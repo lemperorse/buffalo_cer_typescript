@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="TsPageSettings" COMPONENT_TEMPLATE_KEY="templates/ts-component/{{componentName}}.vue.mustache" LESS_TEMPLATE_KEY="templates/ts-component/{{componentName}}.less.mustache" HTML_TEMPLATE_KEY="templates/ts-component/{{componentName}}.html.mustache" />
+</project>
