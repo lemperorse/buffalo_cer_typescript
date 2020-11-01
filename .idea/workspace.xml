@@ -19,14 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fda6cc89-b16b-43cb-b6bf-b71403b394c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Page/Profile/Table.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugins/varible.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/varible.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/Base.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Base.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/root/Test.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/root/Test.vue" afterDir="false" />
+    <list default="true" id="fda6cc89-b16b-43cb-b6bf-b71403b394c1" name="Default Changelist" comment="add homepage (Test)">
+      <change beforePath="$PROJECT_DIR$/src/views/root/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/root/Register.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +88,16 @@
       <workItem from="1604095576409" duration="4792000" />
       <workItem from="1604238653032" duration="2561000" />
       <workItem from="1604241817528" duration="173000" />
+      <workItem from="1604242045639" duration="173000" />
     </task>
+    <task id="LOCAL-00001" summary="add homepage (Test)">
+      <created>1604242089662</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604242089663</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +114,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add homepage (Test)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add homepage (Test)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604026776315">
@@ -142,5 +149,9 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604026686454" />
     <state x="207" y="9" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604241795516" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1604242198193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604242198193" />
   </component>
 </project>
