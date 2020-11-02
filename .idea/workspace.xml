@@ -20,39 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda6cc89-b16b-43cb-b6bf-b71403b394c1" name="Default Changelist" comment="add homepage (Test3)">
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/AddBuffalo/CardAddBuffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/Buffalo/CardProfileBuffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/Buffalo/CardSettingBuffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/BuffaloProfile/CardProfileBuffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/BuffaloProfile/CardSettingBuffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/Profile/CardProfileFarmer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/Profile/CardSettingFarmer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/Report/ReportBuffalo/ReportBuffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/Report/ReportSystem/ChartSystem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/farmer/AddBuffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/farmer/AddBuffaloAge.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/farmer/Buffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/farmer/BuffaloProfile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/farmer/Cer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/farmer/Profile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/farmer/ReportSystem.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/farmer/Search.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cards/CardStatWithBtn.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cards/CardStatWithBtn.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/BuffaloProfile/CardProfileBuffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/BuffaloProfile/CardProfileBuffalo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/Report/ReportBuffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/Report/ReportBuffalo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/Report/ReportExport.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/Report/ReportExport.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/Report/ReportFlow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/Report/ReportFlow.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/Report/ReportMap.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/Report/ReportMap.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/User/Home/ChartBuffaloAll.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/User/Home/ChartBuffaloAll.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/User/Home/ChartBuffaloDead.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/User/Report/ReportBuffalo/ChartBuffalo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/User/Home/ChartBuffaloLive.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/User/Home/ChartBuffaloLive.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/User/Report/ReportBuffalo.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/User/Report/ReportFrow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/User/Report/ReportSystem/ReportSystem.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/FarmerSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/FarmerSidebar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/farmer/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/farmer/ReportBuffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/ReportBuffalo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/farmer/Buffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/Buffalo.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +114,7 @@
       <workItem from="1604242045639" duration="45166000" />
       <workItem from="1604331726113" duration="106000" />
       <workItem from="1604336938520" duration="44000" />
-      <workItem from="1604336986053" duration="10547000" />
+      <workItem from="1604336986053" duration="10744000" />
     </task>
     <task id="LOCAL-00001" summary="add homepage (Test)">
       <created>1604242089662</created>
@@ -175,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604293420660</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add homepage (Test3)">
+      <created>1604351499970</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604351499970</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,10 +218,10 @@
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604026686454" />
     <state x="207" y="9" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604241795516" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1604293423382">
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1604351507691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604293423382" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604351507691" />
     <state x="417" y="12" width="580" height="801" key="find.popup" timestamp="1604263996547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
