@@ -65,26 +65,26 @@
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none">
           <li class="items-center">
-            <router-link to="/admin/dashboard" v-slot="{ href, route, navigate, isActive }">
+            <router-link to="/admin/" v-slot="{ href, route, navigate, isActive }">
               <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
                     ? 'text-green-500 hover:text-green-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
-                <i class="fas fa-tv mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
+                <i class="em em-linked_paperclips mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
                 แดชบอร์ด
               </a>
             </router-link>
           </li>
 
           <li class="items-center">
-            <router-link to="/admin/settings" v-slot="{ href, route, navigate, isActive }">
+            <router-link to="/admin/profile" v-slot="{ href, route, navigate, isActive }">
               <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
                     ? 'text-green-500 hover:text-green-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
-                <i class="fas fa-tools mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
+                <i class="em em-man-man-girl-boy mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
                 ข้อมูลส่วนตัว
               </a>
             </router-link>
@@ -102,16 +102,16 @@
         <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
           <li class="items-center">
             <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
-                         to="/auth/login">
-              <i class="fas fa-fingerprint text-gray-400 mr-2 text-sm"></i>
+                         to="/admin/farmer">
+              <i class="em em-male-farmer text-gray-400 mr-2 text-sm"></i>
               ข้อมูลเกษตรกร
             </router-link>
           </li>
 
           <li class="items-center">
             <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
-                         to="/auth/register">
-              <i class="fas fa-clipboard-list text-gray-400 mr-2 text-sm"></i>
+                         to="/admin/buffalo">
+              <i class="em em-water_buffalo  text-gray-400 mr-2 text-sm"></i>
               ข้อมูลควาย
             </router-link>
           </li>
@@ -127,22 +127,22 @@
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
           <li class="items-center">
-            <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block" to="/landing">
-              <i class="fas fa-newspaper text-gray-400 mr-2 text-sm"></i>
+            <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block" to="/admin/admin">
+              <i class="em em-male-technologist text-gray-400 mr-2 text-sm"></i>
               ข้อมูลผู้ดูแลระบบ
             </router-link>
           </li>
 
           <li class="items-center">
-            <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block" to="/profile">
-              <i class="fas fa-user-circle text-gray-400 mr-2 text-sm"></i>
+            <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block" to="/admin/passwordreq">
+              <i class="em em-spiral_note_pad text-gray-400 mr-2 text-sm"></i>
               คำขอรหัสผ่าน
             </router-link>
           </li>
 
           <li class="items-center">
             <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block" to="/profile">
-              <i class="fas fa-user-circle text-gray-400 mr-2 text-sm"></i>
+              <i class="em em-grey_question text-gray-400 mr-2 text-sm"></i>
               สอบถาม
             </router-link>
           </li>
@@ -159,7 +159,7 @@
           <li class="inline-flex">
             <a href="https://www.creative-tim.com/learning-lab/tailwind/vue/colors/notus" target="_blank"
                class="text-gray-800 hover:text-gray-600 text-sm block mb-4 no-underline font-semibold">
-              <i class="fas fa-paint-brush mr-2 text-gray-400 text-base"></i>
+              <i class="fas fa-sign-out-alt mr-2 text-gray-400 text-base"></i>
               ออกจากระบบ
             </a>
           </li>

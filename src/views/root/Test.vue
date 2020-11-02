@@ -7,7 +7,7 @@ import {
   Component,
   Vue,
 } from 'vue-property-decorator';
-import ProfileTable from "@/components/Page/Profile/Table.vue";
+import ProfileTable from "@/components/Page/Admin/Profile/Table.vue";
 
 @Component({
   components: {ProfileTable},

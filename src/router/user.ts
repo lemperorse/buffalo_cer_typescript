@@ -13,6 +13,11 @@ const userRouter:any  = [
         name: 'home',
         component: getView('Home')
     },
+    {
+        path: 'reportbuffalo',
+        name: 'reportbuffalo',
+        component: getView('ReportBuffalo')
+    },
 ]
 
 export  {
