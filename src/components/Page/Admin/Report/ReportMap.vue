@@ -2,13 +2,15 @@
   <div
       class="flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"
   >
+    <div class="relative w-full mt-4 mb-4 px-4 max-w-full flex-grow flex-1">
+      <h3 class="font-semibold text-base text-gray-800">
+        รายงานเชิงแผนที่
+      </h3>
+    </div>
     <div class="rounded-t mb-0 px-4 py-3 border-0">
+
       <div class="flex flex-wrap items-center">
-        <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-          <h3 class="font-semibold text-base text-gray-800">
-            รายงานเชิงแผนที่
-          </h3>
-        </div>
+
 
         <!-- ค้นหา -->
         <div class="flex flex-wrap ">
@@ -69,22 +71,21 @@
               </div>
             </div>
           </div>
+        </div>
 
-        </div>
-        <!-- ค้นหา -->
-        <div class="relative flex flex-wrap ">
-          <button class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-            ค้นหา
-          </button>
-        </div>
+        <button class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+          ค้นหา
+        </button>
 
       </div>
+
 
       <div class="flex flex-wrap items-center">
         <div class="relative w-full pt-4 pb-4 px-4 max-w-full flex-grow flex-1">
           <img src="https://images.pexels.com/photos/1078850/pexels-photo-1078850.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" srcset="">
         </div>
       </div>
+
     </div>
 
   </div>

@@ -3,16 +3,16 @@
       class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
       :class="[color === 'light' ? 'bg-white' : 'bg-green-900 text-white']"
   >
+    <div class="relative w-full mt-4 mb-4 px-4 max-w-full flex-grow flex-1">
+      <h3 class="font-semibold text-base text-gray-800">
+        รายงานจำนวนควาย
+      </h3>
+    </div>
     <div class="rounded-t mb-0 px-4 py-3 border-0">
       <div class="flex flex-wrap items-center">
         <!-- ค้นหา -->
         <div class="relative flex flex-wrap ">
           <div class="flex flex-wrap items-center">
-            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-              <h3 class="font-semibold text-base text-gray-800">
-                รายงานจำนวนควาย
-              </h3>
-            </div>
 
             <!-- ค้นหา -->
             <div class="flex flex-wrap ">
@@ -254,7 +254,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="i in 4">
+        <tr v-for="i in 5">
           <td
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 "
           >

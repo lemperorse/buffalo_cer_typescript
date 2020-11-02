@@ -27,7 +27,7 @@
           </div>
           <div class="w-full lg:w-6/12 xl:w-4/12 px-4">
             <card-stat-with-btn statSubtitle="รายงานสรุปการเจริญเติบโต"
-                                statRoute="reportmap"
+                                statRoute="reportsystem"
                                 statIconName="fas fa-chart-line" statIconColor="bg-indigo-500"/>
           </div>
         </div>
@@ -47,11 +47,13 @@
 
   </div>
 </template>
+
 <script lang="ts">
-import ChartBuffaloAll from "@/components/Page/User/Home/ChartBuffaloAll.vue";
-import ChartBuffaloLive from "@/components/Page/User/Home/ChartBuffaloLive.vue";
 import CardStats from "@/components/Cards/CardStats.vue";
 import CardStatWithBtn from "@/components/Cards/CardStatWithBtn.vue";
+import ChartBuffaloAll from "@/components/Page/User/Home/ChartBuffaloAll.vue";
+import ChartBuffaloLive from "@/components/Page/User/Home/ChartBuffaloLive.vue";
+
 import {
   Component,
   Vue,
@@ -69,10 +71,11 @@ import {Geography} from '@/models/core'
 import {Core} from '@/store/core'
 @Component({
   components: {
-    ChartBuffaloAll,
-    ChartBuffaloLive,
     CardStats,
-    CardStatWithBtn
+    CardStatWithBtn,
+    ChartBuffaloAll,
+    ChartBuffaloLive
+
 
   },
   computed: {

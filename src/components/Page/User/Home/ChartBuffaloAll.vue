@@ -19,7 +19,7 @@
     </div>
 
     <button
-        @click="$router.push('/admin/reportbuffalo')"
+        @click="$router.push('/user/reportbuffalo')"
         class="bg-indigo-500 f-white active:bg-indigo-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
         type="button">
       แสดงรายละเอียด

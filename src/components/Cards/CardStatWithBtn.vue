@@ -5,9 +5,13 @@
     <div class="flex-auto p-4">
       <div class="flex flex-wrap">
         <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+          <span class="font-semibold text-xl text-gray-800">
+            {{ statTitle }}
+          </span>
           <h5 class="text-gray-500 uppercase font-bold text-xs">
             {{ statSubtitle }}
           </h5>
+
           <h3 >
             <button @click="$router.push(statRoute)">ดูรายระเอียด</button>
           </h3>
@@ -50,6 +54,10 @@ export default {
     statPercentColor: {
       type: String,
       default: "text-green-500",
+    },
+    statTitle: {
+      type: String,
+      default: "350,897",
     },
     statDescripiron: {
       type: String,

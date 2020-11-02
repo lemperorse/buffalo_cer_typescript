@@ -1,12 +1,12 @@
 <template>
   <div
-      class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+    class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
   >
     <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
       <div class="flex flex-wrap items-center">
         <div class="relative w-full max-w-full flex-grow flex-1">
-          <h6 class="uppercase text-gray-500 mb-1 text-xl font-semibold">
-            ควายที่มีชีวิต
+          <h6 class="uppercase text-gray-500 mb-1 text-xs font-semibold">
+            สรุปควาย
           </h6>
         </div>
       </div>
@@ -16,12 +16,6 @@
         <canvas id="bar-chart"></canvas>
       </div>
     </div>
-    <button
-        @click="$router.push('/user/reportbuffalo')"
-        class="bg-indigo-500 f-white active:bg-indigo-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        type="button">
-      แสดงรายละเอียด
-    </button>
   </div>
 </template>
 <script>
@@ -127,8 +121,3 @@ export default {
   },
 };
 </script>
-<style>
-.f-white{
-  color:white!important;
-}
-</style>
