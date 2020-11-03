@@ -1,11 +1,12 @@
 import {VuexModule, Module, Mutation, Action} from "vuex-class-modules";
 import {Core} from "@/store/core";
+import axios from '@/plugins/axios'
 
 @Module({generateMutationSetters: true})
 class AuthClass extends VuexModule {
     //state
-    private token: string | null = null;
     public Hi: String | null = null;
+    private  token:any =  localStorage.getItem('token')
 
     public async register(from:any,fromProfile:any): Promise<any> {
         let user:any  = await Core.postHttp('/api/register',from)
@@ -27,16 +28,23 @@ class AuthClass extends VuexModule {
         })
     }
 
-    @Action
-    async login() {
-        alert('hello login');
-
+    public async storeToken(token:any){
+        axios.defaults.headers.common['Authorization'] = (token != null )?`Token ${token}`:'';
     }
 
-    @Action
-    async logout(): Promise<void> {
+    public async storeTokenToStorage(token:any){
+        localStorage.setItem('token',token )
+    }
 
-        alert('hello');
+    public async checkToken(){
+        if(this.token != null){
+            await this.storeToken(this.token);
+        }
+    }
+
+    async logout(){
+        localStorage.clear();
+        return await Core.postHttp('/api/rest-auth/logout/',{})
     }
 }
 

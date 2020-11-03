@@ -16,14 +16,14 @@
                   class="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                   type="button"
               >
-                <img alt="..." class="w-5 mr-1" :src="github"/>
+                <img alt="..." class="w-5 mr-1" src=""/>
                 Github
               </button>
               <button
                   class="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                   type="button"
               >
-                <img alt="..." class="w-5 mr-1" :src="google"/>
+                <img alt="..." class="w-5 mr-1" src=""/>
                 Google
               </button>
             </div>
@@ -44,7 +44,7 @@
               <div class="text-center mt-6">
                 <button
                     :class="$btn"
-                     type="submit"
+                    type="submit"
                 >
                   เข้าสู่ระบบ
                 </button>
@@ -76,7 +76,9 @@ import {
   Vue,
 } from 'vue-property-decorator';
 import {Core} from '@/store/core'
-import {userModule} from '@/store/test'
+import {Auth} from '@/store/auth'
+import {User} from '@/store/user'
+
 import CityDialog from '@/components/Dialog/City.vue'
 
 @Component({
@@ -85,10 +87,22 @@ import CityDialog from '@/components/Dialog/City.vue'
 })
 
 export default class Home extends Vue {
-  private form:any = {}
+  private form: any = {}
 
-  private async login(){
-    await Core.postHttp('/api/rest-auth/login/',this.form)
+  private async login() {
+    let user:any = await Core.postHttp('/api/rest-auth/login/', this.form)
+    if(user?.key){
+      await Auth.storeToken(user.key)
+      await Auth.storeTokenToStorage(user.key)
+      await User.loadUser()
+      await this.$router.replace(User.routeUser)
+    }else{
+      alert('eee')
+    }
+  }
+
+  private async created(){
+
   }
 
 }

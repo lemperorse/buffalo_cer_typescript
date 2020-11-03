@@ -20,8 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda6cc89-b16b-43cb-b6bf-b71403b394c1" name="Default Changelist" comment="add homepage (Test3)">
+      <change afterPath="$PROJECT_DIR$/src/store/user.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/farmer/Buffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/Buffalo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Base.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Base.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/root/Base.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/root/Base.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/root/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/root/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +58,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Page/User" />
+    <property name="js.ns.project" value="true" />
+    <property name="js.ns.project.flavor" value="TypeScript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Users\Dodo\Desktop\buffalo_cer_typescript\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\pongv\buffalo_cer_typescript\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -115,6 +124,9 @@
       <workItem from="1604331726113" duration="106000" />
       <workItem from="1604336938520" duration="44000" />
       <workItem from="1604336986053" duration="10744000" />
+      <workItem from="1604421514829" duration="189000" />
+      <workItem from="1604421724296" duration="6000" />
+      <workItem from="1604421891532" duration="4218000" />
     </task>
     <task id="LOCAL-00001" summary="add homepage (Test)">
       <created>1604242089662</created>
@@ -193,31 +205,36 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604336980679" />
-    <state width="1515" height="142" key="GridCell.Tab.0.bottom" timestamp="1604351118431">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1874" height="242" key="GridCell.Tab.0.bottom" timestamp="1604425575101">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604098227199" />
     <state width="1515" height="142" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604351118431" />
-    <state width="1515" height="142" key="GridCell.Tab.0.center" timestamp="1604351118431">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1874" height="242" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604425575101" />
+    <state width="1874" height="242" key="GridCell.Tab.0.center" timestamp="1604425575101">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604098227198" />
     <state width="1515" height="142" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604351118431" />
-    <state width="1515" height="142" key="GridCell.Tab.0.left" timestamp="1604351118431">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1874" height="242" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604425575101" />
+    <state width="1874" height="242" key="GridCell.Tab.0.left" timestamp="1604425575101">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604098227197" />
     <state width="1515" height="142" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604351118431" />
-    <state width="1515" height="142" key="GridCell.Tab.0.right" timestamp="1604351118431">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1874" height="242" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604425575101" />
+    <state width="1874" height="242" key="GridCell.Tab.0.right" timestamp="1604425575101">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604098227198" />
     <state width="1515" height="142" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604351118431" />
-    <state x="207" y="9" key="SettingsEditor" timestamp="1604241795516">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1874" height="242" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604425575101" />
+    <state x="259" y="11" key="SettingsEditor" timestamp="1604421706979">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604026686454" />
     <state x="207" y="9" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604241795516" />
+    <state x="259" y="11" key="SettingsEditor/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604421706979" />
     <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1604351507691">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -226,9 +243,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="417" y="12" width="580" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1604263996547" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1604272034238">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="531" y="236" key="run.anything.popup" timestamp="1604423497189">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604272034238" />
+    <state x="531" y="236" key="run.anything.popup/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604423497189" />
   </component>
 </project>
