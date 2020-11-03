@@ -1,6 +1,6 @@
 <template>
   <div class="relative md:pt-32 pb-32 pt-12 mt-24">
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap-reverse">
       <div class="w-full lg:w-8/12 px-4">
         <CardSettingsAdmin />
       </div>

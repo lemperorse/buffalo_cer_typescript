@@ -1,6 +1,7 @@
 <template>
   <div>
     <sidebar/>
+    <CityDialog />
     <div class="relative md:ml-64 bg-gray-200">
       <admin-navbar/>
       <!--  <header-stats />-->
@@ -17,6 +18,7 @@ import AdminNavbar from "@/components/Navbars/AdminNavbar.vue";
 import Sidebar from "@/components/Sidebar/Sidebar.vue";
 import HeaderStats from "@/components/Headers/HeaderStats.vue";
 import FooterAdmin from "@/components/Footers/FooterAdmin.vue";
+import CityDialog from '@/components/Dialog/City.vue'
 
 import {User} from "@/store/user";
 import {Auth} from "@/store/auth";
@@ -24,6 +26,7 @@ import {Component, Vue} from "vue-property-decorator";
 
 @Component({
   components: {
+    CityDialog,
     AdminNavbar,
     Sidebar,
     HeaderStats,

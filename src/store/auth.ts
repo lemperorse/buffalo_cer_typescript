@@ -15,6 +15,7 @@ class AuthClass extends VuexModule {
             await this.autoCreateProfile(fromProfile)
             await this.autoCreateFarm(user?.first_name,user?.id)
         }
+        return user
     }
 
     public async autoCreateProfile(from:any): Promise<any>{
@@ -27,6 +28,22 @@ class AuthClass extends VuexModule {
             "name":name
         })
     }
+
+    public async registerAdmin(from:any ): Promise<any> {
+        let user:any  = await Core.postHttp('/api/register',from)
+        if(user.id){
+            await this.autoAddAdmin(user?.id)
+        }
+        return user
+    }
+    private async autoAddAdmin(user:number){
+        return Core.postHttp('/api/changeAdmin/', {
+            "user":user,
+        })
+    }
+
+
+
 
     public async storeToken(token:any){
         axios.defaults.headers.common['Authorization'] = (token != null )?`Token ${token}`:'';

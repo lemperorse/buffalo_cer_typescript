@@ -1,5 +1,5 @@
 <template>
-
+<v-app v-if="dialog">
   <v-dialog v-model="dialog" persistent>
     <v-card v-if="response">
       <v-card-title>
@@ -22,7 +22,7 @@
       </v-card-text>
     </v-card>
   </v-dialog>
-
+</v-app>
 </template>
 
 <script lang="ts">
