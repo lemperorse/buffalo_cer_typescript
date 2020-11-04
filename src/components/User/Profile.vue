@@ -1,19 +1,28 @@
 <template>
-  <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0">
+  <div  >
     <div class="rounded-t bg-white mb-0 px-6 py-6">
       <div class="text-center flex justify-between">
         <h6 class="text-gray-800 text-xl font-bold">เพิ่มเกษตกร</h6>
         <button
-            @click="$router.go(-1)"
+            v-if="unEdit"
+            @click="unEdit = !unEdit"
+            class="bg-orange-500 f-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+            type="button"
+        >
+          แก้ไข
+        </button>
+        <button
+            v-if="!unEdit"
+            @click="unEdit = !unEdit"
             class="bg-red-500 f-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
             type="button"
         >
-          กลับไปหน้าข้อมูลเกษตรกร
+          ยกเลิกการแก้ไข
         </button>
       </div>
     </div>
     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-      <form @submit.prevent="register">
+      <form @submit.prevent="update()">
         <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
           บัญชี
         </h6>
@@ -23,7 +32,7 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 ชื่อผู้ใช้งาน
               </label>
-              <input required v-model="formUser.username" type="text" :class="$xinput" value=" "/>
+              <input disabled required v-model="formUser.username" type="text" :class="$xinput" value=" "/>
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -31,25 +40,10 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 อีเมล์
               </label>
-              <input   v-model="formUser.email" type="text" :class="$xinput" placeholder="(ไม่บังคับ)"/>
+              <input  :disabled="unEdit" v-model="formUser.email" type="text" :class="$xinput" placeholder="(ไม่บังคับ)"/>
             </div>
           </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full mb-3">
-              <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                รหัสผ่าน
-              </label>
-              <input required v-model="formUser.password" type="password" :class="$xinput" value=""/>
-            </div>
-          </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full mb-3">
-              <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                ยืนยันรหัสผ่าน
-              </label>
-              <input required v-model="formUser.password2" type="password" :class="$xinput" value=""/>
-            </div>
-          </div>
+
         </div>
 
         <hr class="mt-6 border-b-1 border-gray-400"/>
@@ -63,7 +57,7 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 คำนำหน้า
               </label>
-              <select required v-model="formProfile.prefix" :class="$xinput">
+              <select :disabled="unEdit" required v-model="formProfile.prefix" :class="$xinput">
                 <option v-for="val,i in prefix" :key="i" :value="val.id">{{ val.value }}</option>
               </select>
               <!--                  <input type="text" :class="$xinput" value=" " />-->
@@ -74,7 +68,7 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 ชื่อ
               </label>
-              <input required v-model="formUser.first_name" type="text" :class="$xinput" value=" "/>
+              <input :disabled="unEdit" required v-model="formUser.first_name" type="text" :class="$xinput" value=" "/>
             </div>
           </div>
 
@@ -83,15 +77,15 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 นามสกุล
               </label>
-              <input required v-model="formUser.last_name" type="text" :class="$xinput" value=" "/>
+              <input :disabled="unEdit" required v-model="formUser.last_name" type="text" :class="$xinput" value=" "/>
             </div>
           </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full  mb-3">
+          <div class="w-full  lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
               <label  class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 รหัสบัตรประจำตัวประชาชน
               </label>
-              <input v-model="formProfile.personal_id" type="text" :class="$xinput"/>
+              <input :disabled="unEdit" v-model="formProfile.personal_id" type="text" :class="$xinput"/>
             </div>
           </div>
           <div class="w-full lg:w-6/12  px-4">
@@ -99,7 +93,7 @@
               <label  class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 เบอร์โทร
               </label>
-              <input v-model="formProfile.tel" type="text" :class="$xinput"/>
+              <input :disabled="unEdit" v-model="formProfile.tel" type="text" :class="$xinput"/>
             </div>
           </div>
 
@@ -108,7 +102,7 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 เพศ
               </label>
-              <select required v-model="formProfile.gender" :class="$xinput">
+              <select :disabled="unEdit" required v-model="formProfile.gender" :class="$xinput">
                 <option v-for="val,i in gender" :key="i" :value="val.id">{{ val.value }}</option>
               </select>
             </div>
@@ -119,7 +113,7 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 วันเกิด
               </label>
-              <input required v-model="formProfile.birthday" type="date" :class="$xinput" value=" "/>
+              <input :disabled="unEdit" required v-model="formProfile.birthday" type="date" :class="$xinput" value=" "/>
             </div>
           </div>
           <div class="w-full lg:w-4/12 px-4">
@@ -136,7 +130,7 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                 กลุ่มเกษตกร
               </label>
-              <select required v-model="formProfile.group" :class="$xinput">
+              <select :disabled="unEdit" required v-model="formProfile.group" :class="$xinput">
                 <option v-for="val,i in group" :key="i" :value="val.id">{{ val.value }}</option>
               </select>
             </div>
@@ -146,7 +140,7 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 บ้านเลขที่
               </label>
-              <input required v-model="formProfile.address" type="text" :class="$xinput" value=" "/>
+              <input :disabled="unEdit" required v-model="formProfile.address" type="text" :class="$xinput" value=" "/>
             </div>
           </div>
 
@@ -155,18 +149,18 @@
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                 หมู่บ้าน
               </label>
-              <input required v-model="formProfile.mooban" type="text" :class="$xinput" value=" "/>
+              <input :disabled="unEdit" required v-model="formProfile.mooban" type="text" :class="$xinput" value=" "/>
             </div>
           </div>
 
 
 
           <div class="w-full lg:w-6/12 px-4">
-            <div class="relative w-full mb-3" @click="openCityDialog ">
+            <div class="relative w-full mb-3" >
               <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 จังหวัด อำเภอ ตำบล
               </label>
-              <input required :value="CityFrom" @click="openCityDialog " type="text" :class="$xinput" disabled/>
+              <input   :value="CityFrom" @click="openCityDialog " @focus="openCityDialog" type="text" :class="$xinput" :disabled="unEdit"/>
             </div>
           </div>
           <div class="w-full lg:w-6/12 px-4">
@@ -174,7 +168,7 @@
               <label  class="block uppercase text-gray-700 text-xs font-bold mb-2">
                 รหัสไปรษณีย์
               </label>
-              <input v-model="formProfile.zipcode" required type="text" :class="$xinput" value=" "/>
+              <input :disabled="unEdit" v-model="formProfile.zipcode" required type="text" :class="$xinput" value=" "/>
             </div>
           </div>
 
@@ -182,6 +176,7 @@
 
         <div class="flex justify-center mt-6">
           <button
+              v-if="!unEdit"
               class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
               type="submit">
             บันทึกข้อมูล
@@ -226,14 +221,21 @@ export default class Home extends Vue {
   private prefix: any[] = []
   private gender: any[] = []
   private group: any[] = []
+  private currentFarmer:any  = null
+  private unEdit:boolean  = true
+
   async created() {
     await this.run()
   }
 
   async run() {
+    this.currentFarmer = this.$route.query.farmer
     this.prefix = await Core.getChoice('คำนำหน้า')
     this.gender = await Core.getChoice('เพศ')
     this.group = await Core.getChoice('กลุ่มเกษตรกร')
+    this.formProfile = await Core.getHttp(`/api/profile/${this.currentFarmer}/`)
+    this.formUser = await Core.getHttp(`/api/account/${this.formProfile.user}/`)
+    await this.setCity()
   }
 
   @Watch('formProfile.birthday')
@@ -242,19 +244,33 @@ export default class Home extends Vue {
 
   }
 
-  async register() {
+  async setCity(){
+    City.currentGeo = await Core.getHttp(`/user/account/geography/${this.formProfile.geo}/`)
+    City.currentProvince = await Core.getHttp(`/user/account/province/${this.formProfile.province}/`)
+    City.currentAmphur = await Core.getHttp(`/user/account/amphur/${this.formProfile.amphur}/`)
+    City.currentDistrict = await Core.getHttp(`/user/account/district/${this.formProfile.district}/`)
+    await City.setShowName()
+        // City.currentProvince =
+        //     City.currentAmphur =
+        //         City.currentDistrict=
+  }
+
+  async update() {
     this.formProfile.geo = City.currentGeo?.id
     this.formProfile.province = City.currentProvince?.id
     this.formProfile.amphur = City.currentAmphur?.id
     this.formProfile.district = City.currentDistrict?.id
-    let user = await Auth.register(this.formUser,this.formProfile)
-    if(user.id){
-          alert('Success')
-          this.formUser = {}
-          this.formProfile = {}
+    let profile = await Core.putHttp(`/api/profile/${this.currentFarmer}/`,this.formProfile)
+    let user = await Core.putHttp(`/api/account/${this.formProfile.user}/`,this.formUser)
+
+    if(user.id && profile.id){
+      alert('Success')
     }else{
       alert('Error')
     }
+
+    await this.run();
+
   }
 
 
