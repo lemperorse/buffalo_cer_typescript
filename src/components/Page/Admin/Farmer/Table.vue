@@ -87,22 +87,30 @@
                       {{farmer.tel}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
-                        <i class="fas fa-circle text-red-500 mr-2"></i> {{farmer.iprovince}}
+                         {{farmer.iprovince}}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                         <div class="flex">
                           {{farmer.igroup}}
                         </div>
                     </td>
+                  <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
+                    <div class="flex" v-if="farmer.status" >
+                      <i class="fas fa-circle text-green-500 mr-2"></i>  ใช้งานปกติ
+                    </div>
+                    <div class="flex" v-else>
+                      <i class="fas fa-circle text-red-500 mr-2"></i>  ปิดการใช้งาน
+                    </div>
+                  </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                         <div class="flex items-center">
                             <button @click="$router.push(`/admin/farmerprofile?farmer=${farmer.id}`)" class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                                 ดูข้อมูล
                             </button>
-                            <button @click="deleteFarmer(farmer)" class="bg-red-500
-                  active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 f-white " type="button">
-                                ลบ
-                            </button>
+<!--                            <button @click="deleteFarmer(farmer)" class="bg-red-500-->
+<!--                  active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 f-white " type="button">-->
+<!--                                ลบ-->
+<!--                            </button>-->
 
                         </div>
                     </td>

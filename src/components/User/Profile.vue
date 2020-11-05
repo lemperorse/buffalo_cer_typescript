@@ -215,7 +215,7 @@ import moment from "moment";
   computed: {}
 })
 
-export default class Home extends Vue {
+export default class Profile extends Vue {
   private formUser: any = {}
   private formProfile: any = {}
   private prefix: any[] = []
@@ -250,9 +250,6 @@ export default class Home extends Vue {
     City.currentAmphur = await Core.getHttp(`/user/account/amphur/${this.formProfile.amphur}/`)
     City.currentDistrict = await Core.getHttp(`/user/account/district/${this.formProfile.district}/`)
     await City.setShowName()
-        // City.currentProvince =
-        //     City.currentAmphur =
-        //         City.currentDistrict=
   }
 
   async update() {

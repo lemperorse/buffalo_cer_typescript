@@ -126,7 +126,7 @@
         <!-- Navigation -->
         <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
           <li class="inline-flex">
-            <a href="https://www.creative-tim.com/learning-lab/tailwind/vue/colors/notus" target="_blank"
+            <a @click="logout" href="#"
                class="text-gray-800 hover:text-gray-600 text-sm block mb-4 no-underline font-semibold">
               <i class="fas fa-paint-brush mr-2 text-gray-400 text-base"></i>
               ออกจากระบบ
@@ -138,11 +138,12 @@
   </nav>
 </template>
 
-); }
 
 <script>
 import NotificationDropdown from "@/components/Dropdowns/NotificationDropdown.vue";
 import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
+import {Auth} from "@/store/auth";
+import {User} from "@/store/user";
 
 export default {
   data() {
@@ -150,10 +151,29 @@ export default {
       collapseShow: "hidden",
     };
   },
+  watch: {
+    path:function(val){
+      this.collapseShow =  "hidden"
+    }
+  },
+  computed: {
+    path(){
+      return this.$route.path
+    }
+  },
   methods: {
+
+    change(){
+
+    },
+
     toggleCollapseShow: function (classes) {
       this.collapseShow = classes;
     },
+    async logout(){
+      await Auth.logout();
+      await location.reload()
+    }
   },
   components: {
     NotificationDropdown,

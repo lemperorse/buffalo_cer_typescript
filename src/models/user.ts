@@ -5,7 +5,11 @@ export interface Test{
 }
 
 export interface User {
-    id: number | null
-    name: string|null,
-    value : string|null
+    "email": string|null,
+    "username": string|null,
+    "first_name": string|null,
+    "last_name": string|null,
+    "id": string|null,
+    "is_staff": boolean|null,
+    "is_superuser": boolean|null,
 }

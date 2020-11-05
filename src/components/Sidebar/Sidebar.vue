@@ -183,7 +183,22 @@ export default {
       collapseShow: "hidden",
     };
   },
+  watch: {
+    path:function(val){
+      this.collapseShow =  "hidden"
+    }
+  },
+  computed: {
+    path(){
+      return this.$route.path
+    }
+    },
   methods: {
+
+    change(){
+
+    },
+
     toggleCollapseShow: function (classes) {
       this.collapseShow = classes;
     },
