@@ -3,6 +3,7 @@
     <div class="rounded-t bg-white mb-0 px-6 py-6">
       <div class="text-center flex justify-between">
         <h6 class="text-gray-800 text-xl font-bold">ข้อมูลฟาร์ม</h6>
+
         <button
             v-if="unEdit"
             @click="unEdit = !unEdit"
@@ -122,8 +123,10 @@
             บันทึก
           </button>
         </div>
-
       </form>
+
+
+
     </div>
   </div>
 </template>

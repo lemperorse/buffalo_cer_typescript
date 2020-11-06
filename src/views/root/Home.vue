@@ -87,7 +87,10 @@ import CityDialog from '@/components/Dialog/City.vue'
 })
 
 export default class Home extends Vue {
-  private form: any = {}
+  private form: any = {
+    "username":"root",
+    "password":"Pautn1611"
+  }
 
   private async login() {
     let user:any = await Core.postHttp('/api/rest-auth/login/', this.form)
