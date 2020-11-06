@@ -19,9 +19,16 @@
         </li>
         <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
           <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(4)" v-bind:class="{'text-green-600 bg-white': openTab !== 4, 'text-white bg-green-600': openTab === 4}">
+            <i class="em em-water_buffalo   mr-1" style="font-size:10px;"></i> ข้อมูลควาย
+          </a>
+        </li>
+
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+          <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(5)" v-bind:class="{'text-green-600 bg-white': openTab !== 5, 'text-white bg-green-600': openTab === 5}">
             <i class="fas fa-cog text-base mr-1"></i> ตั้งค่า
           </a>
         </li>
+
       </ul>
 
       <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
@@ -40,7 +47,11 @@
             </div>
 
             <div v-bind:class="{'hidden': openTab !== 4, 'block': openTab === 4}">
-               <Manager v-if="openTab === 4" />
+                <button @click="$router.push(`buffalo/?farmer=${$route.query.farmer}`)" :class="`bg-purple-600 ${$btn}`">ดูข้อมูลควาย</button>
+            </div>
+
+            <div v-bind:class="{'hidden': openTab !== 5, 'block': openTab === 5}">
+               <Manager v-if="openTab === 5" />
             </div>
           </div>
         </div>
@@ -74,9 +85,11 @@ import {
 
 import CityDialog from '@/components/Dialog/City.vue'
 
+
 @Component({
   components: {
-    CityDialog, Profile, Farm, ImageUser, Manager
+
+    CityDialog, Profile, Farm, ImageUser, Manager,
   },
   computed: {},
   props: {

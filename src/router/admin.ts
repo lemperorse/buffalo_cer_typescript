@@ -47,19 +47,22 @@ const adminRouter = [
         name: 'addfarmer',
         component: getView('AddFarmer')
     },
+
+
+    /***************************BUFFALO***********************************/
     {
         path: 'buffalo',
-        name: 'buffalo',
+        name: 'buffalo-admin',
         component: getView('Buffalo')
     },
     {
-        path: 'buffaloprofile',
-        name: 'buffaloprofile',
+        path: 'buffalo/profile',
+        name: 'buffalo-profile',
         component: getView('BuffaloProfile')
     },
     {
-        path: 'addbuffalo',
-        name: 'addbuffalo',
+        path: 'buffalo/create',
+        name: 'add-buffalo',
         component: getView('AddBuffalo')
     },
     {

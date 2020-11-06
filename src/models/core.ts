@@ -1,3 +1,8 @@
+export interface CoreForm{
+    id : number | null;
+    name : string |null;
+    value : string |null;
+}
 
 export interface Geography{
     id : number | null;
