@@ -249,6 +249,9 @@ export default class Farm extends Vue {
     this.form.farm = this.farm.id
     let create = await Core.postHttp(`/user/buffalo/buffalo/`,this.form)
     if(create.id){
+      await Core.postHttp(`/api/buffalo/cert/create/`,{"buffalo":create.id})
+      await Core.postHttp(`/api/buffalo/certreal/create/`,{"buffalo":create.id})
+      await Core.postHttp(`/api/buffalo/evolution/create/`,{"buffalo":create.id})
       alert("บันทึกข้อมูลสำเร็จ")
       await this.$router.go(-1)
     }else{

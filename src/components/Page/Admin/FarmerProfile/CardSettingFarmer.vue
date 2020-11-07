@@ -105,7 +105,7 @@ import CityDialog from '@/components/Dialog/City.vue'
 
 export default class Table extends Vue {
 
-  private openTab : number = 4
+  private openTab : number = 1
 
 
   private async created() {

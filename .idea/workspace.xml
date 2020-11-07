@@ -21,18 +21,25 @@
   <component name="ChangeListManager">
     <list default="true" id="fda6cc89-b16b-43cb-b6bf-b71403b394c1" name="Default Changelist" comment="update user UI component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-07bd3118.93b7740a.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-14751ea2.e7b98ce3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-233a8850.e7b98ce3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-07bd3118.423e01ad.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-14751ea2.9edebc73.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-216c7808.f0630ead.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-233a8850.b25c431d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-27e0ccae.6d8a6dfb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-2d0bb20c.40ec84f0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-3049ff34.b90d6147.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/Farm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Farm.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/root/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/root/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-257d9a4e.e7b98ce3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-3049ff34.4aa415f3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-36662aa4.9ac604be.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-3a415f8e.93b7740a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-cordova/www/img/buffalo-1.0c679413.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-01b2e35f.c30189e7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-257d9a4e.12925b14.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-36662aa4.11c18a9e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-3a415f8e.438887c0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buffalo/BuffaloCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/BuffaloCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloCert.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloCert.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloData.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloData.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloEvo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloEvo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buffalo/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/Table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/BuffaloProfile/CardProfileBuffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/BuffaloProfile/CardProfileBuffalo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/BuffaloProfile/CardSettingBuffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/BuffaloProfile/CardSettingBuffalo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/FarmerProfile/CardSettingFarmer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/FarmerProfile/CardSettingFarmer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/buffalo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/buffalo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/BuffaloProfile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/BuffaloProfile.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +93,7 @@
       <recent name="C:\Users\Dodo\Desktop\buffalo_cer_typescript\src\components\Page\User\Report\ReportBuffalo" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.serve">
+  <component name="RunManager" selected="npm.build-android">
     <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -159,7 +166,7 @@
       <workItem from="1604503548194" duration="5121000" />
       <workItem from="1604563484294" duration="27085000" />
       <workItem from="1604650764844" duration="3356000" />
-      <workItem from="1604670582210" duration="13213000" />
+      <workItem from="1604670582210" duration="34286000" />
     </task>
     <task id="LOCAL-00001" summary="add homepage (Test)">
       <created>1604242089662</created>
@@ -224,7 +231,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604619426498</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update user UI component">
+      <created>1604699131008</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604699131008</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update user UI component">
+      <created>1604699204760</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604699204760</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,30 +292,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604336980679" />
-    <state width="1874" height="206" key="GridCell.Tab.0.bottom" timestamp="1604691872259">
+    <state width="1874" height="280" key="GridCell.Tab.0.bottom" timestamp="1604788144910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604098227199" />
     <state width="1515" height="142" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604351118431" />
-    <state width="1874" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604691872259" />
-    <state width="1874" height="206" key="GridCell.Tab.0.center" timestamp="1604691872259">
+    <state width="1874" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604788144910" />
+    <state width="1874" height="280" key="GridCell.Tab.0.center" timestamp="1604788144910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604098227198" />
     <state width="1515" height="142" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604351118431" />
-    <state width="1874" height="206" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604691872259" />
-    <state width="1874" height="206" key="GridCell.Tab.0.left" timestamp="1604691872258">
+    <state width="1874" height="280" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604788144910" />
+    <state width="1874" height="280" key="GridCell.Tab.0.left" timestamp="1604788144910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604098227197" />
     <state width="1515" height="142" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604351118431" />
-    <state width="1874" height="206" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604691872258" />
-    <state width="1874" height="206" key="GridCell.Tab.0.right" timestamp="1604691872259">
+    <state width="1874" height="280" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604788144910" />
+    <state width="1874" height="280" key="GridCell.Tab.0.right" timestamp="1604788144910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604098227198" />
     <state width="1515" height="142" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604351118431" />
-    <state width="1874" height="206" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604691872259" />
+    <state width="1874" height="280" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604788144910" />
     <state width="1874" height="347" key="GridCell.Tab.1.bottom" timestamp="1604619492809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -349,11 +370,11 @@
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604026686454" />
     <state x="207" y="9" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604241795516" />
     <state x="259" y="11" key="SettingsEditor/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604421706979" />
-    <state x="451" y="167" key="Vcs.Push.Dialog.v2" timestamp="1604619486325">
+    <state x="451" y="167" key="Vcs.Push.Dialog.v2" timestamp="1604699207461">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1604351507691" />
-    <state x="451" y="167" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604619486325" />
+    <state x="451" y="167" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604699207461" />
     <state x="417" y="12" width="580" height="801" key="find.popup" timestamp="1604263996547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
