@@ -186,6 +186,7 @@ import moment from "moment";
 import {FarmForm} from "@/models/farm";
 import {BuffaloForm} from "@/models/buffalo";
 import {CoreForm} from "@/models/core";
+import {User} from "@/store/user";
 
 
 
@@ -206,7 +207,10 @@ export default class Farm extends Vue {
   private status : CoreForm[] |null = null
   private froms: CoreForm[] |null = null
 
+
+
   private async created() {
+    await this.collingPermission()
     await this.setChoices();
     await this.run();
   }
@@ -217,11 +221,24 @@ export default class Farm extends Vue {
     this.froms = await Core.getChoice(`แหล่งที่มาของควาย`)
   }
 
+
+  async collingPermission(){
+    let user = await User.getUser();
+    let userAll = await Core.getHttp(`/api/account/${user.pk}/`)
+    if(userAll.is_staff){
+      let profile = await Core.getHttp(`/api/profile/${this.$route.query.farmer}/`)
+      this.farm = await Core.getHttp(`/user/buffalo/farm/${profile.user}/`)
+      this.response = true
+
+    }else{
+      let profile  = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+      this.farm = await Core.getHttp(`/user/buffalo/farm/${profile.user}/`)
+      this.response = true
+    }
+  }
+
   private async run() {
-    let user = this.$route.query.farmer
-    let profile = await Core.getHttp(`/api/profile/${user}/`)
-    this.farm = await Core.getHttp(`/user/buffalo/farm/${profile.user}/`)
-    this.response = true
+
   }
 
   @Watch('form.birthday')

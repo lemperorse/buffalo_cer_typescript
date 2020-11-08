@@ -34,17 +34,17 @@
                 </div>
             </div>
         </form>
-            <hr class="mt-6 border-b-1 border-gray-400" />
-            <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+            <hr class="mt-6 border-b-1 border-gray-400" v-if="admin" />
+            <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase" v-if="admin" >
                 จัดการสิทธิ์
             </h6>
-            <div class="w-full lg:w-12/12 px-4">
+            <div class="w-full lg:w-12/12 px-4" v-if="admin">
                 <div class="relative w-full mb-3">
                     <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                         สิทธ์การใช้งาน
                     </label>
                     <div class="relative">
-                        <select  v-model="formProfile.status" @change="changeStatus" class="block appearance-none w-full bg-gray-100 border border-gray-100 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500">
+                        <select  v-model="admin" @change="changeStatus" class="block appearance-none w-full bg-gray-100 border border-gray-100 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500">
                             <option :value="true">เปิดการใช้งาน (ผู้ใช้)</option>
                             <option :value="false">ปิดการใช้งาน</option>
                         </select>
@@ -56,12 +56,13 @@
                 </div>
             </div>
 
-            <hr class="mt-6 border-b-1 border-gray-400" />
-            <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+
+            <hr class="mt-6 border-b-1 border-gray-400" v-if="admin" />
+            <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase" v-if="admin" >
                 ลบข้อมูลเกษตกร
             </h6>
 
-            <div class="flex flex-wrap">
+            <div class="flex flex-wrap" v-if="admin">
                 <div class="w-full lg:w-6/12 px-4">
                     <div class="relative w-full mb-3">
                         <button @click="disableUser" class="bg-red-500 f-white active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
@@ -71,9 +72,9 @@
                 </div>
             </div>
 
-            <div class="flex justify-center mt-4"><button class=" bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                    บันทึก
-                </button></div>
+<!--            <div v-if="admin" class="flex justify-center mt-4"><button class=" bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">-->
+<!--                    บันทึก-->
+<!--                </button></div>-->
 
 
     </div>
@@ -108,18 +109,31 @@ export default class ManagerClass extends Vue {
     public formPassword :object | any = {}
     public formUser: FarmForm | any = {}
     public formProfile: any = {}
+    private currentFarmer:any  = null
 
+  private admin :any = null
 
     private async created() {
+      await this.collingPermission()
         await this.run();
     }
 
+  async collingPermission(){
+    let user = await User.getUser();
+    let userAll = await Core.getHttp(`/api/account/${user.pk}/`)
+    if(userAll.is_staff){
+      this.admin = userAll.is_staff
+      this.currentFarmer = this.$route.query.farmer
+    }else{
+      let profile  = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+      this.currentFarmer = profile.id
+    }
+  }
+
     private async run() {
-        let user = this.$route.query.farmer
-        this.formProfile = await Core.getHttp(`/api/profile/${user}/`)
+        this.formProfile = await Core.getHttp(`/api/profile/${this.currentFarmer}/`)
 
         this.formUser = await Core.getHttp(`/api/account/${this.formProfile.user}/`)
-
 
     }
 

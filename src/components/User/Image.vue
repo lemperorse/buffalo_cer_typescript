@@ -78,14 +78,26 @@ import {FarmForm} from "@/models/farm";
 export default class ImageClass extends Vue {
   public form: FarmForm | any =  {}
   public formProfile:any = {}
+  private currentFarmer:any  = null
 
   private async created(){
-    this.run();
+    await this.collingPermission()
+    await this.run();
+  }
+
+  async collingPermission(){
+    let user = await User.getUser();
+    let userAll = await Core.getHttp(`/api/account/${user.pk}/`)
+    if(userAll.is_staff){
+      this.currentFarmer = this.$route.query.farmer
+    }else{
+      let profile  = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+      this.currentFarmer = profile.id
+    }
   }
 
   private async run() {
-    let user = this.$route.query.farmer
-    this.formProfile = await Core.getHttp(`/user/account/personal/image/${user}/`)
+    this.formProfile = await Core.getHttp(`/user/account/personal/image/${this.currentFarmer}/`)
     this.form = await Core.getHttp(`/user/buffalo/farm/image/${this.formProfile.user}/`)
     if(this.formProfile.presonal_image){
       let personalImage:any  = this.$refs.personalImage

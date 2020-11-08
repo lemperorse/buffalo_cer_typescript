@@ -168,16 +168,26 @@ export default class Farm extends Vue {
   public form: FarmForm | any =  {}
   private response: boolean = false
   private unEdit: boolean = true
-
+  private currentFarmer:any  = null
 
   private async created() {
-    console.log(this.$route.path)
+    await this.collingPermission()
     await this.run();
   }
 
+  async collingPermission(){
+    let user = await User.getUser();
+    let userAll = await Core.getHttp(`/api/account/${user.pk}/`)
+    if(userAll.is_staff){
+      this.currentFarmer = this.$route.query.farmer
+    }else{
+      let profile  = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+      this.currentFarmer = profile.id
+    }
+  }
+
   private async run() {
-    let user = this.$route.query.farmer
-    let profile = await Core.getHttp(`/api/profile/${user}/`)
+    let profile = await Core.getHttp(`/api/profile/${this.currentFarmer}/`)
     this.form = await Core.getHttp(`/user/buffalo/farm/${profile.user}/`)
     await this.setCity();
     this.response = true

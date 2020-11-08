@@ -34,20 +34,20 @@ const userRouter:any  = [
         component: getView('Buffalo')
     },
     {
-        path: '/user/buffaloprofile',
-        name: 'buffaloprofile',
+        path: 'buffalo/profile',
+        name: 'buffalo-profile',
         component: getView('BuffaloProfile')
     },
     {
-        path: '/user/addbuffaloage',
+        path: 'buffalo/create',
         name: 'addbuffaloage',
-        component: getView('AddBuffaloAge')
-    },
-    {
-        path: '/user/addbuffalo',
-        name: 'addbuffalo',
         component: getView('AddBuffalo')
     },
+    // {
+    //     path: '/user/addbuffalo',
+    //     name: 'addbuffalo',
+    //     component: getView('AddBuffalo')
+    // },
     {
         path: '/user/reportbuffalo',
         name: 'reportbuffalo',

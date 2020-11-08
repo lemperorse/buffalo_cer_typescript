@@ -42,7 +42,7 @@ export default class Admin extends Vue {
     await Auth.checkToken();
     await User.loadUser();
     if(User.routeUser == '/' || User.routeUser == '/user/'){
-      await this.$router.replace('User.routeUser ')
+      await this.$router.replace(User.routeUser )
     }
    }
 }

@@ -2,57 +2,141 @@
   <div
       class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16"
   >
-    <div class="px-6">
+    <div class="px-6" >
       <div class="flex flex-wrap justify-center">
         <div class="w-full px-4 flex justify-center">
           <div class="relative">
-            <img
-                alt="..."
-                :src="team1"
-                class="shadow-xl rounded-full h-auto align-middle border-none -mt-16 w-48 h-48"
+            <img ref="profileImage"
+                 alt="..."
+                 src="https://sv1.picz.in.th/images/2020/11/04/bQMzml.jpg"
+                 class="shadow-xl h-40 w-40 rounded-full align-middle border-none -mt-16 w-48 h-48"
             />
-            <div class="flex justify-center">
-              <button
-                  class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                  type="button">
+            <div class="flex justify-center mt-4" v-if="response" >
+              <input type="file" ref="profile" @change="profileChange" style="display:none;" />
+
+              <button @click="$refs.profile.click()"
+                      class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                      type="button">
                 อัพโหลดรูปภาพ
               </button>
+
             </div>
           </div>
         </div>
       </div>
-      <div class="text-center mt-12">
+      <div class="text-center mt-12"  v-if="response">
         <h3
-            class="text-xl font-semibold leading-normal mb-2 text-gray-800 mb-2"
+            class="text-2xl font-semibold leading-normal mb-2 text-gray-800 mb-2"
         >
-          นายจอห์น ชาวไร่
+          {{User.first_name}}&nbsp;  {{User.last_name}}
         </h3>
         <div
-            class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase"
+            class="text-lg leading-normal mt-0 mb-2 text-gray-500 font-bold  "
         >
-          <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-500"></i>
-          ไทยแลนด์, แพร่
+          <i class="fas fa-user mr-2 text-lg text-gray-500"></i>
+          {{User.username}}
         </div>
-        <div class="mb-2 text-gray-700 mt-10">
-          <i class="fas fa-briefcase mr-2 text-lg text-gray-500"></i>
-         ที่อยู่ 123/123
+
+        <div class="mb-2 text-purple-500 ">
+          <i class="fas fa-envelope mr-2 text-lg text-purple-500"></i>
+          {{User.email}}
         </div>
-        <div class="mb-2 text-gray-700">
-          <i class="fas fa-university mr-2 mb-12 text-lg text-gray-500"></i>
-          เบอร์โทรศัพท์ 0123456789
-        </div>
+        <br><br>
+        <!--        <div class="mb-2 text-gray-700">-->
+        <!--          <i class="fas fa-university mr-2 mb-12 text-lg text-gray-500"></i>-->
+        <!--          เบอร์โทรศัพท์ 0123456789-->
+        <!--        </div>-->
       </div>
     </div>
   </div>
 </template>
-<script>
-import team1 from "@/assets/img/team-1-800x800.jpg";
 
-export default {
-  data() {
-    return {
-      team1,
-    };
-  },
-};
+
+<script lang="ts">
+import {
+  Component,
+  Vue,
+  Watch,
+} from 'vue-property-decorator';
+import {
+  Core
+} from '@/store/core'
+import {
+  Auth
+} from '@/store/auth'
+import {
+  User
+} from '@/store/user'
+
+
+
+import moment from "moment";
+import {FarmForm} from "@/models/farm";
+
+
+
+
+@Component({
+  components: {   },
+  computed: {}
+})
+
+export default class ImageClass extends Vue {
+
+  public formProfile:any = {}
+  private response :boolean = false
+
+  private async created(){
+    this.run();
+  }
+
+  private async run() {
+    let user = await User.getUser();
+    console.log('[USER]',user)
+    let profile = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+    this.formProfile = await Core.getHttp(`/user/account/profile/image/${profile.id}/`)
+    if(this.formProfile.profile_image){
+      let profileImage:any = this.$refs.profileImage
+      profileImage.src   = this.formProfile.profile_image
+    }
+
+    await Auth.setUser(user.pk)
+    this.response = true
+  }
+
+
+
+
+  async profileChange(event:any){
+
+    let file = await this.getBase64(event.target.files[0])
+
+    let profileImage:any = this.$refs.profileImage
+    profileImage.src = file
+    this.formProfile.profile_image = file
+    let data = await Core.putHttp(`/user/account/profile/image/${this.formProfile.id}/`,this.formProfile)
+    if(data.id){
+      alert("success")
+    }
+  }
+
+  async getBase64(file:any) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+  }
+
+  get User(){
+    return Auth.user
+  }
+}
 </script>
+
+<style>
+.f-white {
+  color: white !important;
+}
+</style>

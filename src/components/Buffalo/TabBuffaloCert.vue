@@ -49,7 +49,7 @@
                             </div>
                             <hr>
                             <div class="relative w-full mb-3 mt-4">
-                              <button type="button" @click="openCert"
+                              <button type="button" @click="openCert($api)"
                                       :class="`bg-purple-600 f-white ${$btn}`">ดาวน์โหลดเอกสาร</button>
                             </div>
 
@@ -205,8 +205,8 @@ export default class Farm extends Vue {
       alert("success")
     }
   }
-  openCert(){
-    window.open( `http://192.168.1.112:8000/user/buffalo/print/${this.$route.query.id}`, '_blank');
+  openCert(api:string){
+    window.open( `${api}${this.$route.query.id}`, '_blank');
 
   }
   openRealCret(){

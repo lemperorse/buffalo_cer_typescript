@@ -2,7 +2,7 @@
   <div  >
     <div class="rounded-t bg-white mb-0 px-6 py-6">
       <div class="text-center flex justify-between">
-        <h6 class="text-gray-800 text-xl font-bold">เพิ่มเกษตกร</h6>
+        <h6 class="text-gray-800 text-xl font-bold">ข้อมูลเกษตกร</h6>
         <button
             v-if="unEdit"
             @click="unEdit = !unEdit"
@@ -225,11 +225,23 @@ export default class Profile extends Vue {
   private unEdit:boolean  = true
 
   async created() {
+    await this.collingPermission();
     await this.run()
   }
 
+  async collingPermission(){
+    let user = await User.getUser();
+    let userAll = await Core.getHttp(`/api/account/${user.pk}/`)
+    if(userAll.is_staff){
+      this.currentFarmer = this.$route.query.farmer
+    }else{
+      let profile  = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+      this.currentFarmer = profile.id
+    }
+  }
+
   async run() {
-    this.currentFarmer = this.$route.query.farmer
+
     this.prefix = await Core.getChoice('คำนำหน้า')
     this.gender = await Core.getChoice('เพศ')
     this.group = await Core.getChoice('กลุ่มเกษตรกร')
@@ -261,6 +273,7 @@ export default class Profile extends Vue {
     let user = await Core.putHttp(`/api/account/${this.formProfile.user}/`,this.formUser)
 
     if(user.id && profile.id){
+      this.unEdit = true
       alert('Success')
     }else{
       alert('Error')
