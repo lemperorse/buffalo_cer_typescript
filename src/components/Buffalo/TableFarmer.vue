@@ -32,117 +32,43 @@
     </div>
     <!-- table -->
     <div class="block w-full overflow-x-auto">
-        <table class="items-center w-full bg-transparent border-collapse">
-            <thead>
-                <tr>
-                    <th class="px-6  align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
-                color === 'light'
-                  ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
-              ]">
-                        ควาย
-                    </th>
-                    <th class="px-6  align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
-                color === 'light'
-                  ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
-              ]">
-                        หมายเลข NID
-                    </th>
-                    <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
-                color === 'light'
-                  ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
-              ]">
-                      หมายเลข Microchip
-                    </th>
-                    <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
-                color === 'light'
-                  ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
-              ]">
-                        เพศ
-                    </th>
-                    <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
-                color === 'light'
-                  ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
-              ]">
-                        สถานะควาย
-                    </th>
-                    <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
-                color === 'light'
-                  ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
-              ]">
-                        สี
-                    </th>
-                    <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
-                color === 'light'
-                  ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
-              ]">
-                        แหล่งที่มา
-                    </th>
+        <div class="flex flex-wrap mb-4">
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3" v-for="buffalo,index in buffalos.results" :key="index">
+                <div class="bg-white border-b-2 border-green-700 rounded shadow-xl mx-4 my-2">
+                    <div class="flex-auto p-4 ">
+                        <div class="flex flex-wrap ">
+                            <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+                                <span class="font-semibold text-xl text-gray-800">
+                                    ชื่อควาย : {{buffalo.name}}
+                                </span>
+                                <h5 class="text-gray-500 uppercase font-bold text-xs">
+                                    หมายเลข MICROCHIP : {{ buffalo.nid }}
+                                </h5>
 
-                    <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
-                color === 'light'
-                  ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
-              ]">
-                        การจัดการ
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="buffalo,index in buffalos.results" :key="index">
-                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left flex items-center">
-                        <img :src="(buffalo.back_image)?buffalo.back_image:'https://sv1.picz.in.th/images/2020/11/07/bb198v.jpg'"
-                             class="h-12 w-12 bg-white rounded-full border" alt="..." />
-                        <span class="ml-3 font-bold" :class="[color === 'light' ? 'text-gray-700' : 'text-white']">
-                            {{buffalo.name}}
-                        </span>
-                    </th>
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 ">
-                     <center>{{buffalo.nid}}</center>
-                    </td>
-                  <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 ">
-                    <center>{{buffalo.microship}}</center>
-                  </td>
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
-                      {{buffalo.gender.value}}
-                    </td>
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
-                      {{buffalo.status.value}}
-                    </td>
-                  <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
-                    {{buffalo.color.value}}
-                  </td>
+                                <h3>
+                                    <button @click="$router.push(`buffalo/profile?id=${buffalo.id}`)">ดูรายระเอียด</button>
+                                </h3>
 
-                  <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
-                      {{buffalo.froms.value}}
-                    </td>
+                            </div>
 
-                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
-                        <div class="flex items-center">
-                            <button @click="$router.push(`buffalo/profile?id=${buffalo.id}`)" class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                                ดูข้อมูล
-                            </button>
-<!--                            <button class="bg-red-500-->
-<!--                  active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 f-white " type="button">-->
-<!--                                ลบ-->
-<!--                            </button>-->
-
+                            <div class="relative w-auto pl-4 flex-initial">
+                                <div>
+                                    <img :src="(buffalo.back_image)?buffalo.back_image:'https://sv1.picz.in.th/images/2020/11/07/bb198v.jpg'" class="h-12 w-12 bg-white rounded-full border" alt="..." />
+                                </div>
+                            </div>
                         </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+
     </div>
 
-    <div class="py-2 mb-4">
+
+    <div class="py-2 ">
         <v-app style="height:100px!important;">
-            <v-pagination v-model="page" :length="allPages" :total-visible="7" @input="handlePageChange" circle></v-pagination>
+            <v-pagination v-model="page" :length="allPages" :total-visible="9" @input="handlePageChange" circle></v-pagination>
         </v-app>
 
     </div>
@@ -208,6 +134,7 @@ export default class Farm extends Vue {
         this.user = await Core.getHttp(`/api/account/${user.pk}/`)
         this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
         this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?farm__id=${this.farm.id}&search=${this.search}`)
+        this.allPages  = Math.ceil((this.buffalos?.count / 9))
         this.response = true
     }
     private async handlePageChange(value: any) {
