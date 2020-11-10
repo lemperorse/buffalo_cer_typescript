@@ -15,50 +15,50 @@
             <v-tab-item>
                 <div class="flex flex-wrap">
                     <div class="w-full lg:w-12/12 px-4 mt-4">
-                      <form  @submit.prevent="updateCert">
-                        <div class="flex flex-wrap">
-                          <div class="w-full   px-4">
-                            <div class="relative w-full mb-3">
-                              <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                                พ่อพันธุ์
-                              </label>
-                              <div class="flex">
-                                <input   v-model="form.father_nid" type="text" :class="$xinput" value="Lucky" />
-                                <v-btn @click="dialogFather = true" class="bg-green-600 ml-2" style="background-color: green;" dark icon rounded><v-icon>fas fa-search</v-icon></v-btn>
-                              </div>
+                        <form @submit.prevent="updateCert">
+                            <div class="flex flex-wrap">
+                                <div class="w-full   px-4">
+                                    <div class="relative w-full mb-3">
+                                        <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                                            พ่อพันธุ์
+                                        </label>
+                                        <div class="flex">
+                                            <input v-model="form.father_nid" type="text" :class="$xinput" value="Lucky" />
+                                            <v-btn @click="dialogFather = true" class="bg-green-600 ml-2" style="background-color: green;" dark icon rounded>
+                                                <v-icon>fas fa-search</v-icon>
+                                            </v-btn>
+                                        </div>
 
-                            </div>
-                          </div>
+                                    </div>
+                                </div>
 
-                            <div class="w-full   px-4">
-                                <div class="relative w-full mb-3">
-                                    <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                                      แม่พันธุ์
-                                    </label>
-                                    <div class="flex">
-                                        <input  v-model="form.mother_nid" type="text" :class="$xinput" value="Lucky" />
-                                        <v-btn  @click="dialogMother = true"  class="bg-green-600 ml-2" style="background-color: green;" dark icon rounded><v-icon>fas fa-search</v-icon></v-btn>
+                                <div class="w-full   px-4">
+                                    <div class="relative w-full mb-3">
+                                        <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                                            แม่พันธุ์
+                                        </label>
+                                        <div class="flex">
+                                            <input v-model="form.mother_nid" type="text" :class="$xinput" value="Lucky" />
+                                            <v-btn @click="dialogMother = true" class="bg-green-600 ml-2" style="background-color: green;" dark icon rounded>
+                                                <v-icon>fas fa-search</v-icon>
+                                            </v-btn>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="w-full   px-4">
+                                    <div class="relative w-full mb-3">
+                                        <button type="submit" :class="`bg-green-600 f-white ${$btn}`"><i class="fas fa-save text-lg"></i>  บันทึก</button>
+                                    </div>
+                                    <hr>
+                                    <div class="relative w-full mb-3 mt-4">
+                                        <button type="button" @click="openCert($api)" :class="`bg-purple-600 f-white ${$btn}`"><i class="fas fa-file-download text-lg"></i> ดาวน์โหลดเอกสาร</button>
                                     </div>
 
                                 </div>
-                            </div>
-                          <div class="w-full   px-4">
-                            <div class="relative w-full mb-3">
-                              <button type="submit" :class="`bg-green-600 f-white ${$btn}`">บันทึก</button>
 
                             </div>
-                            <hr>
-                            <div class="relative w-full mb-3 mt-4">
-                              <button type="button" @click="openCert($api)"
-                                      :class="`bg-purple-600 f-white ${$btn}`">ดาวน์โหลดเอกสาร</button>
-                            </div>
-
-
-                          </div>
-
-
-                        </div>
-                      </form>
+                        </form>
                     </div>
                 </div>
 
@@ -71,14 +71,13 @@
                     <div class="w-full lg:w-12/12 px-4">
 
                         <div class="flex justify-center mt-6">
-                          <input @change="certChange" type="file">
+                            <input @change="certChange" type="file">
                         </div>
-                      <br>
-                      <hr>
-                      <div class="relative w-full mb-3 mt-4">
-                        <button type="button" @click="openRealCret"
-                                :class="`bg-purple-600 f-white ${$btn}`">ดาวน์โหลดเอกสาร</button>
-                      </div>
+                        <br>
+                        <hr>
+                        <div class="relative w-full mb-3 mt-4">
+                            <button type="button" @click="openRealCret" :class="`bg-purple-600 f-white ${$btn}`">ดาวน์โหลดเอกสาร</button>
+                        </div>
 
                     </div>
                 </div>
@@ -93,7 +92,9 @@
             <v-card>
                 <v-card-title primary-title>
                     เลือกพ่อพันธ์ุ <v-spacer></v-spacer>
-                  <v-btn @click="chooseFather = null ;  dialogFather = false" class="bg-green-600 ml-2"  icon rounded><v-icon>fas fa-times</v-icon></v-btn>
+                    <v-btn @click="chooseFather = null ;  dialogFather = false" class="bg-green-600 ml-2" icon rounded>
+                        <v-icon>fas fa-times</v-icon>
+                    </v-btn>
                 </v-card-title>
                 <v-card-text>
                     <v-autocomplete v-model="chooseFather" return-object item-text="name" :items="buffalos"></v-autocomplete>
@@ -105,9 +106,11 @@
             <v-card>
                 <v-card-title primary-title>
                     เลือกแม่พันธ์ุ <v-spacer></v-spacer>
-                  <v-btn @click="chooseMother = null ;  dialogMother = false" class="bg-green-600 ml-2"  icon rounded><v-icon>fas fa-times</v-icon></v-btn>
+                    <v-btn @click="chooseMother = null ;  dialogMother = false" class="bg-green-600 ml-2" icon rounded>
+                        <v-icon>fas fa-times</v-icon>
+                    </v-btn>
 
-                 </v-card-title>
+                </v-card-title>
                 <v-card-text>
                     <v-autocomplete v-model="chooseMother" return-object item-text="name" :items="buffalos"></v-autocomplete>
                     <button @click="chooseMotherData()" :class="`bg-green-600 ${$btn}`">เลือก</button>
@@ -142,13 +145,13 @@ import { CoreForm } from "@/models/core";
 
 export default class Farm extends Vue {
     private farm: FarmForm | any = {}
-    private form:  any = {}
-    private formCertReal :any ={}
+    private form: any = {}
+    private formCertReal: any = {}
     private buffalo: BuffaloForm | any = {}
     private buffalos: any = []
     private unEdit: boolean = true
     private response: boolean = false
-    private tab : number = 0
+    private tab: number = 0
 
     private dialogFather: boolean = false
     private dialogMother: boolean = false
@@ -174,13 +177,13 @@ export default class Farm extends Vue {
             this.dialogFather = false
         }
     }
-  private async chooseMotherData() {
-    if (this.chooseMother) {
-      this.form.mother = this.chooseMother.id
-      this.form.mother_nid = `${this.chooseMother.name} (${this.chooseMother.nid})`
-      this.dialogMother= false
+    private async chooseMotherData() {
+        if (this.chooseMother) {
+            this.form.mother = this.chooseMother.id
+            this.form.mother_nid = `${this.chooseMother.name} (${this.chooseMother.nid})`
+            this.dialogMother = false
+        }
     }
-  }
 
     private async updateCert() {
         let update = await Core.putHttp(`/user/buffalo/cert/${this.form.id}/`, this.form)
@@ -194,25 +197,24 @@ export default class Farm extends Vue {
         }
     }
 
-  async certChange(event:any){
-    let file = event.target.files[0]
-    const form = new FormData();
-    form.append("real_cer", file);
-    form.append("buffalo",this.buffalo.id)
-    let data = await Core.putHttp(`/api/buffalo/certreal/${this.formCertReal.id}/`,form)
-    if(data.id){
-      await this.run();
-      alert("success")
+    async certChange(event: any) {
+        let file = event.target.files[0]
+        const form = new FormData();
+        form.append("real_cer", file);
+        form.append("buffalo", this.buffalo.id)
+        let data = await Core.putHttp(`/api/buffalo/certreal/${this.formCertReal.id}/`, form)
+        if (data.id) {
+            await this.run();
+            alert("success")
+        }
     }
-  }
-  openCert(api:string){
-    window.open( `${api}${this.$route.query.id}`, '_blank');
+    openCert(api: string) {
+        window.open(`${api}${this.$route.query.id}`, '_blank');
 
-  }
-  openRealCret(){
-    window.open(this.formCertReal.real_cer, '_blank');
-  }
-
+    }
+    openRealCret() {
+        window.open(this.formCertReal.real_cer, '_blank');
+    }
 
 }
 </script>

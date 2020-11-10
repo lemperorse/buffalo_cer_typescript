@@ -4,10 +4,10 @@
         <div class="flex flex-wrap items-center">
             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                 <h3 class="font-semibold text-base text-gray-800">
-                  <button style="color:#a0aec0;" class=" text-sm" @click="$router.go(-1)">ข้อมูลฟาร์ม</button> /
+                    <button style="color:#a0aec0;" class=" text-sm" @click="$router.go(-1)">ข้อมูลฟาร์ม</button> /
                     ควายในฟาร์ม {{farm.name}}
                 </h3>
-              <h2 class="text-sm" >เจ้าของ {{user.first_name}} </h2>
+                <h2 class="text-sm">เจ้าของ {{user.first_name}} </h2>
             </div>
 
             <!-- ค้นหา -->
@@ -24,13 +24,13 @@
             <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
 
                 <button @click="$router.push(`buffalo/create`)" class="bg-indigo-500 f-white active:bg-indigo-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                    เพิ่มควาย
+                    <i class="fas fa-plus-square text-lg"></i> เพิ่มควาย
                 </button>
             </div>
 
         </div>
     </div>
-    <!-- table -->
+    <!-- card -->
     <div class="block w-full overflow-x-auto">
         <div class="flex flex-wrap mb-4">
             <div class="w-full md:w-1/2 xl:w-1/3 p-3" v-for="buffalo,index in buffalos.results" :key="index">
@@ -61,16 +61,13 @@
                 </div>
             </div>
         </div>
- 
 
     </div>
-
 
     <div class="py-2 ">
         <v-app style="height:100px!important;">
             <v-pagination v-model="page" :length="allPages" :total-visible="9" @input="handlePageChange" circle></v-pagination>
-        </v-app>
-
+        </v-app> 
     </div>
 
 </div>
@@ -116,7 +113,7 @@ import { Map } from "@/store/map";
 })
 
 export default class Farm extends Vue {
-    private user:  any = {}
+    private user: any = {}
     private farm: FarmForm | any = {}
     private buffalos: any = []
     private response: boolean = false
@@ -134,7 +131,7 @@ export default class Farm extends Vue {
         this.user = await Core.getHttp(`/api/account/${user.pk}/`)
         this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
         this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?farm__id=${this.farm.id}&search=${this.search}`)
-        this.allPages  = Math.ceil((this.buffalos?.count / 9))
+        this.allPages = Math.ceil((this.buffalos ?.count / 9))
         this.response = true
     }
     private async handlePageChange(value: any) {

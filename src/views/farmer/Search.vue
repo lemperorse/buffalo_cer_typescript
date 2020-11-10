@@ -1,81 +1,64 @@
 <template>
 <div class="relative md:pt-32 pb-32 pt-12 mt-24">
-    <div class="relative bg-white flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded">
-        <div class="rounded-t mb-0 px-4 py-3 border-0 ">
-            <div class="relative w-full mt-4 mb-4 max-w-full flex-grow flex-1 px-2 py-2">
-                <h3 class="font-semibold text-base text-gray-800">
-                    ค้นหาใบพันธุ์ประวัติ
-                </h3>
-            </div>
+    <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded" :class="[color === 'light' ? 'bg-white' : 'bg-green-900 text-white']">
+        <div class="rounded-t mb-0 px-4 py-3 border-0">
+            <!-- <div class="flex flex-wrap items-center"> -->
+                <div class="relative w-full mt-4 mb-4 max-w-full flex-grow flex-1 px-2 py-2">
+                    <h3 class="font-semibold text-base text-gray-800">
+                        ค้นหาใบพันธุ์ประวัติ
+                    </h3>
+                </div>
 
-            <div class="relative px-2 py-2 flex flex-wrap ">
-                <input type="text" placeholder="ค้นหา" class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pr-10" />
-                <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3">
-                    <i class="fas fa-search"></i>
-                </span>
-            </div>
+                <!-- ค้นหา -->
+                <form @submit.prevent="run">
+                    <div class="relative flex flex-wrap px-3">
+                        <input v-model="search" type="text" placeholder="ค้นหา" class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pr-10" />
+                        <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                </form>
 
-            <div class="flex flex-wrap mt-4 mb-4">
-                <div class="w-full lg:w-6/12 xl:w-4/12  px-2 py-2" v-for="i in 9">
-                    <card-stat-with-btn statTitle="เจ้าของ : นายแดง" statSubtitle="พ่อเปี้ย(1231)" statRoute="cer" statIconName="em em-water_buffalo" statIconColor="bg-gray-500" />
+            <!-- </div> -->
+        </div>
+        <!-- card -->
+        <div class="block w-full overflow-x-auto">
+            <div class="flex flex-wrap mb-4">
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3" v-for="buffalo,index in buffalos.results" :key="index">
+                    <div class="bg-white border-b-2 border-green-700 rounded shadow-xl mx-4 my-2">
+                        <div class="flex-auto p-4 ">
+                            <div class="flex flex-wrap ">
+                                <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+                                    <span class="font-semibold text-xl text-gray-800">
+                                        ชื่อควาย : {{buffalo.name}}
+                                    </span>
+                                    <h5 class="text-gray-500 uppercase font-bold text-xs">
+                                        หมายเลข MICROCHIP : {{ buffalo.nid }}
+                                    </h5>
+
+                                    <h3>
+                                        <button @click="$router.push(`buffalo/profile?id=${buffalo.id}`)">ดูรายระเอียด</button>
+                                    </h3>
+
+                                </div>
+
+                                <div class="relative w-auto pl-4 flex-initial">
+                                    <div>
+                                        <img :src="(buffalo.back_image)?buffalo.back_image:'https://sv1.picz.in.th/images/2020/11/07/bb198v.jpg'" class="h-12 w-12 bg-white rounded-full border" alt="..." />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- pagination -->
-            <div class="py-2 mb-4">
-                <nav class="block">
-                    <ul class="flex justify-center pl-0 rounded list-none flex-wrap">
-                        <li>
-                            <a href="#pablo" class="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-indigo-500 bg-white text-indigo-500">
-                                <i class="fas fa-chevron-left -ml-px"></i>
-                                <i class="fas fa-chevron-left -ml-px"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-indigo-500 bg-white text-indigo-500">
-                                <i class="fas fa-chevron-left -ml-px"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-indigo-500 text-white bg-indigo-500">
-                                1
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-indigo-500 bg-white text-indigo-500">
-                                2
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-indigo-500 bg-white text-indigo-500">
-                                3
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-indigo-500 bg-white text-indigo-500">
-                                4
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-indigo-500 bg-white text-indigo-500">
-                                5
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-indigo-500 bg-white text-indigo-500">
-                                <i class="fas fa-chevron-right -mr-px"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pablo" class="first:ml-0 text-xs font-semibold flex w-8 h-8 mx-1 p-0 rounded-full items-center justify-center leading-tight relative border border-solid border-indigo-500 bg-white text-indigo-500">
-                                <i class="fas fa-chevron-right -mr-px"></i>
-                                <i class="fas fa-chevron-right -mr-px"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+        </div>
 
+        <div class="py-2 ">
+            <v-app style="height:100px!important;">
+                <v-pagination v-model="page" :length="allPages" :total-visible="9" @input="handlePageChange" circle></v-pagination>
+            </v-app>
         </div>
 
     </div>
@@ -83,12 +66,73 @@
 </div>
 </template>
 
-<script>
+<script lang="ts">
 import CardStatWithBtn from "@/components/Cards/CardStatWithBtn.vue";
-export default {
-    name: "search-page",
-    components: {
-        CardStatWithBtn
-    },
-};
+import {
+    Component,
+    Vue,
+    Watch,
+} from 'vue-property-decorator';
+import {
+    Core
+} from '@/store/core'
+import {
+    Auth
+} from '@/store/auth'
+import {
+    User
+} from '@/store/user'
+
+import {
+    City
+} from "@/store/city";
+import MapView from '@/components/Maps/MapView.vue';
+
+import moment from "moment";
+import { FarmForm } from "@/models/farm";
+import { Map } from "@/store/map";
+
+@Component({
+    components: { MapView, CardStatWithBtn },
+    computed: {},
+    props: {
+        color: {
+            default: "light",
+            validator: function (value) {
+                // The value must match one of these strings
+                return ["light", "dark"].indexOf(value) !== -1;
+            },
+        },
+    }
+})
+
+export default class Farm extends Vue {
+    private user: any = {}
+    private farm: FarmForm | any = {}
+    private buffalos: any = []
+    private response: boolean = false
+
+    private page: number = 1
+    private allPages: number = 1
+    private search: string = ''
+
+    private async created() {
+        await this.run();
+    }
+
+    private async run() {
+        let user = await User.getUser();
+        this.user = await Core.getHttp(`/api/account/${user.pk}/`)
+        this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
+        // this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?farm__id=${this.farm.id}&search=${this.search}`)
+        this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?search=${this.search}`)
+        this.allPages = Math.ceil((this.buffalos ?.count / 9))
+        this.response = true
+    }
+    private async handlePageChange(value: any) {
+        // this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?farm__id=${this.farm.id}&search=${this.search}&page=${value}`)
+        this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?search=${this.search}&page=${value}`)
+    }
+
+}
 </script>

@@ -55,7 +55,7 @@
                     <div class="w-full lg:w-6/12 px-4">
                       <div class="relative w-full mb-3">
                         <button @click="deleteBuffalo()" class="bg-red-500 f-white active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                          ลบข้อมูลควาย
+                          <i class="fas fa-eraser text-lg"></i> ลบข้อมูลควาย
                         </button>
                       </div>
                     </div>

@@ -94,12 +94,12 @@
                     </router-link>
                 </li>
 
-                <li class="items-center">
+                <!-- <li class="items-center">
                     <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block" to="/admin/buffalo">
                         <i class="em em-water_buffalo  text-gray-400 mr-2 text-sm"></i>
                         ข้อมูลควาย
                     </router-link>
-                </li>
+                </li> -->
             </ul>
 
             <!-- Divider -->

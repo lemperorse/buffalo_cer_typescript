@@ -5,10 +5,7 @@
         <!-- Brand --> 
         <button class="bg-white shadow-xl rounded-full " @click="$router.go(-1)">
             <v-icon class="icon">mdi-chevron-left</v-icon>
-        </button>
-        <a class=" text-sm uppercase hidden lg:inline-block font-semibold" href="javascript:void(0)">
-            Dashboard
-        </a>
+        </button> 
 
         <!-- Form -->
         <form class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3">

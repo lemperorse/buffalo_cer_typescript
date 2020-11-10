@@ -19,7 +19,7 @@
             <!-- เพิ่ม -->
             <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                 <button @click="$router.push('/admin/addfarmer')" class="bg-indigo-500 f-white active:bg-indigo-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                    เพิ่มเกษตกร
+                    <i class="fas fa-plus-square text-lg"></i> เพิ่มเกษตกร
                 </button>
             </div>
 
@@ -105,7 +105,7 @@
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                         <div class="flex items-center">
                             <button @click="$router.push(`/admin/farmerprofile?farmer=${farmer.id}`)" class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                                ดูข้อมูล
+                                <i class="fas fa-eye "></i> ดูข้อมูล
                             </button>
 <!--                            <button @click="deleteFarmer(farmer)" class="bg-red-500-->
 <!--                  active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 f-white " type="button">-->

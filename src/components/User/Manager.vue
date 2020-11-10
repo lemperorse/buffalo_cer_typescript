@@ -17,7 +17,14 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             รหัสผ่านใหม่
                         </label>
-                        <input v-model="formPassword.password" required type="password" class="px-3 py-3 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
+
+                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                                <i class="fas fa-key text-lg text-gray-500"></i>
+                            </span>
+                            <input v-model="formPassword.password" required type="password" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
+                        </div> 
+                        
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -25,7 +32,12 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ยืนยันรหัสผ่านใหม่
                         </label>
-                        <input v-model="formPassword.password2"  required type="password" class="px-3 py-3 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
+                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                                <i class="fas fa-key text-lg text-gray-500"></i>
+                            </span>
+                            <input v-model="formPassword.password2"  required type="password" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
+                        </div> 
                     </div>
                   <div class="relative w-full mb-3">
                     <button type="submit" :class="'f-white bg-orange-600 '+$btn">อัพเดทรหัสผ่าน</button>
