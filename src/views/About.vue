@@ -97,7 +97,7 @@
 
 <script lang="ts">
 import { Component, Vue,  } from 'vue-property-decorator';
- import {userModule} from "@/store/test";
+import {userModule} from "@/store/test";
  
 @Component({
   components: {

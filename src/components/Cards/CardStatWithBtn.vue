@@ -6,9 +6,9 @@
                 <span class="font-semibold text-xl text-gray-800">
                     ชื่อควาย : {{ statTitle }}
                 </span>
-                <h5 class="text-gray-500 uppercase font-bold text-xs">
+                <!-- <h5 class="text-gray-500 uppercase font-bold text-xs">
                     หมายเลข MICROCHIP : {{ statSubtitle }}
-                </h5>
+                </h5> -->
 
                 <h3>
                     <button @click="$router.push(statRoute)">ดูรายระเอียด</button>
