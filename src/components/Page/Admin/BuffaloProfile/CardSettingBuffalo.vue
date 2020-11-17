@@ -89,7 +89,9 @@ import {
 import {
   User
 } from '@/store/user'
-
+import {
+    App
+} from '@/store/app'
 
 import TabBuffaloData from '@/components/Buffalo/TabBuffaloData.vue'
 import TabBuffaloEvo from '@/components/Buffalo/TabBuffaloEvo.vue'
@@ -126,7 +128,7 @@ export default class Table extends Vue {
   }
 
   async deleteBuffalo(){
-    let checkDelete = confirm('คุฯแน่ใจใช่ไหมที่จะลบควายตัวนี้')
+    let checkDelete = await App.confirm('แน่ใจนะ','อิอิ')
     if(checkDelete){
       let buffalo = await Core.deleteHttp(`/user/buffalo/buffalo/${this.$route.query.id}/`)
 

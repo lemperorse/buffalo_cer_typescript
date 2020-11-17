@@ -151,6 +151,11 @@ import {
 import {
     Core
 } from '@/store/core'
+
+import {
+    App
+} from '@/store/app'
+
 import {
     Auth
 } from '@/store/auth'
@@ -195,10 +200,12 @@ export default class Farm extends Vue {
     }
 
     private async run() {
+        await App.onLoad()
         let profile = await Core.getHttp(`/api/profile/${this.currentFarmer}/`)
         this.form = await Core.getHttp(`/user/buffalo/farm/${profile.user}/`)
         await this.setCity();
         this.response = true
+        await App.offLoad();
     }
 
     async update() {
@@ -210,9 +217,9 @@ export default class Farm extends Vue {
         let farm = await Core.putHttp(`/api/buffalo/farm/${this.form.id}/`, this.form)
         if (farm.id) {
             this.unEdit = true
-            alert('Success')
+            await App.success("แก้ไขข้อมูลสำเร็จแล้ว")
         } else {
-            alert('Error')
+            await App.error("เกิดข้อผิดพลาดในหารแก้ไขข้อมูล")
         }
         await this.run();
     }
