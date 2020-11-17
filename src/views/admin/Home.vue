@@ -17,7 +17,7 @@
                         statIconName="em em-water_buffalo" statIconColor="bg-red-500"/>
           </div>
         </div>
-        <hr class="mt-6 ">
+        <hr class="mt-6">
 
         <div class="flex flex-wrap mt-4">
           <div class="w-full lg:w-6/12 xl:w-4/12 px-4">

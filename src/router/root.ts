@@ -21,6 +21,21 @@ const rootRouter = [
         name: 'register',
         component: getView('Register')
     },
+    {
+        path: '/re-password/',
+        name: 'forgotpassword',
+        component: getView('Forgotpassword')
+    },
+    {
+        path: '/re-password-admin/',
+        name: 'forgot-password-for-admin',
+        component: getView('Forgotpassword_for_admin')
+    },
+    {
+        path: '/re-password-onyourown/',
+        name: 'forgot-password-for-onyourown',
+        component: getView('Forgotpassword_for_onyourown')
+    },
 ]
 
 

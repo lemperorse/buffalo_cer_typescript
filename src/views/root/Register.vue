@@ -7,6 +7,9 @@
               class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0"
           >
             <div class="rounded-t mb-0 px-6 py-6">
+              <button class="bg-white shadow-xl rounded-full mb-2" @click="$router.go(-1)">
+                <v-icon class="icon">mdi-chevron-left</v-icon>
+              </button>
               <div class="text-center mb-3 ">
                 <h2 class="font-bold ">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
               </div>
