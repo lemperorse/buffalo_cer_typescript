@@ -97,6 +97,7 @@ import MapView from '@/components/Maps/MapView.vue';
 import moment from "moment";
 import { FarmForm } from "@/models/farm";
 import { Map } from "@/store/map";
+import {App} from "@/store/app";
 
 @Component({
     components: { MapView },
@@ -127,12 +128,14 @@ export default class Farm extends Vue {
     }
 
     private async run() {
+        await App.onLoad()
         let user = await User.getUser();
         this.user = await Core.getHttp(`/api/account/${user.pk}/`)
         this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
         this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?farm__id=${this.farm.id}&search=${this.search}`)
         this.allPages = Math.ceil((this.buffalos ?.count / 9))
         this.response = true
+        await App.offLoad()
     }
     private async handlePageChange(value: any) {
         this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?farm__id=${this.farm.id}&search=${this.search}&page=${value}`)

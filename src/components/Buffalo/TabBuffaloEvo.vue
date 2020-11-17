@@ -271,6 +271,7 @@ import {
 
 import moment from "moment";
 import { Evolution } from "@/models/buffalo";
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -290,10 +291,12 @@ export default class Farm extends Vue {
     }
 
     private async run() {
+        await App.onLoad()
         let buffalo = this.$route.query.id
         this.form = await Core.getHttp(`/user/buffalo/evolution/${buffalo}/`)
 
         this.response = true
+        await App.offLoad()
     }
 
     @Watch('form.birthday')
@@ -306,10 +309,10 @@ export default class Farm extends Vue {
         if (update.id) {
             await this.run()
             this.unEdit = true
-            alert("บันทึกข้อมูลสำเร็จ")
+            await App.success("บันทึกข้อมูลสำเร็จ")
 
         } else {
-            alert('โปรดระบุข้อมูลให้ครบถ้วน')
+            await App.error("โปรดระบุข้อมูลให้ครบถ้วน")
         }
     }
 

@@ -128,6 +128,7 @@ import {
     City
 } from "@/store/city";
 import moment from "moment";
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -160,10 +161,10 @@ export default class Home extends Vue {
 
         let user = await Auth.registerAdmin(this.formUser)
         if (user.id) {
-            alert('Success')
+            await App.success("เพิ่มผู้ดูแลระบบสำเร็จ")
             this.formUser = {}
         } else {
-            alert('Error')
+            await App.error("เกิดข้อผิดพลาดในการเพิ่มข้อมูลผู้ดูแลระบบ")
         }
     }
 

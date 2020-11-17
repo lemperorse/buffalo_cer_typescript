@@ -72,6 +72,7 @@ import {
 
 import moment from "moment";
 import {FarmForm} from "@/models/farm";
+import {App} from "@/store/app";
 
 
 
@@ -114,7 +115,7 @@ export default class ImageClass extends Vue {
     this.formProfile.profile_image = file
     let data = await Core.putHttp(`/user/account/profile/image/${this.formProfile.id}/`,this.formProfile)
     if(data.id){
-      alert("success")
+      await App.success("อัพโหลดรูปภาพสำเร็จ")
     }
   }
 

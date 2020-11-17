@@ -7,7 +7,7 @@ const getView = function(page:any){
 }
 
 
-const userRouter:any  = [
+const userRouter: any = [
     {
         path: '',
         name: 'home',

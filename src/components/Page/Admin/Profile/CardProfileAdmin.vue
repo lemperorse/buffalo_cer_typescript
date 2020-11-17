@@ -29,6 +29,7 @@ import {
 import { Core } from '@/store/core'
 import { Auth } from '@/store/auth'
 import { User } from '@/store/user'
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -44,6 +45,7 @@ export default class Home extends Vue {
         this.user = User.user
         this.response = true
     }
+
 
 }
 </script>

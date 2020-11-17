@@ -116,7 +116,6 @@
                     </td>
                 </tr>
 
-
             </tbody>
         </table>
     </div>
@@ -154,6 +153,7 @@ import {
 } from '@/store/user'
 
 import CityDialog from '@/components/Dialog/City.vue'
+import {App} from "@/store/app";
 
 @Component({
     components: {
@@ -184,9 +184,11 @@ export default class Table extends Vue {
     }
 
     private async run(){
+      await App.onLoad();
       this.farmers = await Core.getHttp(`/api/profile/?search=${this.search}`)
       this.allPages = Math.ceil((this.farmers?.count / 5))
       this.response = true
+      await App.offLoad();
     }
 
   private async handlePageChange(value:any) {

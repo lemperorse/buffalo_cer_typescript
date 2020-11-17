@@ -65,6 +65,7 @@ import {
 
 import moment from "moment";
 import { FarmForm } from "@/models/farm";
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -102,7 +103,7 @@ export default class ImageClass extends Vue {
         frontImage.src = file
         let data = await Core.postHttp(`/user/buffalo/image/${this.$route.query.id}/`, { "front_image": file })
         if (data.id) {
-            alert("success")
+          await App.success("อัพโหลดรูปภาพสำเร็จ")
         }
     }
     async backChange(event: any) {
@@ -112,7 +113,7 @@ export default class ImageClass extends Vue {
         backImage.src = file
         let data = await Core.putHttp(`/user/buffalo/image/${this.$route.query.id}/`, { "back_image": file })
         if (data.id) {
-            alert("success")
+          await App.success("อัพโหลดรูปภาพสำเร็จ")
         }
     }
 

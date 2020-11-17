@@ -231,6 +231,7 @@ import { FarmForm } from "@/models/farm";
 import { BuffaloForm } from "@/models/buffalo";
 import { CoreForm } from "@/models/core";
 import { User } from "@/store/user";
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -307,10 +308,10 @@ export default class Farm extends Vue {
             await Core.postHttp(`/api/buffalo/cert/create/`, { "buffalo": create.id })
             await Core.postHttp(`/api/buffalo/certreal/create/`, { "buffalo": create.id })
             await Core.postHttp(`/api/buffalo/evolution/create/`, { "buffalo": create.id })
-            alert("บันทึกข้อมูลสำเร็จ")
+            await App.success("บันทึกข้อมูลสำเร็จ")
             await this.$router.go(-1)
         } else {
-            alert('โปรดระบุข้อมูลให้ครบถ้วน')
+            await App.error("โปรดระบุข้อมูลให้ครบถ้วน")
         }
     }
 

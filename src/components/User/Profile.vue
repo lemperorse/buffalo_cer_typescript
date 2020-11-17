@@ -274,6 +274,7 @@ import {
     City
 } from "@/store/city";
 import moment from "moment";
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -306,13 +307,14 @@ export default class Profile extends Vue {
     }
 
     async run() {
-
+        await App.onLoad()
         this.prefix = await Core.getChoice('คำนำหน้า')
         this.gender = await Core.getChoice('เพศ')
         this.group = await Core.getChoice('กลุ่มเกษตรกร')
         this.formProfile = await Core.getHttp(`/api/profile/${this.currentFarmer}/`)
         this.formUser = await Core.getHttp(`/api/account/${this.formProfile.user}/`)
         await this.setCity()
+        await App.offLoad()
     }
 
     @Watch('formProfile.birthday')
@@ -339,9 +341,9 @@ export default class Profile extends Vue {
 
         if (user.id && profile.id) {
             this.unEdit = true
-            alert('Success')
+            await App.success("แก้ไขข้อมูลสำเร็จ")
         } else {
-            alert('Error')
+            await App.error("เกิดข้อผิดพลาดในหารแก้ไขข้อมูล")
         }
 
         await this.run();

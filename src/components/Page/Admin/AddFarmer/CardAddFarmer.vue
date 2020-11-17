@@ -291,6 +291,7 @@ import {
     City
 } from "@/store/city";
 import moment from "moment";
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -326,11 +327,11 @@ export default class Home extends Vue {
         this.formProfile.district = City.currentDistrict ?.id
         let user = await Auth.register(this.formUser, this.formProfile)
         if (user.id) {
-            alert('Success')
+            await App.success("แก้ไขข้อมูลสำเร็จแล้ว")
             this.formUser = {}
             this.formProfile = {}
         } else {
-            alert('Error')
+            await App.error("เกิดข้อผิดพลาดในหารแก้ไขข้อมูล")
         }
     }
 

@@ -66,6 +66,7 @@ import {
 
 import moment from "moment";
 import {FarmForm} from "@/models/farm";
+import {App} from "@/store/app";
 
 
 
@@ -97,6 +98,7 @@ export default class ImageClass extends Vue {
   }
 
   private async run() {
+    await App.onLoad()
     this.formProfile = await Core.getHttp(`/user/account/personal/image/${this.currentFarmer}/`)
     this.form = await Core.getHttp(`/user/buffalo/farm/image/${this.formProfile.user}/`)
     if(this.formProfile.presonal_image){
@@ -108,8 +110,7 @@ export default class ImageClass extends Vue {
       let farmImage:any = this.$refs.farmImage
       farmImage.src   = this.form.farm_image
     }
-
-
+    await App.offLoad();
   }
 
 
@@ -121,7 +122,7 @@ export default class ImageClass extends Vue {
     this.form.farm_image = file
     let data = await Core.putHttp(`/user/buffalo/farm/image/${this.form.id}/`,this.form)
     if(data.id){
-      alert("success")
+      await App.success("อัพโหลดรูปภาพสำเร็จ")
     }
   }
 
@@ -133,7 +134,7 @@ export default class ImageClass extends Vue {
     this.formProfile.presonal_image = file
     let data = await Core.putHttp(`/user/account/personal/image/${this.formProfile.id}/`,this.formProfile)
     if(data.id){
-      alert("success")
+      await App.success("อัพโหลดรูปภาพสำเร็จ")
     }
   }
 

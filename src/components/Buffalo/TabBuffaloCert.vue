@@ -136,6 +136,7 @@ import moment from "moment";
 import { FarmForm } from "@/models/farm";
 import { BuffaloForm } from "@/models/buffalo";
 import { CoreForm } from "@/models/core";
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -163,11 +164,13 @@ export default class Farm extends Vue {
     }
 
     private async run() {
+        await App.onLoad()
         this.buffalo = await Core.getHttp(`/user/buffalo/buffalo/${this.$route.query.id}/`)
         this.buffalos = await Core.putHttp(`/user/buffalo/buffalo/?farm=${this.buffalo.farm}`, {})
         this.form = await Core.getHttp(`/user/buffalo/cert/${this.$route.query.id}/`)
         this.formCertReal = await Core.getHttp(`/user/buffalo/certreal/${this.$route.query.id}/`)
         this.response = true
+        await App.offLoad()
     }
 
     private async chooseFatherData() {
@@ -190,10 +193,10 @@ export default class Farm extends Vue {
         if (update.id) {
             await this.run()
             this.unEdit = true
-            alert("บันทึกข้อมูลสำเร็จ")
+            await App.success("บันทึกข้อมูลสำเร็จ")
 
         } else {
-            alert('โปรดระบุข้อมูลให้ครบถ้วน')
+            await App.error("โปรดระบุข้อมูลให้ครบถ้วน")
         }
     }
 
@@ -205,7 +208,7 @@ export default class Farm extends Vue {
         let data = await Core.putHttp(`/api/buffalo/certreal/${this.formCertReal.id}/`, form)
         if (data.id) {
             await this.run();
-            alert("success")
+            await App.success("บันทึกข้อมูลสำเร็จ")
         }
     }
     openCert(api: string) {

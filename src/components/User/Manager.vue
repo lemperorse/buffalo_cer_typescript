@@ -84,11 +84,6 @@
                 </div>
             </div>
 
-<!--            <div v-if="admin" class="flex justify-center mt-4"><button class=" bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">-->
-<!--                    บันทึก-->
-<!--                </button></div>-->
-
-
     </div>
 </div>
 </template>
@@ -111,6 +106,7 @@ import {
 
 import moment from "moment";
 import { FarmForm } from "@/models/farm";
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -143,27 +139,27 @@ export default class ManagerClass extends Vue {
   }
 
     private async run() {
+        await App.onLoad()
         this.formProfile = await Core.getHttp(`/api/profile/${this.currentFarmer}/`)
-
         this.formUser = await Core.getHttp(`/api/account/${this.formProfile.user}/`)
-
+        await App.offLoad();
     }
 
     async changeStatus(){
         console.log(this.formProfile)
         let profile = await Core.postHttp(`/user/account/user/${this.formProfile.id}/`,this.formProfile)
         if(profile.id){
-          alert('จัดการสิทธิ์สำเร็จ')
+          await App.success("จัดการสิทธิ์สำเร็จ")
         }
         await  this.run();
       }
   
       async disableUser(){
-        let check = confirm("คุณแน่ใจใช่ไหมที่จะลบผู้ใช้คนนี้")
+        let check = await App.confirm('คุณแน่ใจใช่ไหม','ี่จะลบผู้ใช้คนนี้')
         if(check){
           let user = await Core.deleteHttp(`/user/account/user/${this.formUser.id}/`)
           if(user.id){
-              alert("ลบผู้ใช้สำเร็จ")
+              await App.success("ลบผู้ใช้สำเร็จ")
               await this.$router.go(-1)
           }
         }
@@ -175,11 +171,11 @@ export default class ManagerClass extends Vue {
           let change = await Core.putHttp(`/user/account/user/${this.formUser.id}/`,this.formPassword)
           this.formPassword = {}
           if(change.id){
-            alert("เปลี่ยนรหัสผ่านสำเร็จ")
+            await App.success("เปลี่ยนรหัสผ่านสำเร็จ")
           }
-        }else{
-          alert("รหัสผ่านไม่ตรงกัน")
-        }
+          }else{
+            await App.error("รหัสผ่านไม่ตรงกัน")
+          }
     }
 
 

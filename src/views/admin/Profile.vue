@@ -14,6 +14,8 @@
 <script>
 import CardSettingsAdmin from "@/components/Page/Admin/Profile/CardSettingsAdmin.vue";
 import CardProfileAdmin from "@/components/Page/Admin/Profile/CardProfileAdmin.vue";
+import {App} from "@/store/app";
+import {Core} from "@/store/core";
 
 export default {
   name: "profile-admin-page",
@@ -21,6 +23,7 @@ export default {
     CardSettingsAdmin,
     CardProfileAdmin,
   },
+
 };
 </script>
 

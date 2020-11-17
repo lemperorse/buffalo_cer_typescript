@@ -132,6 +132,7 @@ import {
 import { Core } from '@/store/core'
 import { Auth } from '@/store/auth'
 import { User } from '@/store/user'
+import {App} from "@/store/app";
 
 @Component({
     components: {},
@@ -150,15 +151,18 @@ export default class Home extends Vue {
     }
 
     private async run() {
+      await App.onLoad()
         await User.loadUser()
         this.form = User.user
         this.response = true
+      await App.offLoad()
     }
 
     private async updateProfile() {
         let user = await Core.putHttp(`/api/account/${this.form.pk}/`, this.form)
         if (user.id) {
             this.unEdit = true
+          await App.success("แก้ไขข้อมูลสำเร็จแล้ว")
         }
     }
 
@@ -167,8 +171,9 @@ export default class Home extends Vue {
         if (password.detail) {
             this.iPassword = {}
             this.unPassword = true
+            await App.success("แก้ไขรหัสผ่านสำเร็จแล้ว")
         } else {
-            alert('ไม่สามารถเปลี่ยนรหัสผ่านได้')
+            await App.error("ไม่สามารถเปลี่ยนรหัสผ่านได้")
             this.iPassword = {}
         }
     }

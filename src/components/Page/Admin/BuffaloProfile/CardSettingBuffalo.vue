@@ -128,11 +128,11 @@ export default class Table extends Vue {
   }
 
   async deleteBuffalo(){
-    let checkDelete = await App.confirm('แน่ใจนะ','อิอิ')
+    let checkDelete = await App.confirm('คุณแน่ใจใช่ไหม','ที่จะลบควายตัวนี้')
     if(checkDelete){
       let buffalo = await Core.deleteHttp(`/user/buffalo/buffalo/${this.$route.query.id}/`)
 
-        alert("ลบควายแล้ว")
+        await App.success("ลบควายสำเร็จ")
         await this.$router.go(-1)
 
     }

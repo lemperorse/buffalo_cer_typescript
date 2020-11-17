@@ -217,9 +217,9 @@ export default class Farm extends Vue {
         let farm = await Core.putHttp(`/api/buffalo/farm/${this.form.id}/`, this.form)
         if (farm.id) {
             this.unEdit = true
-            await App.success("แก้ไขข้อมูลสำเร็จแล้ว")
+            await App.success("แก้ไขข้อมูลสำเร็จ")
         } else {
-            await App.error("เกิดข้อผิดพลาดในหารแก้ไขข้อมูล")
+            await App.error("เกิดข้อผิดพลาดในการแก้ไขข้อมูล")
         }
         await this.run();
     }

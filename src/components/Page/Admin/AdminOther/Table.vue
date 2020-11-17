@@ -185,6 +185,7 @@ import {
 } from '@/store/user'
 
 import CityDialog from '@/components/Dialog/City.vue'
+import {App} from "@/store/app";
 
 @Component({
     components: {
@@ -217,9 +218,11 @@ export default class Table extends Vue {
     }
 
     private async run() {
+        await App.onLoad();
         this.admins = await Core.getHttp(`/api/account/?is_staff=true&search=${this.search}`)
         this.allPages = Math.ceil((this.admins ?.count / 5))
         this.response = true
+        await App.offLoad();
     }
 
     private async handlePageChange(value: any) {
@@ -227,10 +230,11 @@ export default class Table extends Vue {
     }
 
     private async deleteAdmin(id: number) {
-        let check = confirm('คุณแน่ใจใช่ไหมที่จะลบผู้ใช้นี้')
+        let check = await App.confirm('คุณแน่ใจใช่ไหม','ที่จะลบผู้ดูแลระบบคนนี้')
         if (check) {
             await Core.deleteHttp(`/api/account/${id}/`)
             await this.run();
+            await App.success("ลบผู้ดูแลระบบสำเร็จ")
         }
     }
 
@@ -238,7 +242,7 @@ export default class Table extends Vue {
         let user = await Core.putHttp(`/api/account/${this.form.id}/`, this.form)
         if (user.id) {
             await this.run()
-            alert('แก้ไขข้อมูลสำเร็จแล้ว')
+            await App.success("แก้ไขข้อมูลสำเร็จ")
             await this.closeDialog()
         }
     }
