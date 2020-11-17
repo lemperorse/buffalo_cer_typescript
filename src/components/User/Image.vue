@@ -61,15 +61,9 @@ import {
 import {
   User
 } from '@/store/user'
-
-
-
 import moment from "moment";
 import {FarmForm} from "@/models/farm";
 import {App} from "@/store/app";
-
-
-
 
 @Component({
   components: {   },
