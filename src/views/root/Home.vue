@@ -80,6 +80,7 @@ import {Auth} from '@/store/auth'
 import {User} from '@/store/user'
 
 import CityDialog from '@/components/Dialog/City.vue'
+import {App} from "@/store/app";
 
 @Component({
   components: {CityDialog},
@@ -100,7 +101,7 @@ export default class Home extends Vue {
       await User.loadUser()
       await this.$router.replace(User.routeUser)
     }else{
-      alert('eee')
+      await App.error("เข้าสู่ระบบล้มเหลว")
     }
   }
 

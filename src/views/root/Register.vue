@@ -116,6 +116,7 @@ import {Auth} from "@/store/auth";
 import {FormRegister, Profile, Province} from '@/models/core';
 import CityDialog from '@/components/Dialog/City.vue';
 import moment from 'moment';
+import {App} from "@/store/app";
 @Component({
   components: {CityDialog},
   computed: {}
@@ -144,6 +145,8 @@ export default class Home extends Vue {
       this.formProfile.amphur = City.currentAmphur?.id
       this.formProfile.district = City.currentDistrict?.id
       await Auth.register(this.formUser,this.formProfile)
+      await App.success("สมัครสมาชิกสำเร็จ")
+      await this.$router.go(-1)
   }
 
 

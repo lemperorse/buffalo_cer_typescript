@@ -128,10 +128,10 @@
                             <button @click="$router.push(`profile?id=${buffalo.id}`)" class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                                 ดูข้อมูล
                             </button>
-                            <button class="bg-red-500
-                  active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 f-white " type="button">
-                                ลบ
-                            </button>
+<!--                            <button class="bg-red-500-->
+<!--                  active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 f-white " type="button">-->
+<!--                                ลบ-->
+<!--                            </button>-->
 
                         </div>
                     </td>

@@ -121,10 +121,13 @@ export default class Table extends Vue {
 
 
   private async created() {
-
+    await this.run()
   }
   toggleTabs(tabNumber:number){
     this.openTab = tabNumber
+  }
+
+  private async run() {
   }
 
   async deleteBuffalo(){
