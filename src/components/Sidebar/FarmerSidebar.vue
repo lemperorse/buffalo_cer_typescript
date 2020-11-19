@@ -1,5 +1,8 @@
 <template>
-<nav class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
+<nav
+    class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto
+    md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center
+    justify-between relative md:w-64 z-10 py-4 px-6">
     <div class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
         <!-- Toggler -->
         <button class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent" type="button" v-on:click="toggleCollapseShow('bg-white m-2 py-3 px-6')">
@@ -7,13 +10,13 @@
         </button>
         <!-- Brand -->
         <router-link class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0" to="/">
-            พันธุ์ประวัติ
+          <img class="w-24 md:w-auto" src="https://sv1.picz.in.th/images/2020/11/17/bVc06z.png" alt="">
         </router-link>
         <!-- User -->
-        <ul class="md:hidden items-center flex flex-wrap list-none">
-            <li class="inline-block relative">
-                <notification-dropdown />
-            </li>
+        <ul class="md:hidden items-center flex flex-wrap list-none justify-end">
+<!--            <li class="inline-block relative">-->
+<!--                <notification-dropdown />-->
+<!--            </li>-->
             <li class="inline-block relative">
                 <user-dropdown />
             </li>
@@ -52,7 +55,7 @@
 
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                 <li class="items-center">
-                    <router-link to="/user/" v-slot="{ href, route, navigate, isActive }">
+                    <router-link to="/user/home" v-slot="{ href, route, navigate, isActive }">
                         <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
                     ? 'text-green-500 hover:text-green-600'
@@ -88,17 +91,35 @@
 
             <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
                 <li class="items-center">
-                    <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block" to="/user/profile">
-                        <i class="em em-male-farmer text-gray-400 mr-2 text-sm"></i>
-                        ข้อมูลส่วนตัว
-                    </router-link>
+
+                  <router-link to="/user/profile" v-slot="{ href, route, navigate, isActive }">
+                    <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+                  isActive
+                    ? 'text-green-500 hover:text-green-600'
+                    : 'text-gray-800 hover:text-gray-600',
+                ]">
+                      <i class="em em-male-farmer mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
+                      ข้อมูลส่วนตัว
+                    </a>
+                  </router-link>
+
+
                 </li>
 
                 <li class="items-center">
-                    <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block" to="/user/buffalo">
-                        <i class="em em-water_buffalo  text-gray-400 mr-2 text-sm"></i>
-                        ข้อมูลควาย
-                    </router-link>
+
+                  <router-link to="/user/buffalo" v-slot="{ href, route, navigate, isActive }">
+                    <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+                  isActive
+                    ? 'text-green-500 hover:text-green-600'
+                    : 'text-gray-800 hover:text-gray-600',
+                ]">
+                      <i class="em em-water_buffalo mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
+                      ข้อมูลควาย
+                    </a>
+                  </router-link>
+
+
                 </li>
             </ul>
 
@@ -106,7 +127,7 @@
             <hr class="my-4 md:min-w-full" />
             <!-- Heading -->
             <h6 class="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
-                Documentation
+                เว็บไซต์
             </h6>
             <!-- Navigation -->
             <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">

@@ -1,7 +1,7 @@
 <template>
 <div class="flex flex-wrap">
     <div class="w-full">
-        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
+        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row animate__animated animate__bounceInUp animate__delay-1s">
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center ">
                 <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(1)" v-bind:class="{'text-green-600 bg-white': openTab !== 1, 'text-white bg-green-600': openTab === 1}">
                     <i class="fas fa-user text-base mr-1"></i>ข้อมูลเกษตกร
@@ -31,19 +31,19 @@
 
         </ul>
 
-        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded animate__animated animate__bounceInLeft animate__delay-1s">
             <div class="px-4 py-5 flex-auto">
                 <div class="tab-content tab-space">
                     <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
-                        <Profile v-if="openTab === 1" />
+                        <Profile class="animate__animated animate__zoomIn" v-if="openTab === 1" />
                     </div>
 
                     <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}">
-                        <Farm v-if="openTab === 2" />
+                        <Farm class="animate__animated animate__zoomIn" v-if="openTab === 2" />
                     </div>
 
                     <div v-bind:class="{'hidden': openTab !== 3, 'block': openTab === 3}">
-                        <ImageUser v-if="openTab === 3" />
+                        <ImageUser class="animate__animated animate__zoomIn" v-if="openTab === 3" />
                     </div>
 
                     <!--            <div v-bind:class="{'hidden': openTab !== 4, 'block': openTab === 4}">-->
@@ -51,7 +51,7 @@
                     <!--            </div>-->
 
                     <div v-bind:class="{'hidden': openTab !== 5, 'block': openTab === 5}">
-                        <Manager v-if="openTab === 5" />
+                        <Manager class="animate__animated animate__zoomIn" v-if="openTab === 5" />
                     </div>
                 </div>
             </div>

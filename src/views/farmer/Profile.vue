@@ -1,5 +1,5 @@
 <template>
-  <div class="relative md:pt-32 pb-32 pt-12 mt-24">
+  <div class="p-2 md:p-6 pt-20 md:pt-20">
     <div class="flex flex-wrap-reverse">
       <div class="w-full lg:w-8/12 px-4">
         <CardSettingFarmer />

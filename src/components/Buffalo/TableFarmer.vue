@@ -1,17 +1,18 @@
 <template>
-<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded" :class="[color === 'light' ? 'bg-white' : 'bg-green-900 text-white']">
-    <div class="rounded-t mb-0 px-4 py-3 border-0">
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6  rounded"  >
+    <div class="rounded-t mb-0 px-4 py-3 border-0 animate__animated animate__zoomIn">
+      <div class="relative w-full md:w-auto px-4 max-w-full flex-grow flex-1 ">
+        <h3 class="font-semibold text-base text-gray-800">
+          <button style="color:#855737;" class=" text-base" @click="$router.push('/user/profile')">ข้อมูลฟาร์ม</button> /
+          ควายในฟาร์ม {{farm.name}}
+        </h3>
+        <h2 class="text-sm">เจ้าของ {{user.first_name}} </h2>
+      </div><br>
         <div class="flex flex-wrap items-center">
-            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                <h3 class="font-semibold text-base text-gray-800">
-                    <button style="color:#a0aec0;" class=" text-sm" @click="$router.go(-1)">ข้อมูลฟาร์ม</button> /
-                    ควายในฟาร์ม {{farm.name}}
-                </h3>
-                <h2 class="text-sm">เจ้าของ {{user.first_name}} </h2>
-            </div>
+
 
             <!-- ค้นหา -->
-            <form @submit.prevent="run">
+            <form @submit.prevent="run" class="w-8/12">
                 <div class="relative flex flex-wrap ">
                     <input v-model="search" type="text" placeholder="ค้นหา" class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pr-10" />
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3">
@@ -33,8 +34,8 @@
     <!-- card -->
     <div class="block w-full overflow-x-auto">
         <div class="flex flex-wrap mb-4">
-            <div class="w-full md:w-1/2 xl:w-1/3 p-3" v-for="buffalo,index in buffalos.results" :key="index">
-                <div class="bg-white border-b-2 border-green-700 rounded shadow-xl mx-4 my-2">
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3" v-for="buffalo,index in buffalos.results" :key="index" >
+                <div class="bg-white border-b-2 border-green-700 rounded shadow-xl mx-4 my-2 animate__animated animate__zoomIn">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap ">
                             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
@@ -65,9 +66,9 @@
     </div>
 
     <div class="py-2 ">
-        <v-app style="height:100px!important;">
-            <v-pagination v-model="page" :length="allPages" :total-visible="9" @input="handlePageChange" circle></v-pagination>
-        </v-app> 
+
+            <v-pagination v-model="page" color="#987122" :length="allPages" :total-visible="9" @input="handlePageChange" circle></v-pagination>
+
     </div>
 
 </div>

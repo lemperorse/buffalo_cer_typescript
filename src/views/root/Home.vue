@@ -4,7 +4,7 @@
     <div :class="`containerR ${switchc}`" ref="main">
       <div class="forms-containerR">
         <div class="signin-signup">
-          <form @submit.prevent="login()" class="sign-in-form" v-if="tab == 0" >
+          <form @submit.prevent="login()" class="sign-in-form forms" v-if="tab == 0" >
             <h2 class="title"><i class="em em-water_buffalo text-2xl" aria-role="presentation" aria-label="WATER BUFFALO"></i> เข้าสู่ระบบ</h2>
 
             <div class="relative w-full md:w-8/12 mb-3 mt-4">
@@ -177,7 +177,7 @@ export default class Test extends Vue {
 </script>
 
 
-<style>
+<style  >
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 * {
@@ -216,7 +216,7 @@ export default class Test extends Vue {
   z-index: 5;
 }
 
-form {
+.forms {
   display: flex;
   align-items: center;
   justify-content: center;

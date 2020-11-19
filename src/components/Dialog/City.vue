@@ -1,6 +1,6 @@
 <template>
 <v-app v-if="dialog">
-  <v-dialog v-model="dialog" persistent>
+  <v-dialog v-model="dialog" persistent  >
     <v-card v-if="response">
       <v-card-title>
         เลือก จังหวัด อำเภอ ตำบล

@@ -14,6 +14,11 @@ const userRouter: any = [
         component: getView('Home')
     },
     {
+        path: '/user/home',
+        name: 'home',
+        component: getView('Home')
+    },
+    {
         path: '/user/search',
         name: 'search',
         component: getView('Search')
@@ -37,6 +42,11 @@ const userRouter: any = [
         path: 'buffalo/profile',
         name: 'buffalo-profile',
         component: getView('BuffaloProfile')
+    },
+    {
+        path: 'buffalo/public',
+        name: 'buffalo-public',
+        component: getView('BuffaloPublic')
     },
     {
         path: 'buffalo/create',

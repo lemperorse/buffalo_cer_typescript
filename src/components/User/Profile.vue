@@ -1,7 +1,7 @@
 <template>
 <div>
-    <div class="rounded-t bg-white mb-0 px-6 py-6">
-        <div class="text-center flex justify-between">
+    <div class="rounded-t bg-white mb-0 px-2 md:px-6 py-6">
+        <div class="text-center flex flex-wrap justify-between">
             <h6 class="text-gray-800 text-xl font-bold">ข้อมูลเกษตกร</h6>
             <button v-if="unEdit" @click="unEdit = !unEdit" class="bg-orange-500 f-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">
                 <i class="fas fa-pencil-alt text-lg"></i> แก้ไข
@@ -11,7 +11,7 @@
             </button>
         </div>
     </div>
-    <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+    <div class="flex-auto px-0 lg:px-10 py-10 pt-0">
         <form @submit.prevent="update()">
             <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                 บัญชี
@@ -123,6 +123,9 @@
                         </div> 
                     </div>
                 </div>
+              <div class="w-full pb-6  px-4">
+                <hr class="mt-6 border-b-1 border-gray-400" />
+              </div>
 
                 <div class="w-full lg:w-4/12 px-4">
                     <div class="relative w-full mb-3">
@@ -167,23 +170,10 @@
                     </div>
                 </div>
 
-                <div class="w-full lg:w-4/12 px-4">
-                    <div class="relative w-full mb-3">
-                        <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
-                            กลุ่มเกษตกร
-                        </label>
-                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
-                                <i class="fas fa-users text-lg text-gray-500"></i>
-                            </span>
-                            <select :disabled="unEdit" required v-model="formProfile.group" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
-                              <option v-for="val,i in group" :key="i" :value="val.id">{{ val.value }}</option>
-                            </select>
-                        </div> 
-                        
-                    </div>
-                </div>
-                <div class="w-full lg:w-4/12 px-4">
+              <div class="w-full pb-6  px-4">
+                <hr class="mt-6 border-b-1 border-gray-400" />
+              </div>
+                <div class="w-full lg:w-6/12 px-4">
                     <div class="relative w-full mb-3">
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             บ้านเลขที่
@@ -198,7 +188,7 @@
                     </div>
                 </div>
 
-                <div class="w-full lg:w-4/12 px-4">
+                <div class="w-full lg:w-6/12 px-4">
                     <div class="relative w-full mb-3">
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                             หมู่บ้าน

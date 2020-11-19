@@ -1,6 +1,6 @@
 <template>
 <div>
-  <form class="sign-up-form" v-if="step == 0">
+  <form class="sign-up-form forms"  v-if="step == 0">
 
     <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
     <div class="text-blue-500 text-center mb-3 font-bold">
@@ -14,7 +14,7 @@
     </div>
 
   </form>
-  <form @submit.prevent="step = 2" class="sign-up-form" v-if="step ==1">
+  <form @submit.prevent="step = 2" class="sign-up-form forms"  v-if="step ==1">
 
     <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
     <div class="text-blue-500 text-center mb-3 font-bold">
@@ -54,7 +54,7 @@
 
   </form>
 
-  <form @submit.prevent="step = 3" class="sign-up-form" v-if="step ==2">
+  <form @submit.prevent="step = 3" class="sign-up-form forms"  v-if="step ==2">
 
     <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
     <div class="text-blue-500 text-center mb-3 font-bold">
@@ -85,7 +85,7 @@
     </div>
 
   </form>
-  <form @submit.prevent="step = 4" class="sign-up-form" v-if="step ==3">
+  <form @submit.prevent="step = 4" class="sign-up-form forms"  v-if="step ==3">
 
     <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
     <div class="text-blue-500 text-center mb-3 font-bold">
@@ -116,7 +116,7 @@
     </div>
 
   </form>
-  <form @submit.prevent="step = 5" class="sign-up-form" v-if="step ==4">
+  <form @submit.prevent="step = 5" class="sign-up-form forms"  v-if="step ==4">
 
     <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
     <div class="text-blue-500 text-center mb-3 font-bold">
@@ -162,7 +162,7 @@
     </div>
 
   </form>
-  <form @submit.prevent="register()" class="sign-up-form" v-if="step ==5">
+  <form @submit.prevent="register()" class="sign-up-form forms"  v-if="step ==5">
 
     <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
     <div class="text-blue-500 text-center mb-3 font-bold">

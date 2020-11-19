@@ -33,7 +33,22 @@
                     </div>
                 </div>
             </div>
+          <div class="w-full lg:w-12/12 px-4">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                กลุ่มเกษตกร
+              </label>
+              <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                                <i class="fas fa-users text-lg text-gray-500"></i>
+                            </span>
+                <select :disabled="unEdit" required v-model="form.group" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+                  <option v-for="val,i in group" :key="i" :value="val.id">{{ val.value }}</option>
+                </select>
+              </div>
 
+            </div>
+          </div>
             <hr class="mt-6 border-b-1 border-gray-400" />
             <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                 ที่อยู่ฟาร์ม
@@ -182,7 +197,7 @@ export default class Farm extends Vue {
     private response: boolean = false
     private unEdit: boolean = true
     private currentFarmer: any = null
-
+    private group: any[] = []
     private async created() {
         await this.collingPermission()
         await this.run();
@@ -201,6 +216,7 @@ export default class Farm extends Vue {
 
     private async run() {
         await App.onLoad()
+        this.group = await Core.getChoice('กลุ่มเกษตรกร')
         let profile = await Core.getHttp(`/api/profile/${this.currentFarmer}/`)
         this.form = await Core.getHttp(`/user/buffalo/farm/${profile.user}/`)
         await this.setCity();

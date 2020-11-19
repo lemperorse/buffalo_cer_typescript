@@ -2,9 +2,10 @@
   <div>
     <FarmerSidebar/>
     <div class="relative md:ml-64 bg-gray-200">
-      <FarmerNavbar/>
+<CityDialog />
+   <FarmerNavbar/>
       <!--      <header-stats />-->
-      <div class="px-4 md:px-10 mx-auto w-full -m-24">
+      <div  >
         <router-view/>
         <footer-admin/>
       </div>
@@ -29,7 +30,7 @@ import FooterAdmin from "@/components/Footers/FooterAdmin.vue"
     FarmerNavbar,
     FarmerSidebar,
     HeaderStats,
-    FooterAdmin,
+    FooterAdmin,CityDialog
   },
   computed: {}
 })

@@ -1,136 +1,140 @@
 <template>
-<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded" :class="[color === 'light' ? 'bg-white' : 'bg-green-900 text-white']">
-
-    <div class="rounded-t mb-0 px-4 py-3 border-0">
-        <!-- <div class="flex flex-wrap items-center"> -->
-        <div class="relative w-full mt-4 mb-4 max-w-full flex-grow flex-1 px-2 py-2">
-            <h3 class="font-semibold text-base text-gray-800">
-                ค้นหาใบพันธุ์ประวัติ
-            </h3>
-        </div>
-
-        <!-- ค้นหา -->
-        <form @submit.prevent="run">
-            <div class="relative flex flex-wrap px-3">
-                <input v-model="search" type="text" placeholder="ค้นหา" class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pr-10" />
-                <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3">
-                    <i class="fas fa-search"></i>
-                </span>
-            </div>
-        </form>
-
-        <!-- </div> -->
+  <div  >
+    <div class="w-full bg-cover bg-center ssss" style="height:20rem; ">
+      <div class="flex items-center justify-center h-full w-full ">
+        <div class="  flex flex-col justify-center items-center" style="width:100%;">
+          <h1 class="text-white text-2xl font-semibold uppercase md:text-3xl" >ค้นหาใบพันธุ์ประวัติ</h1>
+          <form @submit.prevent="run"  class="mt-4 w-8/12 md:w-6/12">
+              <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา" />
+          </form>
+         </div>
+      </div>
     </div>
-    <!-- card -->
-    <div class="block w-full overflow-x-auto">
-        <div class="flex flex-wrap mb-4">
-            <div class="w-full md:w-1/2 xl:w-1/3 p-3" v-for="buffalo,index in buffalos.results" :key="index">
-                <div class="bg-white border-b-2 border-green-700 rounded shadow-xl mx-4 my-2">
-                    <div class="flex-auto p-4 ">
-                        <div class="flex flex-wrap ">
-                            <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                                <span class="font-semibold text-xl text-gray-800">
-                                    ชื่อควาย : {{buffalo.name}}
-                                </span>
+
+    <!-- card --><br>
+    <div class="   px-4 md:px-10 mx-auto w-full    overflow-x-auto animate__animated animate__bounceInLeft animate__delay-1s">
+      <div class="flex flex-wrap justify-center " >
+        <div class="w-full p-3  md:w-56  " v-for="buffalo,index in buffalos.results" :key="index">
+          <div class=" w-full bg-white rounded-xl shadow-xl  ">
+            <v-img class="rounded-t-xl h-48 w-full" :src="(buffalo.front_image)?buffalo.front_image:'https://sv1.picz.in.th/images/2020/11/07/bb198v.jpg'" />
+            <div class="p-5">
+              <h1 class="text-2xl font-bold text-yellow-800 py-2">{{buffalo.name}}</h1>
                                 <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                    หมายเลข MICROCHIP : {{ buffalo.nid }}
+                                  MC/NID : {{ buffalo.microchip }}/ {{ buffalo.nid }}
                                 </h5>
+                                <h5 class="text-gray-500 uppercase font-bold text-xs">
+                                  เจ้าของ : {{ buffalo.owner }}
+                                </h5>
+                                <h5 class="text-gray-500 uppercase font-bold text-xs">
+                                  ฟาร์ม : {{ buffalo.froms }}
+                                </h5>
+                                <h5 class="text-gray-500 uppercase font-bold text-xs">
+                                  กลุ่ม : {{ buffalo.group }}
+                                </h5>
+                                <hr>
+                                <h5 class="text-gray-500 uppercase font-bold text-xs">
+                                  ที่อยู่ : {{ buffalo.address }}
+                                </h5><br>
+                                <button :class="`${$btn} bg-yellow-900 w-full`"
+                                        @click="$router.push(`buffalo/public?id=${buffalo.id}`)"><v-icon style="color:white;">mdi mdi-eye</v-icon>&nbsp;ดูรายระเอียด
+                                </button>
+             </div>
+          </div>
 
-                                <h3>
-                                    <button @click="$router.push(`buffalo/profile?id=${buffalo.id}`)">ดูรายระเอียด</button>
-                                </h3>
-
-                            </div>
-
-                            <div class="relative w-auto pl-4 flex-initial">
-                                <div>
-                                    <img :src="(buffalo.back_image)?buffalo.back_image:'https://sv1.picz.in.th/images/2020/11/07/bb198v.jpg'" class="h-12 w-12 bg-white rounded-full border" alt="..." />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+      </div>
 
     </div>
 
     <div class="py-2 ">
-        <v-app style="height:100px!important;">
-            <v-pagination v-model="page" :length="allPages" :total-visible="9" @input="handlePageChange" circle></v-pagination>
-        </v-app>
+<br><br>
+      <v-pagination color="#987122" v-model="page" :length="allPages" :total-visible="9" @input="handlePageChange"
+                    circle></v-pagination>
+
     </div>
 
-</div>
+  </div>
 </template>
 
-<script lang="ts"> 
+<script lang="ts">
 import {
-    Component,
-    Vue,
-    Watch,
+  Component,
+  Vue,
+  Watch,
 } from 'vue-property-decorator';
 import {
-    Core
+  Core
 } from '@/store/core'
 import {
-    Auth
+  Auth
 } from '@/store/auth'
 import {
-    User
+  User
 } from '@/store/user'
 
 import {
-    City
+  City
 } from "@/store/city";
 import MapView from '@/components/Maps/MapView.vue';
 
 import moment from "moment";
-import { FarmForm } from "@/models/farm";
-import { Map } from "@/store/map";
+import {FarmForm} from "@/models/farm";
+import {Map} from "@/store/map";
 import {App} from "@/store/app";
 
 @Component({
-    components: { MapView },
-    computed: {},
-    props: {
-        color: {
-            default: "light",
-            validator: function (value) {
-                // The value must match one of these strings
-                return ["light", "dark"].indexOf(value) !== -1;
-            },
-        },
-    }
+  components: {MapView},
+  computed: {},
+  props: {
+    color: {
+      default: "light",
+      validator: function (value) {
+        // The value must match one of these strings
+        return ["light", "dark"].indexOf(value) !== -1;
+      },
+    },
+  }
 })
 
 export default class Farm extends Vue {
-    private user: any = {}
-    private farm: FarmForm | any = {}
-    private buffalos: any = []
-    private response: boolean = false
+  private user: any = {}
+  private farm: FarmForm | any = {}
+  private buffalos: any = []
+  private response: boolean = false
 
-    private page: number = 1
-    private allPages: number = 1
-    private search: string = ''
+  private page: number = 1
+  private allPages: number = 1
+  private search: string = ''
 
-    private async created() {
-        await this.run();
-    }
+  private async created() {
+    await this.run();
+  }
 
-    private async run() {
-        await App.onLoad()
-        let user = await User.getUser();
-        this.user = await Core.getHttp(`/api/account/${user.pk}/`)
-        this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
-        this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?search=${this.search}`)
-        this.allPages = Math.ceil((this.buffalos ?.count / 9))
-        this.response = true
-        await App.offLoad();
-    }
-    private async handlePageChange(value: any) {
-        this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?search=${this.search}&page=${value}`)
-    }
+  private async run() {
+    await App.onLoad()
+    let user = await User.getUser();
+    this.user = await Core.getHttp(`/api/account/${user.pk}/`)
+    this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
+    this.buffalos = await Core.getHttp(`/api/buffalo/all/?search=${this.search}`)
+    this.allPages = Math.ceil((this.buffalos?.count / 12))
+    this.response = true
+    await App.offLoad();
+  }
+
+  private async handlePageChange(value: any) {
+    await App.onLoad()
+    this.buffalos = await Core.getHttp(`/api/buffalo/all/?page=${value}&search=${this.search}`)
+    await App.offLoad();
+  }
 
 }
 </script>
+<style>
+.ssss{
+  background-color: #45200c;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%2345200c' cx='50' cy='0' r='50'/%3E%3Cg fill='%234d2510' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23552a14' cx='50' cy='100' r='50'/%3E%3Cg fill='%235e2e18' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%2366331c' cx='50' cy='200' r='50'/%3E%3Cg fill='%236f381f' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23783d23' cx='50' cy='300' r='50'/%3E%3Cg fill='%23804227' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%2389482b' cx='50' cy='400' r='50'/%3E%3Cg fill='%23934d30' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%239c5234' cx='50' cy='500' r='50'/%3E%3Cg fill='%23a55738' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23af5d3d' cx='50' cy='600' r='50'/%3E%3Cg fill='%23b96241' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c26846' cx='50' cy='700' r='50'/%3E%3Cg fill='%23cc6d4a' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d6734f' cx='50' cy='800' r='50'/%3E%3Cg fill='%23e07854' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ea7e59' cx='50' cy='900' r='50'/%3E%3Cg fill='%23f5835e' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ff8963' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: contain;
+  background-repeat: repeat;
+ }
+</style>

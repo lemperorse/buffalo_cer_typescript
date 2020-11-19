@@ -1,6 +1,6 @@
 <template>
-  <div class="relative md:pt-32 pb-32 pt-12 mt-24">
-    <Table />
+  <div  class="md:p-6 pt-20 md:pt-20" >
+    <Table  />
   </div>
 </template>
 <script>

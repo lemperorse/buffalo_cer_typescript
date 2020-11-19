@@ -10,7 +10,7 @@
         <span
           class="w-12 h-12 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full"
         >
-          <img
+          <img ref="profileImage"
             alt="..."
             class="w-full rounded-full align-middle border-none shadow-lg"
             :src="image"
@@ -60,6 +60,10 @@ import { createPopper } from "@popperjs/core";
 
 import image from "@/assets/img/team-1-800x800.jpg";
 import {Auth} from "@/store/auth";
+import {Core} from "@/store/core";
+import {
+  User
+} from '@/store/user'
 
 export default {
   data() {
@@ -68,7 +72,24 @@ export default {
       image: image,
     };
   },
+  async mounted() {
+    await this.run()
+},
   methods: {
+
+      async run() {
+      let user = await User.getUser();
+      console.log('[USER]', user)
+      let profile = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+      this.formProfile = await Core.getHttp(`/user/account/profile/image/${profile.id}/`)
+      if (this.formProfile.profile_image) {
+        let profileImage  = this.$refs.profileImage
+        profileImage.src = this.formProfile.profile_image
+      }
+
+      await Auth.setUser(user.pk)
+      this.response = true
+    },
     toggleDropdown: function (event) {
       event.preventDefault();
       if (this.dropdownPopoverShow) {
