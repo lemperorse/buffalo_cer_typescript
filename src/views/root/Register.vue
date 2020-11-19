@@ -2,16 +2,14 @@
   <v-app>
     <div class="container mx-auto  h-full">
       <div class="flex content-center items-center justify-center  ">
-        <div class="w-full lg:w-6/12 px-4">
+        <div class="w-full lg:w-8/12 px-4">
           <div
-              class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0"
+              class="relative flex flex-col min-w-0 break-words w-full mb-6     "
           >
             <div class="rounded-t mb-0 px-6 py-6">
-              <button class="bg-white shadow-xl rounded-full mb-2" @click="$router.go(-1)">
-                <v-icon class="icon">mdi-chevron-left</v-icon>
-              </button>
+
               <div class="text-center mb-3 ">
-                <h2 class="font-bold ">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
+                <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
               </div>
               <div class="text-blue-500 text-center mb-3 font-bold">
                 <h2 :class="headerClass">{{ header }}</h2>
@@ -22,7 +20,7 @@
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
 
               <div class="text-center mt-6" v-if="step == 0">
-                <button @click="step = 1" :class="btn" type="button">
+                <button @click="step = 1" :class="`${btn} bg-purple-600 text-white`" type="button">
                   ดำเนินการต่อ
                 </button>
               </div>

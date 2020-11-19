@@ -1,5 +1,5 @@
 <template>
-<footer class="pb-6" :class="[absolute ? 'absolute w-full bottom-0 bg-gray-900' : 'relative']">
+<footer  class="absolute w-full bottom-0 bg-transparent pb-6">
     <div class="container mx-auto px-4">
         <hr class="mb-6 border-b-1 border-gray-700" />
         <div class="flex flex-wrap items-center md:justify-between justify-center">
@@ -14,9 +14,9 @@
             <div class="w-full md:w-8/12 px-4">
                 <ul class="flex flex-wrap list-none md:justify-end justify-center">
                     <li>
-                        <a href="https://www.creative-tim.com?ref=vn-footer-small" class="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3">
+                        <button @click="$router.push('qa')" class="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3">
                             ติดต่อผู้ดูแลระบบ
-                        </a>
+                        </button>
                     </li>
 
                 </ul>

@@ -49,7 +49,9 @@ class AuthClass extends VuexModule {
 
 
 
-
+    public async removeToken(){
+        axios.defaults.headers.common['Authorization'] ='';
+    }
     public async storeToken(token:any){
         axios.defaults.headers.common['Authorization'] = (token != null )?`Token ${token}`:'';
     }

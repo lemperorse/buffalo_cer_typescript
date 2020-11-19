@@ -13,6 +13,11 @@ const rootRouter = [
         component: getView('Home')
     },
     {
+        path: 'qa',
+        name: 'admin-qa',
+        component: getView('QA')
+    },
+    {
         path: '/test/',
         name: 'test',
         component: getView('Test')
