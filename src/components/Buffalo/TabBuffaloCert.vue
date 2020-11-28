@@ -23,7 +23,7 @@
                         พ่อพันธุ์
                       </label>
                       <div class="flex">
-                        <input v-model="form.father_nid" type="text" :class="$xinput" value="Lucky"/>
+                        <input v-model="form.father_nid" type="text" :class="`${$xinput} border-edit`"  value="Lucky"/>
                         <v-btn @click="dialogFather = true" class="bg-green-600 ml-2" style="background-color: green;"
                                dark icon rounded>
                           <v-icon>fas fa-search</v-icon>
@@ -39,7 +39,7 @@
                         แม่พันธุ์
                       </label>
                       <div class="flex">
-                        <input v-model="form.mother_nid" type="text" :class="$xinput" value="Lucky"/>
+                        <input v-model="form.mother_nid" type="text" :class="`${$xinput} border-edit`"  value="Lucky"/>
                         <v-btn @click="dialogMother = true" class="bg-green-600 ml-2" style="background-color: green;"
                                dark icon rounded>
                           <v-icon>fas fa-search</v-icon>
@@ -63,9 +63,10 @@
               <br>
               <hr>
               <div class="relative w-full mb-3 mt-4">
-                <button type="button" @click="openCert($api)" :class="`bg-purple-600 f-white ${$btn}`"><i
-                    class="fas fa-file-download text-lg"></i> ดาวน์โหลดเอกสาร
+                <button v-if="form.mother_nid && form.father_nid" type="button" @click="openCert($api)" :class="`bg-purple-600 f-white ${$btn}`">
+                  <i class="fas fa-file-download text-lg"></i> ดาวน์โหลดเอกสาร
                 </button>
+               <v-alert v-else color="#ff5766" outlined type="info" > ไม่ข้อมูลให้ดาวน์โหลด </v-alert>
               </div>
             </div>
           </div>
@@ -86,8 +87,9 @@
 
 
               <div class="relative w-full mb-3 mt-4">
-                <button type="button" @click="openRealCret" :class="`bg-purple-600 f-white ${$btn}`">ดาวน์โหลดเอกสาร
+                <button v-if="formCertReal.real_cer" type="button" @click="openRealCret" :class="`bg-purple-600 f-white ${$btn}`">ดาวน์โหลดเอกสาร
                 </button>
+                <v-alert v-else color="#ff5766" outlined type="info" > ไม่ข้อมูลให้ดาวน์โหลด </v-alert>
               </div>
 
             </div>
@@ -126,7 +128,7 @@
           </v-card-title>
           <v-card-text>
             <v-autocomplete v-model="chooseMother" return-object item-text="name" :items="buffalos"></v-autocomplete>
-            <button @click="chooseMotherData()" :class="`bg-green-600 ${$btn}`">เลือก</button>
+            <button  @click="chooseMotherData()" :class="`bg-green-600 ${$btn}`">เลือก</button>
           </v-card-text>
         </v-card>
       </v-dialog>

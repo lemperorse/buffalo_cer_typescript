@@ -9,7 +9,7 @@
             <i class="fas fa-bars"></i>
         </button>
         <!-- Brand -->
-        <router-link class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0" to="/">
+        <router-link class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0" to="/user/home">
           <img class="w-24 md:w-auto" src="https://sv1.picz.in.th/images/2020/11/17/bVc06z.png" alt="">
         </router-link>
         <!-- User -->
@@ -27,7 +27,7 @@
             <div class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-gray-300">
                 <div class="flex flex-wrap">
                     <div class="w-6/12">
-                        <router-link class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0" to="/">
+                        <router-link class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0" to="/user/home">
                             พันธุ์ประวัติ
                         </router-link>
                     </div>

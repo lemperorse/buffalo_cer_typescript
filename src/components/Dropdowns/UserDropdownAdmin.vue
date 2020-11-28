@@ -28,24 +28,25 @@
       }"
     >
       <button
-        @click="$router.push('/user/profile')& close()"
+        @click="$router.push('/admin/profile')& close()"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
       >
         ข้อมูลส่วนตัว
       </button>
       <button
-          @click="$router.push('/user/search')& close()"
+          @click="$router.push('/admin/farmer')& close()"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
       >
 
-        ค้นหาใบพันธุ์ประวัติ
+        ข้อมูลเกษตกร
+
       </button>
-      <button
-          @click="$router.push('/user/buffalo') & close() "
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-      >
-        ข้อมูลควาย
-      </button>
+<!--      <button-->
+<!--          @click="$router.push('/admin/buffalo') & close() "-->
+<!--        class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"-->
+<!--      >-->
+<!--        ข้อมูลควาย-->
+<!--      </button>-->
       <div class="h-0 my-2 border border-solid border-gray-200" />
       <button
           @click="logout()"

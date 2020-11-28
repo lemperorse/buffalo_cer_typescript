@@ -1,15 +1,11 @@
 <template>
   <div  >
-    <div class="w-full bg-cover bg-center ssss" style="height:20rem; ">
-      <div class="flex items-center justify-center h-full w-full ">
-        <div class="  flex flex-col justify-center items-center" style="width:100%;">
-          <h1 class="text-white text-2xl font-semibold uppercase md:text-3xl" >ค้นหาใบพันธุ์ประวัติ</h1>
-          <form @submit.prevent="run"  class="mt-4 w-8/12 md:w-6/12">
-              <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม  กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" />
-          </form>
-         </div>
-      </div>
-    </div>
+<div class=" px-3 md:px-10 mx-auto ">
+  <form @submit.prevent="run"  class=" w-full animate__animated animate__bounceInUp">
+   <center> <h2 class="text-2xl font-bold text-blue-800">ค้นหาพันธุ์ประวัติ</h2></center><br>
+    <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม  กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" />
+  </form>
+</div>
 
     <!-- card --><br>
     <div class="   px-4 md:px-10 mx-auto w-full    overflow-x-auto animate__animated animate__bounceInLeft animate__delay-1s">
@@ -19,26 +15,26 @@
             <v-img class="rounded-t-xl h-48 w-full" :src="(buffalo.front_image)?buffalo.front_image:'https://sv1.picz.in.th/images/2020/11/07/bb198v.jpg'" />
             <div class="p-5">
               <h1 class="text-2xl font-bold text-yellow-800 py-2">{{buffalo.name}}</h1>
-                                <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                  MC/NID : {{ buffalo.microchip }}/ {{ buffalo.nid }}
-                                </h5>
-                                <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                  เจ้าของ : {{ buffalo.owner }}
-                                </h5>
-                                <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                  ฟาร์ม : {{ buffalo.froms }}
-                                </h5>
-                                <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                  กลุ่ม : {{ buffalo.group }}
-                                </h5>
-                                <hr>
-                                <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                  ที่อยู่ : {{ buffalo.address }}
-                                </h5><br>
-                                <button :class="`${$btn} bg-yellow-900 w-full`"
-                                        @click="$router.push(`buffalo/public?id=${buffalo.id}`)"><v-icon style="color:white;">mdi mdi-eye</v-icon>&nbsp;ดูรายระเอียด
-                                </button>
-             </div>
+              <h5 class="text-gray-500 uppercase font-bold text-xs">
+                MC/NID : {{ buffalo.microchip }}/ {{ buffalo.nid }}
+              </h5>
+              <h5 class="text-gray-500 uppercase font-bold text-xs">
+                เจ้าของ : {{ buffalo.owner }}
+              </h5>
+              <h5 class="text-gray-500 uppercase font-bold text-xs">
+                ฟาร์ม : {{ buffalo.froms }}
+              </h5>
+              <h5 class="text-gray-500 uppercase font-bold text-xs">
+                กลุ่ม : {{ buffalo.group }}
+              </h5>
+              <hr>
+              <h5 class="text-gray-500 uppercase font-bold text-xs">
+                ที่อยู่ : {{ buffalo.address }}
+              </h5><br>
+              <button :class="`${$btn} bg-yellow-900 w-full`"
+                      @click="$router.push(`buffalo/profile?id=${buffalo.id}`)"><v-icon style="color:white;">mdi mdi-eye</v-icon>&nbsp;ดูรายระเอียด
+              </button>
+            </div>
           </div>
 
         </div>
@@ -47,7 +43,7 @@
     </div>
 
     <div class="py-2 ">
-<br><br>
+      <br><br>
       <v-pagination color="#987122" v-model="page" :length="allPages" :total-visible="9" @input="handlePageChange"
                     circle></v-pagination>
 
@@ -136,5 +132,5 @@ export default class Farm extends Vue {
   background-attachment: fixed;
   background-size: contain;
   background-repeat: repeat;
- }
+}
 </style>

@@ -17,6 +17,9 @@
             <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                 ข้อมูลทั่วไป
             </h6>
+          <v-alert color="#F59E0B" type="info" outlined  v-if="!unEdit" >
+          โหมดแก้ไข ระบุข้อมูลที่ต้องการแก้ไขในช่องข้อความสีส้ม <v-btn class="border-edit" x-small style="background-color:#eeeef3; color:#F59E0B;">ข้อความ</v-btn>
+          </v-alert>
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-6/12 px-4">
                     <div class="relative w-full mb-3">
@@ -27,7 +30,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input disabled v-model="form.username" type="text" :class="$xinput" value="lucky.jesse" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input disabled v-model="form.username" type="text" :class="`${$xinput} border-success`" value="lucky.jesse"  />
                         </div> 
                     </div>
                 </div>
@@ -40,7 +43,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-envelope text-lg text-gray-500"></i>
                             </span> 
-                             <input :disabled="unEdit" v-model="form.email" type="email" :class="$xinput" value="jesse@example.com" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10" />
+                             <input :disabled="unEdit" v-model="form.email" type="email" :class="`${$xinput} ${editMode}`" value="jesse@example.com"   />
                         </div>
                     </div>
                 </div>
@@ -53,7 +56,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input :disabled="unEdit" v-model="form.first_name" type="text" :class="$xinput" value="Lucky" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="form.first_name" type="text" :class="`${$xinput} ${editMode}`" value="Lucky"  />
                         </div> 
                     </div>
                 </div>
@@ -66,7 +69,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input :disabled="unEdit" v-model="form.last_name" type="text" :class="$xinput" value="Jesse" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="form.last_name" type="text" :class="`${$xinput} ${editMode}`"  value="Jesse"  />
                         </div>
                     </div>
                     <div class="relative w-full mb-3 mt-4" v-if="!unEdit">
@@ -86,7 +89,9 @@
             </button>
         </div>
         <form @submit.prevent="changePassword" class="mt-6">
-
+          <v-alert color="#F59E0B" type="info" outlined  v-if="!unPassword" >
+            โหมดแก้ไข ระบุข้อมูลที่ต้องการแก้ไขในช่องข้อความสีส้ม <v-btn class="border-edit" x-small style="background-color:#eeeef3; color:#F59E0B;">ข้อความ</v-btn>
+          </v-alert>
             <div class="flex flex-wrap">
 
                 <div class="w-full lg:w-6/12 px-4">
@@ -98,7 +103,8 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-key text-lg text-gray-500"></i>
                             </span>
-                            <input required :disabled="unPassword" placeholder="8 อักษรขึ้นไป (A-Z a-z 0-9 สัญลักษณ์)" v-model="iPassword.new_password1" type="password" :class="$xinput" value="" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" />
+                            <input required :disabled="unPassword" placeholder="8 อักษรขึ้นไป (A-Z a-z 0-9 สัญลักษณ์)" v-model="iPassword.new_password1" type="password"
+                                   :class="`${$xinput} ${editModePassword}`" value="" />
                         </div> 
                     </div>
                 </div>
@@ -111,7 +117,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-key text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unPassword" required placeholder="8 อักษรขึ้นไป (A-Z a-z 0-9 สัญลักษณ์)" v-model="iPassword.new_password2" type="password" :class="$xinput" value="" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" />
+                            <input :disabled="unPassword" required placeholder="8 อักษรขึ้นไป (A-Z a-z 0-9 สัญลักษณ์)" v-model="iPassword.new_password2" type="password" :class="`${$xinput} ${editModePassword}`" value=""  />
                         </div>
                     </div>
                     <div class="relative w-full mb-3 mt-4" v-if="!unPassword">
@@ -177,6 +183,14 @@ export default class Home extends Vue {
             this.iPassword = {}
         }
     }
+
+    get editMode(){
+      return (this.unEdit )?'border-success':'border-edit'
+    }
+
+  get editModePassword(){
+    return (this.unPassword )?'border-success':'border-edit'
+  }
 
 }
 </script>

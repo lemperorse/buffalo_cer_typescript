@@ -32,7 +32,7 @@
                 </router-link>
               </div>
               <div class="w-1/2 text-right">
-                <router-link to="/register" class="text-gray-600">
+                <router-link to="/register" class="text-gray-600 invisible">
                   <small>สมัครสมาชิก</small>
                 </router-link>
               </div>
@@ -89,9 +89,8 @@
             <p>
               เข้าร่วมเป็นสมาชิกกับเว็บไซต์พันธุ์ควายไทยเพื่อเก็บข้อมูลพันธุ์ควายและพันธุ์ประวัติของคุณง่ายๆเพียงไม่กี่ขั้นตอน !
             </p>
-            <button class="btn transparent" id="sign-up-btn" @click="ChangeTo('sign-up-mode')">
-              เข้าร่วมกับเรา
-            </button>
+            <v-btn @click="ChangeTo('sign-up-mode')" outlined dark >เข้าร่วมกับเรา</v-btn>
+
           </div>
           <img src="https://sv1.picz.in.th/images/2020/11/19/bpmWRe.png" class="image" alt="" />
         </div>
@@ -101,9 +100,9 @@
             <p>
               หากคุณเป็นสมาชิกกับเราอยู่แล้วสามารถเข้าสู่ระบบได้ในทันที !
             </p>
-            <button class="btn transparent" id="sign-in-btn" @click="ChangeTo('')">
-              เข้าสู่ระบบ
-            </button>
+
+            <v-btn @click="ChangeTo('')" outlined dark >เข้าสู่ระบบ</v-btn>
+
           </div>
           <img src="https://sv1.picz.in.th/images/2020/11/19/bpm9nW.png" class="image" alt="" />
         </div>

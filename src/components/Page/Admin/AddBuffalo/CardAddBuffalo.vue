@@ -16,7 +16,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ชื่อหรือหมายเลขควาย
                         </label>
-                        <input type="text" :class="$xinput" value=" " />
+                        <input type="text" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -24,7 +24,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             หมายเลข NID
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -32,7 +32,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             หมายเลขไมโครซิป
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -40,7 +40,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             วันเกิด
                         </label>
-                        <input type="date" :class="$xinput" value=" " />
+                        <input type="date" :class="`${$xinput} border-edit`" value=" " />
                     </div>
 
                 </div>
@@ -49,7 +49,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             อายุ(ปี)
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -138,7 +138,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ราคา
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ชื่อหรือหมายเลขพ่อ
                         </label>
-                        <input type="text" :class="$xinput" value=" " />
+                        <input type="text" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -162,7 +162,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             หมายเลข NID พ่อ
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -170,7 +170,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             หมายเลขไมโครชิปพ่อ
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -178,7 +178,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ชื่อหรือหมายเลขแม่
                         </label>
-                        <input type="text" :class="$xinput" value=" " />
+                        <input type="text" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -186,7 +186,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             หมายเลข NID แม่
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -194,7 +194,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             หมายเลขไมโครชิปแม่
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
             </div>
@@ -210,7 +210,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             น้ำหนัก(กิโลกรัม)
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -218,7 +218,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ความกว้างรอบอก(เซนติเมตร)
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -226,7 +226,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ความยาวรอบลำตัว(เซนติเมตร)
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
@@ -234,7 +234,7 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ชความสูง(เซนติเมตร)
                         </label>
-                        <input type="number" :class="$xinput" value=" " />
+                        <input type="number" :class="`${$xinput} border-edit`" value=" " />
                     </div>
                 </div>
             </div>

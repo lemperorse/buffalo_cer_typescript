@@ -148,7 +148,7 @@
     </div>
 
     <div class="relative w-full mb-3 ml-2">
-      <label :class="$label" htmlFor="grid-password">รหัสไปรศณีย์</label>
+      <label :class="$label" htmlFor="grid-password">รหัสไปรษณีย์</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
         <input required v-model="formProfile.zipcode" type="text" :class="$input" style="padding-left:40px;">
@@ -221,6 +221,7 @@ import {FormRegister, Profile, Province} from '@/models/core';
 import CityDialog from '@/components/Dialog/City.vue';
 import moment from 'moment';
 import {App} from "@/store/app";
+import {User} from "@/store/user";
 @Component({
   components: {CityDialog},
   computed: {}
@@ -250,9 +251,22 @@ export default class Home extends Vue {
     this.formProfile.district = City.currentDistrict?.id
     await Auth.register(this.formUser,this.formProfile)
     await App.success("สมัครสมาชิกสำเร็จ")
-    await this.$router.go(-1)
+    await this.login();
+    // await this.$router.go(-1)
   }
 
+  private async login() {
+    await Auth.removeToken();
+    let user: any = await Core.postHttp('/api/rest-auth/login/', this.formUser)
+    if (user ?.key) {
+      await Auth.storeToken(user.key)
+      await Auth.storeTokenToStorage(user.key)
+      await User.loadUser()
+      await this.$router.replace(User.routeUser)
+    } else {
+      await App.error("เข้าสู่ระบบล้มเหลว กรุณาตรวจสอบข้อมูลให้ถูกต้อง")
+    }
+  }
 
 
   async openCityDialog(){

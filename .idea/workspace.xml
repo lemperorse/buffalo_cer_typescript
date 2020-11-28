@@ -19,137 +19,48 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fda6cc89-b16b-43cb-b6bf-b71403b394c1" name="Default Changelist" comment="change login ui">
-      <change afterPath="$PROJECT_DIR$/dist/assets/animate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-00361050.93b7740a.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-0293dda1.80462201.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-06ef1e82.8a96bb47.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-07bd3118.93b7740a.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-0e7034d1.70ce3899.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-12ed8a56.8a96bb47.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-14751ea2.bc0ed340.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-18a574a7.e7b98ce3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-18ff58bf.62f700c9.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-1ecb5a40.e7b98ce3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-2219a71f.fc6ad0a6.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-233a8850.bc0ed340.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-25033a8e.b53b4043.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-283af0dd.9d0e3f0e.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-2a402b7a.b53b4043.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-2bf5b80e.bc0ed340.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-2c051208.bc0ed340.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-2e193748.32c24180.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-2f5f61b8.0decd41b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-32382054.73a04cec.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-3a4959e0.44cac894.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-3db084a4.9d0e3f0e.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-407dea90.44cac894.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-453abcc9.2a5364ac.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-487e8b61.e7b98ce3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-64ad7a84.37e11fa7.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-6fac509c.57a8c004.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-711c9f2b.ae7b96b0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-720345b0.e7b98ce3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-77115cef.e7b98ce3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-8296be32.e7b98ce3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-83fc89f0.bc0ed340.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-8cb994d8.80cc52d2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-9bda308e.e9b41bd0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-a14f46cc.9d0e3f0e.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-b72b36ae.053ea7a5.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-cd3a36ba.e7b98ce3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-cf638e94.e7b98ce3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-d815cede.62f700c9.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-fcff236a.4237418c.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/chunk-vendors.9df4035c.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/brand/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/brand/green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/brand/white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/apple-touch-icon-120x120.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/apple-touch-icon-152x152.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/apple-touch-icon-180x180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/apple-touch-icon-60x60.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/apple-touch-icon-76x76.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/common/github.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/common/google.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/msapplication-icon-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/mstile-150x150.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/icons/safari-pinned-tab.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/logo.07d1e22e.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/team-1-800x800.53033970.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/team-2-800x800.dcfcf3b7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/team-3-800x800.5a0e395b.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/angular.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/bootstrap.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/profile-cover.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/react.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/sketch.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/team-1-800x800.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/team-2-800x800.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/team-3-800x800.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/team-4-800x800.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/img/theme/vue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/animate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/aa.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/aaa.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/cc.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/ccc.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/rrr.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Headers/HeadInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/Public/CardProfileBuffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Page/User/Public/CardSettingBuffalo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/farmer/BuffaloPublic.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="fda6cc89-b16b-43cb-b6bf-b71403b394c1" name="Default Changelist" comment="add new UI">
+      <change afterPath="$PROJECT_DIR$/src/components/Dropdowns/UserDropdownAdmin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Page/Admin/Search/Card.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/admin/Search.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0293dda1.80462201.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-0e7034d1.70ce3899.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-12ed8a56.8a96bb47.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-3a4959e0.44cac894.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-407dea90.44cac894.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-6fac509c.57a8c004.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/chunk-fcff236a.4237418c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src-cordova/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-01b2e35f.034335d3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-28794c9b.e7b98ce3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/css/chunk-3dbbd9da.e7b98ce3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/app.d063df65.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/app.d063df65.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-004ce3d8.df6aef2c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-004ce3d8.df6aef2c.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-18a574a7.71e49ff1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-1ecb5a40.3dcb2fa3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-24604c0e.2dac3e81.js" beforeDir="false" afterPath="$PROJECT_DIR$/src-cordova/www/js/chunk-24604c0e.2dac3e81.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-283af0dd.21c15472.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-28794c9b.6d6c28ab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-2d0b90b4.ba3fcff2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src-cordova/www/js/chunk-2d0b90b4.ba3fcff2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-3db084a4.2ec3e918.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src-cordova/www/js/chunk-3dbbd9da.20746d3b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Buffalo/BuffaloCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/BuffaloCreate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloCert.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloCert.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloData.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloData.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloEvo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/TabBuffaloEvo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Buffalo/TableFarmer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Buffalo/TableFarmer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialog/City.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialog/City.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dropdowns/UserDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dropdowns/UserDropdown.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbars/FarmerNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbars/FarmerNavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbars/AdminNavbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbars/AdminNavbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/AddBuffalo/CardAddBuffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/AddBuffalo/CardAddBuffalo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/AddFarmer/CardAddFarmer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/AddFarmer/CardAddFarmer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/AdminOther/AddAdmin/CardAddAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/AdminOther/AddAdmin/CardAddAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/AdminOther/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/AdminOther/Table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Page/Admin/Profile/CardSettingsAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Admin/Profile/CardSettingsAdmin.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/Root/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/Root/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/User/Profile/CardProfileFarmer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/User/Profile/CardProfileFarmer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Page/User/Profile/CardSettingFarmer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/User/Profile/CardSettingFarmer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Page/User/Search/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Page/User/Search/Card.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidebar/FarmerSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/FarmerSidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/User/Farm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Farm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/Manager.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Manager.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/User/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Profile.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plugins/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/axios.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/plugins/varible.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/varible.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/admin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/Base.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/Base.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/farmer/AddBuffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/AddBuffalo.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/farmer/Base.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/Base.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/farmer/Buffalo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/Buffalo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/farmer/BuffaloProfile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/BuffaloProfile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/farmer/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/farmer/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/Profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/farmer/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/farmer/Search.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/root/Base.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/root/Base.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/root/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/root/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/root/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/root/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,26 +92,26 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="js.ns.project" value="true" />
     <property name="js.ns.project.flavor" value="TypeScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/root" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Users\Dodo\Desktop\buffalo_cer_typescript\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\pongv\Desktop\buffalo_cer_typescript\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pongv\Desktop\buffalo_cer_typescript\src\views\admin" />
+      <recent name="C:\Users\pongv\Desktop\buffalo_cer_typescript\src\components\Dropdowns" />
+      <recent name="C:\Users\pongv\Desktop\buffalo_cer_typescript\src\views\root" />
+      <recent name="C:\Users\pongv\buffalo_cer_typescript\src\components\Buffalo" />
+      <recent name="C:\Users\pongv\buffalo_cer_typescript\src\views\farmer" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\pongv\buffalo_cer_typescript\src\components" />
       <recent name="C:\Users\pongv\buffalo_cer_typescript\src\components\Page" />
       <recent name="C:\Users\Dodo\Desktop\buffalo_cer_typescript\src\components\Page\User\Report\ReportSystem" />
       <recent name="C:\Users\Dodo\Desktop\buffalo_cer_typescript\src\components\Page\User\Report\ReportBuffalo" />
       <recent name="C:\Users\Dodo\Desktop\buffalo_cer_typescript\src\components\Page\Admin\Admin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\pongv\Desktop\buffalo_cer_typescript\src\views\root" />
-      <recent name="C:\Users\pongv\buffalo_cer_typescript\src\components\Buffalo" />
-      <recent name="C:\Users\pongv\buffalo_cer_typescript\src\views\farmer" />
-      <recent name="C:\Users\Dodo\Desktop\buffalo_cer_typescript\src\components\Page\User" />
-      <recent name="C:\Users\Dodo\Desktop\buffalo_cer_typescript\src\components\Page\User\Buffalo" />
     </key>
   </component>
   <component name="RunManager" selected="npm.serve">
@@ -280,6 +191,9 @@
       <workItem from="1604823526550" duration="10810000" />
       <workItem from="1605591235810" duration="9349000" />
       <workItem from="1605622325673" duration="7698000" />
+      <workItem from="1606026631034" duration="8000" />
+      <workItem from="1606379644183" duration="660000" />
+      <workItem from="1606585453870" duration="6398000" />
     </task>
     <task id="LOCAL-00001" summary="add homepage (Test)">
       <created>1604242089662</created>
@@ -400,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605749316589</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="add new UI">
+      <created>1605818245372</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1605818245372</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +351,8 @@
     <MESSAGE value="update alert and load" />
     <MESSAGE value="add forgot-password-page" />
     <MESSAGE value="change login ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="change login ui" />
+    <MESSAGE value="add new UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new UI" />
   </component>
   <component name="WindowStateProjectService">
     <state x="180" y="67" width="1094" height="788" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604653778669">
@@ -455,30 +377,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604336980679" />
-    <state width="1874" height="171" key="GridCell.Tab.0.bottom" timestamp="1605817415494">
+    <state width="1874" height="171" key="GridCell.Tab.0.bottom" timestamp="1605820975106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1604098227199" />
     <state width="1515" height="142" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605621647930" />
-    <state width="1874" height="171" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605817415494" />
-    <state width="1874" height="171" key="GridCell.Tab.0.center" timestamp="1605817415494">
+    <state width="1874" height="171" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605820975106" />
+    <state width="1874" height="171" key="GridCell.Tab.0.center" timestamp="1605820975105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1604098227198" />
     <state width="1515" height="142" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605621647930" />
-    <state width="1874" height="171" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605817415494" />
-    <state width="1874" height="171" key="GridCell.Tab.0.left" timestamp="1605817415493">
+    <state width="1874" height="171" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605820975105" />
+    <state width="1874" height="171" key="GridCell.Tab.0.left" timestamp="1605820975105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1604098227197" />
     <state width="1515" height="142" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605621647929" />
-    <state width="1874" height="171" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605817415493" />
-    <state width="1874" height="171" key="GridCell.Tab.0.right" timestamp="1605817415494">
+    <state width="1874" height="171" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605820975105" />
+    <state width="1874" height="171" key="GridCell.Tab.0.right" timestamp="1605820975106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="326" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1604098227198" />
     <state width="1515" height="142" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605621647930" />
-    <state width="1874" height="171" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605817415494" />
+    <state width="1874" height="171" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605820975106" />
     <state width="1874" height="347" key="GridCell.Tab.1.bottom" timestamp="1604619492809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -527,26 +449,35 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1874" height="347" key="GridCell.Tab.3.right/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604619492810" />
+    <state x="739" y="239" key="RollbackChangesDialog" timestamp="1605818136564">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="239" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605818136564" />
     <state x="259" y="11" key="SettingsEditor" timestamp="1604421706979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604026686454" />
     <state x="207" y="9" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604241795516" />
     <state x="259" y="11" key="SettingsEditor/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1604421706979" />
-    <state x="451" y="167" key="Vcs.Push.Dialog.v2" timestamp="1605749324699">
+    <state x="451" y="167" key="Vcs.Push.Dialog.v2" timestamp="1605818248773">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605632815937" />
-    <state x="451" y="167" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605749324699" />
+    <state x="451" y="167" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605818248773" />
+    <state x="758" y="253" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1605818144292">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="758" y="253" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605818144292" />
     <state x="733" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605754023622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1605591301903" />
     <state x="733" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1605754023622" />
-    <state x="417" y="12" width="580" height="801" key="find.popup" timestamp="1604263996547">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="521" y="15" width="725" height="1011" key="find.popup" timestamp="1606588352673">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="417" y="12" width="580" height="801" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1604263996547" />
+    <state x="521" y="15" width="725" height="1011" key="find.popup/0.0.1920.1040/1920.0.1360.728/-1366.0.1366.728@0.0.1920.1040" timestamp="1606588352673" />
     <state x="523" y="236" key="run.anything.popup" timestamp="1605744667567">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -13,6 +13,9 @@
         </div>
     </div>
     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+      <v-alert color="#F59E0B" type="info" outlined  v-if="!unEdit" >
+        โหมดแก้ไข ระบุข้อมูลที่ต้องการแก้ไขในช่องข้อความสีส้ม <v-btn class="border-edit" x-small style="background-color:#eeeef3; color:#F59E0B;">ข้อความ</v-btn>
+      </v-alert>
         <form @submit.prevent="update" v-if="response">
             <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                 เกี่ยวกับฟาร์ม
@@ -28,7 +31,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-home text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" v-model="form.name" type="text" :class="$xinput" value="Lucky" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="form.name" type="text" :class="`${$xinput} ${editMode}`" value="Lucky" />
                         </div> 
                     </div>
                 </div>
@@ -42,7 +45,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-users text-lg text-gray-500"></i>
                             </span>
-                <select :disabled="unEdit" required v-model="form.group" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+                <select :disabled="unEdit" required v-model="form.group" :class="`${$xinput} ${editMode}`" >
                   <option v-for="val,i in group" :key="i" :value="val.id">{{ val.value }}</option>
                 </select>
               </div>
@@ -63,7 +66,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-home text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" v-model="form.address" type="text" :class="$xinput" value="123/123" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="form.address" type="text" :class="`${$xinput} ${editMode}`" value="123/123" />
                         </div> 
                     </div>
                 </div>
@@ -79,7 +82,7 @@
                                   <i class="fas fa-globe-asia text-lg text-gray-500"></i>
                               </span>
 
-                              <input :value="CityFrom" @click="openCityDialog " @focus="openCityDialog" type="text" :class="$xinput" :disabled="unEdit" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                              <input :value="CityFrom" @click="openCityDialog " @focus="openCityDialog" type="text" :class="`${$xinput} ${editMode}`" :disabled="unEdit" />
                               <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                   <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                       <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
@@ -100,7 +103,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-paper-plane text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" v-model="form.zipcode" type="text" :class="$xinput" value="123/123" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="form.zipcode" type="text" :class="`${$xinput} ${editMode}`" value="123/123" />
                         </div>
                     </div>
                 </div>
@@ -127,7 +130,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-map-marker-alt text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" v-model="form.latitude" type="text" :class="$xinput" value="1234560" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="form.latitude" type="text" :class="`${$xinput} ${editMode}`" value="1234560" />
                         </div>
                     </div>
                 </div>
@@ -140,7 +143,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-map-marker-alt text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" v-model="form.longitude" type="text" :class="$xinput" value="1234560" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="form.longitude" type="text" :class="`${$xinput} ${editMode}`" value="1234560" />
                         </div>
                     </div>
                 </div>
@@ -271,7 +274,9 @@ export default class Farm extends Vue {
     get CityFrom() {
         return City.showName
     }
-
+  get editMode(){
+    return (this.unEdit )?'border-success':'border-edit'
+  }
 }
 </script>
 

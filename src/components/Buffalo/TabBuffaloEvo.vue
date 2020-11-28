@@ -19,6 +19,9 @@
     </div>
     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
       <form @submit.prevent="updateBuffalo">
+        <v-alert color="#F59E0B" type="info" outlined  v-if="!unEdit" >
+          โหมดแก้ไข ระบุข้อมูลที่ต้องการแก้ไขในช่องข้อความสีส้ม <v-btn class="border-edit" x-small style="background-color:#eeeef3; color:#F59E0B;">ข้อความ</v-btn>
+        </v-alert>
         <h6 class="text-green-600 text-sm mt-3 mb-6 font-bold uppercase">
           แรกเกิด <span v-if="evo0" class="text-red-600">(ยังไม่มีข้อมูล)</span>
         </h6>
@@ -34,8 +37,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-weight text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.weight0"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.weight0"
+                       />
               </div>
             </div>
           </div>
@@ -49,8 +52,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-width text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.width0"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.width0"
+                       />
               </div>
             </div>
           </div>
@@ -64,8 +67,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-width text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.length0"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.length0"
+                       />
               </div>
             </div>
           </div>
@@ -79,8 +82,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-height text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.height0"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.height0"
+                       />
               </div>
             </div>
           </div>
@@ -101,8 +104,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-weight text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.weight240"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.weight240"
+                       />
               </div>
             </div>
           </div>
@@ -116,8 +119,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-width text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.width240"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.width240"
+                       />
               </div>
             </div>
           </div>
@@ -131,8 +134,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-width text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.length240"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.length240"
+                       />
               </div>
             </div>
           </div>
@@ -146,8 +149,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-height text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.height240"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.height240"
+                       />
               </div>
             </div>
           </div>
@@ -168,8 +171,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-weight text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.weight400"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.weight400"
+                       />
               </div>
             </div>
           </div>
@@ -183,8 +186,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-width text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.width400"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.width400"
+                       />
               </div>
             </div>
           </div>
@@ -198,8 +201,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-width text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.length400"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.length400"
+                       />
               </div>
             </div>
           </div>
@@ -213,8 +216,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-height text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.height400"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.height400"
+                       />
               </div>
             </div>
           </div>
@@ -235,8 +238,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-weight text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.weight600"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.weight600"
+                       />
               </div>
             </div>
           </div>
@@ -250,8 +253,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-width text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.width600"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.width600"
+                       />
               </div>
             </div>
           </div>
@@ -265,8 +268,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-width text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.length600"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.length600"
+                       />
               </div>
             </div>
           </div>
@@ -280,8 +283,8 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-text-height text-lg text-gray-500"></i>
                             </span>
-                <input :disabled="unEdit" type="number" :class="$xinput" v-model="form.height600"
-                       class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                <input :disabled="unEdit" type="number" :class="`${$xinput} ${editMode}`"  v-model="form.height600"
+                       />
               </div>
             </div>
           </div>
@@ -373,7 +376,9 @@ export default class TabBuff extends Vue {
   get evo600() {
     return (this.form.width600 || this.form.weight600 || this.form.width600 || this.form.length600) ? false : true
   }
-
+  get editMode(){
+    return (this.unEdit )?'border-success':'border-edit'
+  }
 }
 </script>
 

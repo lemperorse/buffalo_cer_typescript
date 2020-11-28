@@ -22,7 +22,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-key text-lg text-gray-500"></i>
                             </span>
-                            <input v-model="formPassword.password" required type="password" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
+                            <input placeholder="ระบุรหัสผ่าน ***" v-model="formPassword.password" required type="password" class="border-edit px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
                         </div> 
                         
                     </div>
@@ -36,7 +36,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-key text-lg text-gray-500"></i>
                             </span>
-                            <input v-model="formPassword.password2"  required type="password" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
+                            <input placeholder="ระบุรหัสผ่าน ***" v-model="formPassword.password2"  required type="password" class="border-edit px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
                         </div> 
                     </div>
                   <div class="relative w-full mb-3">
@@ -56,7 +56,7 @@
                         สิทธ์การใช้งาน
                     </label>
                     <div class="relative">
-                        <select  v-model="admin" @change="changeStatus" class="block appearance-none w-full bg-gray-100 border border-gray-100 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500">
+                        <select  v-model="formProfile.status" @change="changeStatus" class="border-edit block appearance-none w-full bg-gray-100 border border-gray-100 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500">
                             <option :value="true">เปิดการใช้งาน (ผู้ใช้)</option>
                             <option :value="false">ปิดการใช้งาน</option>
                         </select>
@@ -77,8 +77,8 @@
             <div class="flex flex-wrap" v-if="admin">
                 <div class="w-full lg:w-6/12 px-4">
                     <div class="relative w-full mb-3">
-                        <button @click="disableUser" class="bg-red-500 f-white active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-                            ลบข้อมูลเกษตกร
+                        <button @click="disableUser" :class="`${$btn} bg-red-600 f-white`"   type="button">
+                            ลบข้อมูลเกษตกรคนนี้
                         </button>
                     </div>
                 </div>
@@ -131,6 +131,7 @@ export default class ManagerClass extends Vue {
     let userAll = await Core.getHttp(`/api/account/${user.pk}/`)
     if(userAll.is_staff){
       this.admin = userAll.is_staff
+
       this.currentFarmer = this.$route.query.farmer
     }else{
       let profile  = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)

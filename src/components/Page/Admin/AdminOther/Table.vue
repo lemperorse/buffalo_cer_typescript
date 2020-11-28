@@ -134,7 +134,7 @@
                                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                                             </span>
-                                            <input required type="text" v-model="form.first_name" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10" />
+                                            <input required type="text" v-model="form.first_name" :class="`${$xinput} border-edit`"   />
                                         </div> 
                                     </div>
                                 </div>
@@ -147,7 +147,7 @@
                                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                                             </span>
-                                            <input required type="text" v-model="form.last_name" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10" />
+                                            <input required type="text" v-model="form.last_name" :class="`${$xinput} border-edit`"   />
                                         </div>
                                     </div>
                                 </div>

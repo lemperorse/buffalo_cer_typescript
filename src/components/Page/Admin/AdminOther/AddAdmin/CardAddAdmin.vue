@@ -23,7 +23,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span>
-                            <input required v-model="formUser.first_name" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10" />
+                            <input required v-model="formUser.first_name" type="text" :class="`${$xinput} border-edit`"  value=" "  />
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span>
-                            <input required v-model="formUser.last_name" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10" />
+                            <input required v-model="formUser.last_name" type="text" :class="`${$xinput} border-edit`"  value=" "  />
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-user text-lg text-gray-500"></i>
                             </span>
-                             <input required v-model="formUser.username" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10" />
+                             <input required v-model="formUser.username" type="text" :class="`${$xinput} border-edit`"  value=" "  />
                         </div> 
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-envelope text-lg text-gray-500"></i>
                             </span> 
-                             <input v-model="formUser.email" type="text" :class="$xinput" placeholder="(ไม่บังคับ)" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                             <input v-model="formUser.email" type="text" :class="`${$xinput} border-edit`"  placeholder="(ไม่บังคับ)" />
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-key text-lg text-gray-500"></i>
                             </span>
-                            <input required v-model="formUser.password" type="password" :class="$xinput" value="" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
+                            <input required v-model="formUser.password" type="password" :class="`${$xinput} border-edit`"  value="" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-key text-lg text-gray-500"></i>
                             </span>
-                            <input required v-model="formUser.password2" type="password" :class="$xinput" value="" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
+                            <input required v-model="formUser.password2" type="password" :class="`${$xinput} border-edit`"  value="" class="px-3 py-3 pl-10 placeholder-gray-400 bg-gray-100 text-black rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" value="" />
                         </div>
                     </div>
                 </div>

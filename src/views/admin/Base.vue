@@ -41,7 +41,7 @@ export default class Admin extends Vue {
   async created() {
     await Auth.checkToken();
     await User.loadUser();
-    if(User.routeUser == '/' || User.routeUser == '/user/'){
+    if(User.routeUser == '/' || User.routeUser == '/user/home'){
       await this.$router.replace(User.routeUser )
     }
    }

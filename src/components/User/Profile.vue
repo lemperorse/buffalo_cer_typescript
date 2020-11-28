@@ -12,6 +12,9 @@
         </div>
     </div>
     <div class="flex-auto px-0 lg:px-10 py-10 pt-0">
+      <v-alert color="#F59E0B" type="info" outlined  v-if="!unEdit" >
+        โหมดแก้ไข ระบุข้อมูลที่ต้องการแก้ไขในช่องข้อความสีส้ม <v-btn class="border-edit" x-small style="background-color:#eeeef3; color:#F59E0B;">ข้อความ</v-btn>
+      </v-alert>
         <form @submit.prevent="update()">
             <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                 บัญชี
@@ -26,7 +29,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-user text-lg text-gray-500"></i>
                             </span>
-                             <input disabled required v-model="formUser.username" type="text" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10" value=" " />
+                             <input disabled required v-model="formUser.username" type="text" :class="`${$xinput} border-success`"  value=" " />
                         </div>
                        
                     </div>
@@ -40,7 +43,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-envelope text-lg text-gray-500"></i>
                             </span> 
-                             <input :disabled="unEdit" v-model="formUser.email" type="text" :class="$xinput" placeholder="(ไม่บังคับ)" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10" value=" " />
+                             <input :disabled="unEdit" v-model="formUser.email" type="text" :class="`${$xinput} ${editMode}`" placeholder="(ไม่บังคับ)"  value=" " />
                         </div> 
                     </div>
                 </div>
@@ -53,7 +56,7 @@
                 ข้อมูลส่วนตัว
             </h6>
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-2/12 px-4">
+                <div class="w-full lg:w-3/12 px-4">
                     <div class="relative w-full mb-3"> 
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             คำนำหน้า
@@ -62,7 +65,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <select :disabled="unEdit" required v-model="formProfile.prefix" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+                            <select :disabled="unEdit" required v-model="formProfile.prefix" :class="`${$xinput} ${editMode}`" >
                               <option v-for="val,i in prefix" :key="i" :value="val.id" >{{ val.value }}</option>
                             </select>
                         </div> 
@@ -78,12 +81,12 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input :disabled="unEdit" required v-model="formUser.first_name" type="text" :class="$xinput"  value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" required v-model="formUser.first_name" type="text" :class="`${$xinput} ${editMode}`"  value=" " />
                         </div> 
                     </div>
                 </div>
 
-                <div class="w-full lg:w-5/12 px-4">
+                <div class="w-full lg:w-4/12 px-4">
                     <div class="relative w-full mb-3">
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             นามสกุล
@@ -92,7 +95,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input :disabled="unEdit" required v-model="formUser.last_name" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" required v-model="formUser.last_name" type="text" :class="`${$xinput} ${editMode}`" value=" " />
                         </div>
                     </div>
                 </div>
@@ -105,7 +108,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input :disabled="unEdit" v-model="formProfile.personal_id" type="text" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="formProfile.personal_id" type="text" :class="`${$xinput} ${editMode}`" />
                         </div> 
                         
                     </div>
@@ -119,7 +122,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-mobile-alt text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" v-model="formProfile.tel" type="text" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="formProfile.tel" type="text" :class="`${$xinput} ${editMode}`" />
                         </div> 
                     </div>
                 </div>
@@ -136,14 +139,14 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-venus-mars text-lg text-gray-500"></i>
                             </span>
-                            <select :disabled="unEdit" required v-model="formProfile.gender" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+                            <select :disabled="unEdit" required v-model="formProfile.gender" :class="`${$xinput} ${editMode}`" >
                               <option v-for="val,i in gender" :key="i" :value="val.id">{{ val.value }}</option>
                             </select>
                         </div> 
                     </div>
                 </div>
 
-                <div class="w-full lg:w-4/12 px-4">
+                <div class="w-full lg:w-5/12 px-4">
                     <div class="relative w-full mb-3">
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             วันเกิด
@@ -152,11 +155,11 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-calendar-day text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" required v-model="formProfile.birthday" type="date" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" required v-model="formProfile.birthday" type="date" :class="`${$xinput} ${editMode}`" value=" " />
                         </div> 
                     </div>
                 </div>
-                <div class="w-full lg:w-4/12 px-4">
+                <div class="w-full lg:w-3/12 px-4">
                     <div class="relative w-full mb-3">
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             อายุ
@@ -165,7 +168,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-birthday-cake text-lg text-gray-500"></i>
                             </span>
-                            <input disabled v-model="formProfile.age" type="text" :class="$xinput" value=" "  class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input disabled v-model="formProfile.age" type="text" :class="`${$xinput} ${editMode}`" value=" "  />
                         </div>
                     </div>
                 </div>
@@ -182,7 +185,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-home text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" required v-model="formProfile.address" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" required v-model="formProfile.address" type="text" :class="`${$xinput} ${editMode}`" value=" " />
                         </div> 
                         
                     </div>
@@ -197,7 +200,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-home text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" required v-model="formProfile.mooban" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" required v-model="formProfile.mooban" type="text" :class="`${$xinput} ${editMode}`" value=" " />
                         </div> 
                     </div>
                 </div>
@@ -211,7 +214,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-globe-asia text-lg text-gray-500"></i>
                             </span>
-                            <input :value="CityFrom" @click="openCityDialog " @focus="openCityDialog" type="text" :class="$xinput" :disabled="unEdit" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :value="CityFrom" @click="openCityDialog " @focus="openCityDialog" type="text" :class="`${$xinput} ${editMode}`" :disabled="unEdit" />
                         </div> 
                     </div>
                 </div>
@@ -224,7 +227,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-paper-plane text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" v-model="formProfile.zipcode" required type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input :disabled="unEdit" v-model="formProfile.zipcode" required type="text" :class="`${$xinput} ${editMode}`" value=" " />
                         </div>
                     </div>
                 </div>
@@ -232,7 +235,7 @@
             </div>
 
             <div class="flex justify-center mt-6">
-                <button v-if="!unEdit" class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">
+                <button v-if="!unEdit" class="bg-orange-500 f-white active:bg-green-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">
                     <i class="fas fa-save text-lg"></i>  บันทึกข้อมูล
                 </button>
             </div>
@@ -347,6 +350,9 @@ export default class Profile extends Vue {
     get CityFrom() {
         return City.showName
     }
+  get editMode(){
+    return (this.unEdit )?'border-success':'border-edit'
+  }
 
 }
 </script>

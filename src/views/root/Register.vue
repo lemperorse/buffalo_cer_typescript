@@ -75,7 +75,7 @@
                 <v-text-field v-model="formProfile.address" required label="บ้านเลขที่ หมู่ที่ " solo ></v-text-field>
                 <v-text-field v-model="formProfile.mooban" label="หมู่บ้าน (ไม่บังคับ)"   solo ></v-text-field>
                 <v-text-field required :readonly="(CityFrom)?true:false" solo v-model="CityFrom" @click="openCityDialog" label="จังหวัด อำเภอ ตำบล"></v-text-field>
-                <v-text-field v-model="formProfile.zipcode" required label="รหัสไปรศณีย์" solo ></v-text-field>
+                <v-text-field v-model="formProfile.zipcode" required label="รหัสไปรษณีย์" solo ></v-text-field>
                 <button  type="submit" :class="'bg-green-600 '+btn">
                   ดำเนินการต่อ
                 </button>

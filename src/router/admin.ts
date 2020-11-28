@@ -13,6 +13,16 @@ const adminRouter = [
         component: getView('Home')
     },
     {
+        path: 'home',
+        name: 'homes',
+        component: getView('Home')
+    },
+    {
+        path: 'search',
+        name: 'search',
+        component: getView('Search')
+    },
+    {
         path: 'profile',
         name: 'profile',
         component: getView('Profile')

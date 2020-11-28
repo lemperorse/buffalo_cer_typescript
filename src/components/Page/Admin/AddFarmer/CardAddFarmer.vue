@@ -23,7 +23,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-user text-lg text-gray-500"></i>
                             </span>
-                             <input required v-model="formUser.username" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                             <input required v-model="formUser.username" type="text" :class="`${$xinput} border-edit`" value=" " />
                         </div> 
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-envelope text-lg text-gray-500"></i>
                             </span> 
-                             <input v-model="formUser.email" type="text" :class="$xinput" placeholder="(ไม่บังคับ)" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10" value=" " />
+                             <input v-model="formUser.email" type="text" :class="`${$xinput} border-edit`" placeholder="(ไม่บังคับ)"  value=" " />
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-key text-lg text-gray-500"></i>
                             </span> 
-                             <input required v-model="formUser.password" type="password" :class="$xinput" value=""  class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                             <input required v-model="formUser.password" type="password" :class="`${$xinput} border-edit`" value=""  />
                         </div> 
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-key text-lg text-gray-500"></i>
                             </span> 
-                             <input required v-model="formUser.password2" type="password" :class="$xinput" value=""  class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                             <input required v-model="formUser.password2" type="password" :class="`${$xinput} border-edit`" value=""  />
                         </div> 
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <select required v-model="formProfile.prefix" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+                            <select required v-model="formProfile.prefix" :class="`${$xinput} border-edit`" >
                               <option v-for="val,i in prefix" :key="i" :value="val.id" >{{ val.value }}</option>
                             </select>
                         </div>  
@@ -98,7 +98,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input required v-model="formUser.first_name" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input required v-model="formUser.first_name" type="text" :class="`${$xinput} border-edit`" value=" " />
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input required v-model="formUser.last_name" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input required v-model="formUser.last_name" type="text" :class="`${$xinput} border-edit`" value=" " />
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input v-model="formProfile.personal_id" type="text" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input v-model="formProfile.personal_id" type="text" :class="`${$xinput} border-edit`" />
                         </div> 
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-mobile-alt text-lg text-gray-500"></i>
                             </span>
-                            <input v-model="formProfile.tel" type="text" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input v-model="formProfile.tel" type="text" :class="`${$xinput} border-edit`" />
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-venus-mars text-lg text-gray-500"></i>
                             </span>
-                            <select required v-model="formProfile.gender" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+                            <select required v-model="formProfile.gender" :class="`${$xinput} border-edit`" >
                               <option v-for="val,i in gender" :key="i" :value="val.id">{{ val.value }}</option>
                             </select>
                         </div>
@@ -168,7 +168,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-calendar-day text-lg text-gray-500"></i>
                             </span>
-                            <input required v-model="formProfile.birthday" type="date" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input required v-model="formProfile.birthday" type="date" :class="`${$xinput} border-edit`" value=" " />
                         </div> 
                     </div>
                 </div>
@@ -181,7 +181,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-birthday-cake text-lg text-gray-500"></i>
                             </span>
-                            <input disabled v-model="formProfile.age" type="text" :class="$xinput" value=" "  class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input disabled v-model="formProfile.age" type="text" :class="`${$xinput} border-edit`" value=" "  />
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-users text-lg text-gray-500"></i>
                             </span>
-                            <select required v-model="formProfile.group" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+                            <select required v-model="formProfile.group" :class="`${$xinput} border-edit`" >
                               <option v-for="val,i in group" :key="i" :value="val.id">{{ val.value }}</option>
                             </select>
                         </div>
@@ -210,7 +210,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-home text-lg text-gray-500"></i>
                             </span>
-                            <input required v-model="formProfile.address" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input required v-model="formProfile.address" type="text" :class="`${$xinput} border-edit`" value=" " />
                         </div> 
                     </div>
                 </div>
@@ -224,7 +224,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-home text-lg text-gray-500"></i>
                             </span>
-                            <input required v-model="formProfile.mooban" type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input required v-model="formProfile.mooban" type="text" :class="`${$xinput} border-edit`" value=" " />
                         </div> 
                     </div>
                 </div>
@@ -238,7 +238,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-globe-asia text-lg text-gray-500"></i>
                             </span>
-                            <input required :value="CityFrom" @click="openCityDialog " type="text" :class="$xinput" disabled class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input required :value="CityFrom" @click="openCityDialog " type="text" :class="`${$xinput} border-edit`" disabled />
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-paper-plane text-lg text-gray-500"></i>
                             </span>
-                            <input v-model="formProfile.zipcode" required type="text" :class="$xinput" value=" " class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"/>
+                            <input v-model="formProfile.zipcode" required type="text" :class="`${$xinput} border-edit`" value=" " />
                         </div>
                     </div>
                 </div>

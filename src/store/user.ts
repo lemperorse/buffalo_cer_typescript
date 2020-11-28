@@ -20,7 +20,7 @@ class UserClass extends VuexModule {
             let permission = await Core.getHttp(`/api/account/${user.pk}/`)
             this.user = user;
             this.permission = permission.is_staff
-            this.routeUser = (permission.is_staff)?'/admin/':'/user/'
+            this.routeUser = (permission.is_staff)?'/admin/home':'/user/home'
         }
     }
 

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
+import UserDropdown from "@/components/Dropdowns/UserDropdownAdmin.vue";
 
 export default {
     components: {
