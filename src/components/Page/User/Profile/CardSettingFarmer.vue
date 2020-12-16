@@ -1,19 +1,19 @@
 <template>
 <div class="flex flex-wrap">
     <div class="w-full">
-        <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row animate__animated animate__bounceInUp animate__delay-1s">
+        <ul class="flex mb-0 list-none  pt-3 pb-4 flex-col md:flex-row animate__animated animate__bounceInUp animate__delay-1s">
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center ">
-                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(1)" v-bind:class="{'text-green-600 bg-white': openTab !== 1, 'text-white bg-green-600': openTab === 1}">
+                <a class="w-full  hvr-grow  text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(1)" v-bind:class="{'text-green-600 bg-white': openTab !== 1, 'text-white bg-green-600': openTab === 1}">
                     <i class="fas fa-user text-base mr-1"></i>ข้อมูลเกษตกร
                 </a>
             </li>
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(2)" v-bind:class="{'text-green-600 bg-white': openTab !== 2, 'text-white bg-green-600': openTab === 2}">
+                <a class="w-full  hvr-grow  text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(2)" v-bind:class="{'text-green-600 bg-white': openTab !== 2, 'text-white bg-green-600': openTab === 2}">
                     <i class="fas fa-tractor text-base mr-1"></i> ข้อมูลฟาร์ม
                 </a>
             </li>
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(3)" v-bind:class="{'text-green-600 bg-white': openTab !== 3, 'text-white bg-green-600': openTab === 3}">
+                <a class="w-full  hvr-grow  text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(3)" v-bind:class="{'text-green-600 bg-white': openTab !== 3, 'text-white bg-green-600': openTab === 3}">
                     <i class="far fa-image text-base mr-1"></i> รูปภาพ
                 </a>
             </li>
@@ -24,14 +24,14 @@
             <!--        </li>-->
 
             <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                <a class="text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(5)" v-bind:class="{'text-green-600 bg-white': openTab !== 5, 'text-white bg-green-600': openTab === 5}">
+                <a class="w-full hvr-grow  text-base font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(5)" v-bind:class="{'text-green-600 bg-white': openTab !== 5, 'text-white bg-green-600': openTab === 5}">
                     <i class="fas fa-cog text-base mr-1"></i> ตั้งค่า
                 </a>
             </li>
 
         </ul>
 
-        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded animate__animated animate__bounceInLeft animate__delay-1s">
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-full rounded animate__animated animate__bounceInLeft animate__delay-1s">
             <div class="px-4 py-5 flex-auto">
                 <div class="tab-content tab-space">
                     <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">

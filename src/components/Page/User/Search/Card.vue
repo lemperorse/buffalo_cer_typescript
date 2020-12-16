@@ -12,10 +12,10 @@
     </div>
 
     <!-- card --><br>
-    <div class="   px-4 md:px-10 mx-auto w-full    overflow-x-auto animate__animated animate__bounceInLeft animate__delay-1s">
+    <div class="   px-4 md:px-10 mx-auto w-full    overflow-x-auto animate__animated animate__bounceInLeft  ">
       <div class="flex flex-wrap justify-center " >
-        <div class="w-full p-3  md:w-56  " v-for="buffalo,index in buffalos.results" :key="index">
-          <div class=" w-full bg-white rounded-xl shadow-xl  ">
+        <div class="w-full p-3  md:w-56  hvr-grow" v-for="buffalo,index in buffalos.results" :key="index">
+          <div class=" w-full bg-white rounded-xl shadow-full  ">
             <v-img class="rounded-t-xl h-48 w-full" :src="(buffalo.front_image)?buffalo.front_image:'https://sv1.picz.in.th/images/2020/11/07/bb198v.jpg'" />
             <div class="p-5">
               <h1 class="text-2xl font-bold text-yellow-800 py-2">{{buffalo.name}}</h1>
@@ -137,4 +137,10 @@ export default class Farm extends Vue {
   background-size: contain;
   background-repeat: repeat;
  }
+
+.shadow-full{
+  -webkit-box-shadow: 0px 0px 152px 2px rgba(184,184,184,1);
+  -moz-box-shadow: 0px 0px 152px 2px rgba(184,184,184,1);
+  box-shadow: 0px 0px 152px 2px rgba(184,184,184,1);
+}
 </style>

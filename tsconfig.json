@@ -12,6 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "removeComments": false,
     "types": [
       "webpack-env",
       "vuex-pathify/types/vuex",

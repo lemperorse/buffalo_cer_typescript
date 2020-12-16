@@ -1,17 +1,17 @@
 <template>
-<div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
+<div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-all ">
     <div class="flex-auto p-4">
         <div class="flex flex-wrap">
             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-                <span class="font-semibold text-xl text-gray-800">
-                    ชื่อควาย : {{ statTitle }}
+                <span class="font-semibold text-base md:text-xl text-gray-800">
+                    {{ statSubtitle }}
                 </span>
                 <!-- <h5 class="text-gray-500 uppercase font-bold text-xs">
                     หมายเลข MICROCHIP : {{ statSubtitle }}
                 </h5> -->
 
                 <h3>
-                    <button @click="$router.push(statRoute)">ดูรายระเอียด</button>
+                    <button class="text-green-500" @click="$router.push(statRoute)">ดูรายระเอียด</button>
                 </h3>
 
             </div>
@@ -77,3 +77,10 @@ export default {
     },
 };
 </script>
+<style>
+.shadow-all {
+  -webkit-box-shadow: 0px 0px 28px 0px rgba(184,184,184,1);
+  -moz-box-shadow: 0px 0px 28px 0px rgba(184,184,184,1);
+  box-shadow: 0px 0px 28px 0px rgba(184,184,184,1);
+}
+</style>

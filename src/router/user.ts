@@ -10,17 +10,21 @@ const getView = function(page:any){
 const userRouter: any = [
     {
         path: '',
-        name: 'home',
+        name: 'name',
         component: getView('Home')
     },
     {
         path: '/user/home',
-        name: 'home',
+        name: 'หน้าแรก',
+        icon:'mdi mdi-home',
+        show: true,
         component: getView('Home')
     },
     {
         path: '/user/search',
-        name: 'search',
+        name: 'ค้นหาใบพันธ์ประวัติ',
+        icon:'mdi mdi-certificate',
+        show: true,
         component: getView('Search')
     },
     {
@@ -30,12 +34,16 @@ const userRouter: any = [
     },
     {
         path: '/user/profile',
-        name: 'profile',
+        name: 'ข้อมูลส่วนตัวของฉัน',
+        icon:'mdi mdi-account',
+        show: true,
         component: getView('Profile')
     },
     {
         path: '/user/buffalo',
-        name: 'buffalo',
+        name: 'ควายของฉัน',
+        icon:'em em-water_buffalo',
+        show: true,
         component: getView('Buffalo')
     },
     {
@@ -53,11 +61,6 @@ const userRouter: any = [
         name: 'addbuffaloage',
         component: getView('AddBuffalo')
     },
-    // {
-    //     path: '/user/addbuffalo',
-    //     name: 'addbuffalo',
-    //     component: getView('AddBuffalo')
-    // },
     {
         path: '/user/reportbuffalo',
         name: 'reportbuffalo',

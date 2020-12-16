@@ -3,10 +3,10 @@
     <div class="rounded-t mb-0 px-4 py-3 border-0 animate__animated animate__zoomIn">
       <div class="relative w-full md:w-auto px-4 max-w-full flex-grow flex-1 ">
         <h3 class="font-semibold text-base text-gray-800">
-          <button style="color:#855737;" class=" text-base" @click="$router.push('/user/profile')">ข้อมูลฟาร์ม</button> /
-          ควายในฟาร์ม {{farm.name}}
+          <button style="color:#855737;" class="text-2xl" @click="$router.push('/user/profile')">ควายในฟาร์ม</button>
+          <span class="text-2xl" > /  {{farm.name}}</span>
         </h3>
-        <h2 class="text-sm">เจ้าของ {{user.first_name}} </h2>
+        <h2 class="text-base">เจ้าของ {{user.first_name}} </h2>
       </div><br>
         <div class="flex flex-wrap items-center">
 
@@ -34,8 +34,8 @@
     <!-- card -->
     <div class="block w-full overflow-x-auto">
         <div class="flex flex-wrap mb-4">
-            <div class="w-full md:w-1/2 xl:w-1/3 p-3" v-for="buffalo,index in buffalos.results" :key="index" >
-                <div class="bg-white border-b-2 border-green-700 rounded shadow-xl mx-4 my-2 animate__animated animate__zoomIn">
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3 hvr-grow" v-for="buffalo,index in buffalos.results" :key="index" >
+                <div class="bg-white border-b-2 border-green-700 rounded shadow-full mx-4 my-2 animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap ">
                             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">

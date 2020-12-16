@@ -1,11 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.vue.example.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>VueExampleAppName</name>
+<widget id="le.buffalo.cert" version="1.0.0"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>พันธุ์ควายไทย</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        แอปฟลิเคชันจัดการพัรธุ์ควายไทย
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+        lemporer
     </author>
     <!-- this hook will point your config.xml to the DevServer on Serve -->
     <hook type="after_prepare" src="../node_modules/vue-cli-plugin-cordova/serve-config-hook.js" />
@@ -17,8 +19,29 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+
     <platform name="android">
+   <preference name="android-targetSdkVersion" value="29" />
         <allow-intent href="market:*" />
+        <preference name="loadUrlTimeoutValue" value="700000" />
+        <icon density="ldpi" src="res/icon/android/ldpi.png"/>
+        <icon density="mdpi" src="res/icon/android/mdpi.png"/>
+        <icon density="hdpi" src="res/icon/android/hdpi.png"/>
+        <icon density="xhdpi" src="res/icon/android/xhdpi.png"/>
+        <icon density="xxhdpi" src="res/icon/android/xxhdpi.png"/>
+        <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png"/>
+        <!--  Portrait  --> 
+
+        <splash density="hdpi" src="res/screen/android/splash-port-hdpi.png" />
+        <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
+        <splash density="ldpi" src="res/screen/android/splash-port-ldpi.png" />
+        <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
+        <splash density="mdpi" src="res/screen/android/splash-port-mdpi.png" />
+        <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
+        <splash density="xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+
+
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

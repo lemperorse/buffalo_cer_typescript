@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16 animate__animated animate__bounceInDown animate__delay-1s">
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-full rounded-lg mt-16 animate__animated animate__bounceInDown animate__delay-1s">
       <div class="px-6">
         <div class="flex flex-wrap justify-center">
           <div class="w-full px-4 flex justify-center">
@@ -10,9 +10,7 @@
                 <center>
                   <h2 class="text-xl font-bold">ภายถ่ายด้านหน้า</h2>
                 </center> <br>
-
               </div>
-
             </div>
           </div>
         </div>
@@ -21,7 +19,7 @@
 
     <hr class="mt-6 pb-6 border-b-1 border-gray-400 " />
 
-    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16 animate__animated animate__bounceInDown animate__delay-1s">
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-full rounded-lg mt-16 animate__animated animate__bounceInDown animate__delay-1s">
       <div class="px-6 ">
         <div class="flex flex-wrap justify-center">
           <div class="w-full px-4 flex justify-center">

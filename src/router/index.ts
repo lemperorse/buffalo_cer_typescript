@@ -7,20 +7,22 @@ import {rootRouter}  from './root'
 Vue.use(VueRouter)
 
 const root:any = rootRouter
-const routes: Array<RouteConfig> = [
+const routes: Array<any> = [
   {
     path: '/',
-    name: 'Home',
+    permission:'Root',
     component: () => import('@/views/root/Base.vue'),
     children: rootRouter
   },
   {
     path: "/user/",
+    permission:'User',
     component: () => import('@/views/farmer/Base.vue'),
     children: userRouter
   },
   {
     path: "/admin/",
+    permission:'Admin',
     component: () => import('@/views/admin/Base.vue'),
     children: adminRouter
   },

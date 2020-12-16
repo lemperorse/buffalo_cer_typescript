@@ -118,46 +118,87 @@
                         </v-btn>
                     </v-card-title>
                     <v-card-text>
-
-                        <h6 class="text-gray-500 text-sm mt-6 mb-6 font-bold uppercase">
-                            ข้อมูลส่วนตัว
-                        </h6>
-                        <form @submit.prevent="updateUser">
+                      <v-tabs>
+                        <v-tab>ข้อมูลส่วนตัว</v-tab>
+                        <v-tab-item class="pt-4">
+                          <form @submit.prevent="updateUser">
                             <div class="flex flex-wrap">
 
-                                <div class="w-full lg:w-12/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
-                                            ชื่อ
-                                        </label>
-                                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                              <div class="w-full lg:w-12/12 px-4">
+                                <div class="relative w-full mb-3">
+                                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
+                                    ชื่อ
+                                  </label>
+                                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
                                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                                             </span>
-                                            <input required type="text" v-model="form.first_name" :class="`${$xinput} border-edit`"   />
-                                        </div> 
-                                    </div>
+                                    <input required type="text" v-model="form.first_name" :class="`${$xinput} border-edit`"   />
+                                  </div>
                                 </div>
-                                <div class="w-full lg:w-12/12 px-4">
-                                    <div class="relative w-full mb-3">
-                                        <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
-                                            สกุล
-                                        </label>
-                                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                              </div>
+                              <div class="w-full lg:w-12/12 px-4">
+                                <div class="relative w-full mb-3">
+                                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
+                                    สกุล
+                                  </label>
+                                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
                                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                                             </span>
-                                            <input required type="text" v-model="form.last_name" :class="`${$xinput} border-edit`"   />
-                                        </div>
-                                    </div>
+                                    <input required type="text" v-model="form.last_name" :class="`${$xinput} border-edit`"   />
+                                  </div>
                                 </div>
+                              </div>
                             </div>
                             <div class="w-full lg:w-12/12 px-4 mt-2">
-                                <div class="relative w-full mb-3">
-                                    <button :class="`bg-orange-600 f-white ${$btn}`"><i class="fas fa-pencil-alt text-lg"></i> แก้ไขข้อมูล</button>
-                                </div>
+                              <div class="relative w-full mb-3">
+                                <button :class="`bg-orange-600 f-white ${$btn}`"><i class="fas fa-pencil-alt text-lg"></i> แก้ไขข้อมูล</button>
+                              </div>
                             </div>
-                        </form>
+                          </form>
+                        </v-tab-item>
+                        <v-tab>รหัสผ่าน</v-tab>
+                        <v-tab-item class="pt-4" >
+                          <form @submit.prevent="updatePassword">
+                            <div class="flex flex-wrap">
+
+                              <div class="w-full lg:w-12/12 px-4">
+                                <div class="relative w-full mb-3">
+                                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
+                                    รหัสผ่าน
+                                  </label>
+                                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                                                <i class="far fa-address-card text-lg text-gray-500"></i>
+                                            </span>
+                                    <input  required type="password" v-model="password" :class="`${$xinput} border-edit`"   />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="w-full lg:w-12/12 px-4">
+                                <div class="relative w-full mb-3">
+                                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
+                                    ยืนยันรหัสผ่าน
+                                  </label>
+                                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                                                <i class="far fa-address-card text-lg text-gray-500"></i>
+                                            </span>
+                                    <input  required type="password" v-model="passwordConfirm" :class="`${$xinput} border-edit`"   />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full lg:w-12/12 px-4 mt-2">
+                              <div class="relative w-full mb-3" >
+                                <button v-if="password != '' && passwordConfirm != '' && password == passwordConfirm"   :class="`bg-orange-600 f-white ${$btn}`"><i class="fas fa-pencil-alt text-lg"></i> แก้ไขข้อมูล</button>
+                              </div>
+                            </div>
+                          </form>
+                        </v-tab-item>
+                      </v-tabs>
+
 
                     </v-card-text>
                 </v-card>
@@ -212,6 +253,8 @@ export default class Table extends Vue {
     private search: string = ''
     private dialog: boolean = false
     private form: any = {}
+    private password:string = ''
+    private passwordConfirm:string = ''
 
     private async created() {
         await this.run();
@@ -247,10 +290,27 @@ export default class Table extends Vue {
         }
     }
 
+    private async updatePassword(){
+      let form = {
+        user : this.form.id,
+        password : this.password
+      }
+      let changePasswordUser  = await Core.postHttp(`/user/account/changepassword/`,form)
+      if(changePasswordUser){
+        alert('สำเร็จแล้ว')
+        await this.closeDialog()
+      }else{
+        alert('ไม่สามารถแก้ไขรหัสผ่านได้')
+      }
+      await this.run()
+    }
+
     private async openDialog(form: object) {
         this.form = form
         this.dialog = true
     }
+
+
 
     private async closeDialog() {
         this.form = {}

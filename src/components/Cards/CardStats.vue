@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
+    class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-all "
   >
     <div class="flex-auto p-4">
       <div class="flex flex-wrap">
@@ -81,3 +81,10 @@ export default {
   },
 };
 </script>
+<style>
+.shadow-all {
+  -webkit-box-shadow: 0px 0px 28px 0px rgba(184,184,184,1);
+  -moz-box-shadow: 0px 0px 28px 0px rgba(184,184,184,1);
+  box-shadow: 0px 0px 28px 0px rgba(184,184,184,1);
+}
+</style>

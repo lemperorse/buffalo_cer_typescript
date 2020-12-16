@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="">
     <div class="rounded-t bg-white mb-0 px-2 md:px-6 py-6">
         <div class="text-center flex flex-wrap justify-between">
             <h6 class="text-gray-800 text-xl font-bold">ข้อมูลเกษตกร</h6>
@@ -108,7 +108,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="far fa-address-card text-lg text-gray-500"></i>
                             </span> 
-                            <input :disabled="unEdit" v-model="formProfile.personal_id" type="text" :class="`${$xinput} ${editMode}`" />
+                            <input  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"  :disabled="unEdit" v-model="formProfile.personal_id" type="text" :class="`${$xinput} ${editMode}`" />
                         </div> 
                         
                     </div>
@@ -122,7 +122,7 @@
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
                                 <i class="fas fa-mobile-alt text-lg text-gray-500"></i>
                             </span>
-                            <input :disabled="unEdit" v-model="formProfile.tel" type="text" :class="`${$xinput} ${editMode}`" />
+                            <input onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" :disabled="unEdit" v-model="formProfile.tel" type="text" :class="`${$xinput} ${editMode}`" />
                         </div> 
                     </div>
                 </div>

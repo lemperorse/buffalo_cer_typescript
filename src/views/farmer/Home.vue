@@ -2,6 +2,7 @@
   <div class="p-6  pt-20">
     <div class="px-4 md:px-10 mx-auto w-full">
       <div>
+        <h2 class="text-2xl"> <b>สวัสดี ,</b> {{user.first_name}}</h2> <br>
         <!-- Card stats -->
         <div class="flex flex-wrap">
           <div class="w-full lg:w-6/12 xl:w-4/12 px-4">
@@ -20,13 +21,13 @@
         <hr class="mt-6 ">
 
         <div class="flex flex-wrap mt-4">
-          <div class="w-full lg:w-6/12 xl:w-4/12 px-4">
+          <div class="w-full lg:w-1/3 xl:w-1/3 px-4">
             <card-stat-with-btn statSubtitle="รายงานจำนวนควาย"
                                 statRoute="reportbuffalo"
                                 statIconName="em em-card_file_box" statIconColor="bg-purple-500"/>
           </div>
-          <div class="w-full lg:w-6/12 xl:w-4/12 px-4">
-            <card-stat-with-btn statSubtitle="รายงานสรุปการเจริญเติบโต"
+          <div class="w-full lg:w-2/3 xl:w-2/3 px-4">
+            <card-stat-with-btn statSubtitle="รายงานการเจริญเติบโต"
                                 statRoute="reportsystem"
                                 statIconName="fas fa-chart-line" statIconColor="bg-indigo-500"/>
           </div>
@@ -64,9 +65,9 @@ import {
 } from 'vuex';
 
 import {
-  userModule
-} from "@/store/test";
-import {Test, User} from '@/models/user'
+  User
+} from '@/store/user'
+
 import {Geography} from '@/models/core'
 import {Core} from '@/store/core'
 @Component({
@@ -84,6 +85,15 @@ import {Core} from '@/store/core'
   }
 })
 export default class Home extends Vue {
+  user:any = {}
+
+  async created() {
+    this.user = await User.getUser();
+
+  }
+
+
+
 
 }
 </script>
