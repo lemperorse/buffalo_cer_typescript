@@ -23,7 +23,7 @@
                   <div class="w-full md:w-12/12 pt-2">
                     <v-text-field v-model="form.tel"  type="text"    label="เบอร์โทรที่ใช้สมัครสมาชิก" solo ></v-text-field>
                   </div>
-                  <button  :class="'f-white bg-green-600 '+btn" type="submit">
+                  <button  :class="'f-white bg-blue-600 '+btn" type="submit">
                     ตรวจสอบ
                   </button>
                 </div>
@@ -48,7 +48,7 @@
                   <div class="w-full md:w-12/12 pt-2">
                     <input type="password" v-model="passwordConfirm" :class="`${$xinput}`" placeholder="ยืนยันรหัสผ่านใหม่">
                   </div><br>
-                  <button v-if="password != '' && passwordConfirm != '' && password == passwordConfirm"  :class="'f-white bg-green-600 '+btn" type="submit">
+                  <button v-if="password != '' && passwordConfirm != '' && password == passwordConfirm"  :class="'f-white bg-blue-600 '+btn" type="submit">
                     เปลี่ยนรหัสผ่าน
                   </button>
                 </div>

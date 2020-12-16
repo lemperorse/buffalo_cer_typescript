@@ -1,23 +1,20 @@
 <template>
-<div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-all ">
+<div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 border-b-2 border hover:shadow-lg transform transition duration-500 hover:scale-110">
     <div class="flex-auto p-4">
         <div class="flex flex-wrap">
             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                 <span class="font-semibold text-base md:text-xl text-gray-800">
                     {{ statSubtitle }}
-                </span>
-                <!-- <h5 class="text-gray-500 uppercase font-bold text-xs">
-                    หมายเลข MICROCHIP : {{ statSubtitle }}
-                </h5> -->
+                </span> 
 
                 <h3>
-                    <button class="text-green-500" @click="$router.push(statRoute)">ดูรายระเอียด</button>
+                    <button class="text-blue-500 transform transition duration-500 hover:scale-110" @click="$router.push(statRoute)">ดูรายละเอียด</button>
                 </h3>
 
             </div>
             
             <div class="relative w-auto pl-4 flex-initial">
-                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full" :class="[statIconColor]">
+                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-lg" :class="[statIconColor]">
                     <i :class="[statIconName]"></i>
                 </div>
             </div>
@@ -50,7 +47,7 @@ export default {
         // from tailwindcss
         statPercentColor: {
             type: String,
-            default: "text-green-500",
+            default: "text-blue-500",
         },
         statTitle: {
             type: String,

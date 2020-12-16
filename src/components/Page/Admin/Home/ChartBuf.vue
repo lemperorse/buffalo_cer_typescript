@@ -1,145 +1,137 @@
 <template>
-  <div
-      class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-gray-800"
-  >
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-gray-800 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
     <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
-      <div class="flex flex-wrap items-center">
-        <div class="relative w-full max-w-full flex-grow flex-1">
-          <h6 class="uppercase text-gray-200 mb-1 text-xl font-semibold">
-            จำนวนฟาร์มทั้งหมด
-          </h6>
+        <div class="flex flex-wrap items-center">
+            <div class="relative w-full max-w-full flex-grow flex-1">
+                <h6 class="uppercase text-gray-200 mb-1 text-xl font-semibold">
+                    จำนวนฟาร์มทั้งหมด
+                </h6>
+            </div>
         </div>
-      </div>
     </div>
     <div class="p-4 flex-auto">
-      <!-- Chart -->
-      <div class="relative h-350-px">
-        <canvas id="line-chart"></canvas>
-      </div>
+        <!-- Chart -->
+        <div class="relative h-350-px">
+            <canvas id="line-chart"></canvas>
+        </div>
     </div>
 
-    <button
-        @click="$router.push('/admin/reportbuffalo')"
-        class="bg-indigo-500 f-white active:bg-indigo-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        type="button">
-      แสดงรายละเอียด
+    <button @click="$router.push('/admin/reportbuffalo')" class="f-white rounded p-2 bg-blue-500 hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="button">
+        แสดงรายละเอียด
     </button>
-  </div>
+</div>
 </template>
+
 <script>
 import Chart from "chart.js";
 
 export default {
-  mounted: function () {
-    this.$nextTick(function () {
-      var config = {
-        type: "line",
-        data: {
-          labels: [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-          ],
-          datasets: [
-            {
-              label: new Date().getFullYear(),
-              backgroundColor: "#4c51bf",
-              borderColor: "#4c51bf",
-              data: [65, 78, 66, 44, 56, 67, 75],
-              fill: false,
-            },
-            {
-              label: new Date().getFullYear() - 1,
-              fill: false,
-              backgroundColor: "#fff",
-              borderColor: "#fff",
-              data: [40, 68, 86, 74, 56, 60, 87],
-            },
-          ],
-        },
-        options: {
-          maintainAspectRatio: false,
-          responsive: true,
-          title: {
-            display: false,
-            text: "Sales Charts",
-            fontColor: "white",
-          },
-          legend: {
-            labels: {
-              fontColor: "white",
-            },
-            align: "end",
-            position: "bottom",
-          },
-          tooltips: {
-            mode: "index",
-            intersect: false,
-          },
-          hover: {
-            mode: "nearest",
-            intersect: true,
-          },
-          scales: {
-            xAxes: [
-              {
-                ticks: {
-                  fontColor: "rgba(255,255,255,.7)",
+    mounted: function () {
+        this.$nextTick(function () {
+            var config = {
+                type: "line",
+                data: {
+                    labels: [
+                        "January",
+                        "February",
+                        "March",
+                        "April",
+                        "May",
+                        "June",
+                        "July",
+                    ],
+                    datasets: [{
+                            label: new Date().getFullYear(),
+                            backgroundColor: "#4c51bf",
+                            borderColor: "#4c51bf",
+                            data: [65, 78, 66, 44, 56, 67, 75],
+                            fill: false,
+                        },
+                        {
+                            label: new Date().getFullYear() - 1,
+                            fill: false,
+                            backgroundColor: "#fff",
+                            borderColor: "#fff",
+                            data: [40, 68, 86, 74, 56, 60, 87],
+                        },
+                    ],
                 },
-                display: true,
-                scaleLabel: {
-                  display: false,
-                  labelString: "Month",
-                  fontColor: "white",
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    title: {
+                        display: false,
+                        text: "Sales Charts",
+                        fontColor: "white",
+                    },
+                    legend: {
+                        labels: {
+                            fontColor: "white",
+                        },
+                        align: "end",
+                        position: "bottom",
+                    },
+                    tooltips: {
+                        mode: "index",
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: "nearest",
+                        intersect: true,
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                fontColor: "rgba(255,255,255,.7)",
+                            },
+                            display: true,
+                            scaleLabel: {
+                                display: false,
+                                labelString: "Month",
+                                fontColor: "white",
+                            },
+                            gridLines: {
+                                display: false,
+                                borderDash: [2],
+                                borderDashOffset: [2],
+                                color: "rgba(33, 37, 41, 0.3)",
+                                zeroLineColor: "rgba(0, 0, 0, 0)",
+                                zeroLineBorderDash: [2],
+                                zeroLineBorderDashOffset: [2],
+                            },
+                        }, ],
+                        yAxes: [{
+                            ticks: {
+                                fontColor: "rgba(255,255,255,.7)",
+                            },
+                            display: true,
+                            scaleLabel: {
+                                display: false,
+                                labelString: "Value",
+                                fontColor: "white",
+                            },
+                            gridLines: {
+                                borderDash: [3],
+                                borderDashOffset: [3],
+                                drawBorder: false,
+                                color: "rgba(255, 255, 255, 0.15)",
+                                zeroLineColor: "rgba(33, 37, 41, 0)",
+                                zeroLineBorderDash: [2],
+                                zeroLineBorderDashOffset: [2],
+                            },
+                        }, ],
+                    },
                 },
-                gridLines: {
-                  display: false,
-                  borderDash: [2],
-                  borderDashOffset: [2],
-                  color: "rgba(33, 37, 41, 0.3)",
-                  zeroLineColor: "rgba(0, 0, 0, 0)",
-                  zeroLineBorderDash: [2],
-                  zeroLineBorderDashOffset: [2],
-                },
-              },
-            ],
-            yAxes: [
-              {
-                ticks: {
-                  fontColor: "rgba(255,255,255,.7)",
-                },
-                display: true,
-                scaleLabel: {
-                  display: false,
-                  labelString: "Value",
-                  fontColor: "white",
-                },
-                gridLines: {
-                  borderDash: [3],
-                  borderDashOffset: [3],
-                  drawBorder: false,
-                  color: "rgba(255, 255, 255, 0.15)",
-                  zeroLineColor: "rgba(33, 37, 41, 0)",
-                  zeroLineBorderDash: [2],
-                  zeroLineBorderDashOffset: [2],
-                },
-              },
-            ],
-          },
-        },
-      };
-      var ctx = document.getElementById("line-chart").getContext("2d");
-      window.myLine = new Chart(ctx, config);
-    });
-  },
+            };
+            var ctx = document.getElementById("line-chart").getContext("2d");
+            window.myLine = new Chart(ctx, config);
+        });
+    },
 };
 </script>
+
 <style>
-.f-white{
-  color:white!important;
+.f-white {
+    color: white !important;
 }
 </style>

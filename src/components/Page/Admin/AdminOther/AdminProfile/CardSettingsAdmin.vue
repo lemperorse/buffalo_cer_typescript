@@ -121,7 +121,7 @@
           </div>
         </div>
 
-        <hr class="mt-6 border-b-1 border-gray-400" />
+        <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
         <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
           จัดการสิทธิ์
         </h6>
@@ -145,7 +145,7 @@
         </div>
 
 
-        <div class="flex justify-center mt-8"><button class=" bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+        <div class="flex justify-center mt-8"><button class=" bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
           บันทึก
         </button></div>
 

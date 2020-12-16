@@ -25,7 +25,7 @@
       <label :class="$label" htmlFor="grid-password">คำนำหน้า</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <select   required v-model="formProfile.prefix" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+        <select   required v-model="formProfile.prefix" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
           <option v-for="val,i in prefix" :key="i" :value="val.id">{{ val.value }}</option>
         </select>      </div>
     </div>
@@ -33,7 +33,7 @@
         <label :class="$label" htmlFor="grid-password">ชื่อ</label>
         <div :class="$ininput">
            <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-          <input required v-model="formUser.first_name" type="text" :class="$input"  style="padding-left:40px;">
+          <input required v-model="formUser.first_name" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`"  style="padding-left:40px;">
         </div>
       </div>
 
@@ -42,7 +42,7 @@
         <label :class="$label" htmlFor="grid-password">สกุล</label>
         <div :class="$ininput">
           <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-          <input required v-model="formUser.last_name" type="text" :class="$input"  style="padding-left:40px;">
+          <input required v-model="formUser.last_name" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`"  style="padding-left:40px;">
         </div>
       </div>
 
@@ -65,7 +65,7 @@
       <label :class="$label" htmlFor="grid-password">วันเกิด</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formProfile.birthday" type="date" :class="$input" style="padding-left:40px;">
+        <input required v-model="formProfile.birthday" type="date" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
 
@@ -74,7 +74,7 @@
       <label :class="$label" htmlFor="grid-password">อายุ</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formProfile.age" type="text" :class="$input" style="padding-left:40px;" >
+        <input required v-model="formProfile.age" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;" >
       </div>
     </div>
 
@@ -96,14 +96,14 @@
       <label :class="$label" htmlFor="grid-password">เลขบัตรประจำตัวประชาชน 13 หลัก</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formProfile.personal_id" type="text" :class="$input" style="padding-left:40px;">
+        <input required v-model="formProfile.personal_id" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
     <div class="relative w-full mb-3 ml-2">
       <label :class="$label" htmlFor="grid-password">เพศ</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <select   required v-model="formProfile.gender" :class="$xinput" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+        <select   required v-model="formProfile.gender" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" >
           <option v-for="val,i in gender" :key="i" :value="val.id">{{ val.value }}</option>
         </select>      </div>
     </div>
@@ -127,7 +127,7 @@
       <label :class="$label" htmlFor="grid-password">บ้านเลขที่ หมู่ที่ </label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formProfile.address" type="text" :class="$input" style="padding-left:40px;">
+        <input required v-model="formProfile.address" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
 
@@ -135,7 +135,7 @@
       <label :class="$label" htmlFor="grid-password">หมู่บ้าน (ไม่บังคับ)</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input   v-model="formProfile.mooban" type="text" :class="$input" style="padding-left:40px;">
+        <input   v-model="formProfile.mooban" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
 
@@ -143,7 +143,7 @@
       <label :class="$label" htmlFor="grid-password">จังหวัด อำเภอ ตำบล</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input :disabled="(CityFrom)?true:false"  @click="openCityDialog"   required v-model="CityFrom" type="text" :class="$input" style="padding-left:40px;">
+        <input :disabled="(CityFrom)?true:false"  @click="openCityDialog"   required v-model="CityFrom" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
 
@@ -151,7 +151,7 @@
       <label :class="$label" htmlFor="grid-password">รหัสไปรษณีย์</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formProfile.zipcode" type="text" :class="$input" style="padding-left:40px;">
+        <input required v-model="formProfile.zipcode" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
 
@@ -173,33 +173,33 @@
       <label :class="$label" htmlFor="grid-password">ชื่อผู้ใช้ </label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formUser.username" type="text" :class="$input" style="padding-left:40px;">
+        <input required v-model="formUser.username" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
     <div class="relative w-full mb-3 ml-2">
       <label :class="$label" htmlFor="grid-password">อีเมล์ (ไม่บังคับ) </label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input     type="text" :class="$input" style="padding-left:40px;">
+        <input     type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
     <div class="relative w-full mb-3 ml-2">
       <label :class="$label" htmlFor="grid-password">รหัสผ่าน </label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formUser.password" type="password" :class="$input" style="padding-left:40px;">
+        <input required v-model="formUser.password" type="password" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
     <div class="relative w-full mb-3 ml-2">
       <label :class="$label" htmlFor="grid-password">ยืนยันรหัสผ่าน </label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formUser.password2" type="password" :class="$input" style="padding-left:40px;">
+        <input required v-model="formUser.password2" type="password" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
 
     <div class="text-center mt-6"  >
-      <button   :class="`${btn} bg-green-600 f-white`" type="submit">
+      <button   :class="`${btn} bg-blue-600 f-white`" type="submit">
         ดำเนินการต่อ
       </button>
     </div>

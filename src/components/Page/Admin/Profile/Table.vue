@@ -68,7 +68,7 @@
           <td
               :class="`  ${$tr}`"
           >
-            <i class="fas fa-arrow-up text-green-500 mr-4"></i>
+            <i class="fas fa-arrow-up text-blue-500 mr-4"></i>
             46,53%
           </td>
         </tr>

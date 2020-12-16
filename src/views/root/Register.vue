@@ -39,7 +39,7 @@
                       <v-text-field v-model="formUser.last_name"  required :rules="[v => !!v || 'ต้องระบุ']" solo label="สกุล"></v-text-field>
                     </div>
                   </div>
-                  <button type="submit" :class="'bg-green-600 '+btn">
+                  <button type="submit" :class="'bg-blue-600 '+btn">
                     ดำเนินการต่อ
                   </button>
                 </form>
@@ -54,7 +54,7 @@
                   <v-text-field class="mt-4" v-model="formProfile.age"  required   solo label="อายุ"></v-text-field>
 
                 </center>
-                <button @click="step=3" :class="'bg-green-600  '+btn">
+                <button @click="step=3" :class="'bg-blue-600  '+btn">
                   ดำเนินการต่อ
                 </button>
               </div>
@@ -63,7 +63,7 @@
                 <v-select v-model="formProfile.gender"  :items="gender" item-text="value" item-value="id" required
                           :rules="[v => !!v || 'ต้องระบุ']" :label="gender[0].name" solo></v-select>
 
-                <button  @click="step=4" :class="'bg-green-600 '+btn">
+                <button  @click="step=4" :class="'bg-blue-600 '+btn">
                   ดำเนินการต่อ
                 </button>
               </div>
@@ -76,7 +76,7 @@
                 <v-text-field v-model="formProfile.mooban" label="หมู่บ้าน (ไม่บังคับ)"   solo ></v-text-field>
                 <v-text-field required :readonly="(CityFrom)?true:false" solo v-model="CityFrom" @click="openCityDialog" label="จังหวัด อำเภอ ตำบล"></v-text-field>
                 <v-text-field v-model="formProfile.zipcode" required label="รหัสไปรษณีย์" solo ></v-text-field>
-                <button  type="submit" :class="'bg-green-600 '+btn">
+                <button  type="submit" :class="'bg-blue-600 '+btn">
                   ดำเนินการต่อ
                 </button>
                 </form>
@@ -89,7 +89,7 @@
                   <v-text-field    label="อีเมล์ (ไม่บังคับ)"   solo ></v-text-field>
                   <v-text-field v-model="formUser.password"  type="password" required label="รหัสผ่าน" solo ></v-text-field>
                   <v-text-field v-model="formUser.password2"  type="password" required label="ยืนยันรหัสผ่าน" solo ></v-text-field>
-                  <button  type="submit" :class="'bg-green-600 '+btn">
+                  <button  type="submit" :class="'bg-blue-600 '+btn">
                     สมัครสมาชิก
                   </button>
                 </form>

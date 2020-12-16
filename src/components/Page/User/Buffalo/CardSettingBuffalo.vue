@@ -2,23 +2,23 @@
   <div class="flex flex-wrap">
     <div class="w-full">
       <ul class="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row">
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center ">
-          <a class="hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(1)" v-bind:class="{'text-green-600 bg-white': openTab !== 1, 'text-white bg-green-600': openTab === 1}">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center border rounded ">
+          <a class="hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(1)" v-bind:class="{'text-blue-600 bg-white': openTab !== 1, 'text-white bg-blue-600': openTab === 1}">
             <i class="fas fa-paw text-base mr-1 "></i>ข้อมูลควาย
           </a>
         </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a class="hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(2)" v-bind:class="{'text-green-600 bg-white': openTab !== 2, 'text-white bg-green-600': openTab === 2}">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center border rounded">
+          <a class="hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(2)" v-bind:class="{'text-blue-600 bg-white': openTab !== 2, 'text-white bg-blue-600': openTab === 2}">
             <i class="fas fa-chart-line text-base mr-1"></i> การเจริญเติบโต
           </a>
         </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a class="hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(3)" v-bind:class="{'text-green-600 bg-white': openTab !== 3, 'text-white bg-green-600': openTab === 3}">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center border rounded">
+          <a class="hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(3)" v-bind:class="{'text-blue-600 bg-white': openTab !== 3, 'text-white bg-blue-600': openTab === 3}">
             <i class="far fa-file-pdf text-base mr-1"></i> ใบพันธุ์ประวัติ
           </a>
         </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a class="hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(4)" v-bind:class="{'text-green-600 bg-white': openTab !== 4, 'text-white bg-green-600': openTab === 4}">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center border rounded">
+          <a class="hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(4)" v-bind:class="{'text-blue-600 bg-white': openTab !== 4, 'text-white bg-blue-600': openTab === 4}">
             <i class="fas fa-cog text-base mr-1"></i> ตั้งค่า
           </a>
         </li>
@@ -189,7 +189,7 @@
                     </div>
                   </div>
 
-                  <hr class="mt-6 border-b-1 border-gray-400" />
+                  <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
 
                   <h6 class="text-gray-500 text-sm mt-6 mb-6 font-bold uppercase">
                     ราคาและแหล่งที่มา
@@ -230,7 +230,7 @@
                     </div>
                   </div>
 
-                  <hr class="mt-6 border-b-1 border-gray-400" />
+                  <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
 
                   <h6 class="text-gray-500 text-sm mt-6 mb-6 font-bold uppercase">
                     พ่อพันธุ์และแม่พันธุ์
@@ -387,7 +387,7 @@
                   </div>
 
                   <div class="flex justify-center mt-8">
-                    <button class=" bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                    <button class=" bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                     บันทึก
                     </button>
                   </div>
@@ -402,7 +402,7 @@
                   <h6 class="text-gray-800 text-xl font-bold">การเจริญเติบโต</h6>
                   <button
                       @click="$router.push('/user/addbuffaloage')"
-                      class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+                      class="bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
                       type="button"
                   >
                     เพิ่มอายุ
@@ -473,7 +473,7 @@
                     </div>
                   </div>
 
-                  <hr class="mt-6 border-b-1 border-gray-400" />
+                  <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
                   <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                     อายุ 240 วัน
                   </h6>
@@ -536,7 +536,7 @@
                     </div>
                   </div>
 
-                  <hr class="mt-6 border-b-1 border-gray-400" />
+                  <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
                   <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                     อายุ 400 วัน
                   </h6>
@@ -599,7 +599,7 @@
                     </div>
                   </div>
 
-                  <hr class="mt-6 border-b-1 border-gray-400" />
+                  <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
                   <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                     อายุ 600 วัน
                   </h6>
@@ -662,7 +662,7 @@
                     </div>
                   </div>
 
-                  <div class="flex justify-center mt-4"><button class=" bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                  <div class="flex justify-center mt-4"><button class=" bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                     บันทึก
                   </button></div>
 
@@ -689,7 +689,7 @@
                             src="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
                       </div>
                       <div class="flex flex-wrap justify-center mt-4">
-                        <button class=" bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                        <button class=" bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                           ดาวน์โหลด
                         </button>
                         <button class=" bg-indigo-500 f-white active:bg-indigo-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
@@ -699,7 +699,7 @@
                     </div>
                   </div>
 
-                  <hr class="mt-6 border-b-1 border-gray-400" />
+                  <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
 
                   <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                     ใบพันธุ์ประวัติทางการ
@@ -712,7 +712,7 @@
                             src="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
                       </div>
                       <div class="flex justify-center mt-6">
-                        <button class=" bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                        <button class=" bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                           ดาวน์โหลด
                         </button>
                         <button class=" bg-indigo-500 f-white active:bg-indigo-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
@@ -722,7 +722,7 @@
                     </div>
                   </div>
 
-                  <div class="flex justify-center mt-8"><button class=" bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                  <div class="flex justify-center mt-8"><button class=" bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                     บันทึก
                   </button></div>
 
@@ -765,7 +765,7 @@
 
 <script>
 export default {
-  name: "green-tabs",
+  name: "blue-tabs",
   data() {
     return {
       date: null,

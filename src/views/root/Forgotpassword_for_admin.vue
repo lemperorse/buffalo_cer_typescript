@@ -23,7 +23,7 @@
                     <input required v-model="form.tel" type="text" :class="`${$xinput}`" placeholder="หมายเลขโทรศัพท์ที่ติดต่อกลับได้" >
 
                   </div><br>
-                  <button  type="submit" :class="'bg-green-600 '+btn">
+                  <button  type="submit" :class="'bg-blue-600 '+btn">
                     ส่งคำขอ
                   </button>
                 </div>

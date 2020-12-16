@@ -1,17 +1,17 @@
 <template>
 <div>
-    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg mt-16 animate__animated animate__bounceInLeft animate__delay-1s">
         <div class="px-6">
             <div class="flex flex-wrap justify-center">
                 <div class="w-full px-4 flex justify-center">
                     <div class="relative">
-                        <img style="width:150px; height:150px;" ref="frontImage" src="https://sv1.picz.in.th/images/2020/11/07/bjhzBy.png" class="shadow-xl rounded-full  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
+                        <img style="width:150px; height:150px;" ref="frontImage" src="https://sv1.picz.in.th/images/2020/11/07/bjhzBy.png" class="shadow-lg rounded-full  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
                         <div class="flex flex-col justify-center  mt-4">
                             <center>
                                 <h2 class="text-xl font-bold">ภายถ่ายด้านหน้า</h2>
                             </center> <br>
                             <input type="file" ref="front" @change="frontChange" style="display:none;" />
-                            <button @click="$refs.front.click()" class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                            <button @click="$refs.front.click()" class="f-white rounded p-2 bg-blue-500 hover:bg-blue-800 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="button">
                                 อัพโหลดรูปภาพ
                             </button> <br>
                         </div>
@@ -22,20 +22,20 @@
         </div>
     </div>
 
-    <hr class="mt-6 pb-6 border-b-1 border-gray-400 " />
+    <hr class="mt-6 pb-6 border-b-1 border-gray-400 animate__animated animate__bounceInLeft animate__delay-1s" />
 
-    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
+    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg mt-16 animate__animated animate__bounceInLeft animate__delay-1s">
         <div class="px-6 ">
             <div class="flex flex-wrap justify-center">
                 <div class="w-full px-4 flex justify-center">
                     <div class="relative">
-                        <img ref="backImage" style="width:150px; height:150px;" src="https://sv1.picz.in.th/images/2020/11/07/bjhzBy.png" class="shadow-xl rounded-full  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
+                        <img ref="backImage" style="width:150px; height:150px;" src="https://sv1.picz.in.th/images/2020/11/07/bjhzBy.png" class="shadow-lg rounded-full  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
                         <div class="flex flex-col justify-center  mt-4">
                             <center>
                                 <h2 class="text-xl font-bold">ภายถ่ายด้านข้าง</h2>
                             </center> <br>
                             <input type="file" ref="back" @change="backChange" style="display:none;" />
-                            <button @click="$refs.back.click()" class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                            <button @click="$refs.back.click()" class="f-white rounded p-2 bg-blue-500 hover:bg-blue-800 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="button">
                                 อัพโหลดรูปภาพ
                             </button> <br>
                         </div>

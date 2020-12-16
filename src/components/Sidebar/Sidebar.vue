@@ -55,7 +55,7 @@
                     <router-link to="/admin/home" v-slot="{ href, route, navigate, isActive }">
                         <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
+                    ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
                             <i class="em em-clipboard mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
@@ -68,7 +68,7 @@
                     <router-link to="/admin/profile" v-slot="{ href, route, navigate, isActive }">
                         <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
+                    ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
                             <i class="em em-man-man-girl-boy mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
@@ -92,7 +92,7 @@
                 <router-link to="/admin/farmer" v-slot="{ href, route, navigate, isActive }">
                   <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
+                    ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
                     <i class="em em-male-farmer mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
@@ -105,7 +105,7 @@
                 <router-link to="/admin/search" v-slot="{ href, route, navigate, isActive }">
                   <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
+                    ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
                     <i class="em em-water_buffalo mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
@@ -130,7 +130,7 @@
                 <router-link to="/admin/admin" v-slot="{ href, route, navigate, isActive }">
                   <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
+                    ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
                     <i class="em em-male-technologist mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
@@ -143,7 +143,7 @@
                 <router-link to="/admin/passwordreq" v-slot="{ href, route, navigate, isActive }">
                   <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
+                    ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
                     <i class="em em-spiral_note_pad mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>

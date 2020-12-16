@@ -10,7 +10,7 @@
     </div>
     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
         <form @submit.prevent="createBuffalo">
-            <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
+            <h6 class="text-gray-500 text-sm mx-4 mt-3 mb-6 font-bold uppercase">
                 ข้อมูลทั่วไป
             </h6>
             <div class="flex flex-wrap">
@@ -19,11 +19,11 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ชื่อหรือหมายเลขควาย
                         </label>
-                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
+                        <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1">
                                 <i class="em em-water_buffalo text-lg text-gray-500"></i>
                             </span> 
-                            <input required v-model="form.name" type="text" :class="`${$xinput} border-edit`" value=" " />
+                            <input required v-model="form.name" type="text" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" value=" " />
                         </div>
                     </div>
                 </div>
@@ -32,11 +32,11 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             ราคา
                         </label>
-                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                        <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
                                 <i class="fas fa-money-bill-wave text-lg text-gray-500"></i>
                             </span> 
-                            <input v-model="form.price" type="number" :class="`${$xinput} border-edit`" value=" " />
+                            <input v-model="form.price" type="number" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" value=" " />
                         </div>
                     </div>
                 </div>
@@ -45,11 +45,11 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             หมายเลข NID
                         </label>
-                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                        <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
                                 <i class="fas fa-list-ol text-lg text-gray-500"></i>
                             </span> 
-                            <input v-model="form.nid" type="number" :class="`${$xinput} border-edit`" value=" " />
+                            <input v-model="form.nid" type="number" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" value=" " />
                         </div>
                     </div>
                 </div>
@@ -58,17 +58,17 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             หมายเลขไมโครซิป
                         </label>
-                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                        <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
                                 <i class="fas fa-microchip text-lg text-gray-500"></i>
                             </span> 
-                            <input v-model="form.microship" type="number" :class="`${$xinput} border-edit`" value=" " />
+                            <input v-model="form.microship" type="number" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" value=" " />
                         </div>
                     </div>
                 </div>
                 <div class="w-full">
-                    <hr class="mt-6 border-b-1 border-gray-400" />
-                    <h6 class="text-gray-500 text-sm mt-6 mb-6 font-bold uppercase">
+                    <hr class="mt-6 mx-4 border-b-1 border-gray-400" />
+                    <h6 class="text-gray-500 text-sm mt-6 mx-4 mb-6 font-bold uppercase">
                         ข้อมูลลักษณะควาย
                     </h6>
                 </div>
@@ -77,11 +77,11 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             วันเกิด
                         </label>
-                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                        <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
                                 <i class="fas fa-calendar-day text-lg text-gray-500"></i>
                             </span>
-                            <input required v-model="form.birthday" type="date" :class="`${$xinput} border-edit`" value=" " />
+                            <input required v-model="form.birthday" type="date" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" value=" " />
                         </div>
                     </div>
 
@@ -91,11 +91,11 @@
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                             อายุ(ปี)
                         </label>
-                        <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                        <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
                                 <i class="fas fa-birthday-cake text-lg text-gray-500"></i>
                             </span>
-                            <input v-model="form.age" type="number" :class="`${$xinput} border-edit`" value=" " />
+                            <input v-model="form.age" type="number" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" value=" " />
                         </div>
                     </div>
                 </div>
@@ -105,10 +105,10 @@
                             เพศ
                         </label>
                         <div class="relative">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
                                 <i class="fas fa-venus-mars text-lg text-gray-500"></i>
                             </span>
-                            <select v-model="form.gender" required :class="`${$xinput} border-edit`" >
+                            <select v-model="form.gender" required :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" >
                                 <option v-for="val,i in sex" :key="i" :value="val.id">{{ val.value }}</option>
                             </select>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -125,10 +125,10 @@
                             สี
                         </label>
                         <div class="relative">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
                                 <i class="fas fa-palette text-lg text-gray-500"></i>
                             </span>
-                            <select v-model="form.color" required :class="`${$xinput} border-edit`" >
+                            <select v-model="form.color" required :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" >
                                 <option v-for="val,i in color" :key="i" :value="val.id">{{ val.value }}</option>
                             </select>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -145,10 +145,10 @@
                             สถานะ
                         </label>
                         <div class="relative">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
                                 <i class="fas fa-file-alt text-lg text-gray-500"></i>
                             </span>
-                            <select v-model="form.status" required :class="`${$xinput} border-edit`" >
+                            <select v-model="form.status" required :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" >
                                 <option v-for="val,i in status" :key="i" :value="val.id">{{ val.value }}</option>
                             </select>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -164,10 +164,10 @@
                             แหล่งที่มา
                         </label>
                         <div class="relative">
-                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
+                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
                                 <i class="fas fa-file-import text-lg text-gray-500"></i>
                             </span>
-                            <select v-model="form.froms" required :class="`${$xinput} border-edit`" >
+                            <select v-model="form.froms" required :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" >
                                 <option v-for="val,i in froms" :key="i" :value="val.id">{{ val.value }}</option>
                             </select>
                             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -178,8 +178,8 @@
                     </div>
                 </div>
             </div>
-            <hr class="mt-6 border-b-1 border-gray-400" />
-            <h6 class="text-gray-500 text-sm mt-6 mb-6 font-bold uppercase">
+            <hr class="mt-6 mx-4 border-b-1 border-gray-400" />
+            <h6 class="text-gray-500 text-sm mx-4 mt-6 mb-6 font-bold uppercase">
                 รูปภาพ
             </h6>
             <div class="flex flex-wrap flex justify-center">
@@ -203,10 +203,10 @@
                 </div>
             </div>
 
-            <hr class="mt-6 border-b-1 border-gray-400" />
+            <hr class="mt-6 mx-4 border-b-1 border-gray-400" />
 
             <div class="flex justify-center mt-6">
-                <button class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit">
+                <button :class="`f-white ${$btnsuccess}`" type="submit">
                     <i class="fas fa-save text-lg"></i>  บันทึกข้อมูล
                 </button>
             </div>

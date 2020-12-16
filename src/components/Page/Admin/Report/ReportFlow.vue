@@ -1,7 +1,7 @@
 <template>
   <div
       class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
-      :class="[color === 'light' ? 'bg-white' : 'bg-green-900 text-white']"
+      :class="[color === 'light' ? 'bg-white' : 'bg-blue-900 text-white']"
   >
     <div class="relative w-full mt-4 mb-4 px-4 max-w-full flex-grow flex-1">
       <h3 class="font-semibold text-base text-gray-800">
@@ -64,7 +64,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             ชื่อ
@@ -74,7 +74,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             นามสกุล
@@ -84,7 +84,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             กิจกรรม
@@ -94,7 +94,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             วันที่ใช้
@@ -104,7 +104,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             การจัดการ
@@ -141,7 +141,7 @@
             <div class="flex items-center">
               <button
                   @click="$router.push('/admin/farmerprofile')"
-                  class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  class="bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button">
                 ดูข้อมูล
               </button>

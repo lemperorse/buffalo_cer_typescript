@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div :class="`containerR ${switchc}`" ref="main">
       <div class="forms-containerR">
         <div class="signin-signup">
@@ -11,19 +10,19 @@
               <label :class="$label" htmlFor="grid-password">ชื่อผู้ใช้ </label>
               <div :class="$ininput">
                 <span :class="$iconinput"><i class="mdi mdi-account text-lg text-gray-500"></i></span>
-                <input required v-model="form.username" placeholder="ระบุชื่อผู้ใช้ของคุณ" type="text" :class="$input" style="padding-left:40px;">
+                <input required v-model="form.username" placeholder="ระบุชื่อผู้ใช้ของคุณ" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
               </div>
             </div>
             <div class="relative w-full md:w-8/12 mb-3 ">
               <label :class="$label" htmlFor="grid-password">รหัสผ่าน </label>
               <div :class="$ininput">
                 <span :class="$iconinput"><i class="mdi mdi-form-textbox-password text-lg text-gray-500"></i></span>
-                <input required v-model="form.password"  placeholder="ระบุรหัสผ่านของคุณ" type="password" :class="$input" style="padding-left:40px;">
+                <input required v-model="form.password"  placeholder="ระบุรหัสผ่านของคุณ" type="password" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
               </div>
             </div>
 
             <div class="w-full md:w-8/12">
-              <button :class="`${$btn} bg-green-600`">เข้าสู่ระบบ</button>
+              <button :class="`${$btn} bg-blue-600`">เข้าสู่ระบบ</button>
             </div>
             <div class="w-full md:w-8/12 flex flex-wrap   relative">
               <div class="w-1/2">

@@ -1,7 +1,7 @@
 <template>
   <div
       class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
-      :class="[color === 'light' ? 'bg-white' : 'bg-green-900 text-white']"
+      :class="[color === 'light' ? 'bg-white' : 'bg-blue-900 text-white']"
   >
     <div class="relative w-full mt-4 mb-4 px-4 max-w-full flex-grow flex-1">
       <h3 class="font-semibold text-base text-gray-800">
@@ -146,7 +146,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             เลขบัตรประชาชน
@@ -156,7 +156,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             ชื่อ
@@ -166,7 +166,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             เบอร์โทรศัพท์
@@ -176,7 +176,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             จำนวนกระบือแรกเกิด(ตัว)
@@ -186,7 +186,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             จำนวนกระบือ 240 วัน(ตัว)
@@ -196,7 +196,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             จำนวนกระบือ 400 วัน(ตัว)
@@ -206,7 +206,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             จำนวนกระบือ 600 วัน(ตัว)
@@ -216,7 +216,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             ตำบล
@@ -226,7 +226,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             อำเภอ
@@ -236,7 +236,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             จังหวัด
@@ -246,7 +246,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             กลุ่มผู้ใช้งาน

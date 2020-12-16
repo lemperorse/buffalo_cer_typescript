@@ -3,18 +3,18 @@
 
     <div class="w-full ">
       <ul class="flex mb-0  list-none flex-col pt-3 pb-4 md:flex-row animate__animated animate__bounceInUp animate__delay-1s">
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center ">
-          <a class="w-full hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(1)" v-bind:class="{'text-green-600 bg-white': openTab !== 1, 'text-white bg-green-600': openTab === 1}">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center border rounded ">
+          <a class="w-full hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(1)" v-bind:class="{'text-blue-600 bg-white': openTab !== 1, 'text-white bg-blue-600': openTab === 1}">
             <i class="fas fa-paw text-base mr-1"></i>ข้อมูลควาย
           </a>
         </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a class=" w-full hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(2)" v-bind:class="{'text-green-600 bg-white': openTab !== 2, 'text-white bg-green-600': openTab === 2}">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center border rounded">
+          <a class=" w-full hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(2)" v-bind:class="{'text-blue-600 bg-white': openTab !== 2, 'text-white bg-blue-600': openTab === 2}">
             <i class="fas fa-chart-line text-base mr-1"></i> การเจริญเติบโต
           </a>
         </li>
-        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-          <a class="w-full hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(3)" v-bind:class="{'text-green-600 bg-white': openTab !== 3, 'text-white bg-green-600': openTab === 3}">
+        <li class="-mb-px mr-2 last:mr-0 flex-auto text-center border rounded">
+          <a class="w-full hvr-grow text-xs font-bold uppercase px-5 py-3 shadow-lg rounded block leading-normal" v-on:click="toggleTabs(3)" v-bind:class="{'text-blue-600 bg-white': openTab !== 3, 'text-white bg-blue-600': openTab === 3}">
             <i class="far fa-file-pdf text-base mr-1"></i> ใบพันธุ์ประวัติ
           </a>
         </li>

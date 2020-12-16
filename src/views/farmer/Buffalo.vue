@@ -1,6 +1,5 @@
 <template>
-  <div  class="md:p-6 pt-20 md:pt-20" >
-
+  <div class="md:p-6 pt-20 md:pt-20" >
     <Table  />
   </div>
 </template>

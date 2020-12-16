@@ -16,14 +16,14 @@ const userRouter: any = [
     {
         path: '/user/home',
         name: 'หน้าแรก',
-        icon:'mdi mdi-home',
+        icon:'em em-house_with_garden',
         show: true,
         component: getView('Home')
     },
     {
         path: '/user/search',
         name: 'ค้นหาใบพันธ์ประวัติ',
-        icon:'mdi mdi-certificate',
+        icon:'em em-card_file_box',
         show: true,
         component: getView('Search')
     },
@@ -35,7 +35,7 @@ const userRouter: any = [
     {
         path: '/user/profile',
         name: 'ข้อมูลส่วนตัวของฉัน',
-        icon:'mdi mdi-account',
+        icon:'em em-male-farmer',
         show: true,
         component: getView('Profile')
     },

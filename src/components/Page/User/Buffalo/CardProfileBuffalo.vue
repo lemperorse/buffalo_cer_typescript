@@ -12,7 +12,7 @@
                   class="shadow-xl rounded  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
               <div class="flex justify-center">
                 <button
-                    class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    class="bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button">
                   อัพโหลดรูปภาพ
                 </button>
@@ -50,7 +50,7 @@
                   class="shadow-xl rounded  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
               <div class="flex justify-center">
                 <button
-                    class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    class="bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button">
                   อัพโหลดรูปภาพ
                 </button>

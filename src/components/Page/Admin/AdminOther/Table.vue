@@ -1,15 +1,14 @@
 <template>
-<div v-if="response" class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded" :class="[color === 'light' ? 'bg-white' : 'bg-green-900 text-white']">
+<div v-if="response" class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded" :class="[color === 'light' ? 'bg-white' : 'bg-blue-900 text-white']">
     <div class="rounded-t mb-0 px-4 py-3 border-0">
         <div class="flex flex-wrap items-center">
-            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+            <div class="relative w-full  max-w-full flex-grow flex-1">
                 <h3 class="font-semibold text-base text-gray-800">
                     ข้อมูลผู้ดูแลระบบ
                 </h3>
             </div>
 
-            <!-- ค้นหา -->
-            <form @submit.prevent="run">
+            <!-- <form @submit.prevent="run">
                 <div class="relative flex flex-wrap ">
                     <input type="text" v-model="search" placeholder="ค้นหา" class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pr-10" />
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 right-0 pr-3 py-3">
@@ -17,15 +16,34 @@
                     </span>
                 </div>
             </form>
-
-            <!-- เพิ่ม -->
             <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                 <button @click="$router.push('/admin/addAdmin')" class="bg-indigo-500 f-white active:bg-indigo-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                     <i class="fas fa-plus-square text-lg"></i> เพิ่มผู้ดูแลระบบ
                 </button>
-            </div>
-
+            </div> -->
         </div>
+
+        <div class="flex flex-wrap items-center ">
+            <!-- ค้นหา -->
+            <form @submit.prevent="run" class="w-8/12">
+                <div class="flex rounded border bg-gray-100 hover:shadow-lg">
+                    <button>
+                        <span class="w-auto flex justify-end items-center text-grey p-2">
+                            <i class="fas fa-search text-xl"></i>
+                        </span>
+                    </button>
+                    <input class="w-full" type="text" placeholder="ค้นหาเกษตกร">
+                </div>
+            </form>
+
+            <!-- เพิ่ม -->
+            <div class="relative w-full max-w-full flex-grow flex-1 text-right">
+                <button @click="$router.push('/admin/addAdmin')" class="f-white rounded p-2 bg-indigo-500 hover:bg-indigo-800 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-indigo-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="button">
+                    <i class="fas fa-plus-square text-lg"></i> เพิ่มผู้ดูแลระบบ
+                </button>
+            </div>
+        </div>
+
     </div>
     <!-- table -->
     <div class="block w-full overflow-x-auto">
@@ -36,14 +54,14 @@
                     <th class="px-6  align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]">
                         ชื่อ-สกุล
                     </th>
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]">
                         ชื่อผู้ใช้
                     </th>
@@ -51,14 +69,14 @@
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]">
                         สถานะ
                     </th>
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]">
                         จัดการ
                     </th>
@@ -66,7 +84,7 @@
                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left" :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"></th>
                 </tr>
             </thead>
@@ -83,16 +101,15 @@
                         {{ admin.username }}
                     </td>
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
-                        <i class="fas fa-circle text-green-500 mr-2"></i> ผู้ดูแลระบบ
+                        <i class="fas fa-circle text-blue-500 mr-2"></i> ผู้ดูแลระบบ
                     </td>
 
                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                         <div class="flex items-center">
-                            <button @click="openDialog(admin)" class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+                            <button @click="openDialog(admin)" class="f-white rounded p-2 bg-blue-500 hover:bg-blue-800 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="button">
                                 <i class="fas fa-eye"></i> ดูข้อมูล
                             </button>
-                            <button @click="deleteAdmin(admin.id)" class="bg-red-500
-                  active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 f-white " type="button">
+                            <button @click="deleteAdmin(admin.id)" class="f-white rounded p-2 bg-red-500 hover:bg-red-800 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-red-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="button">
                                 <i class="fas fa-eraser"></i> ลบ
                             </button>
 
@@ -107,98 +124,95 @@
     <!-- pagination -->
     <div class="py-2 mb-4">
         <v-app style="height:100px!important;">
-            <v-pagination v-model="page" :length="allPages" :total-visible="7" @input="handlePageChange" circle></v-pagination>
+            <v-pagination color="#4361EE" class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" v-model="page" :length="allPages" :total-visible="7" @input="handlePageChange" circle></v-pagination>
             <v-dialog v-model="dialog" max-width="500px" persistent>
                 <v-card>
                     <v-card-title>
                         ข้อมูลของ {{ form.first_name }}
                         <v-spacer></v-spacer>
-                        <v-btn @click="closeDialog" icon text>
+                        <v-btn @click="closeDialog" icon text color="red" class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
                             <v-icon>fas fa-window-close</v-icon>
                         </v-btn>
                     </v-card-title>
                     <v-card-text>
-                      <v-tabs>
-                        <v-tab>ข้อมูลส่วนตัว</v-tab>
-                        <v-tab-item class="pt-4">
-                          <form @submit.prevent="updateUser">
-                            <div class="flex flex-wrap">
-
-                              <div class="w-full lg:w-12/12 px-4">
-                                <div class="relative w-full mb-3">
-                                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
-                                    ชื่อ
-                                  </label>
-                                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
-                                                <i class="far fa-address-card text-lg text-gray-500"></i>
-                                            </span>
-                                    <input required type="text" v-model="form.first_name" :class="`${$xinput} border-edit`"   />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="w-full lg:w-12/12 px-4">
-                                <div class="relative w-full mb-3">
-                                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
-                                    สกุล
-                                  </label>
-                                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
-                                                <i class="far fa-address-card text-lg text-gray-500"></i>
-                                            </span>
-                                    <input required type="text" v-model="form.last_name" :class="`${$xinput} border-edit`"   />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="w-full lg:w-12/12 px-4 mt-2">
-                              <div class="relative w-full mb-3">
-                                <button :class="`bg-orange-600 f-white ${$btn}`"><i class="fas fa-pencil-alt text-lg"></i> แก้ไขข้อมูล</button>
-                              </div>
-                            </div>
-                          </form>
-                        </v-tab-item>
-                        <v-tab>รหัสผ่าน</v-tab>
-                        <v-tab-item class="pt-4" >
-                          <form @submit.prevent="updatePassword">
-                            <div class="flex flex-wrap">
-
-                              <div class="w-full lg:w-12/12 px-4">
-                                <div class="relative w-full mb-3">
-                                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
-                                    รหัสผ่าน
-                                  </label>
-                                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
-                                                <i class="far fa-address-card text-lg text-gray-500"></i>
-                                            </span>
-                                    <input  required type="password" v-model="password" :class="`${$xinput} border-edit`"   />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="w-full lg:w-12/12 px-4">
-                                <div class="relative w-full mb-3">
-                                  <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
-                                    ยืนยันรหัสผ่าน
-                                  </label>
-                                  <div class="relative flex w-full flex-wrap items-stretch mb-3">
-                                            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-2">
-                                                <i class="far fa-address-card text-lg text-gray-500"></i>
-                                            </span>
-                                    <input  required type="password" v-model="passwordConfirm" :class="`${$xinput} border-edit`"   />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="w-full lg:w-12/12 px-4 mt-2">
-                              <div class="relative w-full mb-3" >
-                                <button v-if="password != '' && passwordConfirm != '' && password == passwordConfirm"   :class="`bg-orange-600 f-white ${$btn}`"><i class="fas fa-pencil-alt text-lg"></i> แก้ไขข้อมูล</button>
-                              </div>
-                            </div>
-                          </form>
-                        </v-tab-item>
-                      </v-tabs>
-
+                        <v-tabs>
+                            <v-tab>ข้อมูลส่วนตัว</v-tab>
+                            <v-tab-item class="pt-4">
+                                <form @submit.prevent="updateUser">
+                                    <div class="flex flex-wrap">
+                                        <div class="w-full lg:w-12/12 px-4">
+                                            <div class="relative w-full mb-3">
+                                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
+                                                    ชื่อ
+                                                </label>
+                                                <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                                                    <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
+                                                        <i class="far fa-address-card text-lg text-gray-500"></i>
+                                                    </span>
+                                                    <input required type="text" v-model="form.first_name" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full lg:w-12/12 px-4">
+                                            <div class="relative w-full mb-3">
+                                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
+                                                    สกุล
+                                                </label>
+                                                <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                                                    <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
+                                                        <i class="far fa-address-card text-lg text-gray-500"></i>
+                                                    </span>
+                                                    <input required type="text" v-model="form.last_name" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full lg:w-12/12 px-4 mt-2">
+                                        <div class="relative w-full mb-3">
+                                            <button class="f-white w-full rounded p-2 bg-yellow-500 hover:bg-yellow-800 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-yellow-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"><i class="fas fa-pencil-alt text-lg"></i> แก้ไขข้อมูล</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </v-tab-item>
+                            <v-tab>รหัสผ่าน</v-tab>
+                            <v-tab-item class="pt-4">
+                                <form @submit.prevent="updatePassword">
+                                    <div class="flex flex-wrap">
+                                        <div class="w-full lg:w-12/12 px-4">
+                                            <div class="relative w-full mb-3">
+                                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
+                                                    รหัสผ่าน
+                                                </label>
+                                                <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                                                    <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
+                                                        <i class="far fa-address-card text-lg text-gray-500"></i>
+                                                    </span>
+                                                    <input required type="password" v-model="password" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w-full lg:w-12/12 px-4">
+                                            <div class="relative w-full mb-3">
+                                                <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
+                                                    ยืนยันรหัสผ่าน
+                                                </label>
+                                                <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                                                    <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">
+                                                        <i class="far fa-address-card text-lg text-gray-500"></i>
+                                                    </span>
+                                                    <input required type="password" v-model="passwordConfirm" :class="`${$xinput} border-edit focus:ring-1 focus:ring-yellow-600`" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full lg:w-12/12 px-4 mt-2">
+                                        <div class="relative w-full mb-3">
+                                            <button v-if="password != '' && passwordConfirm != '' && password == passwordConfirm" class="f-white w-full rounded p-2 bg-yellow-500 hover:bg-yellow-800 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-yellow-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"><i class="fas fa-pencil-alt text-lg"></i> แก้ไขข้อมูล</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </v-tab-item>
+                        </v-tabs>
 
                     </v-card-text>
                 </v-card>
@@ -226,7 +240,7 @@ import {
 } from '@/store/user'
 
 import CityDialog from '@/components/Dialog/City.vue'
-import {App} from "@/store/app";
+import { App } from "@/store/app";
 
 @Component({
     components: {
@@ -253,8 +267,8 @@ export default class Table extends Vue {
     private search: string = ''
     private dialog: boolean = false
     private form: any = {}
-    private password:string = ''
-    private passwordConfirm:string = ''
+    private password: string = ''
+    private passwordConfirm: string = ''
 
     private async created() {
         await this.run();
@@ -273,7 +287,7 @@ export default class Table extends Vue {
     }
 
     private async deleteAdmin(id: number) {
-        let check = await App.confirm('คุณแน่ใจใช่ไหม','ที่จะลบผู้ดูแลระบบคนนี้')
+        let check = await App.confirm('คุณแน่ใจใช่ไหม', 'ที่จะลบผู้ดูแลระบบคนนี้')
         if (check) {
             await Core.deleteHttp(`/api/account/${id}/`)
             await this.run();
@@ -290,27 +304,25 @@ export default class Table extends Vue {
         }
     }
 
-    private async updatePassword(){
-      let form = {
-        user : this.form.id,
-        password : this.password
-      }
-      let changePasswordUser  = await Core.postHttp(`/user/account/changepassword/`,form)
-      if(changePasswordUser){
-        alert('สำเร็จแล้ว')
-        await this.closeDialog()
-      }else{
-        alert('ไม่สามารถแก้ไขรหัสผ่านได้')
-      }
-      await this.run()
+    private async updatePassword() {
+        let form = {
+            user: this.form.id,
+            password: this.password
+        }
+        let changePasswordUser = await Core.postHttp(`/user/account/changepassword/`, form)
+        if (changePasswordUser) {
+            alert('สำเร็จแล้ว')
+            await this.closeDialog()
+        } else {
+            alert('ไม่สามารถแก้ไขรหัสผ่านได้')
+        }
+        await this.run()
     }
 
     private async openDialog(form: object) {
         this.form = form
         this.dialog = true
     }
-
-
 
     private async closeDialog() {
         this.form = {}

@@ -1,7 +1,7 @@
 <template>
   <div
       class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
-      :class="[color === 'light' ? 'bg-white' : 'bg-green-900 text-white']"
+      :class="[color === 'light' ? 'bg-white' : 'bg-blue-900 text-white']"
   >
     <div class="rounded-t mb-0 px-4 py-3 border-0">
       <div class="flex flex-wrap items-center">
@@ -45,7 +45,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             เจ้าของควาย
@@ -55,7 +55,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             ชื่อควาย
@@ -65,7 +65,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             เบอร์หู
@@ -75,7 +75,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             อายุ
@@ -85,7 +85,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             เพศ
@@ -95,7 +95,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             สี
@@ -105,7 +105,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             สถานะ
@@ -115,7 +115,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             ใบพันธุ์ประวัติ
@@ -125,7 +125,7 @@
               :class="[
                 color === 'light'
                   ? 'bg-gray-100 text-gray-600 border-gray-200'
-                  : 'bg-green-800 text-green-300 border-green-700',
+                  : 'bg-blue-800 text-blue-300 border-blue-700',
               ]"
           >
             การจัดการ
@@ -201,7 +201,7 @@
             <div class="flex items-center">
               <button
                   @click="$router.push('/admin/buffaloprofile')"
-                  class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  class="bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button">
                 ดูข้อมูล
               </button>

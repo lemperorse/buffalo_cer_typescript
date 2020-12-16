@@ -18,7 +18,7 @@
                         item-text="name"></v-autocomplete>
         <v-autocomplete return-object label="ตำบล" filled v-model="districtChoose" :items="district"
                         item-text="name"></v-autocomplete>
-        <button @click="submitCity()" :class="'bg-green-800 '+$btn"> {{ $rt }}</button>
+        <button @click="submitCity()" :class="'bg-blue-800 '+$btn"> {{ $rt }}</button>
       </v-card-text>
     </v-card>
   </v-dialog>

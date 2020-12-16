@@ -6,7 +6,7 @@
       <div class="text-center flex justify-between">
         <h6 class="text-gray-800 text-xl font-bold">My account</h6>
         <button
-          class="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
+          class="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
           type="button"
         >
           Settings
@@ -81,7 +81,7 @@
           </div>
         </div>
 
-        <hr class="mt-6 border-b-1 border-gray-400" />
+        <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
 
         <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
           Contact Information
@@ -149,7 +149,7 @@
           </div>
         </div>
 
-        <hr class="mt-6 border-b-1 border-gray-400" />
+        <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
 
         <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
           About Me

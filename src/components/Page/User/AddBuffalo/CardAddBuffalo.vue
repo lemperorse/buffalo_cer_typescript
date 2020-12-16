@@ -386,7 +386,7 @@
           </div>
         </div>
 
-        <hr class="mt-6 border-b-1 border-gray-400" />
+        <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
 
         <h6 class="text-gray-500 text-sm mt-6 mb-6 font-bold uppercase">
           ใบพันธุ์ประวัติ
@@ -419,7 +419,7 @@
         </div>
 
         <div class="flex justify-center mt-6">
-          <button class="bg-green-500 f-white active:bg-green-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
+          <button class="f-white rounded p-2 bg-blue-500 hover:bg-blue-800 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="button">
             บันทึกข้อมูล
           </button>
         </div>
