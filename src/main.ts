@@ -11,7 +11,10 @@ import 'hover.css'
 Vue.use(Loading,{color: 'red'});
 Vue.component('loading', Loading)
  
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
 
+Vue.component('apexchart', VueApexCharts)
 
 
 import './plugins/varible';
