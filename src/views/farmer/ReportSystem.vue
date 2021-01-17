@@ -5,7 +5,7 @@
         <ReportSystem />
       </div>
       <div class="w-full lg:w-12/12 px-4">
-        <ChartSystem />
+        <!-- <ChartSystem /> -->
       </div>
     </div>
 

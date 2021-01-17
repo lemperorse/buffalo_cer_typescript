@@ -1,97 +1,134 @@
 <template>
-  <div
-      class="flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"
-  >
-    <div class="relative w-full mt-4 mb-4 px-4 max-w-full flex-grow flex-1">
-      <h3 class="font-semibold text-base text-gray-800">
-        รายงานเชิงแผนที่
-      </h3>
+<div v-if="response">
+  
+    <div class="container mx-auto">
+        <center>
+            <h2 class="text-2xl"> <i class="em em-world_map" aria-role="presentation" aria-label=""></i> รายงานเชิงแผนที่</h2>
+        </center> 
+        <MapView :locations='locations' :center="{'Latitude':19.0308857,'Longitude' :99.9258682 }" />
+        <!-- <pre>{{maps}}</pre> -->
+<v-app>
+      <v-dialog v-model="dialog" scrollable persistent :overlay="false" max-width="500px" transition="dialog-transition">
+            <v-card v-if="detail">
+                <v-card-title primary-title>
+                    {{detail.name}}
+                    <v-spacer></v-spacer>
+                    <v-btn fab small text @click="closeMap">
+                        <v-icon>mdi-close</v-icon>
+                    </v-btn>
+                </v-card-title>
+                <v-card-text>
+                    <p> {{detail.province.name}} - {{detail.amphur.name}} - {{detail.district.name}}</p>
+                    <p> {{detail.detail}}</p>
+                    <MapView :locations="[{'Latitude':detail.latitude,'Longitude' :detail.longitude}]" :zoom="20" :zoomControl="true" :center="{'Latitude':detail.latitude,'Longitude' :detail.longitude}" />
+                    <v-btn class="w-full mt-2" x-large @click="openMap()" color="success">เปิดแผนที่นำทาง</v-btn>
+                </v-card-text>
+            </v-card>
+        </v-dialog>
+</v-app>
+    
     </div>
-    <div class="rounded-t mb-0 px-4 py-3 border-0">
-
-      <div class="flex flex-wrap items-center">
-
-
-        <!-- ค้นหา -->
-        <div class="flex flex-wrap ">
-          <div class="w-full lg:w-4/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                  class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              >
-                ตำบล
-              </label>
-              <div class="relative">
-                <select class="block appearance-none w-full bg-gray-100 border border-gray-100 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500">
-                  <option>จำป่าหวาย</option>
-                  <option>แม่กา</option>
-                  <option>แม่ต๋ำ</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-full lg:w-4/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                  class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              >
-                อำเภอ
-              </label>
-              <div class="relative">
-                <select class="block appearance-none w-full bg-gray-100 border border-gray-100 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500">
-                  <option>เมือง</option>
-                  <option>แม่กา</option>
-                  <option>แม่ใจ</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-full lg:w-4/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                  class="block uppercase text-gray-700 text-xs font-bold mb-2"
-              >
-                จังหวัด
-              </label>
-              <div class="relative">
-                <select class="block appearance-none w-full bg-gray-100 border border-gray-100 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500">
-                  <option>พะเยา</option>
-                  <option>แพร่</option>
-                  <option>น่าน</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button class="bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
-          ค้นหา
-        </button>
-
-      </div>
-
-
-      <div class="flex flex-wrap items-center">
-        <div class="relative w-full pt-4 pb-4 px-4 max-w-full flex-grow flex-1">
-          <img src="https://images.pexels.com/photos/1078850/pexels-photo-1078850.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" srcset="">
-        </div>
-      </div>
-
-    </div>
-
-  </div>
+</div>
 </template>
-<style>
-.f-white{
-  color:white!important;
+
+<script lang="ts">
+import { User } from "@/store/user";
+import { Auth } from "@/store/auth";
+import { Core } from "@/store/core";
+
+import { Component, Vue, Watch } from "vue-property-decorator";
+import MapView from '@/components/Maps/MapX.vue'
+import { Map } from '@/store/map'
+
+@Component({
+    components: {
+        MapView
+    },
+    computed: {}
+})
+
+export default class Navbar extends Vue {
+    maps: any = null
+    response: boolean = false
+
+    async created() {
+        await this.getMap();
+        this.response = true;
+    }
+    locations: any = []
+    async getMap() {
+        this.maps = await Core.getHttp(`/api/buffalo/farms/`)
+        for (let index = 0; index < this.maps.length; index++) {
+            this.locations.push({ Latitude: this.maps[index].latitude, Longitude: this.maps[index].longitude, data: this.maps[index] })
+        }
+        console.log(this.locations);
+    }
+
+    get dialog() {
+        return Map.dialog
+    }
+    get detail() {
+        return Map.detail
+    }
+    async closeMap() {
+        await Map.setDialog(false)
+    }
+
+    async openBrowser(position: any) {
+        let me = `${position.coords.latitude},${position.coords.longitude}`
+        let to = `${this.detail.latitude},${this.detail.longitude}`
+        console.log(me, `https://www.google.com/maps/dir/?api=1&origin=${me}&destination=${to}`);
+        window.open(`https://www.google.com/maps/dir/?api=1&origin=${me}&destination=${to}`, '_blank');
+    }
+    async openMap() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(this.openBrowser);
+        } else {
+
+        }
+
+        // window.open(`https://www.google.com/maps/dir/?api=1&origin=19.0199381,99.9218023&destination=19.065738,99.9302781`);
+
+    }
+
+}
+</script>
+
+<style scoped>
+.sizemap {
+    width: 300px;
+    height: 300px;
+}
+
+/* Style the list */
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
 }
 </style>

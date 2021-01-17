@@ -89,7 +89,7 @@
                 <div class="w-full lg:w-4/12 px-4">
                     <div class="relative w-full mb-3">
                         <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
-                            อายุ(ปี)
+                            อายุ(ปี) หรือ (ประเมินจากฟัน)
                         </label>
                         <div class="relative flex w-full flex-wrap items-stretch mb-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
                             <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-2 py-1 mt-1 ">

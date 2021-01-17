@@ -65,7 +65,7 @@
       <label :class="$label" htmlFor="grid-password">วันเกิด</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formProfile.birthday" type="date" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
+        <input   v-model="formProfile.birthday" type="date" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
 
@@ -74,7 +74,7 @@
       <label :class="$label" htmlFor="grid-password">อายุ</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formProfile.age" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;" >
+        <input   v-model="formProfile.age" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;" >
       </div>
     </div>
 
@@ -96,14 +96,14 @@
       <label :class="$label" htmlFor="grid-password">เลขบัตรประจำตัวประชาชน 13 หลัก</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <input required v-model="formProfile.personal_id" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
+        <input   v-model="formProfile.personal_id" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
       </div>
     </div>
     <div class="relative w-full mb-3 ml-2">
       <label :class="$label" htmlFor="grid-password">เพศ</label>
       <div :class="$ininput">
         <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-        <select   required v-model="formProfile.gender" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" >
+        <select     v-model="formProfile.gender" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" >
           <option v-for="val,i in gender" :key="i" :value="val.id">{{ val.value }}</option>
         </select>      </div>
     </div>
