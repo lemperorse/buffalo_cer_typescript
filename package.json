@@ -20,7 +20,8 @@
     "cordova-serve-browser": "cross-env CORDOVA_PLATFORM=browser vue-cli-service cordova-serve-browser",
     "cordova-serve-electron": "cross-env CORDOVA_PLATFORM=electron vue-cli-service cordova-serve-electron",
     "cordova-serve-ios": "cross-env CORDOVA_PLATFORM=ios vue-cli-service cordova-serve-ios",
-    "cordova-serve-osx": "cross-env CORDOVA_PLATFORM=osx vue-cli-service cordova-serve-osx"
+    "cordova-serve-osx": "cross-env CORDOVA_PLATFORM=osx vue-cli-service cordova-serve-osx",
+    "android-build-sign": "npm run cordova-build-android && cd src-cordova && cordova run android --release -- --keystore=keystore.jks --storePassword=password --alias=user --password=password && cd ../"
   },
   "dependencies": {
     "@popperjs/core": "^2.5.3",
