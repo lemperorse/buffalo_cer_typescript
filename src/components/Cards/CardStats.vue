@@ -1,5 +1,5 @@
 <template>
-<div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 border hover:shadow-lg  transform transition duration-500 hover:scale-110">
+<div class="relative flex flex-col min-w-0 break-words rounded-lg mb-6 xl:mb-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
     <div class="flex-auto p-4">
         <div class="flex flex-wrap">
             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
@@ -11,11 +11,11 @@
                 </span>
             </div>
             <div class="relative w-auto pl-4 flex-initial">
-                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-lg" :class="[statIconColor]">
-                    <i :class="[statIconName]"></i>
+                <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-lg border-4 border-white" :class="[statIconColor]">
+                    <i class="text-lg" :class="[statIconName]"></i>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
 </template>
@@ -63,6 +63,10 @@ export default {
             type: String,
             default: "bg-red-500",
         },
+        statBgColor: {
+            type: String,
+            default: "bg-green-500",
+        },
     },
 };
 </script>
@@ -72,5 +76,26 @@ export default {
     -webkit-box-shadow: 0px 0px 28px 0px rgba(184, 184, 184, 1);
     -moz-box-shadow: 0px 0px 28px 0px rgba(184, 184, 184, 1);
     box-shadow: 0px 0px 28px 0px rgba(184, 184, 184, 1);
-} 
+}
+
+.stati {
+    background: #fff;
+    height: 6em;
+    padding: 1em;
+    margin: 1em 0;
+    -webkit-transition: margin 0.5s ease, box-shadow 0.5s ease;
+    /* Safari */
+    transition: margin 0.5s ease, box-shadow 0.5s ease;
+    /* -moz-box-shadow: 0px 0.2em 0.4em rgb(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0px 0.2em 0.4em rgb(0, 0, 0, 0.8); */
+    /* box-shadow: 0px 0.2em 0.4em rgb(0, 0, 0, 0.8); */
+}
+
+.stati:hover {
+    margin-top: 0.5em;
+    -moz-box-shadow: 0px 0.4em 0.5em rgb(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0px 0.4em 0.5em rgb(0, 0, 0, 0.8);
+    box-shadow: 0px 0.4em 0.5em rgb(0, 0, 0, 0.8);
+}
+
 </style>

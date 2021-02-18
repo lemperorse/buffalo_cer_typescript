@@ -2,30 +2,45 @@
 <div class="p-6 pt-20  ">
     <div class="px-1 md:px-10 mx-auto w-full">
         <div>
-            <h2 class="text-2xl px-2"> <b>สวัสดี ,</b> {{user.first_name}}</h2> <br>
-              <hr class="md:mt-4 mx-2">
+            <p class="text-2xl px-2"> <b>สวัสดี {{user.first_name}}</b></p><br>
+            <!-- <hr class="mx-2 mb-4 border-4 rounded-lg "> -->
+            <div class="box px-2 pt-6">
+                <div class="box-sm red rounded-l-lg "></div>
+                <div class="box-sm orange"></div>
+                <div class="box-sm yellow "></div>
+                <div class="box-sm green "></div>
+                <div class="box-sm blue "></div>
+                <div class="box-sm purple rounded-r-lg"></div>
+            </div>
             <h2 class="text-xl md:mt-4 px-2">จำนวนควายทั้งหมด</h2> <br>
-            <div class="flex flex-wrap">
+            <div class="flex flex-wrap mb-10">
                 <div class="w-full lg:w-1/3 xl:w-1/3 px-2">
                     <apexchart type="pie" :options="chartOptions" :series="series"></apexchart>
                 </div>
-                <div class="w-full lg:w-2/3 xl:w-2/3  px-2">
+                <div class="w-full lg:w-2/3 xl:w-2/3 px-2">
                     <div class="flex flex-row flex-wrap">
                         <div class="w-full lg:w-4/12 xl:w-4/12 px-2">
-                            <card-stats statSubtitle="ควายทั้งหมด" :statTitle="`${dashboard.buffalo_lifed} ตัว`" statIconName="em em-water_buffalo" statIconColor="bg-green-500" class="" />
+                            <card-stats class="shadow-xl border-b-4 border-green-700 hover:shadow-lg" statSubtitle="ควายทั้งหมด" :statTitle="`${dashboard.buffalo_lifed} ตัว`" statIconName="em em-water_buffalo" statIconColor="bg-green-500" />
                         </div>
                         <div class="w-full lg:w-4/12 xl:w-4/12 px-2">
-                            <card-stats statSubtitle="ควายที่มีชีวิต" :statTitle="`${dashboard.buffalo_lifed} ตัว`" statIconName="fas fa-heart" statIconColor="bg-blue-500" />
+                            <card-stats class="shadow-xl border-b-4 border-blue-700 hover:shadow-lg" statSubtitle="ควายที่มีชีวิต" :statTitle="`${dashboard.buffalo_lifed} ตัว`" statIconName="fas fa-heart" statIconColor="bg-blue-500" />
                         </div>
                         <div class="w-full lg:w-4/12 xl:w-4/12 px-2">
-                            <card-stats statSubtitle="ควายที่ไม่มีชีวิต" :statTitle="`${dashboard.buffalo_died} ตัว`" statIconName="fas fa-heart-broken" statIconColor="bg-red-500" />
+                            <card-stats class="shadow-xl border-b-4 border-red-700 hover:shadow-lg" statSubtitle="ควายที่ไม่มีชีวิต" :statTitle="`${dashboard.buffalo_died} ตัว`" statIconName="fas fa-heart-broken" statIconColor="bg-red-500" />
                         </div>
                     </div>
                 </div>
-
             </div>
-            <hr class="md:mt-4 mx-2">
-            <h2 class="text-xl md:mt-4 px-2">จำนวนควายในปัจจุบัน</h2> <br>
+            <!-- <hr class="mx-2 mt-6 mb-4 border-4 rounded-lg"> -->
+            <div class="box px-2">
+                <div class="box-sm red rounded-l-lg"></div>
+                <div class="box-sm orange"></div>
+                <div class="box-sm yellow "></div>
+                <div class="box-sm green "></div>
+                <div class="box-sm blue "></div>
+                <div class="box-sm purple rounded-r-lg"></div>
+            </div>
+            <h2 class="text-xl px-2">จำนวนควายในปัจจุบัน</h2> <br>
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-1/3 xl:w-1/3 px-2">
                     <apexchart type="donut" :options="buffaloOptions" :series="buffaloSeries"></apexchart>
@@ -33,26 +48,27 @@
                 <div class="w-full lg:w-2/3 xl:w-2/3  px-2">
                     <div class="flex flex-row flex-wrap">
                         <div class="w-full  px-2">
-                            <form @submit.prevent="getDataDetailGraph()" class="flex"> 
-                                <v-select :items="STATUS" item-text="value" item-value="id"  v-model="STATUS_VAL"  label="สถานะ"></v-select>
-                                <v-text-field v-model="AGE_START" label="เริ่มต้นอายุ"  ></v-text-field>
-                                <v-text-field v-model="AGE_END" label="ถึงอายุ"  ></v-text-field>
-                                <v-btn type="submit" small fab dark color="#006fdd"><v-icon>mdi-card-search</v-icon></v-btn>
+                            <form @submit.prevent="getDataDetailGraph()" class="flex">
+                                <v-select :items="STATUS" item-text="value" item-value="id" v-model="STATUS_VAL" label="สถานะ"></v-select>
+                                <v-text-field v-model="AGE_START" label="เริ่มต้นอายุ"></v-text-field>
+                                <v-text-field v-model="AGE_END" label="ถึงอายุ"></v-text-field>
+                                <v-btn type="submit" small fab dark color="#006fdd">
+                                    <v-icon>mdi-card-search</v-icon>
+                                </v-btn>
                             </form>
                         </div>
                         <div class="w-full lg:w-4/12 xl:w-4/12 px-2">
-                            <card-stats statSubtitle="ทั้งหมด" :statTitle="`${CURRENT_BUFFALO.all} ตัว`" statIconName="mdi mdi-gender-male-female" statIconColor="bg-red-800"   />
+                            <card-stats class="shadow-xl border-b-4 border-yellow-700 hover:shadow-lg" statSubtitle="ทั้งหมด" :statTitle="`${CURRENT_BUFFALO.all} ตัว`" statIconName="mdi mdi-gender-male-female" statIconColor="bg-yellow-500" />
                         </div>
                         <div class="w-full lg:w-4/12 xl:w-4/12 px-2">
-                            <card-stats statSubtitle="ตัวผู้" :statTitle="`${CURRENT_BUFFALO.male} ตัว`" statIconName="mdi mdi-gender-male" statIconColor="bg-blue-500" />
+                            <card-stats class="shadow-xl border-b-4 border-purple-700 hover:shadow-lg" statSubtitle="ตัวผู้" :statTitle="`${CURRENT_BUFFALO.male} ตัว`" statIconName="mdi mdi-gender-male" statIconColor="bg-purple-500" />
                         </div>
                         <div class="w-full lg:w-4/12 xl:w-4/12 px-2">
-                            <card-stats statSubtitle="ตัวเมีย" :statTitle="`${CURRENT_BUFFALO.female} ตัว`" statIconName="mdi mdi-gender-female" statIconColor="bg-green-500" />
+                            <card-stats class="shadow-xl border-b-4 border-pink-700 hover:shadow-lg" statSubtitle="ตัวเมีย" :statTitle="`${CURRENT_BUFFALO.female} ตัว`" statIconName="mdi mdi-gender-female" statIconColor="bg-pink-500" />
                         </div>
                     </div>
                 </div>
             </div>
- 
 
             <div class="flex flex-wrap mt-4">
                 <div class="w-full lg:w-1/3 xl:w-1/3 px-2">
@@ -62,8 +78,7 @@
                     <card-stat-with-btn statSubtitle="รายงานการเจริญเติบโต" statRoute="reportsystem" statIconName="fas fa-chart-line" statIconColor="bg-indigo-500" />
                 </div>
             </div>
-
-            <hr class="mt-6 mx-2">
+ 
             <div class="flex flex-wrap mt-4">
                 <div class="w-full xl:w-6/12 px-2">
                     <ChartBuffaloAll />
@@ -83,7 +98,6 @@ import CardStats from "@/components/Cards/CardStats.vue";
 import CardStatWithBtn from "@/components/Cards/CardStatWithBtn.vue";
 import ChartBuffaloAll from "@/components/Page/User/Home/ChartBuffaloAll.vue";
 import ChartBuffaloLive from "@/components/Page/User/Home/ChartBuffaloLive.vue";
-
 import {
     Component,
     Vue,
@@ -105,8 +119,7 @@ import _ from 'lodash'
         CardStats,
         CardStatWithBtn,
         ChartBuffaloAll,
-        ChartBuffaloLive
-
+        ChartBuffaloLive,
     },
     computed: {
 
@@ -165,4 +178,46 @@ export default class Home extends Vue {
 </script>
 
 <style scoped> 
+   .box {
+       display: flex;
+       width: 100%;
+       height: 8px;
+       margin: 5px 0px 60px 0px;
+   }
+
+   .box-sm {
+       height: 8px;
+       margin: 0;
+       flex-grow: 1;
+       transition: all .8s ease-in-out;
+       cursor: pointer;
+   }
+
+   .box-sm:hover {
+       flex-grow: 12;
+   }
+
+   .red {
+       background-color: #FF5852;
+   }
+
+   .orange {
+       background-color: #FF9000;
+   }
+
+   .yellow {
+       background-color: #FFD300;
+   }
+
+   .green {
+       background-color: #3DCD49;
+   }
+
+   .blue {
+       background-color: #0089D7;
+   }
+
+   .purple {
+       background-color: #9E44C4;
+   }
 </style>

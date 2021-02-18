@@ -88,32 +88,31 @@
 
             <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
 
-              <li class="items-center">
-                <router-link to="/admin/farmer" v-slot="{ href, route, navigate, isActive }">
-                  <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+                <li class="items-center">
+                    <router-link to="/admin/farmer" v-slot="{ href, route, navigate, isActive }">
+                        <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
                     ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
-                    <i class="em em-male-farmer mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
-                    ข้อมูลเกษตรกร
-                  </a>
-                </router-link>
-              </li>
+                            <i class="em em-male-farmer mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
+                            ข้อมูลเกษตรกร
+                        </a>
+                    </router-link>
+                </li>
 
-              <li class="items-center">
-                <router-link to="/admin/search" v-slot="{ href, route, navigate, isActive }">
-                  <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+                <li class="items-center">
+                    <router-link to="/admin/search" v-slot="{ href, route, navigate, isActive }">
+                        <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
                     ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
-                    <i class="em em-water_buffalo mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
-                    ค้นหาพันธุ์ประวัติ
-                  </a>
-                </router-link>
-              </li>
-
+                            <i class="em em-water_buffalo mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
+                            ค้นหาพันธุ์ประวัติ
+                        </a>
+                    </router-link>
+                </li>
 
             </ul>
 
@@ -126,33 +125,31 @@
             <!-- Navigation -->
 
             <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-              <li class="items-center">
-                <router-link to="/admin/admin" v-slot="{ href, route, navigate, isActive }">
-                  <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+                <li class="items-center">
+                    <router-link to="/admin/admin" v-slot="{ href, route, navigate, isActive }">
+                        <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
                     ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
-                    <i class="em em-male-technologist mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
-                    ข้อมูลผู้ดูแลระบบ
-                  </a>
-                </router-link>
-              </li>
+                            <i class="em em-male-technologist mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
+                            ข้อมูลผู้ดูแลระบบ
+                        </a>
+                    </router-link>
+                </li>
 
-              <li class="items-center">
-                <router-link to="/admin/passwordreq" v-slot="{ href, route, navigate, isActive }">
-                  <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+                <li class="items-center">
+                    <router-link to="/admin/passwordreq" v-slot="{ href, route, navigate, isActive }">
+                        <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
                   isActive
                     ? 'text-blue-500 hover:text-blue-600'
                     : 'text-gray-800 hover:text-gray-600',
                 ]">
-                    <i class="em em-spiral_note_pad mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
-                    คำขอรหัสผ่าน
-                  </a>
-                </router-link>
-              </li>
-
-
+                            <i class="em em-spiral_note_pad mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-gray-400']"></i>
+                            คำขอรหัสผ่าน
+                        </a>
+                    </router-link>
+                </li>
 
                 <li class="items-center">
                     <router-link class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block" to="/profile">

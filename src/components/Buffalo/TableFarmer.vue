@@ -1,5 +1,5 @@
 <template>
-<div class="relative flex flex-col min-w-0 break-words w-full mb-6 px-2 rounded">
+<div class="relative flex flex-col min-w-0 break-words w-full mb-6 px-2 rounded ">
     <div class="rounded-t mb-0 py-3 border-0 animate__animated animate__zoomIn">
         <div class="relative w-full md:w-auto px-1 max-w-full flex-grow flex-1 ">
             <h3 class="font-semibold text-base text-gray-800">
@@ -31,7 +31,7 @@
         </div>
     </div>
     <!-- card -->
-    <div class="block w-full overflow-x-auto bg-gray-100">
+    <div class="block w-full overflow-x-auto border rounded-lg">
         <div class="flex flex-wrap mb-4">
             <div class="w-full md:w-1/2 xl:w-1/3 p-3 hvr-grow" v-for="buffalo,index in buffalos.results" :key="index">
                 <div class="bg-white border-b-2 border-blue-700 rounded shadow-full mx-4 my-2 animate__animated animate__zoomIn ">
