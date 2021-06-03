@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import ReportBuffalo from "@/components/Page/User/Report/ReportBuffalo/ReportBuffalo.vue";
-import ChartBuffalo from "@/components/Page/User/Report/ReportBuffalo/ChartBuffalo";
+import ReportBuffalo from "@/components/Component/User/Report/ReportBuffalo/ReportBuffalo.vue";
+import ChartBuffalo from "@/components/Component/User/Report/ReportBuffalo/ChartBuffalo";
 export default {
   name: "report-buffalo-page",
   components: {

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ReportExport from "@/components/Page/Admin/Report/ReportExport.vue";
+import ReportExport from "@/components/Component/Admin/Report/ReportExport.vue";
 
 export default {
   components: {

@@ -2,23 +2,23 @@
   <div class="relative md:pt-32 pb-32 pt-12 mt-24 ">
     <div class="flex flex-wrap-reverse ">
       <div class="w-full lg:w-8/12 px-4">
-        <CardSettingFarmer />
+        <FarmerSetting />
       </div>
       <div class="w-full lg:w-4/12 px-4">
-        <CardProfileFarmer />
+        <FarmerProfile />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CardSettingFarmer from "@/components/Page/Admin/FarmerProfile/CardSettingFarmer";
-import CardProfileFarmer from "@/components/Page/Admin/FarmerProfile/CardProfileFarmer";
+import FarmerSetting from "@/components/Component/Admin/Farmer/FarmerSetting";
+import FarmerProfile from "@/components/Component/Admin/Farmer/FarmerProfile";
 export default {
   name: "farmer-profile-page",
   components: {
-    CardSettingFarmer,
-    CardProfileFarmer
+    FarmerSetting,
+    FarmerProfile
   },
 };
 </script>

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Table from "@/components/Page/Admin/PasswordRequest/Table.vue";
+import Table from "@/components/Component/Admin/PasswordReq/Table.vue";
 
 export default {
   name: "profile-admin-page",

@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import Table from "@/components/Buffalo/Table";
+import Table from "@/components/Component/Core/Buffalo/Table";
 export default {
   name: "buffalo-all-page",
   components: {

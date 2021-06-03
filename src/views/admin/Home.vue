@@ -48,10 +48,10 @@
 </template>
 
 <script>
-import ChartUser from "@/components/Page/Admin/Home/ChartUser.vue";
-import ChartBuf from "@/components/Page/Admin/Home/ChartBuf.vue";
-import CardStats from "@/components/Cards/CardStats.vue";
-import CardStatWithBtn from "@/components/Cards/CardStatWithBtn.vue";
+import ChartUser from "@/components/Component/Admin/Home/ChartUser.vue";
+import ChartBuf from "@/components/Component/Admin/Home/ChartBuf.vue";
+import CardStats from "@/components/Component/Admin/Home/CardStats.vue";
+import CardStatWithBtn from "@/components/Component/Admin/Home/CardStatWithBtn.vue";
 import { Vue } from "vue-property-decorator";
 
 export default {

@@ -15,8 +15,7 @@
 
 <script lang="ts">
 import AdminNavbar from "@/components/Navbars/AdminNavbar.vue";
-import Sidebar from "@/components/Sidebar/Sidebar.vue";
-import HeaderStats from "@/components/Headers/HeaderStats.vue";
+import Sidebar from "@/components/Sidebar/Sidebar.vue"; 
 import FooterAdmin from "@/components/Footers/FooterAdmin.vue";
 import CityDialog from '@/components/Dialog/City.vue'
 
@@ -28,8 +27,7 @@ import {Component, Vue} from "vue-property-decorator";
   components: {
     CityDialog,
     AdminNavbar,
-    Sidebar,
-    HeaderStats,
+    Sidebar, 
     FooterAdmin,
   },
   computed: {}

@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import CardSettingFarmer from "@/components/Page/User/Profile/CardSettingFarmer";
-import CardProfileFarmer from "@/components/Page/User/Profile/CardProfileFarmer";
+import CardSettingFarmer from "@/components/Component/User/Profile/CardSettingFarmer";
+import CardProfileFarmer from "@/components/Component/User/Profile/CardProfileFarmer";
 export default {
     name: "profile-page",
     components: {

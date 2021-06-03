@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import CardSettingsAdmin from "@/components/Page/Admin/AdminOther/AdminProfile/CardSettingsAdmin.vue";
-import CardProfileAdmin from "@/components/Page/Admin/AdminOther/AdminProfile/CardProfileAdmin.vue";
+import CardSettingsAdmin from "@/components/Component/Admin/AdminOther/CardSettingsAdmin.vue";
+import CardProfileAdmin from "@/components/Component/Admin/AdminOther/CardProfileAdmin.vue";
 
 export default {
   name: "profile-admin-page",

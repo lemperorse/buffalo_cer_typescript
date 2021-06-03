@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Card from "@/components/Page/Admin/Search/Card.vue";
+import Card from "@/components/Component/Admin/SearchCer/Card.vue";
 export default {
   name: "search-page",
   components: {

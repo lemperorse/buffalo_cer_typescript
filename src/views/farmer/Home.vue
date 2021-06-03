@@ -79,25 +79,16 @@
                 </div>
             </div>
  
-            <div class="flex flex-wrap mt-4">
-                <div class="w-full xl:w-6/12 px-2">
-                    <ChartBuffaloAll />
-                </div>
-                <div class="w-full xl:w-6/12 px-2">
-                    <ChartBuffaloLive />
-                </div>
-            </div>
+             
         </div>
     </div>
 
 </div>
 </template>
 
-<script lang="ts">
-import CardStats from "@/components/Cards/CardStats.vue";
-import CardStatWithBtn from "@/components/Cards/CardStatWithBtn.vue";
-import ChartBuffaloAll from "@/components/Page/User/Home/ChartBuffaloAll.vue";
-import ChartBuffaloLive from "@/components/Page/User/Home/ChartBuffaloLive.vue";
+<script lang="ts">  
+import ChartBuffaloAll from "@/components/Component/User/Chart/ChartBuffaloAll.vue";
+import ChartBuffaloLive from "@/components/Component/User/Chart/ChartBuffaloLive.vue";
 import {
     Component,
     Vue,
@@ -115,9 +106,7 @@ import { Geography } from '@/models/core'
 import { Core } from '@/store/core'
 import _ from 'lodash'
 @Component({
-    components: {
-        CardStats,
-        CardStatWithBtn,
+    components: {  
         ChartBuffaloAll,
         ChartBuffaloLive,
     },

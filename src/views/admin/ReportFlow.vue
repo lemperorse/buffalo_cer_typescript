@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ReportFlow from "@/components/Page/Admin/Report/ReportFlow.vue";
+import ReportFlow from "@/components/Component/Admin/Report/ReportFlow.vue";
 
 export default {
   components: {

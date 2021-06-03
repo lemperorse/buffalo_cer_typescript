@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ReportBuffalo from "@/components/Page/Admin/Report/ReportBuffalo.vue";
+import ReportBuffalo from "@/components/Component/Admin/Report/ReportBuffalo.vue";
 export default {
   name: "report-buffalo-page",
   components: {

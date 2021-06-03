@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import CardAddBuffalo from "@/components/Buffalo/BuffaloCreate.vue";
+import CardAddBuffalo from "@/components/Component/Core/Buffalo/BuffaloCreate.vue";
 export default {
   name: "add-farmer-page",
   components: {

@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import CardSettingBuffalo from "@/components/Page/Admin/BuffaloProfile/CardSettingBuffalo";
-import CardProfileBuffalo from "@/components/Page/Admin/BuffaloProfile/CardProfileBuffalo";
+import CardSettingBuffalo from "@/components/Component/Core/Buffalo/CardSettingBuffalo";
+import CardProfileBuffalo from "@/components/Component/Core/Buffalo/CardProfileBuffalo";
 export default {
   name: "buffalo-profile-page",
   components: {

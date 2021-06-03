@@ -1,11 +1,11 @@
 <template>
   <div class="relative md:pt-32 pb-32 pt-12 mt-24">
-    <CardAddFarmer />
+    <AddFarmer />
   </div>
 </template>
 
 <script>
-import CardAddFarmer from "@/components/Page/Admin/AddFarmer/CardAddFarmer.vue";
+import CardAddFarmer from "@/components/Component/Admin/Farmer/AddFarmer.vue";
 export default {
   name: "add-farmer-page",
   components: {

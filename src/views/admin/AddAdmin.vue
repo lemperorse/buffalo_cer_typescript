@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import CardAddAdmin from "@/components/Page/Admin/AdminOther/AddAdmin/CardAddAdmin.vue";
+import CardAddAdmin from "@/components/Component/Admin/Admin/CardAddAdmin.vue";
 export default {
   name: "add-admin-page",
   components: {

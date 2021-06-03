@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Table from "@/components/Page/Admin/AdminOther/Table.vue";
+import Table from "@/components/Component/Admin/Admin/Table.vue";
 export default {
   name: "admin-page",
   data() {

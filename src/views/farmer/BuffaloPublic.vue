@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import CardSettingBuffalo from "@/components/Page/User/Public/CardSettingBuffalo";
-import CardProfileBuffalo from "@/components/Page/User/Public/CardProfileBuffalo";
+import CardSettingBuffalo from "@/components/Component/Core/BuffaloPublic/CardSettingBuffalo";
+import CardProfileBuffalo from "@/components/Component/Core/BuffaloPublic/CardProfileBuffalo";
 
 export default {
   name: "buffalo-profile-page",

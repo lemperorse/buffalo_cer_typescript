@@ -1,79 +1,76 @@
 <template>
-  <v-app>
+<v-app>
     <div class="container mx-auto  h-full">
-      <div class="flex content-center items-center justify-center  ">
-        <div class="w-full lg:w-6/12 px-4">
-          <div
-              class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0"
-          >
-            <div class="rounded-t mb-0 px-6 py-6">
-              <button class="bg-white shadow-xl rounded-full mb-2" @click="$router.go(-1)">
-                <v-icon class="icon">mdi-chevron-left</v-icon>
-              </button>
-              <div class="text-center mb-3 ">
-                <h2 class=" ">ส่งคำขอไปที่ผู้ดูแลระบบ</h2>
-              </div>
-              <form @submit.prevent="calling()">
-                <div class="text-blue-500 text-center mb-3 font-bold">
-                  <div class="mx-auto lg:mx-0 border-b-2 border-teal-500 opacity-25"></div>
-                  <div class="w-full md:w-12/12 pt-2">
-                    <input required v-model="form.personal_id" type="text" :class="`${$xinput}`" placeholder="หมายเลขบัตรประชาชน" >
-                  </div>
-                  <div class="w-full md:w-12/12 pt-2">
-                    <input required v-model="form.tel" type="text" :class="`${$xinput}`" placeholder="หมายเลขโทรศัพท์ที่ติดต่อกลับได้" >
+        <div class="flex content-center items-center justify-center  ">
+            <div class="w-full lg:w-6/12 px-4">
+                <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0">
+                    <div class="rounded-t mb-0 px-6 py-6">
+                        <button class="bg-white shadow-xl rounded-full mb-2" @click="$router.go(-1)">
+                            <v-icon class="icon">mdi-chevron-left</v-icon>
+                        </button>
+                        <div class="text-center mb-3 ">
+                            <h2 class=" ">ส่งคำขอไปที่ผู้ดูแลระบบ</h2>
+                        </div>
+                        <form @submit.prevent="calling()">
+                            <div class="text-blue-500 text-center mb-3 font-bold">
+                                <div class="mx-auto lg:mx-0 border-b-2 border-teal-500 opacity-25"></div>
+                                <div class="w-full md:w-12/12 pt-2">
+                                    <input required v-model="form.personal_id" type="text" :class="`${$xinput}`" placeholder="หมายเลขบัตรประชาชน">
+                                </div>
+                                <div class="w-full md:w-12/12 pt-2">
+                                    <input required v-model="form.tel" type="text" :class="`${$xinput}`" placeholder="หมายเลขโทรศัพท์ที่ติดต่อกลับได้">
 
-                  </div><br>
-                  <button  type="submit" :class="'bg-blue-600 '+btn">
-                    ส่งคำขอ
-                  </button>
+                                </div><br>
+                                <button type="submit" :class="'bg-blue-600 '+btn">
+                                    ส่งคำขอ
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
-              </form>
-
-
-
 
             </div>
-          </div>
-
         </div>
-      </div>
     </div>
 
     <CityDialog />
-  </v-app>
+</v-app>
 </template>
 
 <script lang="ts">
-import {Core} from "@/store/core";
+import { Core } from "@/store/core";
 import {
-  Component,
-  Vue, Watch,
+    Component,
+    Vue,
+    Watch,
 } from 'vue-property-decorator';
 @Component({
-  components: {},
-  computed: {}
+    components: {},
+    computed: {}
 })
 
 export default class Home extends Vue {
 
-  private form:any = {
-          "personal_id": null,
-          "tel": null ,
-          "status": false
-        }
-
-  private async calling(){
-    let user  = await Core.postHttp(`/user/account/forgetpassword/`,this.form)
-    if(user){
-      alert('ส่งคำขอไปที่ผู้ดูแลระบบแล้ว')
-      this.$router.push('/')
+    private form: any = {
+        "personal_id": null,
+        "tel": null,
+        "status": false
     }
-  }
 
-  btn: string = 'text-white  text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150'
-  input: string = 'px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150'
+    private async calling() {
+        let user = await Core.postHttp(`/user/account/forgetpassword/`, this.form)
+        if (user) {
+            alert('ส่งคำขอไปที่ผู้ดูแลระบบแล้ว')
+            this.$router.push('/')
+        }
+    }
+
+    btn: string = 'text-white  text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150'
+    input: string = 'px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150'
 }
 </script>
+
 <style>
 
 </style>

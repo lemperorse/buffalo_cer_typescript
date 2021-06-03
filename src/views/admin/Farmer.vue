@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Table from "@/components/Page/Admin/Farmer/Table";
+import Table from "@/components/Component/Admin/Farmer/Table";
 export default {
   name: "farmer-all-page",
   components: {

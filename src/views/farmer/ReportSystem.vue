@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import ReportSystem from "@/components/Page/User/Report/ReportSystem/ReportSystem.vue";
-import ChartSystem from "@/components/Page/User/Report/ReportSystem/ChartSystem";
+import ReportSystem from "@/components/Component/User/Report/ReportSystem/ReportSystem.vue";
+import ChartSystem from "@/components/Component/User/Report/ReportSystem/ChartSystem";
 export default {
   name: "report-system-page",
   components: {

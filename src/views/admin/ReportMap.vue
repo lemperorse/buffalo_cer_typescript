@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ReportMap from "@/components/Page/Admin/Report/ReportMap.vue";
+import ReportMap from "@/components/Component/Admin/Report/ReportMap.vue";
 import MapExample from "@/components/Maps/MapExample.vue";
 import {Vue} from "vue-property-decorator";
 
