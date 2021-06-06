@@ -1,6 +1,7 @@
 <template>
-<div class="bg-gray-100">
-    <div class="w-full bg-cover bg-center ssss" style="height:20rem; ">
+<!-- <div class="bg-gray-100"> -->
+<div class="">    
+    <div class="w-full rounded bg-cover bg-center ssss" style="height:20rem; ">
         <div class="flex items-center justify-center h-full w-full ">
             <div class="  flex flex-col justify-center items-center" style="width:100%;">
                 <h1 class="text-white text-2xl font-semibold uppercase md:text-3xl  ">ค้นหาใบพันธุ์ประวัติ</h1>
@@ -35,9 +36,9 @@
                         <h5 class="text-gray-500 uppercase font-bold text-xs">
                             ที่อยู่ : {{ buffalo.address }}
                         </h5><br>
-                        <button :class="`${$btn} f-white rounded p-2 bg-blue-500 hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110`" @click="$router.push(`buffalo/public?id=${buffalo.id}`)">
+                        <v-btn @click="$router.push(`buffalo/public?id=${buffalo.id}`)" class="w-full" color="primary">
                             <v-icon style="color:white;">mdi mdi-eye</v-icon>&nbsp;ดูรายละเอียด
-                        </button>
+                        </v-btn>
                     </div>
                 </div>
 
@@ -140,10 +141,5 @@ export default class Farm extends Vue {
     background-repeat: no-repeat; 
 
 }
-
-.shadow-full {
-    -webkit-box-shadow: 0px 0px 152px 2px rgba(184, 184, 184, 1);
-    -moz-box-shadow: 0px 0px 152px 2px rgba(184, 184, 184, 1);
-    box-shadow: 0px 0px 152px 2px rgba(184, 184, 184, 1);
-}
+ 
 </style>

@@ -3,24 +3,28 @@
     <div class="w-full ">
         <ul class="flex flex-col mb-0 list-none flex-wrap pt-3 pb-4 md:flex-row animate__animated animate__bounceInUp animate__delay-1s">
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1 ">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal" v-on:click="toggleTabs(1)" v-bind:class="{'text-blue-600 bg-white': openTab !== 1, 'text-white bg1': openTab === 1}">
-                    <i class="em em-water_buffalo text-base mr-1 -mt-2"></i>ข้อมูลควาย
+                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(1)" v-bind:class="{'text-blue-600 bg-white': openTab !== 1, 'text-white bg1': openTab === 1}">
+                    <img src="@/assets/buffalo/buffalo.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <span>ข้อมูลควาย</span>
                 </a>
             </li>
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal" v-on:click="toggleTabs(2)" v-bind:class="{'text-blue-600 bg-white': openTab !== 2, 'text-white bg1': openTab === 2}">
-                    <i class="em em-chart_with_upwards_trend text-base mr-1"></i> การเจริญเติบโต
+                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(2)" v-bind:class="{'text-blue-600 bg-white': openTab !== 2, 'text-white bg1': openTab === 2}">
+                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/031-computer.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <span>การเจริญเติบโต</span>
                 </a>
             </li>
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal" v-on:click="toggleTabs(3)" v-bind:class="{'text-blue-600 bg-white': openTab !== 3, 'text-white bg1': openTab === 3}">
-                    <i class="em em-card_file_box text-base mr-1"></i> ใบพันธุ์ประวัติ
+                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(3)" v-bind:class="{'text-blue-600 bg-white': openTab !== 3, 'text-white bg1': openTab === 3}">
+                    <img src="@/assets/certificate/certificate.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <span>ใบพันธุ์ประวัติ</span>
                 </a>
             </li>
 
         </ul>
 
-        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded-lg shadow-lg">
+        <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded-lg shadow-lg"> -->
+        <v-card class="relative bg-white">
             <div class="px-4 py-5 flex-auto">
                 <div class="tab-content tab-space">
                     <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1} ">
@@ -37,7 +41,8 @@
 
                 </div>
             </div>
-        </div>
+        </v-card>
+        <!-- </div> -->
 
     </div>
 </div>

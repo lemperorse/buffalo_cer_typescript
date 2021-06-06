@@ -11,7 +11,7 @@
         <div class="flex flex-wrap items-center ">
             <!-- ค้นหา -->
             <form @submit.prevent="run" class="w-8/12">
-                <div class="flex rounded border bg-gray-100 hover:shadow-lg">
+                <div class="flex rounded-full border bg-gray-100 hover:shadow-lg">
                     <button>
                         <span class="w-auto flex justify-end items-center text-grey p-2">
                             <i class="fas fa-search text-xl"></i>
@@ -23,7 +23,7 @@
 
             <!-- เพิ่ม -->
             <div class="relative w-full max-w-full flex-grow flex-1 text-right"> 
-                <v-btn color="success" depressed large @click="$router.push(`buffalo/create`)">
+                <v-btn color="success" rounded depressed large @click="$router.push(`buffalo/create`)">
                     <v-icon left dark>
                         fas fa-plus-square
                     </v-icon> 
@@ -34,10 +34,11 @@
         </div>
     </div>
     <!-- card -->
-    <div class="block w-full overflow-x-auto border rounded-lg">
+    <div class="block w-full overflow-x-auto rounded-lg">
         <div class="flex flex-wrap mb-4">
             <div class="w-full md:w-1/2 xl:w-1/3 p-3 hvr-grow" v-for="buffalo,index in buffalos.results" :key="index">
-                <div class="bg-white border-b-2 border-blue-700 rounded shadow-full mx-4 my-2 animate__animated animate__zoomIn ">
+            <v-card class="animate__animated animate__zoomIn">
+                <!-- <div class="border-b-2 border-blue-700 rounded shadow-lg mx-4 my-2 animate__animated animate__zoomIn "> -->
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap ">
                             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
@@ -60,7 +61,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                <!-- </div> -->
+            </v-card>
             </div>
         </div>
 

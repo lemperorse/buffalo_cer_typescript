@@ -3,47 +3,54 @@
     <div class="w-full">
         <ul class="flex flex-col mb-0 list-none flex-wrap pt-3 pb-4 md:flex-row animate__animated animate__bounceInUp animate__delay-1s">
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal" v-on:click="toggleTabs(1)" v-bind:class="{'text-blue-600 bg-white': openTab !== 1, 'text-white bg1 ': openTab === 1}">
-                    <i class="em em-male-farmer text-base mr-1"></i>ข้อมูลเกษตกร
+                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(1)" v-bind:class="{'text-blue-600 bg-white': openTab !== 1, 'text-white bg1 ': openTab === 1}">
+                    <!-- <i src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png"></i>ข้อมูลเกษตกร -->
+                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <span>ข้อมูลเกษตกร</span>
                 </a>
             </li>
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal" v-on:click="toggleTabs(2)" v-bind:class="{'text-blue-600 bg-white': openTab !== 2, 'text-white bg1': openTab === 2}">
-                    <i class="em em-house_buildings text-base mr-1"></i> ข้อมูลฟาร์ม
+                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(2)" v-bind:class="{'text-blue-600 bg-white': openTab !== 2, 'text-white bg1': openTab === 2}">
+                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/042-smart-farm-6.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <span>ข้อมูลฟาร์ม</span>
                 </a>
             </li>
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal" v-on:click="toggleTabs(3)" v-bind:class="{'text-blue-600 bg-white': openTab !== 3, 'text-white bg1': openTab === 3}">
-                    <i class="em em-frame_with_picture text-base mr-1"></i> รูปภาพ
+                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(3)" v-bind:class="{'text-blue-600 bg-white': openTab !== 3, 'text-white bg1': openTab === 3}">
+                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/027-information.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <span>รูปภาพ</span>
                 </a>
-            </li> 
+            </li>
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal" v-on:click="toggleTabs(5)" v-bind:class="{'text-blue-600 bg-white': openTab !== 5, 'text-white bg1': openTab === 5}">
-                    <i class="fas fa-cog text-base mr-1"></i> ตั้งค่า
+                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(5)" v-bind:class="{'text-blue-600 bg-white': openTab !== 5, 'text-white bg1': openTab === 5}">
+                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/004-engine.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <span>ตั้งค่า</span>
                 </a>
             </li>
         </ul>
 
-        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg animate__animated animate__bounceInLeft animate__delay-1s">
-            <div class="px-4 py-5 flex-auto">
-                <div class="tab-content tab-space">
-                    <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
-                        <Profile class="animate__animated animate__zoomIn" v-if="openTab === 1" />
-                    </div>
+        <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg animate__animated animate__bounceInLeft animate__delay-1s"> -->
+            <v-card class="relatives animate__animated animate__bounceInLeft animate__delay-1s">
+                <div class="px-4 py-5 flex-auto">
+                    <div class="tab-content tab-space">
+                        <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
+                            <Profile class="animate__animated animate__zoomIn" v-if="openTab === 1" />
+                        </div>
 
-                    <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}">
-                        <Farm class="animate__animated animate__zoomIn" v-if="openTab === 2" />
-                    </div>
+                        <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}">
+                            <Farm class="animate__animated animate__zoomIn" v-if="openTab === 2" />
+                        </div>
 
-                    <div v-bind:class="{'hidden': openTab !== 3, 'block': openTab === 3}">
-                        <ImageUser class="animate__animated animate__zoomIn" v-if="openTab === 3" />
-                    </div> 
-                    <div v-bind:class="{'hidden': openTab !== 5, 'block': openTab === 5}">
-                        <Manager class="animate__animated animate__zoomIn" v-if="openTab === 5" />
+                        <div v-bind:class="{'hidden': openTab !== 3, 'block': openTab === 3}">
+                            <ImageUser class="animate__animated animate__zoomIn" v-if="openTab === 3" />
+                        </div>
+                        <div v-bind:class="{'hidden': openTab !== 5, 'block': openTab === 5}">
+                            <Manager class="animate__animated animate__zoomIn" v-if="openTab === 5" />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </v-card>
+        <!-- </div> -->
 
     </div>
 </div>
@@ -110,14 +117,17 @@ export default class Table extends Vue {
 .f-white {
     color: white !important;
 }
-.ho{
-    transition: 0.8s;  
+
+.ho {
+    transition: 0.8s;
 }
+
 .ho:hover {
-  transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(224, 224, 224, 0.25), 
-    -5px -5px 30px 15px rgba(145, 145, 145, 0.22);
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(224, 224, 224, 0.25),
+        -5px -5px 30px 15px rgba(145, 145, 145, 0.22);
 }
+
 .bg1 {
     background-color: #333333;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%233b00dd'/%3E%3Cstop offset='1' stop-color='%23333333'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23ffffff' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23ffffff' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");

@@ -1,6 +1,7 @@
 <template>
 <div>
-    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg mt-16 animate__animated animate__bounceInLeft animate__delay-1s">
+    <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg mt-16 animate__animated animate__bounceInLeft animate__delay-1s"> -->
+    <v-card class="relative mt-24 animate__animated animate__bounceInLeft animate__delay-1s">
         <div class="px-6">
             <div class="flex flex-wrap justify-center">
                 <div class="w-full px-4 flex justify-center">
@@ -19,11 +20,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </v-card>
+    <!-- </div> --> 
 
-    <hr class="mt-6 pb-6 border-b-1 border-gray-400 animate__animated animate__bounceInLeft animate__delay-1s" />
-
-    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg mt-16 animate__animated animate__bounceInLeft animate__delay-1s">
+    <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg mt-16 animate__animated animate__bounceInLeft animate__delay-1s"> -->
+    <v-card class="relative mt-24 animate__animated animate__bounceInLeft animate__delay-1s">
         <div class="px-6 ">
             <div class="flex flex-wrap justify-center">
                 <div class="w-full px-4 flex justify-center">
@@ -41,7 +42,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </v-card>
+    <!-- </div> -->
 </div>
 </template>
 

@@ -81,7 +81,7 @@
     <div class="block w-full overflow-x-auto bg-gray-100">
         <div class="flex flex-wrap mb-4">
             <div class="w-full md:w-1/2 xl:w-1/3 p-3 hvr-grow" v-for="buffalo,index in buffalos.results" :key="index">
-                <div class="bg-white border-b-2 border-blue-700 rounded shadow-full mx-4 my-2 animate__animated animate__zoomIn ">
+                <div class="bg-white border-b-2 border-blue-700 rounded shadow-lg mx-4 my-2 animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap ">
                             <div class="relative w-full pr-4 max-w-full flex-grow flex-1">

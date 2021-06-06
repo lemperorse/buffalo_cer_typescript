@@ -1,49 +1,71 @@
 <template>
-<div class=""> 
+<div class="">
     <v-app>
-    <CityDialog />
-    <div class="flex ">
-        <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false" class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden  "></div>
-        <div style="position:fixed; top:0!important;" :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in '" class=" z-30 inset-y-0 left-0 w-64 bg-white shadow-lg duration-300 transform  overflow-y-auto lg:translate-x-0 lg:static lg:inset-0 ">
-            <div class="flex items-center justify-center mt-8">
-                <div class="flex items-center p-6">
-                    <img class="w-auto" src="https://sv1.picz.in.th/images/2020/11/17/bVc06z.png" alt="">
-                </div>
+        <CityDialog />
+        <div class="">
+            <v-app-bar app class="bg-nav" dark>
+                <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+                <v-toolbar-title>พันธุ์ควายไทย</v-toolbar-title>
+                <v-spacer></v-spacer>
+                <UserDropdown class="" />
+            </v-app-bar>
+
+            <v-navigation-drawer v-model="drawer" fixed temporary>
+                <v-list  dense>
+                        <v-list-item-group active-class="deep-purple--text text--accent-4">
+                            <v-list-item @click="$router.push('/user/home')">
+                                <v-list-item-title class="row wrap p-2">
+                                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/039-warehouse.png" height="36px" width="36px" class="rounded-lg" alt="">
+                                    <span class="mt-3 ml-2">หน้าแรก</span>
+                                    </v-list-item-title>
+                            </v-list-item>
+
+                            <v-list-item @click="$router.push('/user/profile')">
+                                <v-list-item-title class="row wrap p-2">
+                                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png" height="36px" width="36px" class="rounded-lg" alt="">
+                                    <span class="mt-3 ml-2">ข้อมูลส่วนตัว</span>
+                                </v-list-item-title>
+                            </v-list-item>
+
+                            <v-list-item @click="$router.push('/user/search')">
+                                <v-list-item-title class="row wrap p-2">
+                                    <img src="@/assets/certificate/certificate.png" height="36px" width="36px" class="rounded-lg" alt="">
+                                    <span class="mt-3 ml-2">ค้นหาใบพันธุ์ประวัติ</span>
+                                </v-list-item-title>
+                            </v-list-item>
+
+                            <v-list-item @click="$router.push('/user/buffalo')">
+                            <v-list-item-title class="row wrap p-2">
+                                    <img src="@/assets/buffalo/buffalo.png" height="36px" width="36px" class="rounded-lg" alt="">
+                                    <span class="mt-3 ml-2">ข้อมูลควาย</span>
+                                </v-list-item-title>
+                            </v-list-item>
+                        </v-list-item-group>
+                    </v-list>
+            </v-navigation-drawer>
+            <div class="w-full h-screen" style="z-index:1;">
+                <v-container grid-list-xs>
+                    <router-view />
+                </v-container>
+                <footer-admin class="bg1" />
             </div>
-            <UserMenu />
         </div>
-
-        <v-toolbar flat style="position:fixed; background-color:transparent;" class="w-full lg:pl-64 z-20 " :class="(!view.atTopOfPage)?'bg-nav':''">
-            <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none lg:hidden">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-            </button>
-            <v-spacer></v-spacer>
-            <UserDropdown class="" />
-        </v-toolbar>
-        <div class="lg:pl-64   w-full h-screen" style="z-index:1;">
-            <router-view />
-            <footer-admin class="bg1" />
-        </div>
-
-    </div>
-  </v-app>
+    </v-app>
 </div>
 </template>
 
-<script lang="ts">  
+<script lang="ts">
 import { User } from "@/store/user";
-import { Auth } from "@/store/auth"; 
+import { Auth } from "@/store/auth";
 import { Component, Vue } from "vue-property-decorator";
 import CityDialog from '@/components/Dialog/City.vue'
-import UserMenu from "@/components/Sidebar/UserMenu.vue";  
+import UserMenu from "@/components/Sidebar/UserMenu.vue";
 import FooterAdmin from "@/components/Footers/FooterAdmin.vue"
 import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
 
 @Component({
-    components: { 
-        UserMenu, 
+    components: {
+        UserMenu,
         FooterAdmin,
         CityDialog,
         UserDropdown
@@ -55,6 +77,8 @@ export default class Admin extends Vue {
 
     sidebarOpen: boolean = true;
     notificationOpen: boolean = false;
+    drawer: boolean = false;
+
     view: any = {
         atTopOfPage: true
     }
