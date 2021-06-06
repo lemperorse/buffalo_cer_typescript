@@ -6,27 +6,18 @@
                 <form @submit.prevent="login()" class="sign-in-form forms" v-if="tab == 0">
                     <h2 class="title">เข้าสู่ระบบ</h2>
                     <div class="text-gray-500 text-center mb-3 font-bold flex justify-center pt-6">
-                          <img class="w-48" src="https://sv1.picz.in.th/images/2020/11/17/bVc06z.png" alt="">
+                        <img class="w-48" src="https://sv1.picz.in.th/images/2020/11/17/bVc06z.png" alt="">
                     </div>
                     <div class="relative w-full md:w-8/12 mb-3 mt-4">
-                        <label :class="$label" htmlFor="grid-password">ชื่อผู้ใช้ </label>
-                        <div :class="$ininput">
-                            <span :class="$iconinput"><i class="mdi mdi-account text-lg text-gray-500"></i></span>
-                            <input required v-model="form.username" placeholder="ระบุชื่อผู้ใช้ของคุณ" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
-                        </div>
+                        <v-text-field required v-model="form.username" placeholder="ระบุชื่อผู้ใช้ของคุณ" type="text" filled rounded label="ชื่อผู้ใช้" prepend-inner-icon="mdi mdi-account"></v-text-field>
                     </div>
                     <div class="relative w-full md:w-8/12 mb-3 ">
-                        <label :class="$label" htmlFor="grid-password">รหัสผ่าน </label>
-                        <div :class="$ininput">
-                            <span :class="$iconinput"><i class="mdi mdi-form-textbox-password text-lg text-gray-500"></i></span>
-                            <input required v-model="form.password" placeholder="ระบุรหัสผ่านของคุณ" type="password" :class="`${$xinput} focus:ring-2 focus:ring-blue-600`" style="padding-left:40px;">
-                        </div>
+                        <v-text-field required v-model="form.password" placeholder="ระบุรหัสผ่านของคุณ" type="password" filled rounded label="รหัสผ่าน" prepend-inner-icon="mdi mdi-form-textbox-password"></v-text-field>
                     </div>
 
-                    <div class="w-full md:w-8/12">
-                        <button :class="`${$btn} bg-blue-600`">เข้าสู่ระบบ</button>
-                    </div> 
-
+                    <div class="w-full md:w-8/12"> 
+                        <button :class="`${$btn} bg-blue-600 rounded-full`">เข้าสู่ระบบ</button>
+                    </div>
 
                     <div class="w-full md:w-8/12 flex flex-wrap   relative">
                         <div class="w-1/2">
@@ -45,7 +36,7 @@
 
                 </form>
 
-                <Register v-if="tab == 1" /> 
+                <Register v-if="tab == 1" />
             </div>
         </div>
 
@@ -56,7 +47,7 @@
                     <p>
                         เข้าร่วมเป็นสมาชิกกับเว็บไซต์พันธุ์ควายไทยเพื่อเก็บข้อมูลพันธุ์ควายและพันธุ์ประวัติของคุณง่ายๆเพียงไม่กี่ขั้นตอน !
                     </p>
-                    <v-btn @click="ChangeTo('sign-up-mode')" outlined dark>เข้าร่วมกับเรา</v-btn>
+                    <v-btn @click="ChangeTo('sign-up-mode')" outlined dark rounded>เข้าร่วมกับเรา</v-btn>
 
                 </div>
                 <img src="https://sv1.picz.in.th/images/2020/11/19/bpmWRe.png" class="image" alt="" />
@@ -68,7 +59,7 @@
                         หากคุณเป็นสมาชิกกับเราอยู่แล้วสามารถเข้าสู่ระบบได้ในทันที !
                     </p>
 
-                    <v-btn @click="ChangeTo('')" outlined dark>เข้าสู่ระบบ</v-btn>
+                    <v-btn @click="ChangeTo('')" outlined dark rounded>เข้าสู่ระบบ</v-btn>
 
                 </div>
                 <img src="https://sv1.picz.in.th/images/2020/11/19/bpm9nW.png" class="image" alt="" />
@@ -78,65 +69,65 @@
 </div>
 </template>
 
-<script lang="ts">  
-import Register from '@/components/Component/Core/Register.vue';
+<script lang="ts">
+  import Register from '@/components/Component/Core/Register.vue';
 
-import {
-    Component,
-    Vue,
-} from 'vue-property-decorator';
-import { User } from "@/store/user";
-import { Auth } from "@/store/auth";
-import { Core } from "@/store/core";
-import { App } from "@/store/app";
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
-const containerR = document.querySelector(".containerR");
-@Component({
-    components: { 
-        Register, 
-    },
-    computed: {}
-})
+  import {
+      Component,
+      Vue,
+  } from 'vue-property-decorator';
+  import { User } from "@/store/user";
+  import { Auth } from "@/store/auth";
+  import { Core } from "@/store/core";
+  import { App } from "@/store/app";
+  const sign_in_btn = document.querySelector("#sign-in-btn");
+  const sign_up_btn = document.querySelector("#sign-up-btn");
+  const containerR = document.querySelector(".containerR");
+  @Component({
+      components: {
+          Register,
+      },
+      computed: {}
+  })
 
-export default class Test extends Vue {
-    tab: number = 0
-    switchc: string = ''
-    private form: any = {
-        "username": "root",
-        "password": "Pautn1611"
-    }
+  export default class Test extends Vue {
+      tab: number = 0
+      switchc: string = ''
+      private form: any = {
+          "username": "root",
+          "password": "Pautn1611"
+      }
 
-    private async login() {
-        await Auth.removeToken();
-        let user: any = await Core.postHttp('/api/rest-auth/login/', this.form)
-        if (user ?.key) {
-            await Auth.storeToken(user.key)
-            await Auth.storeTokenToStorage(user.key)
-            await User.loadUser()
-            await this.$router.replace(User.routeUser)
-        } else {
-            await App.error("เข้าสู่ระบบล้มเหลว กรุณาตรวจสอบข้อมูลให้ถูกต้อง")
-        }
-    }
+      private async login() {
+          await Auth.removeToken();
+          let user: any = await Core.postHttp('/api/rest-auth/login/', this.form)
+          if (user ?.key) {
+              await Auth.storeToken(user.key)
+              await Auth.storeTokenToStorage(user.key)
+              await User.loadUser()
+              await this.$router.replace(User.routeUser)
+          } else {
+              await App.error("เข้าสู่ระบบล้มเหลว กรุณาตรวจสอบข้อมูลให้ถูกต้อง")
+          }
+      }
 
-    async created() {
-        await Auth.checkToken();
-        await User.loadUser();
-        await this.$router.replace(User.routeUser)
-        console.log(User.routeUser)
-    }
+      async created() {
+          await Auth.checkToken();
+          await User.loadUser();
+          await this.$router.replace(User.routeUser)
+          console.log(User.routeUser)
+      }
 
-    async ChangeTo(val: string) {
-        this.switchc = val
-        await this.sleep(1000)
-        this.tab = (val) ? 1 : 0
-    }
-    async sleep(ms: any) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
+      async ChangeTo(val: string) {
+          this.switchc = val
+          await this.sleep(1000)
+          this.tab = (val) ? 1 : 0
+      }
+      async sleep(ms: any) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+      }
 
-}
+  }
 </script>
 
 <style>

@@ -16,14 +16,15 @@
                             <div class="text-blue-500 text-center mb-3 font-bold">
                                 <div class="mx-auto lg:mx-0 border-b-2 border-teal-500 opacity-25"></div>
                                 <div class="w-full md:w-12/12 pt-2">
-                                    <v-text-field v-model="form.personal_id" type="text" required label="เลขบัตรประจำตัวประชาชน" solo></v-text-field>
+                                    <v-text-field v-model="form.personal_id" rounded filled type="text" required label="เลขบัตรประจำตัวประชาชน" ></v-text-field>
                                 </div>
                                 <div class="w-full md:w-12/12 pt-2">
-                                    <v-text-field v-model="form.tel" type="text" label="เบอร์โทรที่ใช้สมัครสมาชิก" solo></v-text-field>
+                                    <v-text-field v-model="form.tel" rounded filled type="text" label="เบอร์โทรที่ใช้สมัครสมาชิก"></v-text-field>
                                 </div>
-                                <button :class="'f-white bg-blue-600 '+btn" type="submit">
+                                <v-btn type="submit" color="indigo accent-4" rounded dark large class="w-full">เปลี่ยนรหัสผ่าน</v-btn>
+                                <!-- <button :class="'f-white bg-blue-600 '+btn" type="submit">
                                     ตรวจสอบ
-                                </button>
+                                </button> -->
                             </div>
                         </form>
                     </div>
@@ -40,14 +41,12 @@
                             <div class="text-blue-500 text-center mb-3 font-bold">
                                 <div class="mx-auto lg:mx-0 border-b-2 border-teal-500 opacity-25"></div>
                                 <div class="w-full md:w-12/12 pt-2">
-                                    <input type="password" v-model="password" :class="`${$xinput}`" placeholder="รหัสผ่านใหม่">
+                                    <v-text-field v-model="password" rounded filled type="password" label="รหัสผ่านใหม่"></v-text-field>
                                 </div>
                                 <div class="w-full md:w-12/12 pt-2">
-                                    <input type="password" v-model="passwordConfirm" :class="`${$xinput}`" placeholder="ยืนยันรหัสผ่านใหม่">
+                                    <v-text-field v-model="passwordConfirm" rounded filled type="password" label="ยืนยันรหัสผ่านใหม่"></v-text-field>
                                 </div><br>
-                                <button v-if="password != '' && passwordConfirm != '' && password == passwordConfirm" :class="'f-white bg-blue-600 '+btn" type="submit">
-                                    เปลี่ยนรหัสผ่าน
-                                </button>
+                                <v-btn type="submit" v-if="password != '' && passwordConfirm != '' && password == passwordConfirm" color="indigo accent-4">เปลี่ยนรหัสผ่าน</v-btn>
                             </div>
                         </form>
                     </div>
@@ -108,8 +107,6 @@ export default class Home extends Vue {
         }
     }
 
-    btn: string = 'text-white  text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150'
-    input: string = 'px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150'
 }
 </script>
 

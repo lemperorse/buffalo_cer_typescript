@@ -18,7 +18,7 @@
                     <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
 
                         <div class="text-center mt-6" v-if="step == 0">
-                            <button @click="step = 1" :class="`${btn} bg-purple-600 text-white`" type="button">
+                            <button @click="step = 1" :class="`${btn} bg-purple-600 text-white rounded-full`" type="button">
                                 ดำเนินการต่อ
                             </button>
                         </div>

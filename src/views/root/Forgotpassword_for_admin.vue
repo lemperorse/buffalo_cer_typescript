@@ -15,15 +15,12 @@
                             <div class="text-blue-500 text-center mb-3 font-bold">
                                 <div class="mx-auto lg:mx-0 border-b-2 border-teal-500 opacity-25"></div>
                                 <div class="w-full md:w-12/12 pt-2">
-                                    <input required v-model="form.personal_id" type="text" :class="`${$xinput}`" placeholder="หมายเลขบัตรประชาชน">
+                                    <v-text-field filled rounded required v-model="form.personal_id" label="หมายเลขบัตรประชาชน"></v-text-field>
                                 </div>
-                                <div class="w-full md:w-12/12 pt-2">
-                                    <input required v-model="form.tel" type="text" :class="`${$xinput}`" placeholder="หมายเลขโทรศัพท์ที่ติดต่อกลับได้">
-
+                                <div class="w-full md:w-12/12 pt-2"> 
+                                    <v-text-field filled rounded required v-model="form.tel" label="หมายเลขโทรศัพท์ที่ติดต่อกลับได้"></v-text-field>
                                 </div><br>
-                                <button type="submit" :class="'bg-blue-600 '+btn">
-                                    ส่งคำขอ
-                                </button>
+                                <v-btn type="submit" dark rounded large color="blue accent-4" class="w-full">ส่งคำขอ</v-btn> 
                             </div>
                         </form>
 
@@ -65,9 +62,6 @@ export default class Home extends Vue {
             this.$router.push('/')
         }
     }
-
-    btn: string = 'text-white  text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150'
-    input: string = 'px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150'
 }
 </script>
 
