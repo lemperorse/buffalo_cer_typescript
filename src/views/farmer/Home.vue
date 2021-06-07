@@ -1,10 +1,10 @@
 <template>
-<div class="p-6 pt-24  ">
+<div class="p-6 md:pt-24 pt-20">
     <div class="px-1 md:px-10 mx-auto w-full">
         <div>  
-            <v-row wrap class="p-4 pb-6">
+            <v-row wrap class="p-4 pb-10">
                 <div>
-                    <v-card class="pa-2 wrap elevation-0 hvr-grow " @click="$router.push('/user/profile')">
+                    <div class="pa-2 wrap elevation-0 hvr-grow " @click="$router.push('/user/profile')">
                         <div class="row wrap px-3">
                             <v-avatar size="86">
                                 <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
@@ -14,32 +14,32 @@
                                 <div>Email : {{user.email}}</div>
                             </div>
                         </div>
-                    </v-card>
+                    </div>
                 </div>
                 <v-spacer></v-spacer>
                 <div>
-                    <v-card class="pa-2 elevation-0 hvr-grow" @click="$router.push('/user/buffalo')">
+                    <div class="pa-2 elevation-0 hvr-grow" @click="$router.push('/user/buffalo')">
                         <center>
                             <v-avatar rounded size="36"><img src="@/assets/buffalo/buffalo.png" alt=""></v-avatar>
                             <span class="align-self-center">ควายของฉัน</span>
                         </center>
-                    </v-card>
+                    </div>
                 </div>
                 <div>
-                    <v-card class="pa-2 wrap elevation-0 hvr-grow" @click="$router.push('/user/profile')">
+                    <div class="pa-2 wrap elevation-0 hvr-grow" @click="$router.push('/user/profile')">
                         <center>
                             <v-avatar rounded size="36">
                                 <v-icon>mdi-form-textbox-password</v-icon>
                             </v-avatar>
                             <span class="align-self-center">เปลี่ยนรหัสผ่าน</span>
                         </center>
-                    </v-card>
+                    </div>
                 </div>
 
             </v-row>
 
             <div class="flex flex-wrap mb-10">
-                <div class="w-full lg:w-1/3 xl:w-1/3 px-2 mb-2">
+                <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
                     <v-card max-height="380" rounded class="" outlined>
                         <v-card-title primary-title>
                             จำนวนควายทั้งหมด
@@ -55,7 +55,7 @@
                         </v-card-actions>
                     </v-card>
                 </div>
-                <div class="w-full lg:w-1/3 xl:w-1/3 px-2 mb-2">
+                <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
                     <v-card max-height="380" rounded class="" outlined>
                         <v-card-title primary-title>
                             จำนวนควายในปัจจุบัน
@@ -77,7 +77,7 @@
                         </v-card-text>
                     </v-card>
                 </div>
-                <div class="w-full lg:w-1/3 xl:w-1/3 px-2 mb-2">
+                <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
                     <v-card max-height="380" class="" outlined>
                         <v-card-title primary-title>
                             ค้นหาใบพันธ์ประวัติ
@@ -94,7 +94,7 @@
                         </v-card-actions>
                     </v-card>
                 </div>
-                <div class="w-full lg:w-1/3 xl:w-1/3 px-2 mb-2">
+                <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
                     <v-card max-height="380" class="" outlined>
                         <v-card-title primary-title>
                             ข้อมูลส่วนตัว
@@ -111,7 +111,7 @@
                         </v-card-actions>
                     </v-card>
                 </div>
-                <div class="w-full lg:w-1/3 xl:w-1/3 px-2 mb-2">
+                <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
                     <v-card max-height="380" class="" outlined>
                         <v-card-title primary-title>
                             ข้อมูลควาย

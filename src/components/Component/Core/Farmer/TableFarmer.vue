@@ -11,7 +11,7 @@
         <div class="flex flex-wrap items-center ">
             <!-- ค้นหา -->
             <form @submit.prevent="run" class="w-6/12">
-                <div class="flex rounded-full border bg-gray-100 hover:shadow-lg">
+                <div class="flex rounded-full border bg-white hover:shadow-lg">
                     <button>
                         <span class="w-auto flex justify-end items-center text-grey p-2">
                             <i class="fas fa-search text-xl"></i>
@@ -38,7 +38,7 @@
         <div class="flex flex-wrap mb-4">
             <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index">
             <!-- <v-card class="animate__animated animate__zoomIn"> -->
-                <div class="border-b-2  rounded shadow  animate__animated animate__zoomIn ">
+                <div class="border bg-white rounded shadow  animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap ">
                             <div class="relative w-auto pl-4 flex-initial">

@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="w-full px-1">
                                     <div class="relative w-full mb-3">
-                                        <v-btn color="deep-purple accent-3" depressed type="submit" class="" block large rounded>
+                                        <v-btn dark color="deep-purple accent-3" depressed type="submit" class="" block large rounded>
                                             <v-icon left>fas fa-save</v-icon>
                                             บันทึกข้อมูล
                                         </v-btn>

@@ -7,7 +7,7 @@
                 <h1 class="text-2xl font-semibold uppercase md:text-3xl ">ค้นหาใบพันธุ์ประวัติ</h1>
                 <form @submit.prevent="run" class="mt-4 w-full row wrap">
                     <!-- <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" /> -->
-                    <div class="flex rounded-full border bg-gray-100 hover:shadow-lg">
+                    <div class="flex rounded-full border bg-white hover:shadow-lg">
                         <button>
                             <span class="w-auto flex justify-end items-center text-grey p-2">
                                 <i class="fas fa-search text-xl"></i>
@@ -16,7 +16,7 @@
                         <input v-model="search" class="w-full" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม">
                     </div>
                     <div class="mt1">
-                        <v-btn type="submit" fab color="orange darken-1" dark>
+                        <v-btn type="submit" fab depressed color="orange darken-1" dark>
                             <v-icon>fas fa-search</v-icon>
                         </v-btn>
                     </div>
@@ -31,7 +31,7 @@
     <div class="block w-full overflow-x-auto rounded-lg">
         <div class="flex flex-wrap mb-4">
             <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index"> 
-                <div class="border-b-2  rounded shadow  animate__animated animate__zoomIn ">
+                <div class="border-b-2 bg-white rounded shadow  animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap">
                             <div class="relative w-auto pl-4 flex-initial pt-3">

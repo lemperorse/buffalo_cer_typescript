@@ -69,7 +69,7 @@
             </div>
 
             <div class="flex justify-center mt-6">
-                <v-btn color="deep-purple accent-3" depressed type="submit" v-if="!unEdit" block large rounded>
+                <v-btn color="deep-purple accent-3" dark depressed type="submit" v-if="!unEdit" block large rounded>
                     <v-icon left>fas fa-save</v-icon>
                     บันทึกข้อมูล
                 </v-btn>
