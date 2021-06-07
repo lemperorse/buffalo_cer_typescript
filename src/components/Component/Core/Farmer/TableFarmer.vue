@@ -1,7 +1,7 @@
 <template>
 <div class="relative flex flex-col min-w-0 break-words w-full mb-6 px-2 rounded ">
-    <div class="rounded-t mb-0 py-3 border-0 animate__animated animate__zoomIn">
-        <div class="relative w-full md:w-auto px-1 max-w-full flex-grow flex-1 ">
+    <div class="rounded-t mb-0 py-3 border-0 animate__animated animate__zoomIn p-3">
+        <div class="relative w-full md:w-auto px-1 max-w-full flex-grow flex-1">
             <h3 class="font-semibold text-base text-gray-800">
                 <button style="color:#855737;" class="text-2xl" @click="$router.push('/user/profile')">ควายในฟาร์ม</button>
                 <span class="text-2xl"> / {{farm.name}}</span>
@@ -10,7 +10,7 @@
         </div><br>
         <div class="flex flex-wrap items-center ">
             <!-- ค้นหา -->
-            <form @submit.prevent="run" class="w-8/12">
+            <form @submit.prevent="run" class="w-6/12">
                 <div class="flex rounded-full border bg-gray-100 hover:shadow-lg">
                     <button>
                         <span class="w-auto flex justify-end items-center text-grey p-2">
@@ -36,12 +36,17 @@
     <!-- card -->
     <div class="block w-full overflow-x-auto rounded-lg">
         <div class="flex flex-wrap mb-4">
-            <div class="w-full md:w-1/2 xl:w-1/3 p-3 hvr-grow" v-for="buffalo,index in buffalos.results" :key="index">
-            <v-card class="animate__animated animate__zoomIn">
-                <!-- <div class="border-b-2 border-blue-700 rounded shadow-lg mx-4 my-2 animate__animated animate__zoomIn "> -->
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index">
+            <!-- <v-card class="animate__animated animate__zoomIn"> -->
+                <div class="border-b-2  rounded shadow  animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap ">
-                            <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+                            <div class="relative w-auto pl-4 flex-initial">
+                                <div>
+                                    <img :src="(buffalo.back_image)?buffalo.back_image:'https://images.pexels.com/photos/4835959/pexels-photo-4835959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'" class="h-16 w-16 bg-white rounded-full border" alt="..." />
+                                </div>
+                            </div>
+                            <div class="relative w-full pr-4 max-w-full flex-grow flex-1 text-right">
                                 <span class="font-semibold text-xl text-gray-800">
                                     ชื่อควาย : {{buffalo.name}}
                                 </span>
@@ -51,18 +56,11 @@
                                 <span>
                                     <v-btn color="primary" depressed @click="$router.push(`buffalo/profile?id=${buffalo.id}`)">ดูรายละเอียด</v-btn>
                                 </span>
-
-                            </div>
-
-                            <div class="relative w-auto pl-4 flex-initial">
-                                <div>
-                                    <img :src="(buffalo.back_image)?buffalo.back_image:'https://sv1.picz.in.th/images/2020/11/07/bb198v.jpg'" class="h-12 w-12 bg-white rounded-full border" alt="..." />
-                                </div>
                             </div>
                         </div>
                     </div>
-                <!-- </div> -->
-            </v-card>
+                </div>
+            <!-- </v-card> -->
             </div>
         </div>
 
@@ -144,6 +142,8 @@ export default class Farm extends Vue {
     private async handlePageChange(value: any) {
         this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/?farm__id=${this.farm.id}&search=${this.search}&page=${value}`)
     }
+ 
+
 
 }
 </script>
