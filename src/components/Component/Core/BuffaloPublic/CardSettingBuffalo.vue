@@ -3,19 +3,19 @@
     <div class="w-full ">
         <ul class="flex flex-col mb-0 list-none flex-wrap pt-3 pb-4 md:flex-row animate__animated animate__bounceInUp animate__delay-1s">
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1 ">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(1)" v-bind:class="{'text-blue-600 bg-white': openTab !== 1, 'text-white bg1': openTab === 1}">
+                <a class="w-full text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(1)" v-bind:class="{'text-blue-600 bg-white': openTab !== 1, 'text-white bg1': openTab === 1}">
                     <img src="@/assets/buffalo/buffalo.png" height="24px" width="24px" class="rounded-lg" alt="">
                     <span>ข้อมูลควาย</span>
                 </a>
             </li>
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(2)" v-bind:class="{'text-blue-600 bg-white': openTab !== 2, 'text-white bg1': openTab === 2}">
+                <a class="w-full text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(2)" v-bind:class="{'text-blue-600 bg-white': openTab !== 2, 'text-white bg1': openTab === 2}">
                     <img src="@/assets/SmartFarm/1188011-smart-farm/png/031-computer.png" height="24px" width="24px" class="rounded-lg" alt="">
                     <span>การเจริญเติบโต</span>
                 </a>
             </li>
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
-                <a class="w-full ho text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(3)" v-bind:class="{'text-blue-600 bg-white': openTab !== 3, 'text-white bg1': openTab === 3}">
+                <a class="w-full text-base font-bold uppercase px-5 py-3 shadow-lg rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(3)" v-bind:class="{'text-blue-600 bg-white': openTab !== 3, 'text-white bg1': openTab === 3}">
                     <img src="@/assets/certificate/certificate.png" height="24px" width="24px" class="rounded-lg" alt="">
                     <span>ใบพันธุ์ประวัติ</span>
                 </a>
