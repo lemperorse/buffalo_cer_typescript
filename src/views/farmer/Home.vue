@@ -85,7 +85,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/search')" src="@/assets/certificate/certificate.png" height="222px" width="222px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/search')" src="@/assets/home/ค้นหาใบพันธ์ประวัติ.png" height="222px" width="222px" alt="">
                             </center>
                         </v-card-text>
 
@@ -102,7 +102,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png" height="200px" width="200px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/home/ข้อมูลส่วนตัว.png" height="200px" width="200px" alt="">
                             </center>
                         </v-card-text>
 
@@ -119,7 +119,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/buffalo/buffalo1.png" height="200px" width="200px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/home/ข้อมูลควาย.png" height="200px" width="200px" alt="">
                             </center>
                         </v-card-text>
 

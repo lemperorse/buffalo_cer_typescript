@@ -1,7 +1,7 @@
 <template>
 <!-- <div class="bg-gray-100"> -->
 <div class="">
-    <div class="w-full rounded">
+    <div class="w-full">
         <div class="flex h-full w-full p-6">
             <div class="flex flex-col ">
                 <h1 class="text-2xl font-semibold uppercase md:text-3xl ">ค้นหาใบพันธุ์ประวัติ</h1>
@@ -15,22 +15,35 @@
                         </button>
                         <input v-model="search" class="w-full" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม">
                     </div>
-                    <div class="mt1">
+                    <div class="ml-2">
                         <v-btn type="submit" fab depressed color="orange darken-1" dark>
                             <v-icon>fas fa-search</v-icon>
                         </v-btn>
                     </div>
-                    
                 </form>
-                
             </div>
         </div>
+        <center>
+            <v-row class=" w-full flex row wrap p-3 md:p-0">
+                <div class="w-full md:w-1/3 md:p-3">
+                    <v-select :items="items" filled rounded label="จังหวัด"></v-select>
+                </div>
+
+                <div class="w-full md:w-1/3 md:p-3">
+                    <v-select :items="items" filled rounded label="อำเภอ"></v-select>
+                </div>
+
+                <div class="w-full md:w-1/3 md:p-3">
+                    <v-select :items="items" filled rounded label="ตำบล"></v-select>
+                </div>
+            </v-row>
+        </center>
     </div>
 
     <!-- card --><br>
-    <div class="block w-full overflow-x-auto rounded-lg">
+    <div class="block w-full overflow-x-auto rounded-lg -mt-10">
         <div class="flex flex-wrap mb-4">
-            <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index"> 
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index">
                 <div class="border-b-2 bg-white rounded shadow  animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap">
@@ -63,43 +76,10 @@
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
-    <!-- <div class="px-4 md:px-10 mx-auto  overflow-x-auto animate__animated animate__bounceInLeft ">
-        <div class="flex flex-wrap flex-row ">
-            <div class="w-1/4 p-3" v-for="buffalo,index in buffalos.results" :key="index"> -->
-                <!-- <div class=" w-full bg-white rounded-lg shadow-lg">
-                    <v-img class="rounded-t-lg h-48 w-full" :src="(buffalo.front_image)?buffalo.front_image:'https://sv1.picz.in.th/images/2020/11/07/bb198v.jpg'" />
-                    <div class="p-5">
-                        <h1 class="text-2xl font-bold text-yellow-800 py-2">{{buffalo.name}}</h1>
-                        <h5 class="text-gray-500 uppercase font-bold text-xs">
-                            MC/NID : {{ buffalo.microchip }}/ {{ buffalo.nid }}
-                        </h5>
-                        <h5 class="text-gray-500 uppercase font-bold text-xs">
-                            เจ้าของ : {{ buffalo.owner }}
-                        </h5>
-                        <h5 class="text-gray-500 uppercase font-bold text-xs">
-                            ฟาร์ม : {{ buffalo.froms }}
-                        </h5>
-                        <h5 class="text-gray-500 uppercase font-bold text-xs">
-                            กลุ่ม : {{ buffalo.group }}
-                        </h5>
-                        <hr>
-                        <h5 class="text-gray-500 uppercase font-bold text-xs">
-                            ที่อยู่ : {{ buffalo.address }}
-                        </h5><br>
-                        <v-btn @click="$router.push(`buffalo/public?id=${buffalo.id}`)" class="w-full" color="primary">
-                            <v-icon style="color:white;">mdi mdi-eye</v-icon>&nbsp;ดูรายละเอียด
-                        </v-btn>
-                    </div>
-                </div> -->
-
-            <!-- </div>
-        </div>
-    </div> -->
-
     <div class="py-2 ">
         <br><br>
         <v-pagination color="#4361EE" class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" v-model="page" :length="allPages" :total-visible="9" @input="handlePageChange" circle></v-pagination>
