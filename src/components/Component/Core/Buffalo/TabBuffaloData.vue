@@ -30,16 +30,16 @@
             </h6>
             
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" required v-model="form.name" type="text" filled rounded dense label="ชื่อหรือหมายเลขควาย" id="id" prepend-inner-icon="em em-water_buffalo"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" required v-model="form.price" type="number" filled rounded dense label="ราคา" id="id" prepend-inner-icon="fas fa-money-bill-wave"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" required v-model="form.nid" type="number" filled rounded dense label="หมายเลข NID" id="id" prepend-inner-icon="fas fa-list-ol"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" required v-model="form.microship" type="number" filled rounded dense label="หมายเลขไมโครซิป" id="id" prepend-inner-icon="fas fa-microchip"></v-text-field>
                 </div>
                 <div class="w-full">
@@ -48,28 +48,28 @@
                         ข้อมูลลักษณะควาย
                     </h6>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" required v-model="form.birthday" type="date" filled rounded dense label="วันเกิด" id="id"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" required v-model="form.age" type="number" filled rounded dense label="อายุ(ปี) หรือ (ประเมินจากฟัน)" id="id" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-select :disabled="unEdit" required :items="sex" item-text="value" item-value="id" v-model="form.gender" filled rounded dense label="เพศ" prepend-inner-icon="fas fa-venus-mars" />
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-select :disabled="unEdit" :items="color" item-text="value" item-value="id" v-model="form.color" filled rounded dense label="สี" prepend-inner-icon="fas fa-palette" />
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-select :disabled="unEdit" :items="status" item-text="value" item-value="id" v-model="form.status" filled rounded dense label="สถานะ" prepend-inner-icon="fas fa-file-alt" />
                 </div> 
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-select :disabled="unEdit" :items="froms" item-text="value" item-value="id" v-model="form.froms" filled rounded dense label="แหล่งที่มา" prepend-inner-icon="fas fa-file-import" />
                 </div>
             </div>
 
             <div class="flex justify-center mt-6">
-                <v-btn color="success" depressed type="submit" v-if="!unEdit" block large rounded>
+                <v-btn color="deep-purple accent-3" depressed type="submit" v-if="!unEdit" block large rounded>
                     <v-icon left>fas fa-save</v-icon>
                     บันทึกข้อมูล
                 </v-btn>

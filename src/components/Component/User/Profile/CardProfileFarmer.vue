@@ -8,8 +8,7 @@
                     <img ref="profileImage" alt="..." src="https://sv1.picz.in.th/images/2020/11/04/bQMzml.jpg" class="shadow-xl h-40 w-40 rounded-full align-middle border-none -mt-16 w-48 h-48" />
                     <div class="flex justify-center mt-4" v-if="response">
                         <input type="file" ref="profile" @change="profileChange" style="display:none;" />
-                        <v-btn color="primary" @click="$refs.front.click()" rounded depressed large>อัพโหลดรูปภาพ</v-btn>
-
+                        <v-btn color="deep-purple accent-4" dark @click="$refs.front.click()" rounded depressed large>อัพโหลดรูปภาพ</v-btn>
                     </div>
                 </div>
             </div>

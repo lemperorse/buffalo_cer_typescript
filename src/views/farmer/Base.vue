@@ -53,7 +53,7 @@
                 <v-container grid-list-xs>
                     <router-view />
                 </v-container>
-                <footer-admin class="bg2" />
+                <footer-admin class="" />
             </div>
         </div>
     </v-app>

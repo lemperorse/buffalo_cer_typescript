@@ -11,7 +11,6 @@
                         <button @click="$refs.profile.click()" class="bg-blue-500 f-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">
                             อัพโหลดรูปภาพ
                         </button>
-
                     </div>
                 </div>
             </div>

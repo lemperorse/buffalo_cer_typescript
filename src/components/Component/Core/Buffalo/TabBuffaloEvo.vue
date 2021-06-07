@@ -27,16 +27,16 @@
             </h6>
 
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.weight0" name="name" label="น้ำหนัก(กก.)" id="id" prepend-inner-icon="fas fa-weight"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.width0" name="name" label="ความกว้างรอบอก(ซม.)" id="id" prepend-inner-icon="fas fa-text-width"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.length0" name="name" label="ความยาวรอบลำตัว(ซม.)" id="id" prepend-inner-icon="fas fa-text-width"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.height0" name="name" label="ความสูง(ซม.)" id="id" prepend-inner-icon="fas fa-text-height"></v-text-field>
                 </div>
             </div>
@@ -46,16 +46,16 @@
                 อายุ 240 วัน <span v-if="evo240" class="text-red-600">(ยังไม่มีข้อมูล)</span>
             </h6>
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.weight240" name="name" label="น้ำหนัก(กก.)" id="id" prepend-inner-icon="fas fa-weight"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.width240" name="name" label="ความกว้างรอบอก(ซม.)" id="id" prepend-inner-icon="fas fa-text-width"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.length240" name="name" label="ความยาวรอบลำตัว(ซม.)" id="id" prepend-inner-icon="fas fa-text-width"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.height240" name="name" label="ความสูง(ซม.)" id="id" prepend-inner-icon="fas fa-text-height"></v-text-field>
                 </div>
             </div>
@@ -65,16 +65,16 @@
                 อายุ 400 วัน <span v-if="evo400" class="text-red-600">(ยังไม่มีข้อมูล)</span>
             </h6>
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.weight400" name="name" label="น้ำหนัก(กก.)" id="id" prepend-inner-icon="fas fa-weight"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.width400" name="name" label="ความกว้างรอบอก(ซม.)" id="id" prepend-inner-icon="fas fa-text-width"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.length400" name="name" label="ความยาวรอบลำตัว(ซม.)" id="id" prepend-inner-icon="fas fa-text-width"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.height400" name="name" label="ความสูง(ซม.)" id="id" prepend-inner-icon="fas fa-text-height"></v-text-field>
                 </div>
             </div>
@@ -84,22 +84,22 @@
                 อายุ 600 วัน <span v-if="evo600" class="text-red-600">(ยังไม่มีข้อมูล)</span>
             </h6>
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.weight600" name="name" label="น้ำหนัก(กก.)" id="id" prepend-inner-icon="fas fa-weight"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.width600" name="name" label="ความกว้างรอบอก(ซม.)" id="id" prepend-inner-icon="fas fa-text-width"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.length600" name="name" label="ความยาวรอบลำตัว(ซม.)" id="id" prepend-inner-icon="fas fa-text-width"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field filled rounded dense :disabled="unEdit" type="number" v-model="form.height600" name="name" label="ความสูง(ซม.)" id="id" prepend-inner-icon="fas fa-text-height"></v-text-field>
                 </div>
             </div>
 
             <div class="flex justify-center mt-4">
-                <v-btn color="success" depressed type="submit" v-if="!unEdit" block large rounded>
+                <v-btn color="deep-purple accent-3" depressed type="submit" v-if="!unEdit" block large rounded>
                     <v-icon left>fas fa-save</v-icon>
                     บันทึกข้อมูล
                 </v-btn>

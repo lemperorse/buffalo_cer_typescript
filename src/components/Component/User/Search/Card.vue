@@ -16,7 +16,7 @@
                         <input v-model="search" class="w-full" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม">
                     </div>
                     <div class="mt1">
-                        <v-btn type="submit" fab color="success">
+                        <v-btn type="submit" fab color="orange darken-1" dark>
                             <v-icon>fas fa-search</v-icon>
                         </v-btn>
                     </div>
@@ -33,10 +33,10 @@
             <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index"> 
                 <div class="border-b-2  rounded shadow  animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
-                        <div class="flex flex-wrap ">
-                            <div class="relative w-auto pl-4 flex-initial">
-                                <div>
-                                    <img :src="(buffalo.back_image)?buffalo.back_image:'https://images.pexels.com/photos/4835959/pexels-photo-4835959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'" class="h-16 w-16 bg-white rounded-full border" alt="..." />
+                        <div class="flex flex-wrap">
+                            <div class="relative w-auto pl-4 flex-initial pt-3">
+                                <div class="">
+                                    <img :src="(buffalo.back_image)?buffalo.back_image:'https://images.pexels.com/photos/4835959/pexels-photo-4835959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'" class="h-24 w-24 bg-white rounded-full border" alt="..." />
                                 </div>
                             </div>
                             <div class="relative w-full pr-4 max-w-full flex-grow flex-1 text-right">
@@ -56,7 +56,7 @@
                                     ที่อยู่ : {{ buffalo.address }}
                                 </div>
                                 <span>
-                                    <v-btn @click="$router.push(`buffalo/public?id=${buffalo.id}`)" depressed color="primary">
+                                    <v-btn @click="$router.push(`buffalo/public?id=${buffalo.id}`)" rounded depressed dark color="amber">
                                         ดูรายละเอียด
                                     </v-btn>
                                 </span>

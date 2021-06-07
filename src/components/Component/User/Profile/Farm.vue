@@ -25,10 +25,10 @@
                 เกี่ยวกับฟาร์ม
             </h6>
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-12/12 px-4 ">
+                <div class="w-full lg:w-12/12  md:px-4">
                     <v-text-field :disabled="unEdit" v-model="form.name" type="text" filled rounded dense label="ชื่อฟาร์ม" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
                 </div>
-                <div class="w-full lg:w-12/12 px-4 ">
+                <div class="w-full lg:w-12/12 md:px-4 ">
                     <v-select :disabled="unEdit" required :items="group" item-text="value" item-value="id" v-model="form.group" filled rounded dense label="กลุ่มเกษตกร" prepend-inner-icon="fas fa-users" />
                 </div>
             </div> 
@@ -37,13 +37,13 @@
                 ที่อยู่ฟาร์ม
             </h6>
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-12/12 px-4 ">
+                <div class="w-full lg:w-12/12 md:px-4 ">
                     <v-text-field :disabled="unEdit" v-model="form.address" type="text" filled rounded dense label="ที่อยู่ฟาร์ม" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
                 </div>
-                <div class="w-full lg:w-12/12 px-4 ">
+                <div class="w-full lg:w-12/12  md:px-4">
                     <v-text-field :disabled="unEdit" :value="CityFrom" @click="openCityDialog " @focus="openCityDialog"  type="text" filled rounded dense label="จังหวัด อำเภอ ตำบล" prepend-inner-icon="fas fa-globe-asia" />
                 </div>
-                <div class="w-full lg:w-12/12 px-4 ">
+                <div class="w-full lg:w-12/12  md:px-4">
                     <v-text-field :disabled="unEdit" v-model="form.zipcode" type="text" filled rounded dense label="รหัสไปรษณีย์" id="id" prepend-inner-icon="fas fa-paper-plane"></v-text-field>
                 </div>
             </div>
@@ -53,22 +53,22 @@
                 พิกัด GPS
             </h6>
             <div class="flex flex-wrap">
-                <div class="w-full px-4">
+                <div class="w-full ">
                     <div class="relative w-full mb-3">
                         <MapView :name="'locations'" :center="{'Latitude':form.latitude,'Longitude' :form.longitude }" :locations="[
                   {'Latitude':form.latitude,'Longitude' :form.longitude } ,]" :zoom="18" :disableDefaultUI="false" :scaleControl="false" :zoomControl="false"></MapView>
                     </div>
                 </div>
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" v-model="form.latitude" type="text" filled rounded dense label="พิกัดฟาร์ม GPS(ละติจูด)" id="id" prepend-inner-icon="fas fa-map-marker-alt"></v-text-field>
                 </div> 
-                <div class="w-full lg:w-6/12 px-4">
+                <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" v-model="form.longitude" type="text" filled rounded dense label="พิกัดฟาร์ม GPS(ลองติจูด)" id="id" prepend-inner-icon="fas fa-map-marker-alt"></v-text-field>
                 </div> 
             </div>
 
             <div class="flex justify-center mt-4">
-                <v-btn color="success" depressed type="submit" v-if="!unEdit" block large rounded>
+                <v-btn color="deep-purple accent-3" depressed type="submit" v-if="!unEdit" block large rounded>
                     <v-icon left>fas fa-save</v-icon>
                     บันทึกข้อมูล
                 </v-btn>

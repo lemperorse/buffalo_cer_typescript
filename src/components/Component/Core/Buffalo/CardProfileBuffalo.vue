@@ -12,7 +12,7 @@
                                 <h2 class="text-xl font-bold">ภายถ่ายด้านหน้า</h2>
                             </center> <br>
                             <input type="file" ref="front" @change="frontChange" style="display:none;" />
-                            <v-btn color="primary" @click="$refs.front.click()" rounded depressed large>อัพโหลดรูปภาพ</v-btn>
+                            <v-btn color="deep-purple accent-4" dark @click="$refs.front.click()" rounded depressed large>อัพโหลดรูปภาพ</v-btn>
                             <br>
                         </div>
 
@@ -35,7 +35,7 @@
                                 <h2 class="text-xl font-bold">ภายถ่ายด้านข้าง</h2>
                             </center> <br>
                             <input type="file" ref="back" @change="backChange" style="display:none;" />
-                            <v-btn color="primary" @click="$refs.front.click()" rounded depressed large>อัพโหลดรูปภาพ</v-btn>
+                            <v-btn color="deep-purple accent-4" dark @click="$refs.front.click()" rounded depressed large>อัพโหลดรูปภาพ</v-btn>
                             <br>
                         </div>
                     </div>

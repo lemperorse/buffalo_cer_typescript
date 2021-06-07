@@ -27,8 +27,7 @@
                     <span class="text-black pl-2">ตั้งค่า</span>
                 </a>
             </li>
-        </ul>
-
+        </ul> 
         <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg animate__animated animate__bounceInLeft animate__delay-1s"> -->
             <v-card class="relatives animate__animated animate__bounceInLeft animate__delay-1s">
                 <div class="px-4 py-5 flex-auto">
@@ -50,8 +49,7 @@
                     </div>
                 </div>
             </v-card>
-        <!-- </div> -->
-
+        <!-- </div> --> 
     </div>
 </div>
 </template>

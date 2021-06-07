@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="rounded-t bg-white mb-0 px-2 md:px-6 py-6">
+    <div class="rounded-t bg-white mb-0 md:px-6 py-6">
         <div class="text-center flex flex-wrap justify-between">
             <h6 class="text-gray-800 text-xl font-bold">ตั้งค่า</h6> 
         </div>
@@ -11,12 +11,12 @@
                 ตั้งค่ารหัสผ่าน
             </h6>
             <div class="flex flex-wrap">
-                <div class="w-full lg:w-6/12 px-4 ">
+                <div class="w-full lg:w-6/12 md:px-4 ">
                     <v-text-field required v-model="formPassword.password" type="password" placeholder="ระบุรหัสผ่าน ***" filled rounded dense label="รหัสผ่านใหม่" id="id" prepend-inner-icon="fas fa-key"></v-text-field>
                 </div>
-                <div class="w-full lg:w-6/12 px-4 ">
+                <div class="w-full lg:w-6/12  md:px-4">
                     <v-text-field required v-model="formPassword.password2" type="password" placeholder="ระบุรหัสผ่าน ***" filled rounded dense label="ยืนยันรหัสผ่านใหม่" id="id" prepend-inner-icon="fas fa-key"></v-text-field>
-                    <v-btn color="success" depressed type="submit" block large rounded>
+                    <v-btn color="yellow darken-3" dark depressed type="submit" block large rounded>
                         <v-icon left>fas fa-save</v-icon>
                         อัพเดทรหัสผ่าน
                     </v-btn>
@@ -27,13 +27,13 @@
         <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase" v-if="admin">
             จัดการสิทธิ์
         </h6>
-        <div class="w-full lg:w-12/12 px-4" v-if="admin">
+        <div class="w-full lg:w-12/12 " v-if="admin">
             <div class="relative w-full mb-3">
                 <label class="block uppercase text-gray-700 text-xs font-bold mb-2">
                     สิทธ์การใช้งาน
                 </label>
                 <div class="relative">
-                    <select v-model="formProfile.status" @change="changeStatus" class="border-edit block appearance-none w-full bg-gray-100 border border-gray-100 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500">
+                    <select v-model="formProfile.status" @change="changeStatus" class="border-edit block appearance-none w-full bg-gray-100 border border-gray-100 text-black py-3  pr-8 rounded leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-500">
                         <option :value="true">เปิดการใช้งาน (ผู้ใช้)</option>
                         <option :value="false">ปิดการใช้งาน</option>
                     </select>
@@ -51,7 +51,7 @@
         </h6>
 
         <div class="flex flex-wrap" v-if="admin">
-            <div class="w-full lg:w-6/12 px-4">
+            <div class="w-full lg:w-6/12 ">
                 <div class="relative w-full mb-3">
                     <button @click="disableUser" class="f-white w-full rounded p-2 bg-red-500 hover:bg-red-800 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-red-600 focus:ring-opacity-50 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" type="button">
                         ลบข้อมูลเกษตกรคนนี้

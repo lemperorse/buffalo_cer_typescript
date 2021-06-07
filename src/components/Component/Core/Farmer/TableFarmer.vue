@@ -23,7 +23,7 @@
 
             <!-- เพิ่ม -->
             <div class="relative w-full max-w-full flex-grow flex-1 text-right"> 
-                <v-btn color="success" rounded depressed large @click="$router.push(`buffalo/create`)">
+                <v-btn color="deep-purple accent-4" dark rounded depressed large @click="$router.push(`buffalo/create`)">
                     <v-icon left dark>
                         fas fa-plus-square
                     </v-icon> 
@@ -54,7 +54,7 @@
                                     หมายเลข MICROCHIP : {{ buffalo.nid }}
                                 </h5>
                                 <span>
-                                    <v-btn color="primary" depressed @click="$router.push(`buffalo/profile?id=${buffalo.id}`)">ดูรายละเอียด</v-btn>
+                                    <v-btn color="amber" dark rounded depressed @click="$router.push(`buffalo/profile?id=${buffalo.id}`)">ดูรายละเอียด</v-btn>
                                 </span>
                             </div>
                         </div>

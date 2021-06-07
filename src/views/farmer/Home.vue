@@ -1,40 +1,43 @@
 <template>
-<div class="p-6 pt-20  ">
+<div class="p-6 pt-24  ">
     <div class="px-1 md:px-10 mx-auto w-full">
-        <div>
-            <v-row wrap>
-                <v-col>
+        <div>  
+            <v-row wrap class="p-4 pb-6">
+                <div>
                     <v-card class="pa-2 wrap elevation-0 hvr-grow " @click="$router.push('/user/profile')">
                         <div class="row wrap px-3">
-                            <v-avatar>
-                                <img src="https://cdn.vuetifyjs.com/images/john.jpg" size="36" alt="John">
+                            <v-avatar size="86">
+                                <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
                             </v-avatar>
-                            <div class=" ml-2">
-                                <div>สวัสดี {{user.first_name}}</div>
+                            <div class=" ml-2 align-self-center">
+                                <div class="text-xl">สวัสดี {{user.first_name}}</div>
                                 <div>Email : {{user.email}}</div>
                             </div>
                         </div>
                     </v-card>
-                </v-col>
-                <v-col md="auto">
+                </div>
+                <v-spacer></v-spacer>
+                <div>
                     <v-card class="pa-2 elevation-0 hvr-grow" @click="$router.push('/user/buffalo')">
                         <center>
                             <v-avatar rounded size="36"><img src="@/assets/buffalo/buffalo.png" alt=""></v-avatar>
-                            <span>ควายของฉัน</span>
+                            <span class="align-self-center">ควายของฉัน</span>
                         </center>
                     </v-card>
-                </v-col>
-                <v-col lg="2">
+                </div>
+                <div>
                     <v-card class="pa-2 wrap elevation-0 hvr-grow" @click="$router.push('/user/profile')">
                         <center>
                             <v-avatar rounded size="36">
                                 <v-icon>mdi-form-textbox-password</v-icon>
                             </v-avatar>
-                            <span>เปลี่ยนรหัสผ่าน</span>
+                            <span class="align-self-center">เปลี่ยนรหัสผ่าน</span>
                         </center>
                     </v-card>
-                </v-col>
+                </div>
+
             </v-row>
+
             <div class="flex flex-wrap mb-10">
                 <div class="w-full lg:w-1/3 xl:w-1/3 px-2 mb-2">
                     <v-card max-height="380" rounded class="" outlined>
@@ -48,7 +51,7 @@
                         <br>
                         <br>
                         <v-card-actions>
-                            <v-btn color="success" block text>ควายของฉัน</v-btn>
+                            <v-btn color="deep-purple accent-3" block text>ควายของฉัน</v-btn>
                         </v-card-actions>
                     </v-card>
                 </div>
@@ -87,7 +90,7 @@
                         </v-card-text>
 
                         <v-card-actions class="mt-3">
-                            <v-btn color="success" block text @click="$router.push('/user/search')">ค้นหาใบพันธ์ประวัติ</v-btn>
+                            <v-btn color="deep-purple accent-3" block text @click="$router.push('/user/search')">ค้นหาใบพันธ์ประวัติ</v-btn>
                         </v-card-actions>
                     </v-card>
                 </div>
@@ -99,12 +102,12 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png" height="222px" width="222px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png" height="200px" width="200px" alt="">
                             </center>
                         </v-card-text>
 
                         <v-card-actions class="mt-3">
-                            <v-btn color="success" block text @click="$router.push('/user/profile')">ข้อมูลส่วนตัว</v-btn>
+                            <v-btn color="deep-purple accent-3" block text @click="$router.push('/user/profile')">ข้อมูลส่วนตัว</v-btn>
                         </v-card-actions>
                     </v-card>
                 </div>
@@ -116,12 +119,12 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/buffalo/buffalo1.png" height="222px" width="222px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/buffalo/buffalo1.png" height="200px" width="200px" alt="">
                             </center>
                         </v-card-text>
 
                         <v-card-actions class="mt-3">
-                            <v-btn color="success" block text @click="$router.push('/user/profile')">ควายทั้งหมด</v-btn>
+                            <v-btn color="deep-purple accent-3" block text @click="$router.push('/user/profile')">ควายทั้งหมด</v-btn>
                         </v-card-actions>
                     </v-card>
                 </div>
