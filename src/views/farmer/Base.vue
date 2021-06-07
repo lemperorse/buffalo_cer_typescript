@@ -7,10 +7,10 @@
                 <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
                 <v-toolbar-title>พันธุ์ควายไทย</v-toolbar-title>
                 <ul class="" style="">
-                    <li><a @click="$router.push('/user/home')">หน้าแรก</a></li>
-                    <li><a @click="$router.push('/user/profile')">ข้อมูลส่วนตัว</a></li>
-                    <li><a @click="$router.push('/user/search')">ค้นหาใบพันธุ์ประวัติ</a></li>
-                    <li><a @click="$router.push('/user/buffalo')">ข้อมูลควาย</a></li>
+                    <li class="p-6"><a @click="$router.push('/user/home')">หน้าแรก</a></li>
+                    <li class="p-6"><a @click="$router.push('/user/profile')">ข้อมูลส่วนตัว</a></li>
+                    <li class="p-6"><a @click="$router.push('/user/search')">ค้นหาใบพันธุ์ประวัติ</a></li>
+                    <li class="p-6"><a @click="$router.push('/user/buffalo')">ข้อมูลควาย</a></li>
                 </ul>
                 <v-spacer></v-spacer>
                 <UserDropdown class="" />
@@ -49,6 +49,7 @@
                     </v-list-item-group>
                 </v-list>
             </v-navigation-drawer>
+            
             <div class="w-full h-screen" style="z-index:1;">
                 <v-container grid-list-xs>
                     <router-view />
