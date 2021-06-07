@@ -9,7 +9,7 @@
                             <v-avatar>
                                 <img src="https://cdn.vuetifyjs.com/images/john.jpg" size="36" alt="John">
                             </v-avatar>
-                            <div>
+                            <div class=" ml-2">
                                 <div>สวัสดี {{user.first_name}}</div>
                                 <div>Email : {{user.email}}</div>
                             </div>
