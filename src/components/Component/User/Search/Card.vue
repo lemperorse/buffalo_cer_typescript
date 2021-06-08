@@ -44,7 +44,7 @@
     <div class="block w-full overflow-x-auto rounded-lg -mt-10">
         <div class="flex flex-wrap mb-4">
             <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index">
-                <div class="border-b-2 bg-white rounded shadow  animate__animated animate__zoomIn ">
+                <div class="border bg-white rounded-lg shadow  animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap">
                             <div class="relative w-auto pl-4 flex-initial pt-3">

@@ -3,52 +3,7 @@
     <v-app>
         <CityDialog />
         <div class="">
-            <v-app-bar app class="bg2" dark>
-                <v-app-bar-nav-icon  @click="drawer = !drawer"></v-app-bar-nav-icon>
-                <v-toolbar-title>พันธุ์ควายไทย</v-toolbar-title>
-                <ul class="" style="">
-                    <li class="p-6" style="visibility: hidden;"><a @click="$router.push('/user/home')">หน้าแรก</a></li>
-                    <li class="p-6" style="visibility: hidden;"><a @click="$router.push('/user/profile')">ข้อมูลส่วนตัว</a></li>
-                    <li class="p-6" style="visibility: hidden;"><a @click="$router.push('/user/search')">ค้นหาใบพันธุ์ประวัติ</a></li>
-                    <li class="p-6" style="visibility: hidden;"><a @click="$router.push('/user/buffalo')">ข้อมูลควาย</a></li>
-                </ul>
-                <v-spacer></v-spacer>
-                <UserDropdown class="" />
-            </v-app-bar>
-
-            <v-navigation-drawer v-model="drawer" fixed temporary>
-                <v-list dense>
-                    <v-list-item-group active-class="deep-purple--text text--accent-4">
-                        <v-list-item @click="$router.push('/user/home')">
-                            <v-list-item-title class="row wrap p-2">
-                                <img src="@/assets/SmartFarm/1188011-smart-farm/png/039-warehouse.png" height="36px" width="36px" class="rounded-lg" alt="">
-                                <span class="mt-3 ml-2">หน้าแรก</span>
-                            </v-list-item-title>
-                        </v-list-item>
-
-                        <v-list-item @click="$router.push('/user/profile')">
-                            <v-list-item-title class="row wrap p-2">
-                                <img src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png" height="36px" width="36px" class="rounded-lg" alt="">
-                                <span class="mt-3 ml-2">ข้อมูลส่วนตัว</span>
-                            </v-list-item-title>
-                        </v-list-item>
-
-                        <v-list-item @click="$router.push('/user/search')">
-                            <v-list-item-title class="row wrap p-2">
-                                <img src="@/assets/certificate/certificate.png" height="36px" width="36px" class="rounded-lg" alt="">
-                                <span class="mt-3 ml-2">ค้นหาใบพันธุ์ประวัติ</span>
-                            </v-list-item-title>
-                        </v-list-item>
-
-                        <v-list-item @click="$router.push('/user/buffalo')">
-                            <v-list-item-title class="row wrap p-2">
-                                <img src="@/assets/buffalo/buffalo.png" height="36px" width="36px" class="rounded-lg" alt="">
-                                <span class="mt-3 ml-2">ข้อมูลควาย</span>
-                            </v-list-item-title>
-                        </v-list-item>
-                    </v-list-item-group>
-                </v-list>
-            </v-navigation-drawer>
+            <IndexNavbar/>
 
             <div class="bg-gray-100" style="z-index:1;">
                 <v-container grid-list-xs>
@@ -69,6 +24,7 @@ import CityDialog from '@/components/Dialog/City.vue'
 import UserMenu from "@/components/Sidebar/UserMenu.vue";
 import FooterAdmin from "@/components/Footers/FooterAdmin.vue"
 import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
+import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 
 @Component({
     components: {
@@ -76,6 +32,7 @@ import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
         FooterAdmin,
         CityDialog,
         UserDropdown,
+        IndexNavbar
     },
     computed: {}
 })

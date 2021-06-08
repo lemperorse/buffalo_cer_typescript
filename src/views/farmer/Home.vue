@@ -1,8 +1,8 @@
 <template>
-<div class="p-6 md:pt-24 pt-20">
+<div class="p-6 pt-20">
     <div class="px-1 md:px-10 mx-auto w-full">
         <div>  
-            <v-row wrap class="p-4 pb-10">
+            <v-row wrap class="p-4 pb-6">
                 <div>
                     <div class="pa-2 wrap elevation-0 hvr-grow " @click="$router.push('/user/profile')">
                         <div class="row wrap px-3">
@@ -25,6 +25,7 @@
                         </center>
                     </div>
                 </div>
+                <v-spacer></v-spacer>
                 <div>
                     <div class="pa-2 wrap elevation-0 hvr-grow" @click="$router.push('/user/profile')">
                         <center>

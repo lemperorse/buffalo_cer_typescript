@@ -2,8 +2,8 @@
 <div class="">
     <a class="text-gray-600 block" href="#pablo" ref="btnDropdownRef" v-on:click="toggleDropdown($event)">
         <div class="items-center flex rounded-full border-4 border-white m-2">
-            <span class="w-12 h-12 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full ">
-                <img ref="profileImage" alt="..." class=" w-12 h-12 rounded-full align-middle border-none shadow-lg" :src="image" />
+            <span class="text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full ">
+                <img ref="profileImage" alt="..." class=" w-6 h-6 rounded-full align-middle border-none shadow-lg" :src="image" />
             </span>
         </div>
     </a>

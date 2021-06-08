@@ -1,7 +1,7 @@
 <template>
 <!-- <div class="p-6 pt-20 bg-gray-100"> -->
-<div class="p-6 pt-20">
-    <div class="w-full lg:w-8/12 px-4 md:px-10">
+<div class="md:p-6 p-2 pt-20 md:pt-28">
+    <div class="w-full lg:w-8/12 px-6 md:px-10">
         <h2 class="text-2xl"> <b>ข้อมูลส่วนตัวของฉัน</b> </h2> <span>ประวัติส่วนตัว ข้อมูลฟาร์ม ภาพถ่ายต่างๆ</span><br><br>
     </div>
     <div class="flex flex-wrap-reverse">

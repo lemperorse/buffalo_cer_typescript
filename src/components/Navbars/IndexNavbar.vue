@@ -1,114 +1,82 @@
 <template>
-  <nav
-    class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow"
-  >
-    <div
-      class="container px-4 mx-auto flex flex-wrap items-center justify-between"
-    >
-      <div
-        class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
-      >
-        <router-link to="/">
-          <a
-            class="text-gray-800 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
-            href="#pablo"
-          >
-            พันธ์ุประวัติ
-          </a>
-        </router-link>
-        <button
-          class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-          type="button"
-          v-on:click="setNavbarOpen"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <div
-        class="lg:flex flex-grow items-center"
-        :class="[navbarOpen ? 'block' : 'hidden']"
-        id="example-navbar-warning"
-      >
-        <ul class="flex flex-col lg:flex-row list-none mr-auto">
-          <li class="flex items-center">
-            <a
-              class="hover:text-gray-600 text-gray-800 px-3 py-2 flex items-center text-xs uppercase font-bold"
-              href="https://www.creative-tim.com/learning-lab/tailwind/vue/overview/notus?ref=vn-index-navbar"
-            >
-              <i
-                class="text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
-              />
-              Docs
-            </a>
-          </li>
-        </ul>
-        <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
-          <li class="flex items-center">
-            <index-dropdown />
-          </li>
-          <li class="flex items-center">
-            <a
-              class="hover:text-gray-600 text-gray-800 px-3 py-2 flex items-center text-xs uppercase font-bold"
-              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdemos.creative-tim.com%2Fvue-notus%2F%23%2F"
-              target="_blank"
-            >
-              <i class="text-gray-500 fab fa-facebook text-lg leading-lg" />
-              <span class="lg:hidden inline-block ml-2">Share</span>
-            </a>
-          </li>
-
-          <li class="flex items-center">
-            <a
-              class="hover:text-gray-600 text-gray-800 px-3 py-2 flex items-center text-xs uppercase font-bold"
-              href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdemos.creative-tim.com%2Fvue-notus%2F%23%2F&text=Start%20your%20development%20with%20a%20Free%20Tailwind%20CSS%20and%20VueJS%20UI%20Kit%20and%20Admin.%20Let%20Vue%20Notus%20amaze%20you%20with%20its%20cool%20features%20and%20build%20tools%20and%20get%20your%20project%20to%20a%20whole%20new%20level.%20"
-              target="_blank"
-            >
-              <i class="text-gray-500 fab fa-twitter text-lg leading-lg" />
-              <span class="lg:hidden inline-block ml-2">Tweet</span>
-            </a>
-          </li>
-
-          <li class="flex items-center">
-            <a
-              class="hover:text-gray-600 text-gray-800 px-3 py-2 flex items-center text-xs uppercase font-bold"
-              href="https://github.com/creativetimofficial/vue-notus?ref=vn-index-navbar"
-              target="_blank"
-            >
-              <i class="text-gray-500 fab fa-github text-lg leading-lg" />
-              <span class="lg:hidden inline-block ml-2">Star</span>
-            </a>
-          </li>
-
-          <li class="flex items-center">
-            <button
-              class="bg-blue-500 text-white active:bg-blue-600 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
-              type="button"
-            >
-              <i class="fas fa-arrow-alt-circle-down"></i> Download
+<nav class=" fixed z-50 w-full flex flex-wrap items-center justify-between navbar-expand-lg bg1 shadow ">
+    <div class="container  mx-auto flex flex-wrap items-center justify-between">
+        <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+            <router-link to="/">
+                <a class="text-white text-md font-bold leading-relaxed inline-block whitespace-no-wrap uppercase" href="#pablo">
+                    พันธ์ุประวัติ
+                </a>
+            </router-link>
+            <button class="cursor-pointer bg-white text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" v-on:click="setNavbarOpen">
+                <i class="fas fa-bars"></i>
             </button>
-          </li>
-        </ul>
-      </div>
+        </div>
+        <div class="lg:flex flex-grow items-center" :class="[navbarOpen ? 'block' : 'hidden']" id="example-navbar-warning">
+            <ul class="flex flex-col lg:flex-row list-none mr-auto">
+                <li class="flex items-center md:w-1/4">
+                    <a class="flex items-center md:text-sm text-xl" @click="$router.push('/user/home')">
+                        <img src="@/assets/SmartFarm/1188011-smart-farm/png/039-warehouse.png" height="24px" width="24px" class="rounded-lg" alt="">
+                        <span class=" ml-2">หน้าแรก</span>
+                    </a>
+                </li>
+                <li class="flex items-center md:w-1/4">
+                    <a class="flex items-center md:text-sm text-xl" @click="$router.push('/user/profile')">
+                        <img src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
+                        <span class=" ml-2">ข้อมูลส่วนตัว</span>
+                    </a>
+                </li>
+                <li class="flex items-center md:w-1/4">
+                    <a class="flex items-center md:text-sm text-xl" @click="$router.push('/user/search')">
+                        <img src="@/assets/certificate/certificate.png" height="24px" width="24px" class="rounded-lg" alt="">
+                        <span class=" ml-2">ใบพันธุ์ประวัติ</span>
+                    </a>
+                </li>
+                <li class="flex items-center md:w-1/4">
+                    <a class="flex items-center md:text-sm text-xl" @click="$router.push('/user/buffalo')">
+                        <img src="@/assets/buffalo/buffalo.png" height="24px" width="24px" class="rounded-lg" alt="">
+                        <span class=" ml-2">ข้อมูลควาย</span>
+                    </a>
+                </li>
+
+            </ul>
+            <v-spacer></v-spacer>
+            <ul class="">  
+                <li class="">
+                    <UserDropdown class="" />
+                </li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
 </template>
 
 <script>
 import IndexDropdown from "@/components/Dropdowns/IndexDropdown.vue";
+import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
 
 export default {
-  data() {
-    return {
-      navbarOpen: false,
-    };
-  },
-  methods: {
-    setNavbarOpen: function () {
-      this.navbarOpen = !this.navbarOpen;
+    data() {
+        return {
+            navbarOpen: false,
+        };
     },
-  },
-  components: {
-    IndexDropdown,
-  },
+    methods: {
+        setNavbarOpen: function () {
+            this.navbarOpen = !this.navbarOpen;
+        },
+    },
+    components: {
+        IndexDropdown,
+        UserDropdown,
+    },
 };
 </script>
+<style scoped>
+.bg1{
+    background-color: #ee5522;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23ca481d' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+}
+a{
+    color: white;
+}
+</style>
