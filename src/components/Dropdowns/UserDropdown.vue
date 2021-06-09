@@ -31,8 +31,7 @@
 
 <script>
 import { createPopper } from "@popperjs/core";
-
-import image from "@/assets/img/team-1-800x800.jpg";
+ 
 import { Auth } from "@/store/auth";
 import { Core } from "@/store/core";
 import {
@@ -42,8 +41,7 @@ import {
 export default {
     data() {
         return {
-            dropdownPopoverShow: false,
-            image: image,
+            dropdownPopoverShow: false, 
         };
     },
     async mounted() {

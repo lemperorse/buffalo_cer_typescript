@@ -1,5 +1,5 @@
 <template>
-<div class="p-6 pt-20">
+<div class="p-2">
     <div class="px-1 md:px-10 mx-auto w-full">
         <div>  
             <v-row wrap class="p-4 pb-6">
@@ -20,12 +20,11 @@
                 <div>
                     <div class="pa-2 elevation-0 hvr-grow" @click="$router.push('/user/buffalo')">
                         <center>
-                            <v-avatar rounded size="36"><img src="@/assets/buffalo/buffalo.png" alt=""></v-avatar>
+                            <v-avatar rounded size="36"><img src="/assets/buffalo/buffalo.png" alt=""></v-avatar>
                             <span class="align-self-center">ควายของฉัน</span>
                         </center>
                     </div>
-                </div>
-                <v-spacer></v-spacer>
+                </div> 
                 <div>
                     <div class="pa-2 wrap elevation-0 hvr-grow" @click="$router.push('/user/profile')">
                         <center>
@@ -86,7 +85,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/search')" src="@/assets/home/ค้นหาใบพันธ์ประวัติ.png" height="222px" width="222px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/search')" src="/assets/home/ค้นหาใบพันธ์ประวัติ.png" height="222px" width="222px" alt="">
                             </center>
                         </v-card-text>
 
@@ -103,7 +102,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/home/ข้อมูลส่วนตัว.png" height="200px" width="200px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="/assets/home/ข้อมูลส่วนตัว.png" height="200px" width="200px" alt="">
                             </center>
                         </v-card-text>
 
@@ -120,7 +119,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="@/assets/home/ข้อมูลควาย.png" height="200px" width="200px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="/assets/home/ข้อมูลควาย.png" height="200px" width="200px" alt="">
                             </center>
                         </v-card-text>
 

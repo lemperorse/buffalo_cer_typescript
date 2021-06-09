@@ -1,5 +1,5 @@
 <template>
-<div class=" pt-20 md:pt-28">
+<div class="p-2">
      <Card />
 </div>
 </template>

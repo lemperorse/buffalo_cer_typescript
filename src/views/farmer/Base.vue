@@ -1,9 +1,10 @@
 <template>
 <div>
     <v-app>
+        <IndexNavbar/>
         <CityDialog />
         <div class="">
-            <IndexNavbar/>
+         
 
             <div class="bg-gray-100" style="z-index:1;">
                 <v-container grid-list-xs>
@@ -21,14 +22,12 @@ import { User } from "@/store/user";
 import { Auth } from "@/store/auth";
 import { Component, Vue } from "vue-property-decorator";
 import CityDialog from '@/components/Dialog/City.vue'
-import UserMenu from "@/components/Sidebar/UserMenu.vue";
 import FooterAdmin from "@/components/Footers/FooterAdmin.vue"
 import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
 
 @Component({
-    components: {
-        UserMenu,
+    components: { 
         FooterAdmin,
         CityDialog,
         UserDropdown,

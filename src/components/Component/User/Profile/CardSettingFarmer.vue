@@ -2,28 +2,28 @@
 <div class="flex flex-wrap">
     <div class="w-full">
         <ul class="flex flex-col mb-0 list-none flex-wrap pt-3 pb-4 md:flex-row animate__animated animate__bounceInUp animate__delay-1s">
-            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
+            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 ">
                 <a class="w-full text-base font-bold uppercase px-5 py-3 shadow rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(1)" v-bind:class="{'text-black bg-white': openTab !== 1, 'text-white bg-yellow-500': openTab === 1}">
                     <!-- <i src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png"></i>ข้อมูลเกษตกร -->
-                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <img src="/assets/farm/2826134-agriculture/png/006-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
                     <span class="text-black pl-2">ข้อมูลเกษตกร</span>
                 </a>
             </li>
-            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
+            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 ">
                 <a class="w-full text-base font-bold uppercase px-5 py-3 shadow rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(2)" v-bind:class="{'text-black bg-white': openTab !== 2, 'text-black bg-yellow-500': openTab === 2}">
-                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/042-smart-farm-6.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <img src="/assets/farm/2826134-agriculture/png/028-barn.png" height="24px" width="24px" class="rounded-lg" alt="">
                     <span class="text-black pl-2">ข้อมูลฟาร์ม</span>
                 </a>
             </li>
-            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
+            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 ">
                 <a class="w-full text-base font-bold uppercase px-5 py-3 shadow rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(3)" v-bind:class="{'text-black bg-white': openTab !== 3, 'text-black bg-yellow-500': openTab === 3}">
-                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/027-information.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <img src="/assets/farm/2826134-agriculture/png/083-desktop.png" height="24px" width="24px" class="rounded-lg" alt="">
                     <span class="text-black pl-2">รูปภาพ</span>
                 </a>
             </li>
-            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 pb-1">
+            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 ">
                 <a class="w-full text-base font-bold uppercase px-5 py-3 shadow rounded-lg block leading-normal row wrap" v-on:click="toggleTabs(5)" v-bind:class="{'text-black bg-white': openTab !== 5, 'text-white bg-yellow-500': openTab === 5}">
-                    <img src="@/assets/SmartFarm/1188011-smart-farm/png/004-engine.png" height="24px" width="24px" class="rounded-lg" alt="">
+                    <img src="/assets/farm/2826134-agriculture/png/068-phone.png" height="24px" width="24px" class="rounded-lg" alt="">
                     <span class="text-black pl-2">ตั้งค่า</span>
                 </a>
             </li>

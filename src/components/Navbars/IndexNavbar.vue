@@ -1,63 +1,64 @@
 <template>
-<nav class=" fixed z-50 w-full flex flex-wrap items-center justify-between navbar-expand-lg bg1 shadow ">
-    <div class="container  mx-auto flex flex-wrap items-center justify-between">
-        <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <router-link to="/">
-                <a class="text-white text-md font-bold leading-relaxed inline-block whitespace-no-wrap uppercase" href="#pablo">
-                    พันธ์ุประวัติ
-                </a>
-            </router-link>
-            <button class="cursor-pointer bg-white text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" v-on:click="setNavbarOpen">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-        <div class="lg:flex flex-grow items-center" :class="[navbarOpen ? 'block' : 'hidden']" id="example-navbar-warning">
-            <ul class="flex flex-col lg:flex-row list-none mr-auto">
-                <li class="flex items-center md:w-1/4">
-                    <a class="flex items-center md:text-sm text-xl" @click="$router.push('/user/home')">
-                        <img src="@/assets/SmartFarm/1188011-smart-farm/png/039-warehouse.png" height="24px" width="24px" class="rounded-lg" alt="">
-                        <span class=" ml-2">หน้าแรก</span>
-                    </a>
-                </li>
-                <li class="flex items-center md:w-1/4">
-                    <a class="flex items-center md:text-sm text-xl" @click="$router.push('/user/profile')">
-                        <img src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
-                        <span class=" ml-2">ข้อมูลส่วนตัว</span>
-                    </a>
-                </li>
-                <li class="flex items-center md:w-1/4">
-                    <a class="flex items-center md:text-sm text-xl" @click="$router.push('/user/search')">
-                        <img src="@/assets/certificate/certificate.png" height="24px" width="24px" class="rounded-lg" alt="">
-                        <span class=" ml-2">ใบพันธุ์ประวัติ</span>
-                    </a>
-                </li>
-                <li class="flex items-center md:w-1/4">
-                    <a class="flex items-center md:text-sm text-xl" @click="$router.push('/user/buffalo')">
-                        <img src="@/assets/buffalo/buffalo.png" height="24px" width="24px" class="rounded-lg" alt="">
-                        <span class=" ml-2">ข้อมูลควาย</span>
-                    </a>
-                </li>
+<div>
+    <v-toolbar class="bg1">
+        <v-app-bar-nav-icon dark @click="navbarOpen=!navbarOpen" class="d-flex d-md-none"></v-app-bar-nav-icon>
 
-            </ul>
-            <v-spacer></v-spacer>
-            <ul class="">  
-                <li class="">
-                    <UserDropdown class="" />
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+        <v-toolbar-title class="text-white">พันธุ์ควายไทย</v-toolbar-title>
+          <v-btn class="d-none d-md-flex ml-3" text dark v-for="(menu,i) in menus" :key="i" @click="$router.push(menu.path)"  >
+                    <img class="h-8 w-auto" :src="menu.image" alt=""> <span class="ml-2">
+                        {{menu.name}}
+                    </span>
+                </v-btn> 
+        <v-spacer></v-spacer>
+        <UserDropdown class="" />
+    </v-toolbar>
+
+    <v-bottom-sheet v-model="navbarOpen" inset>
+        <v-sheet height="200px">
+            <div class="flex flex-col"> 
+                <v-btn v-for="(menu,i) in menus" :key="i" text @click="$router.push(menu.path)" >
+                    <img class="h-8 w-auto" :src="menu.image" alt=""> 
+                    <span class="ml-2">
+                        {{menu.name}}
+                    </span>
+                </v-btn>
+            </div>
+        </v-sheet>
+    </v-bottom-sheet>
+
+</div>
 </template>
 
 <script>
-import IndexDropdown from "@/components/Dropdowns/IndexDropdown.vue";
 import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
 
 export default {
     data() {
         return {
             navbarOpen: false,
+            menus: [
+                {
+                name: 'หน้าแรก',
+                image: '/assets/farm/2826134-agriculture/png/005-farm.png',
+                path: '/user/home',
+                },
+                {
+                name: 'ข้อมูลส่วนตัว',
+                image: '/assets/farm/2826134-agriculture/png/006-farmer.png',
+                path: '/user/profile',
+                },
+                {
+                name: 'ใบพันธุ์ประวัติ',
+                image: '/assets/farm/2826134-agriculture/png/076-award.png',
+                path: '/user/search',
+                },
+                {
+                name: 'ข้อมูลควาย',
+                image: '/assets/buffalo/buffalo.png',
+                path: '/user/buffalo',
+                }
+            ]
+
         };
     },
     methods: {
@@ -66,17 +67,16 @@ export default {
         },
     },
     components: {
-        IndexDropdown,
         UserDropdown,
     },
 };
 </script>
+
 <style scoped>
-.bg1{
-    background-color: #ee5522;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23ca481d' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
-}
-a{
-    color: white;
+.bg1 {
+    background-color: #ff9d00;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
 }
 </style>
