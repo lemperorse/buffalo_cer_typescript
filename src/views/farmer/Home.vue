@@ -85,7 +85,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/search')" src="/assets/home/ค้นหาใบพันธ์ประวัติ.png" height="222px" width="222px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/search')" src="/assets/home/ใบcer.png" height="222px" width="222px" alt="">
                             </center>
                         </v-card-text>
 

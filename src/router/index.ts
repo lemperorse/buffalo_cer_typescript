@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 
 import { userRouter } from './user'
-import { adminRouter } from './admin'
+// import { adminRouter } from './admin'
 import {rootRouter}  from './root'
 Vue.use(VueRouter)
 
@@ -20,12 +20,12 @@ const routes: Array<any> = [
     component: () => import('@/views/farmer/Base.vue'),
     children: userRouter
   },
-  {
-    path: "/admin/",
-    permission:'Admin',
-    component: () => import('@/views/admin/Base.vue'),
-    children: adminRouter
-  },
+  // {
+  //   path: "/admin/",
+  //   permission:'Admin',
+  //   component: () => import('@/views/admin/Base.vue'),
+  //   children: adminRouter
+  // },
 ]
 
 const router = new VueRouter({
