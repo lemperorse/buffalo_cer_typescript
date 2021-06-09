@@ -300,7 +300,8 @@ form.sign-in-form {
     background: rgb(102, 50, 17);
     background: linear-gradient(90deg, rgba(102, 50, 17, 1) 0%, rgba(126, 78, 29, 1) 100%);
     transform: translateY(-50%);
-    background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%);
+    /* background-image: linear-gradient(-45deg, #4481eb 0%, #04befe 100%); */
+    background-image: linear-gradient(-45deg, #3c1053 0%, #ad5389 100%);
 
     transition: 1.8s ease-in-out;
     border-radius: 50%;

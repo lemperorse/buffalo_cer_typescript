@@ -27,13 +27,13 @@
                             <form @submit.prevent="step=2">
                                 <div class="flex md:flex-row  flex-col">
                                     <div class="w-full md:w-5/12  p-2 ">
-                                        <v-select v-model="formProfile.prefix" :items="prefix" item-text="value" item-value="id" required :rules="[v => !!v || 'ต้องระบุ']" :label="prefix[0].name" solo></v-select>
+                                        <v-select v-model="formProfile.prefix" :items="prefix" item-text="value" item-value="id" required :rules="[v => !!v || 'ต้องระบุ']" :label="prefix[0].name" filled rounded></v-select>
                                     </div>
                                     <div class="w-full md:w-6/12  p-2   ">
-                                        <v-text-field v-model="formUser.first_name" required :rules="[v => !!v || 'ต้องระบุ']" solo label="ชื่อ"></v-text-field>
+                                        <v-text-field v-model="formUser.first_name" required :rules="[v => !!v || 'ต้องระบุ']" filled rounded label="ชื่อ"></v-text-field>
                                     </div>
                                     <div class="w-full md:w-6/12 p-2   ">
-                                        <v-text-field v-model="formUser.last_name" required :rules="[v => !!v || 'ต้องระบุ']" solo label="สกุล"></v-text-field>
+                                        <v-text-field v-model="formUser.last_name" required :rules="[v => !!v || 'ต้องระบุ']" filled rounded label="สกุล"></v-text-field>
                                     </div>
                                 </div>
                                 <button type="submit" :class="'bg-blue-600 '+btn">

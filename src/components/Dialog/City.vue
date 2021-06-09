@@ -10,15 +10,16 @@
         </v-btn>
       </v-card-title>
       <v-card-text>
-        <v-autocomplete return-object label="ภูมิภาค" filled v-model="geoChoose" :items="geo"
+        <v-autocomplete return-object label="ภูมิภาค" filled rounded v-model="geoChoose" :items="geo"
                         item-text="name"></v-autocomplete>
-        <v-autocomplete return-object label="จังหวัด" filled v-model="provinceChoose" :items="province"
+        <v-autocomplete return-object label="จังหวัด" filled rounded v-model="provinceChoose" :items="province"
                         item-text="name"></v-autocomplete>
-        <v-autocomplete return-object label="อำเภอ" filled v-model="amphurChoose" :items="amphur"
+        <v-autocomplete return-object label="อำเภอ" filled rounded v-model="amphurChoose" :items="amphur"
                         item-text="name"></v-autocomplete>
-        <v-autocomplete return-object label="ตำบล" filled v-model="districtChoose" :items="district"
+        <v-autocomplete return-object label="ตำบล" filled rounded v-model="districtChoose" :items="district"
                         item-text="name"></v-autocomplete>
-        <button @click="submitCity()" :class="'bg-blue-800 '+$btn"> {{ $rt }}</button>
+        <!-- <button @click="submitCity()" :class="'bg-blue-800 '+$btn"> {{ $rt }}</button> -->
+        <v-btn @click="submitCity()" color="primary" class="w-full" large rounded dark>{{ $rt }}</v-btn>
       </v-card-text>
     </v-card>
   </v-dialog>
