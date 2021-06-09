@@ -15,7 +15,7 @@
             </h6>
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-6/12 px-4">
-                    <v-text-field required v-model="form.name" filled rounded dense label="ชื่อหรือหมายเลขควาย" prepend-inner-icon="em em-water_buffalo"></v-text-field>
+                    <v-text-field required v-model="form.name" filled rounded dense label="ชื่อหรือหมายเลขควาย" prepend-inner-icon="mdi-cow"></v-text-field>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
                     <v-text-field type="number" v-model="form.price" filled rounded dense label="ราคา" prepend-inner-icon="fas fa-money-bill-wave "></v-text-field>

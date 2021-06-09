@@ -31,7 +31,7 @@
             
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-6/12 md:px-4">
-                    <v-text-field :disabled="unEdit" required v-model="form.name" type="text" filled rounded dense label="ชื่อหรือหมายเลขควาย" id="id" prepend-inner-icon="em em-water_buffalo"></v-text-field>
+                    <v-text-field :disabled="unEdit" required v-model="form.name" type="text" filled rounded dense label="ชื่อหรือหมายเลขควาย" id="id" prepend-inner-icon="mdi-cow"></v-text-field>
                 </div>
                 <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" required v-model="form.price" type="number" filled rounded dense label="ราคา" id="id" prepend-inner-icon="fas fa-money-bill-wave"></v-text-field>
