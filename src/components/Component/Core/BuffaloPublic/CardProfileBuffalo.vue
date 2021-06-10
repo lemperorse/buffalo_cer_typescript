@@ -1,7 +1,7 @@
 <template>
 <div>
     <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-full rounded-lg mt-16 animate__animated animate__bounceInDown animate__delay-1s"> -->
-    <v-card class="relative mt-24 animate__animated animate__bounceInDown animate__delay">
+    <v-card class="relative mt-24 rounded-lg animate__animated animate__bounceInDown animate__delay">
         <div class="px-6">
             <div class="flex flex-wrap justify-center">
                 <div class="w-full px-4 flex justify-center">
@@ -23,7 +23,7 @@
     <!-- <hr class="mt-6 pb-6 border-b-1 border-gray-400 animate__animated animate__bounceInDown animate__delay-1s" /> -->
 
     <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-full rounded-lg mt-16 animate__animated animate__bounceInDown animate__delay-1s"> -->
-    <v-card class="relative mt-16 animate__animated animate__bounceInDown animate__delay-1s">
+    <v-card class="relative mt-16 rounded-lg animate__animated animate__bounceInDown animate__delay-1s">
         <div class="px-6 ">
             <div class="flex flex-wrap justify-center">
                 <div class="w-full px-4 flex justify-center">

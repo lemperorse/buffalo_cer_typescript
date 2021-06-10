@@ -29,7 +29,7 @@
         </ul>
 
         <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded-lg shadow-lg"> -->
-            <v-card class="relative">
+            <v-card class="relative rounded-lg">
                 <div class="px-4 py-5 flex-auto">
                     <div class="tab-content tab-space">
                         <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">

@@ -4,7 +4,6 @@
         <ul class="flex flex-col mb-0 list-none flex-wrap pt-3 pb-4 md:flex-row animate__animated animate__bounceInUp animate__delay-1s">
             <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 ">
                 <a class="w-full text-base font-bold uppercase px-5 py-3 shadow rounded-full block leading-normal row wrap" v-on:click="toggleTabs(1)" v-bind:class="{'text-black bg-white': openTab !== 1, 'text-white bg-yellow-500': openTab === 1}">
-                    <!-- <i src="@/assets/SmartFarm/1188011-smart-farm/png/043-farmer.png"></i>ข้อมูลเกษตกร -->
                     <img src="/assets/farm/2826134-agriculture/png/006-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
                     <span class="text-black pl-2">ข้อมูลเกษตกร</span>
                 </a>
@@ -29,11 +28,11 @@
             </li>
         </ul> 
         <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg animate__animated animate__bounceInLeft animate__delay-1s"> -->
-            <v-card class="relatives animate__animated animate__bounceInLeft animate__delay-1s">
+            <v-card class="relatives rounded-lg animate__animated animate__bounceInLeft animate__delay-1s">
                 <div class="px-4 py-5 flex-auto">
                     <div class="tab-content tab-space">
                         <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
-                            <Profile class="animate__animated animate__zoomIn" v-if="openTab === 1" />
+                            <Profile class="animate__animated animate__zoomIn"  v-if="openTab === 1" />
                         </div>
 
                         <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}">

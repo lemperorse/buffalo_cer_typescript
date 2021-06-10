@@ -1,6 +1,6 @@
 <template>
-<div class="">
-    <div class="rounded-t bg-white mb-0  md:px-6 py-6">
+<div class="rounded-full">
+    <div class=" bg-white mb-0  md:px-6 py-6">
         <div class="text-center flex flex-wrap justify-between">
             <h6 class="text-gray-800 text-xl font-bold">ข้อมูลเกษตกร</h6>
             <v-btn color="orange" dark large depressed rounded v-if="unEdit" @click="unEdit = !unEdit">
