@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="flex flex-col h-full justify-center items-center">
     <form class="sign-up-form forms" v-if="step == 0">
 
         <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
@@ -8,9 +8,7 @@
         </div>
         <img src="https://sv1.picz.in.th/images/2020/11/19/bvS1Pn.png" alt="">
         <div class="text-center mt-6" v-if="step == 0">
-            <button @click="step = 1" :class="`${btn} bg-purple-600 f-white rounded-full`" type="button">
-                ดำเนินการต่อ
-            </button>
+            <v-btn @click="step = 1" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
@@ -21,34 +19,18 @@
             <h2 :class="headerClass">{{ header }}</h2>
         </div>
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">คำนำหน้า</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <select required v-model="formProfile.prefix" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" class="px-2 py-1 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
-                    <option v-for="val,i in prefix" :key="i" :value="val.id">{{ val.value }}</option>
-                </select> </div>
-
+            <v-select required :items="prefix" item-text="value" item-value="id" v-model="formProfile.prefix" filled rounded dense label="คำนำหน้า" prepend-inner-icon="fas fa-venus-mars" />
         </div>
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">ชื่อ</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input required v-model="formUser.first_name" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field required v-model="formUser.first_name" filled rounded name="name" label="ชื่อ" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
 
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">สกุล</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input required v-model="formUser.last_name" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field required v-model="formUser.last_name" filled rounded name="name" label="สกุล" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
 
         <div class="text-center mt-6">
-            <button  :class="`${btn} bg-purple-600 f-white rounded-full`" type="submit">
-                ดำเนินการต่อ
-            </button>
+            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
@@ -61,25 +43,15 @@
         </div>
 
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">วันเกิด</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input v-model="formProfile.birthday" type="date" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field v-model="formProfile.birthday" filled rounded type="date" name="name" label="วันเกิด" id="id" prepend-inner-icon="fas fa-calendar"></v-text-field>
         </div>
 
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">อายุ</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input v-model="formProfile.age" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field v-model="formProfile.age" filled rounded type="number" name="name" label="อายุ" id="id" prepend-inner-icon="fas fa-calendar-day"></v-text-field>
         </div>
 
         <div class="text-center mt-6">
-            <button :class="`${btn} bg-purple-600 f-white rounded-full`" type="submit">
-                ดำเนินการต่อ
-            </button>
+            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
@@ -91,25 +63,15 @@
         </div>
 
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">เลขบัตรประจำตัวประชาชน 13 หลัก</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input v-model="formProfile.personal_id" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field v-model="formProfile.personal_id" filled rounded type="number" name="name" label="เลขบัตรประจำตัวประชาชน 13 หลัก" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
+
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">เพศ</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <select v-model="formProfile.gender" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`">
-                    <option v-for="val,i in gender" :key="i" :value="val.id">{{ val.value }}</option>
-                </select> </div>
+            <v-select required :items="gender" item-text="value" item-value="id" v-model="formProfile.gender" filled rounded dense label="เพศ" prepend-inner-icon="fas fa-venus-mars" />
         </div>
 
         <div class="text-center mt-6">
-            <button :class="`${btn} bg-purple-600 f-white rounded-full`" type="submit">
-                ดำเนินการต่อ
-            </button>
+            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
@@ -121,41 +83,23 @@
         </div>
 
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">บ้านเลขที่ หมู่ที่ </label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input required v-model="formProfile.address" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field required v-model="formProfile.address" filled rounded name="name" label="บ้านเลขที่ หมู่ที่" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
         </div>
 
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">หมู่บ้าน (ไม่บังคับ)</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input v-model="formProfile.mooban" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field v-model="formProfile.mooban" filled rounded name="name" label="หมู่บ้าน (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
         </div>
 
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">จังหวัด อำเภอ ตำบล</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input :disabled="(CityFrom)?true:false" @click="openCityDialog" required v-model="CityFrom" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field required @click="openCityDialog" v-model="CityFrom" type="text" filled rounded name="name" label="จังหวัด อำเภอ ตำบล" id="id" prepend-inner-icon="fas fa-hotel"></v-text-field>
         </div>
 
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">รหัสไปรษณีย์</label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input required v-model="formProfile.zipcode" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field required v-model="formProfile.zipcode" type="number" filled rounded name="name" label="รหัสไปรษณีย์" id="id" prepend-inner-icon="fas fa-mail-bulk"></v-text-field></v-text-field>
         </div>
 
         <div class="text-center mt-6">
-            <button :class="`${btn} bg-purple-600 f-white rounded-full`" type="submit">
-                ดำเนินการต่อ
-            </button>
+            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
@@ -167,38 +111,20 @@
         </div>
 
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">ชื่อผู้ใช้ </label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input required v-model="formUser.username" type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field required v-model="formUser.username" type="text" filled rounded name="name" label="ชื่อผู้ใช้" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">อีเมล์ (ไม่บังคับ) </label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input type="text" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field type="text" filled rounded name="name" label="อีเมล์ (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-at"></v-text-field>
         </div>
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">รหัสผ่าน </label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input required v-model="formUser.password" type="password" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field required v-model="formUser.password" type="password" filled rounded name="name" label="รหัสผ่าน" id="id" prepend-inner-icon="fas fa-key"></v-text-field>
         </div>
         <div class="relative w-full mb-3 ml-2">
-            <label :class="$label" htmlFor="grid-password">ยืนยันรหัสผ่าน </label>
-            <div :class="$ininput">
-                <span :class="$iconinput"><i class="fas fa-users text-lg text-gray-500"></i></span>
-                <input required v-model="formUser.password2" type="password" :class="`${$xinput} focus:ring-2 focus:ring-blue-600 rounded-full`" style="padding-left:40px;">
-            </div>
+            <v-text-field required v-model="formUser.password2" type="password" filled rounded name="name" label="ยืนยันรหัสผ่าน" id="id" prepend-inner-icon="fas fa-key"></v-text-field>
         </div>
 
         <div class="text-center mt-6">
-            <button :class="`${btn} bg-purple-600 f-white rounded-full`" type="submit">
-                ดำเนินการต่อ
-            </button>
+            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>

@@ -40,7 +40,7 @@
 
             <div class="flex flex-wrap mb-10">
                 <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
-                    <v-card max-height="380" rounded class="" outlined>
+                    <v-card max-height="390" rounded class="" outlined>
                         <v-card-title primary-title>
                             จำนวนควายทั้งหมด
                         </v-card-title>
@@ -56,7 +56,7 @@
                     </v-card>
                 </div>
                 <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
-                    <v-card max-height="380" rounded class="" outlined>
+                    <v-card max-height="390" rounded class="" outlined>
                         <v-card-title primary-title>
                             จำนวนควายในปัจจุบัน
                         </v-card-title>
@@ -78,7 +78,7 @@
                     </v-card>
                 </div>
                 <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
-                    <v-card max-height="380" class="" outlined>
+                    <v-card max-height="390" class="" outlined>
                         <v-card-title primary-title>
                             ค้นหาใบพันธ์ประวัติ
                         </v-card-title>
@@ -95,7 +95,7 @@
                     </v-card>
                 </div>
                 <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
-                    <v-card max-height="380" class="" outlined>
+                    <v-card max-height="390" class="" outlined>
                         <v-card-title primary-title>
                             ข้อมูลส่วนตัว
                         </v-card-title>
@@ -112,7 +112,7 @@
                     </v-card>
                 </div>
                 <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
-                    <v-card max-height="380" class="" outlined>
+                    <v-card max-height="390" class="" outlined>
                         <v-card-title primary-title>
                             ข้อมูลควาย
                         </v-card-title>

@@ -1,7 +1,7 @@
 <template>
 <div>
     <v-app>
-        <IndexNavbar/>
+        <IndexNavbar class="z-50"/>
         <CityDialog />
         <div class="">
          

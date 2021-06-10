@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2">
+  <div class="p-2 pt-10">
     <div class="relative w-full md:w-auto px-4 max-w-full flex-grow flex-1 ">
       <h3 class="font-semibold text-base text-gray-800">
         <button style="color:#855737;" class="text-xl md:text-2xl" @click="$router.go(-1)">ควายของฉัน</button>

@@ -4,7 +4,7 @@
         <div class="text-center flex justify-between ">
             <h6 class="text-gray-800 text-xl font-bold">
                 <button style="color:#a0aec0;" class=" text-sm" @click="$router.go(-1)">ควายทั้งหมด</button> /
-                <button class="text-purple-600  ">เพิ่มความ</button>
+                <button class="text-purple-600  ">เพิ่มควาย</button>
             </h6>
         </div>
     </div>
@@ -77,7 +77,7 @@
             </div>
 
             <hr class="mt-6 mx-4 border-b-1 border-gray-400" />
-            <v-btn color="deep-purple accent-3" type="submit" class="" block large rounded>บันทึกข้อมูล</v-btn> 
+            <v-btn color="deep-purple accent-3" type="submit" class="" block dark large rounded>บันทึกข้อมูล</v-btn> 
 
         </form>
     </div>
