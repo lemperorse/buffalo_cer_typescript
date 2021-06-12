@@ -1,6 +1,6 @@
 <template>
 <v-app>
-    <div class="container mx-auto  h-full">
+    <div class="container mx-auto  h-full flex justify-center items-center">
         <div class="flex content-center items-center justify-center  ">
             <div class="w-full lg:w-6/12 px-4">
                 <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-300 border-0">

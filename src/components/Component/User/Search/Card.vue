@@ -2,42 +2,53 @@
 <!-- <div class="bg-gray-100"> -->
 <div class="">
     <div class="w-full">
-        <div class="flex h-full w-full p-6">
+        <div class="flex w-full p-6">
             <div class="flex flex-col ">
                 <h1 class="text-2xl font-semibold uppercase md:text-3xl ">ค้นหาใบพันธุ์ประวัติ</h1>
                 <form @submit.prevent="run" class="mt-4 w-full row wrap">
                     <!-- <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" /> -->
-                    <div class="flex rounded-full border bg-white hover:shadow-lg">
+                    <div class="flex w-full rounded-full border bg-white hover:shadow-lg">
                         <button>
                             <span class="w-auto flex justify-end items-center text-grey p-2">
                                 <i class="fas fa-search text-xl"></i>
                             </span>
                         </button>
                         <input v-model="search" class="w-full" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม">
+                        <div class="ml-2">
+                            <v-btn type="submit" fab depressed color="orange darken-1" dark>
+                                <v-icon>fas fa-search</v-icon>
+                            </v-btn>
+                        </div>
                     </div>
-                    <div class="ml-2">
+                    <!-- <div class="ml-2">
                         <v-btn type="submit" fab depressed color="orange darken-1" dark>
                             <v-icon>fas fa-search</v-icon>
                         </v-btn>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+        <div class="flex w-full p-6">
+            <div class="flex flex-col ">
+                <form @submit.prevent="run" class="w-full row wrap">
+                    <!-- <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" /> -->
+                    <div class="flex w-full rounded-full border bg-white hover:shadow-lg">
+                        <button>
+                            <span class="w-auto flex justify-end items-center text-grey p-2">
+                                <i class="fas fa-search text-xl"></i>
+                            </span>
+                        </button>
+                        <input v-model="search" class="w-full" type="text" placeholder="ค้นหา จังหวัด อำเภอ ตำบล ของฟาร์ม">
+                        <div class="ml-2">
+                            <v-btn type="submit" fab depressed color="orange darken-1" dark>
+                                <v-icon>fas fa-search</v-icon>
+                            </v-btn>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
-        <center>
-            <v-row class=" w-full flex row wrap p-3 md:p-0">
-                <div class="w-full md:w-1/3 md:p-3">
-                    <v-select :items="items" filled rounded label="จังหวัด"></v-select>
-                </div>
 
-                <div class="w-full md:w-1/3 md:p-3">
-                    <v-select :items="items" filled rounded label="อำเภอ"></v-select>
-                </div>
-
-                <div class="w-full md:w-1/3 md:p-3">
-                    <v-select :items="items" filled rounded label="ตำบล"></v-select>
-                </div>
-            </v-row>
-        </center>
     </div>
 
     <!-- card --><br>

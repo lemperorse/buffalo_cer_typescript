@@ -1,13 +1,13 @@
 <template>
-<div>
+<div >
     <div :class="`containerR ${switchc}`" ref="main">
         <div class="forms-containerR">
             <div class="signin-signup">
                 <form @submit.prevent="login()" class="sign-in-form forms" v-if="tab == 0">
                     <h2 class="title">เข้าสู่ระบบ</h2>
-                    <div class="text-gray-500 text-center mb-3 font-bold flex justify-center pt-6">
+                    <!-- <div class="text-gray-500 text-center mb-3 font-bold flex justify-center pt-6">
                         <img class="w-48" src="https://sv1.picz.in.th/images/2020/11/17/bVc06z.png" alt="">
-                    </div>
+                    </div> -->
                     <div class="relative w-full md:w-8/12 mb-3 mt-4">
                         <v-text-field required v-model="form.username" placeholder="ระบุชื่อผู้ใช้ของคุณ" type="text" filled rounded label="ชื่อผู้ใช้" prepend-inner-icon="mdi mdi-account"></v-text-field>
                     </div>

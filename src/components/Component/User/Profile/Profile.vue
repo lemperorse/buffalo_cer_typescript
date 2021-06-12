@@ -61,7 +61,7 @@
                     <v-text-field :disabled="unEdit" required v-model="formProfile.birthday" type="date" filled rounded dense label="วันเกิด" id="id" ></v-text-field>
                 </div>
                 <div class="w-full lg:w-4/12 md:px-4">
-                    <v-text-field :disabled="unEdit" required v-model="formProfile.age" type="number" filled rounded dense label="วันเกิด" id="id" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
+                    <v-text-field :disabled="unEdit" required v-model="formProfile.age" type="number" filled rounded dense label="อายุ" id="id" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
                 </div> 
             </div>
             

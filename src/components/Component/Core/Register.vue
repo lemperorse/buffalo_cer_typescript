@@ -1,5 +1,5 @@
 <template>
-<div class="flex flex-col h-full justify-center items-center">
+<div class="flex flex-col h-full justify-center items-center -mt-64 md:mt-0">
     <form class="sign-up-form forms" v-if="step == 0">
 
         <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
@@ -8,123 +8,126 @@
         </div>
         <img src="https://sv1.picz.in.th/images/2020/11/19/bvS1Pn.png" alt="">
         <div class="text-center mt-6" v-if="step == 0">
-            <v-btn @click="step = 1" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
+            <v-btn large @click="step = 1" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
     <form @submit.prevent="step = 2" class="sign-up-form forms" v-if="step ==1">
 
-        <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
+        <h2 class="font-bold text-md">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
         <div class="text-blue-500 text-center mb-3 font-bold">
             <h2 :class="headerClass">{{ header }}</h2>
         </div>
-        <div class="relative w-full mb-3 ml-2">
-            <v-select required :items="prefix" item-text="value" item-value="id" v-model="formProfile.prefix" filled rounded dense label="คำนำหน้า" prepend-inner-icon="fas fa-venus-mars" />
+        <div class="relative w-full ml-2">
+            <v-select :items="prefix" item-text="value" item-value="id" v-model="formProfile.prefix" filled rounded dense label="คำนำหน้า" prepend-inner-icon="fas fa-venus-mars" />
         </div>
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field required v-model="formUser.first_name" filled rounded name="name" label="ชื่อ" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
 
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field required v-model="formUser.last_name" filled rounded name="name" label="สกุล" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
 
         <div class="text-center mt-6">
-            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
+            <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
 
     <form @submit.prevent="step = 3" class="sign-up-form forms" v-if="step ==2">
 
-        <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
+        <h2 class="font-bold text-md">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
         <div class="text-blue-500 text-center mb-3 font-bold">
             <h2 :class="headerClass">{{ header }}</h2>
         </div>
 
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field v-model="formProfile.birthday" filled rounded type="date" name="name" label="วันเกิด" id="id" prepend-inner-icon="fas fa-calendar"></v-text-field>
         </div>
 
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field v-model="formProfile.age" filled rounded type="number" name="name" label="อายุ" id="id" prepend-inner-icon="fas fa-calendar-day"></v-text-field>
         </div>
 
         <div class="text-center mt-6">
-            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
+            <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
     <form @submit.prevent="step = 4" class="sign-up-form forms" v-if="step ==3">
 
-        <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
+        <h2 class="font-bold text-md">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
         <div class="text-blue-500 text-center mb-3 font-bold">
             <h2 :class="headerClass">{{ header }}</h2>
         </div>
 
-        <div class="relative w-full mb-3 ml-2">
-            <v-text-field v-model="formProfile.personal_id" filled rounded type="number" name="name" label="เลขบัตรประจำตัวประชาชน 13 หลัก" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
+        <div class="relative w-full ml-2">
+            <v-text-field v-model="formProfile.personal_id" filled rounded type="number" name="name" label="เลขบัตรประจำตัวประชาชน 13 หลัก (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
 
-        <div class="relative w-full mb-3 ml-2">
-            <v-select required :items="gender" item-text="value" item-value="id" v-model="formProfile.gender" filled rounded dense label="เพศ" prepend-inner-icon="fas fa-venus-mars" />
+        <div class="relative w-full ml-2">
+            <v-select :items="gender" item-text="value" item-value="id" v-model="formProfile.gender" filled rounded dense label="เพศ (ไม่บังคับ)" prepend-inner-icon="fas fa-venus-mars" />
         </div>
 
         <div class="text-center mt-6">
-            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
+            <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
     <form @submit.prevent="step = 5" class="sign-up-form forms" v-if="step ==4">
 
-        <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
+        <h2 class="font-bold text-md">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
         <div class="text-blue-500 text-center mb-3 font-bold">
             <h2 :class="headerClass">{{ header }}</h2>
         </div>
 
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field required v-model="formProfile.address" filled rounded name="name" label="บ้านเลขที่ หมู่ที่" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
         </div>
+        <div class="relative w-full ml-2">
+            <v-text-field filled rounded name="name" label="พิกัดฟาร์ม (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
+        </div>
 
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field v-model="formProfile.mooban" filled rounded name="name" label="หมู่บ้าน (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
         </div>
 
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field required @click="openCityDialog" v-model="CityFrom" type="text" filled rounded name="name" label="จังหวัด อำเภอ ตำบล" id="id" prepend-inner-icon="fas fa-hotel"></v-text-field>
         </div>
 
-        <div class="relative w-full mb-3 ml-2">
-            <v-text-field required v-model="formProfile.zipcode" type="number" filled rounded name="name" label="รหัสไปรษณีย์" id="id" prepend-inner-icon="fas fa-mail-bulk"></v-text-field></v-text-field>
+        <div class="relative w-full ml-2">
+            <v-text-field v-model="formProfile.zipcode" type="number" filled rounded name="name" label="รหัสไปรษณีย์ (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-mail-bulk"></v-text-field>
         </div>
 
-        <div class="text-center mt-6">
-            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
+        <div class="text-center">
+            <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
     <form @submit.prevent="register()" class="sign-up-form forms" v-if="step ==5">
 
-        <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
+        <h2 class="font-bold text-md">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
         <div class="text-blue-500 text-center mb-3 font-bold">
             <h2 :class="headerClass">{{ header }}</h2>
         </div>
 
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field required v-model="formUser.username" type="text" filled rounded name="name" label="ชื่อผู้ใช้" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field type="text" filled rounded name="name" label="อีเมล์ (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-at"></v-text-field>
         </div>
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field required v-model="formUser.password" type="password" filled rounded name="name" label="รหัสผ่าน" id="id" prepend-inner-icon="fas fa-key"></v-text-field>
         </div>
-        <div class="relative w-full mb-3 ml-2">
+        <div class="relative w-full ml-2">
             <v-text-field required v-model="formUser.password2" type="password" filled rounded name="name" label="ยืนยันรหัสผ่าน" id="id" prepend-inner-icon="fas fa-key"></v-text-field>
         </div>
 
         <div class="text-center mt-6">
-            <v-btn type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
+            <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
     </form>
@@ -176,7 +179,7 @@ export default class Home extends Vue {
         await Auth.register(this.formUser, this.formProfile)
         await App.success("สมัครสมาชิกสำเร็จ")
         await this.login();
-        // await this.$router.go(-1)
+        await this.$router.go(-1)
     }
 
     private async login() {

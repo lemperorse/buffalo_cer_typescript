@@ -33,7 +33,7 @@
                     </h6>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
-                    <v-text-field required v-model="form.birthday" type="date" filled rounded dense label="หมายเลขไมโครซิป"></v-text-field>
+                    <v-text-field required v-model="form.birthday" type="date" filled rounded dense label="ว/ด/ป"></v-text-field>
                 </div>
                 <div class="w-full lg:w-6/12 px-4">
                     <v-text-field v-model="form.age" type="number" filled rounded dense label="อายุ(ปี) หรือ (ประเมินจากฟัน)" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
