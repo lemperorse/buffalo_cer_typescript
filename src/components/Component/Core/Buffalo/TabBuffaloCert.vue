@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="w-full px-1">
                                     <div class="relative w-full mb-3">
-                                        <v-btn dark color="deep-purple accent-3" depressed type="submit" class="" block large rounded>
+                                        <v-btn dark class="bg2" depressed type="submit" block large rounded>
                                             <v-icon left>fas fa-save</v-icon>
                                             บันทึกข้อมูล
                                         </v-btn>
@@ -59,7 +59,7 @@
                         <br>
                         <hr class="mx-1">
                         <div class="relative w-full mb-3 mt-4 px-1">
-                            <v-btn v-if="form.mother_nid && form.father_nid" @click="openCert($api)" color="purple" depressed dark block large rounded>
+                            <v-btn v-if="form.mother_nid && form.father_nid" @click="openCert($api)" color="deep-purple accent-3" depressed dark block large rounded>
                                 <v-icon left>fas fa-file-download</v-icon>
                                     ดาวน์โหลดเอกสาร
                             </v-btn>
@@ -104,13 +104,14 @@
                 <v-card-title primary-title>
                     เลือกพ่อพันธ์ุ
                     <v-spacer></v-spacer>
-                    <v-btn @click="chooseFather = null ;  dialogFather = false" class="bg-blue-600 ml-2" icon rounded>
+                    <v-btn color="error" @click="chooseFather = null ;  dialogFather = false" class="bg-blue-600 ml-2" icon rounded>
                         <v-icon>fas fa-times</v-icon>
                     </v-btn>
                 </v-card-title>
                 <v-card-text>
-                    <v-autocomplete v-model="chooseFather" return-object item-text="name" :items="buffalos"></v-autocomplete>
-                    <button @click="chooseFatherData()" :class="`bg-blue-600 ${$btn}`">เลือก</button>
+                    <v-autocomplete filled rounded v-model="chooseFather" return-object item-text="name" :items="buffalos"></v-autocomplete>
+                    <v-btn @click="chooseFatherData()" color="purple" dark large rounded block>เลือก</v-btn>
+                    <!-- <button @click="chooseFatherData()" :class="`bg-blue-600 ${$btn}`">เลือก</button> -->
                 </v-card-text>
             </v-card>
         </v-dialog>
@@ -119,14 +120,15 @@
                 <v-card-title primary-title>
                     เลือกแม่พันธ์ุ
                     <v-spacer></v-spacer>
-                    <v-btn @click="chooseMother = null ;  dialogMother = false" class="bg-blue-600 ml-2" icon rounded>
+                    <v-btn color="error" @click="chooseMother = null ;  dialogMother = false" class="bg-blue-600 ml-2" icon rounded>
                         <v-icon>fas fa-times</v-icon>
                     </v-btn>
 
                 </v-card-title>
                 <v-card-text>
-                    <v-autocomplete v-model="chooseMother" return-object item-text="name" :items="buffalos"></v-autocomplete>
-                    <button @click="chooseMotherData()" :class="`bg-blue-600 ${$btn}`">เลือก</button>
+                    <v-autocomplete filled rounded v-model="chooseMother" return-object item-text="name" :items="buffalos"></v-autocomplete>
+                    <v-btn @click="chooseMotherData()" color="purple" dark large rounded block>เลือก</v-btn>
+                    <!-- <button @click="chooseMotherData()" :class="`bg-blue-600 ${$btn}`">เลือก</button> -->
                 </v-card-text>
             </v-card>
         </v-dialog>
@@ -243,8 +245,14 @@ export default class Farm extends Vue {
 }
 </script>
 
-<style>
+<style scoped>
 .f-white {
     color: white !important;
+}
+.bg2{
+    background-color: #ff9d00;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 }
 </style>

@@ -59,7 +59,7 @@
                                     <div class="flex flex-wrap">
                                         <div class="w-full lg:w-6/12 px-4">
                                             <div class="relative w-full mb-3">
-                                                <v-btn color="error" large depressed @click="deleteBuffalo()">
+                                                <v-btn rounded color="error" large depressed @click="deleteBuffalo()">
                                                     <v-icon left>
                                                         fas fa-eraser
                                                     </v-icon>

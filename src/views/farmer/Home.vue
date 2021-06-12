@@ -49,7 +49,7 @@
                         <br>
                         <br>
                         <v-card-actions>
-                            <v-btn color="deep-purple accent-3" block text>ควายของฉัน</v-btn>
+                            <v-btn @click="$router.push('/user/buffalo')" color="deep-purple accent-3" block text>ควายของฉัน</v-btn>
                         </v-card-actions>
                     </v-card>
                 </div>
@@ -120,12 +120,12 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="/assets/home/ข้อมูลควาย.png" height="200px" width="200px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/buffalo')" src="/assets/home/ข้อมูลควาย.png" height="200px" width="200px" alt="">
                             </center>
                         </v-card-text>
 
                         <v-card-actions class="mt-3 pt-5">
-                            <v-btn color="deep-purple accent-3" block text @click="$router.push('/user/profile')">ควายทั้งหมด</v-btn>
+                            <v-btn color="deep-purple accent-3" block text @click="$router.push('/user/buffalo')">ควายทั้งหมด</v-btn>
                         </v-card-actions>
                     </v-card>
                 </div>

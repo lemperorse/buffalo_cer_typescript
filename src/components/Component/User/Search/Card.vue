@@ -2,9 +2,11 @@
 <!-- <div class="bg-gray-100"> -->
 <div class="">
     <div class="w-full">
+        <h1 class="text-2xl font-semibold uppercase md:text-3xl p-6">ค้นหาใบพันธุ์ประวัติ</h1>
         <div class="flex w-full p-6">
-            <div class="flex flex-col ">
-                <h1 class="text-2xl font-semibold uppercase md:text-3xl ">ค้นหาใบพันธุ์ประวัติ</h1>
+            
+            <div class="flex ">
+                
                 <form @submit.prevent="run" class="mt-4 w-full row wrap">
                     <!-- <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" /> -->
                     <div class="flex w-full rounded-full border bg-white hover:shadow-lg">
@@ -20,16 +22,11 @@
                             </v-btn>
                         </div>
                     </div>
-                    <!-- <div class="ml-2">
-                        <v-btn type="submit" fab depressed color="orange darken-1" dark>
-                            <v-icon>fas fa-search</v-icon>
-                        </v-btn>
-                    </div> -->
                 </form>
             </div>
         </div>
         <div class="flex w-full p-6">
-            <div class="flex flex-col ">
+            <div class="flex  -mt-8">
                 <form @submit.prevent="run" class="w-full row wrap">
                     <!-- <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" /> -->
                     <div class="flex w-full rounded-full border bg-white hover:shadow-lg">
