@@ -27,7 +27,7 @@
         </div>
         <div class="flex w-full p-6">
             <div class="flex  -mt-8">
-                <form @submit.prevent="run" class="w-full row wrap">
+                <form @submit.prevent="run2" class="w-full row wrap">
                     <!-- <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" /> -->
                     <div class="flex w-full rounded-full border bg-white hover:shadow-lg">
                         <button>
@@ -35,7 +35,7 @@
                                 <i class="fas fa-search text-xl"></i>
                             </span>
                         </button>
-                        <input v-model="search" class="w-full" type="text" placeholder="ค้นหา จังหวัด อำเภอ ตำบล ของฟาร์ม">
+                        <input v-model="search2" class="w-full" type="text" placeholder="ค้นหา จังหวัด อำเภอ ตำบล ของฟาร์ม">
                         <div class="ml-2">
                             <v-btn type="submit" fab depressed color="orange darken-1" dark>
                                 <v-icon>fas fa-search</v-icon>
@@ -145,6 +145,7 @@ export default class Farm extends Vue {
     private page: number = 1
     private allPages: number = 1
     private search: string = ''
+    private search2: string = ''
 
     private async created() {
         await this.run();
@@ -155,7 +156,18 @@ export default class Farm extends Vue {
         let user = await User.getUser();
         this.user = await Core.getHttp(`/api/account/${user.pk}/`)
         this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
-        this.buffalos = await Core.getHttp(`/api/buffalo/all/?search=${this.search}`)
+        this.buffalos = await Core.getHttp(`/api/buffalo/all/?search=${this.search}`) 
+        this.allPages = Math.ceil((this.buffalos ?.count / 12))
+        this.response = true
+        await App.offLoad();
+    }
+
+    private async run2() {
+        await App.onLoad()
+        let user = await User.getUser();
+        this.user = await Core.getHttp(`/api/account/${user.pk}/`)
+        this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
+        this.buffalos = await Core.getHttp(`/api/buffalo/all/?search=${this.search2}`) 
         this.allPages = Math.ceil((this.buffalos ?.count / 12))
         this.response = true
         await App.offLoad();
@@ -163,7 +175,7 @@ export default class Farm extends Vue {
 
     private async handlePageChange(value: any) {
         await App.onLoad()
-        this.buffalos = await Core.getHttp(`/api/buffalo/all/?page=${value}&search=${this.search}`)
+        this.buffalos = await Core.getHttp(`/api/buffalo/all/?page=${value}&search=${this.search}`) 
         await App.offLoad();
     }
 

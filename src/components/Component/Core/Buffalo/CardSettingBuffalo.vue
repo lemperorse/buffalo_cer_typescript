@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-                                <form>
+                                <form @submit.prevent="deleteBuffalo">
                                     <h6 class="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase">
                                         ลบข้อมูลควาย
                                     </h6>
@@ -59,7 +59,7 @@
                                     <div class="flex flex-wrap">
                                         <div class="w-full lg:w-6/12 px-4">
                                             <div class="relative w-full mb-3">
-                                                <v-btn rounded color="error" large depressed @click="deleteBuffalo()">
+                                                <v-btn rounded color="error" large depressed type="submit">
                                                     <v-icon left>
                                                         fas fa-eraser
                                                     </v-icon>
@@ -139,11 +139,11 @@ export default class Table extends Vue {
     async deleteBuffalo() {
         let checkDelete = await App.confirm('คุณแน่ใจใช่ไหม', 'ที่จะลบควายตัวนี้')
         if (checkDelete) {
+            
             let buffalo = await Core.deleteHttp(`/user/buffalo/buffalo/${this.$route.query.id}/`)
 
             await App.success("ลบควายสำเร็จ")
             await this.$router.go(-1)
-
         }
 
     }
