@@ -22,7 +22,7 @@
             </li>
 
         </ul>
-
+    
         <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded-lg shadow-lg"> -->
         <v-card class="relative bg-white rounded-lg">
             <div class="px-4 py-5 flex-auto">

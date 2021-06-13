@@ -26,7 +26,7 @@
                     <span class="text-black pl-2">ตั้งค่า</span>
                 </a>
             </li>
-        </ul>
+        </ul> 
 
         <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded-lg shadow-lg"> -->
             <v-card class="relative rounded-lg">

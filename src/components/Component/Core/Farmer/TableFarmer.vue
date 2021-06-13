@@ -42,7 +42,7 @@
     <!-- card -->
     <div class="block w-full overflow-x-auto rounded-lg">
         <div class="flex flex-wrap mb-4">
-            <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index">
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index" v-if="!buffalo.deleted">
                 <!-- <v-card class="animate__animated animate__zoomIn"> -->
                 <div class="border bg-white rounded-lg shadow  animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
