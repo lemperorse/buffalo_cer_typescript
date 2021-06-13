@@ -21,6 +21,7 @@
         </div>
     </div>
     <div class="flex-auto px-1 lg:px-10 py-10 pt-0">
+        <v-alert type="error" class="rounded-lg" v-if="form.deleted">ควายตัวนี้ไม่ได้อยู่ในฟาร์มแล้ว เจ้าของอาจลบ หรือยกเลิกข้อมูลควาย แล้ว</v-alert>
         <form @submit.prevent="updateBuffalo" v-if="response">
             <v-alert color="#F59E0B" type="info" outlined v-if="!unEdit">
                 โหมดแก้ไข ระบุข้อมูลที่ต้องการแก้ไขในช่องข้อความสีส้ม <v-btn class="border-edit" x-small style="background-color:#eeeef3; color:#F59E0B;">ข้อความ</v-btn>
