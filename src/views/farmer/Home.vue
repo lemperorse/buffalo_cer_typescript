@@ -31,15 +31,15 @@
 
             <div :class="(width > 1025)?`grid grid-cols-1 lg:grid-cols-4 gap-4`:''">
                 <div class="m-2 w-full">
-                    <Menu name="ข้อมูลส่วนตัว" path="/user/profile?tab=1" image="/assets/home/user.png" head="แก้ไขข้อมูล" txt="ชื่อสกุล ที่อยู่ อีเมล์ รวมถึงข้อมมูลส่วนตัวต่างๆ ของคุณ" caption="จัดการข้อมูล" />
+                    <Menu name="ข้อมูลส่วนตัว" path="/user/profile?tab=1" image="./assets/home/user.PNG" head="แก้ไขข้อมูล" txt="ชื่อสกุล ที่อยู่ อีเมล์ รวมถึงข้อมมูลส่วนตัวต่างๆ ของคุณ" caption="จัดการข้อมูล" />
                 </div>
                 <div class="m-2 w-full">
-                    <Menu name="ฟาร์มของฉัน" path="/user/profile?tab=2" image="/assets/home/ข้อมูลส่วนตัว.png" head="ข้อมูลฟาร์ม" txt="บันทึกข้อมูล เพื่อให้สำนักงาน ทราบว่าฟาร์มคุณอยู่ที่ใด" caption="จัดการข้อมูล" />
+                    <Menu name="ฟาร์มของฉัน" path="/user/profile?tab=2" image="./assets/home/ข้อมูลส่วนตัว.png" head="ข้อมูลฟาร์ม" txt="บันทึกข้อมูล เพื่อให้สำนักงาน ทราบว่าฟาร์มคุณอยู่ที่ใด" caption="จัดการข้อมูล" />
                 </div>
 
                 <div class="m-2 w-full">
 
-                    <Menu name="ควายของฉัน" path="/user/buffalo" image="/assets/home/ข้อมูลควาย.png" head="ควายในฟาร์มของฉัน" txt="เพิ่ม ลบข้อมูลทั่วไป สถานะ ใบพันธุ์ประวัติ ควายของคุณ" caption="จัดการข้อมูล" />
+                    <Menu name="ควายของฉัน" path="/user/buffalo" image="./assets/home/ข้อมูลควาย.png" head="ควายในฟาร์มของฉัน" txt="เพิ่ม ลบข้อมูลทั่วไป สถานะ ใบพันธุ์ประวัติ ควายของคุณ" caption="จัดการข้อมูล" />
                 </div>
 
                 <div class="m-2 w-full  ">
@@ -72,21 +72,21 @@
                 </div>
 
                 <div class="m-2 w-full">
-                    <Menu name="พิกัดฟาร์ม" path="/user/buffalo" image="/assets/home/map.png" head="ฟาร์มอื่นๆ" txt="ค้นหาที่ตั้ง ฟาร์มอื่นๆ บนแผนที่ ที่เกษตรกรคนอื่นๆ บันทึกไว้" caption="ดูข้อมูล" />
+                    <Menu name="พิกัดฟาร์ม" path="/user/buffalo" image="./assets/home/map.PNG" head="ฟาร์มอื่นๆ" txt="ค้นหาที่ตั้ง ฟาร์มอื่นๆ บนแผนที่ ที่เกษตรกรคนอื่นๆ บันทึกไว้" caption="ดูข้อมูล" />
 
                 </div>
 
                 <div class="m-2 w-full">
-                    <Menu name="ค้นหาใบพันธ์ประวัติ" path="/user/search" image="/assets/home/ใบcer.png" head="ควายในฟาร์มอื่นๆ" txt="ค้นหาข้อมูลใบพันธุ์ประวัติควาย ในฟาร์มอื่นๆ" caption="ดูข้อมูลควาย" />
+                    <Menu name="ค้นหาใบพันธ์ประวัติ" path="/user/search" image="./assets/home/ใบcer.png" head="ควายในฟาร์มอื่นๆ" txt="ค้นหาข้อมูลใบพันธุ์ประวัติควาย ในฟาร์มอื่นๆ" caption="ดูข้อมูลควาย" />
 
                 </div>
 
                 <div class="m-2 w-full">
-                    <Menu name="ยืนยันตัวตน" path="/user/profile?tab=3" image="/assets/home/id.png" head="คุณเป็นใคร" txt="บันทึดรูปถ่ายบัตรประจำตัวประชาชน ที่ตั้งฟาร์ม ให้รู้ว่าคุณมีตัวตนจริง" caption="บันทึกข้อมูล" />
+                    <Menu name="ยืนยันตัวตน" path="/user/profile?tab=3" image="./assets/home/id.PNG" head="คุณเป็นใคร" txt="บันทึดรูปถ่ายบัตรประจำตัวประชาชน ที่ตั้งฟาร์ม ให้รู้ว่าคุณมีตัวตนจริง" caption="บันทึกข้อมูล" />
                 </div>
 
                 <div class="m-2 w-full">
-                    <Menu name="ความปลอดภัย" path="/user/profile?tab=5" image="/assets/home/lock.png" head="เปลี่ยนรหัสผ่าน" txt="หากคุณต้องการเปลี่ยนแปลงรหัสผ่านใหม่ในการเข้าใช้งานระบบ" caption="แก้ไขข้อมูล" />
+                    <Menu name="ความปลอดภัย" path="/user/profile?tab=5" image="./assets/home/lock.PNG" head="เปลี่ยนรหัสผ่าน" txt="หากคุณต้องการเปลี่ยนแปลงรหัสผ่านใหม่ในการเข้าใช้งานระบบ" caption="แก้ไขข้อมูล" />
                 </div>
 
             </div>
