@@ -50,8 +50,7 @@
             </tr>
 
         </table>
-        <v-pagination v-model="page" color="#4361EE" class="transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110" :length="allPages" :total-visible="9" @input="handlePageChange" circle></v-pagination>
-
+     
     </div>
 
 </div>

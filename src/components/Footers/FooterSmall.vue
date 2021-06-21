@@ -1,5 +1,5 @@
 <template>
-<footer  class="absolute w-full bottom-0 bg-transparent pb-6">
+<footer  class="footer">
     <div class="container mx-auto px-4">
         <hr class="mb-6 border-b-1 border-gray-700" />
         <div class="flex flex-wrap items-center md:justify-between justify-center">
@@ -32,3 +32,14 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%; 
+   color: white;
+   text-align: center;
+}
+</style>

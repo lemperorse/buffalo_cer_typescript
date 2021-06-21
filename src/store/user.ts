@@ -7,7 +7,7 @@ class UserClass extends VuexModule {
     public permission :object|null = null
     public routeUser : string = '/'
     public profile:object | null = null
-
+    public farm:object | null = null
     public async autoCreateProfile(from:any): Promise<any>{
         return Core.postHttp('/api/profile/create/',from)
     }
@@ -27,6 +27,7 @@ class UserClass extends VuexModule {
             let profile = await this.getProfile(user.pk)
             this.user =  Object.assign({}, user, profile,permission,{user_id:user.pk,profile_id:profile.id});   
             this.permission = permission.is_staff
+            this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
             this.routeUser = (permission.is_staff)?'/admin/home':'/user/home'
             return true;
         }else{
@@ -38,6 +39,7 @@ class UserClass extends VuexModule {
         let user = await this.getUser();
         let profile = await this.getProfile(user.pk)
         let permission = await Core.getHttp(`/api/account/${user.pk}/`)
+        this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`) 
         this.user =  Object.assign({}, user, profile,permission,{user_id:user.pk,profile_id:profile.id});   
     }
 

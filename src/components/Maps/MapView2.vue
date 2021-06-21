@@ -1,5 +1,5 @@
 <template>
-  <div class="map" ref="googleMap"></div>
+  <div class="map  " ref="googleMap"></div>
 </template>
 
 <script lang="ts">
@@ -57,14 +57,10 @@ export default class GoogleMapWithMarkersComponent extends Vue {
   async drawMap(map: any, locations: any) {
     console.log(locations);
     this.buildMarkers(map, locations);
-    this.map = google.maps.event.addListener(map, "click", (event: any) => {
-      this.addMarker(event.latLng, map);
-      this.markers.addListener("click", () => {
-       
-        map.setZoom(16);
-        map.setCenter(this.markers.getPosition());
-      });
-
+    this.map = google.maps.event.addListener(this.markers, "click", (event: any) => {
+      // this.addMarker(event.latLng, map);
+      
+  alert('Hello')
     });
 
  
@@ -136,6 +132,6 @@ export default class GoogleMapWithMarkersComponent extends Vue {
 <style scoped>
 .map {
   border-radius: 8px;
-  height: 300px;
+  height: 900px;
 }
 </style>
