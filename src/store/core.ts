@@ -40,6 +40,18 @@ class CoreModule extends VuexModule {
         });
     }
 
+
+    imageExists(image_url:any){
+
+        var http = new XMLHttpRequest();
+    
+        http.open('HEAD', image_url, false);
+        http.send();
+    
+        return http.status != 404;
+    
+    }
+
 }
 
 import store from "@/store"

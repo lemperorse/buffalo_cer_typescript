@@ -17,7 +17,7 @@
                             <i class="fas fa-search text-xl"></i>
                         </span>
                     </button>
-                    <input v-model="search" class="w-full" type="text" placeholder="ค้นหาควาย">
+                    <input v-model="search" class="w-full" type="text" placeholder="ค้นหาควาย ชื่อควาย, หมายเลข Microship, NID">
                     <div class="ml-2">
                         <v-btn type="submit" fab depressed color="orange darken-1" dark>
                             <v-icon>fas fa-search</v-icon>
@@ -49,7 +49,10 @@
                         <div class="flex flex-wrap ">
                             <div class="relative w-auto pl-4 flex-initial">
                                 <div>
-                                    <img :src="(buffalo.back_image)?buffalo.back_image:'https://images.pexels.com/photos/4835959/pexels-photo-4835959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'" class="h-16 w-16 bg-white rounded-full border" alt="..." />
+                                    <!-- <v-img class="h-16 w-16 bg-white rounded-full border" :src="(checkImg($api+buffalo.front_image))?$api+buffalo.front_image:'/assets/buffalo/buffalo.png'"></v-img> -->
+                                    
+                                    <v-img class="h-16 w-16 bg-white rounded-full border"  :src="$api+buffalo.front_image"></v-img>
+                                    
                                 </div>
                             </div>
                             <div class="relative w-full pr-4 max-w-full flex-grow flex-1 text-right">
@@ -123,6 +126,7 @@ import { App } from "@/store/app";
 })
 
 export default class Farm extends Vue {
+    checkImg:any = Core.imageExists
     private user: any = {}
     private farm: FarmForm | any = {}
     private buffalos: any = []

@@ -69,7 +69,7 @@ export default class ImageClass extends Vue {
     public form: FarmForm | any = {}
     public formProfile: any = {}
     private currentFarmer: any = null
-
+  api: any = process.env.VUE_APP_SERVER
     private async created() {
         await this.collingPermission()
         await this.run();
@@ -92,12 +92,12 @@ export default class ImageClass extends Vue {
         this.form = await Core.getHttp(`/user/buffalo/farm/image/${this.formProfile.user}/`)
         if (this.formProfile.presonal_image) {
             let personalImage: any = this.$refs.personalImage
-            personalImage.src = this.formProfile.presonal_image
+            personalImage.src = this.api+ this.formProfile.presonal_image
         }
 
         if (this.form.farm_image) {
             let farmImage: any = this.$refs.farmImage
-            farmImage.src = this.form.farm_image
+            farmImage.src = this.api+  this.form.farm_image
         }
         await App.offLoad();
     }

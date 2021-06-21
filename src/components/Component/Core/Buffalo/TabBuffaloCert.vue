@@ -59,7 +59,7 @@
                         <br>
                         <hr class="mx-1">
                         <div class="relative w-full mb-3 mt-4 px-1">
-                            <v-btn v-if="form.mother_nid && form.father_nid" @click="openCert($api)" color="deep-purple accent-3" depressed dark block large rounded>
+                            <v-btn v-if="form.mother_nid && form.father_nid" @click="openCert()" color="deep-purple accent-3" depressed dark block large rounded>
                                 <v-icon left>fas fa-file-download</v-icon>
                                     ดาวน์โหลดเอกสาร
                             </v-btn>
@@ -163,7 +163,7 @@ import { App } from "@/store/app";
 export default class Farm extends Vue {
 
     @Prop({ default: false })
-    privateMode!: boolean
+    privateMode!: boolean 
 
     private farm: FarmForm | any = {}
     private form: any = {}
@@ -178,7 +178,7 @@ export default class Farm extends Vue {
     private dialogMother: boolean = false
     private chooseFather: any | null = null
     private chooseMother: any | null = null
-
+api: any = process.env.VUE_APP_SERVER
     private async created() {
         await this.run();
     }
@@ -233,13 +233,14 @@ export default class Farm extends Vue {
         }
     }
 
-    openCert(api: string) {
-        window.open(`${api}${this.$route.query.id}`, '_blank');
+    openCert() {
+        window.open(`${this.api}/cert/buffalo?id=${this.$route.query.id}`, '_blank');
 
     }
 
     openRealCret() {
-        window.open(this.formCertReal.real_cer, '_blank');
+        console.log(`${this.api}/${this.formCertReal.real_cer}`);
+        window.open(`${this.api}/${this.formCertReal.real_cer}`, '_blank');
     }
 
 }

@@ -11,16 +11,7 @@
                     </a>
                 </div>
             </div>
-            <div class="w-full md:w-8/12 px-4">
-                <ul class="flex flex-wrap list-none md:justify-end justify-center">
-                    <li>
-                        <button @click="$router.push('qa')" class="text-black hover:text-gray-400 text-sm font-semibold block py-1 px-3">
-                            ติดต่อผู้ดูแลระบบ
-                        </button>
-                    </li>
-
-                </ul>
-            </div>
+           
         </div>
     </div>
 </footer>

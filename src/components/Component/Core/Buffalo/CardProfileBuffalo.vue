@@ -6,7 +6,7 @@
             <div class="flex flex-wrap justify-center">
                 <div class="w-full px-4 flex justify-center">
                     <div class="relative">
-                        <img style="width:150px; height:150px;" ref="frontImage" src="https://sv1.picz.in.th/images/2020/11/07/bjhzBy.png" class="shadow-lg rounded-full  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
+                        <img style="width:150px; height:150px;" ref="frontImage" src="/assets/buffalo/buffalo.png" class="shadow-lg rounded-full  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
                         <div class="flex flex-col justify-center  mt-4">
                             <center>
                                 <h2 class="text-xl font-bold">ภายถ่ายด้านหน้า</h2>
@@ -29,13 +29,13 @@
             <div class="flex flex-wrap justify-center">
                 <div class="w-full px-4 flex justify-center">
                     <div class="relative">
-                        <img ref="backImage" style="width:150px; height:150px;" src="https://sv1.picz.in.th/images/2020/11/07/bjhzBy.png" class="shadow-lg rounded-full  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
+                        <img ref="backImage" style="width:150px; height:150px;" src="/assets/buffalo/buffalo.png" class="shadow-lg rounded-full  h-auto align-middle border-none -mt-16 w-48 h-48" alt="" srcset="">
                         <div class="flex flex-col justify-center  mt-4">
                             <center>
                                 <h2 class="text-xl font-bold">ภายถ่ายด้านข้าง</h2>
                             </center> <br>
                             <input type="file" ref="back" @change="backChange" style="display:none;" />
-                            <v-btn class="bg2" dark @click="$refs.front.click()" rounded depressed large>อัพโหลดรูปภาพ</v-btn>
+                            <v-btn class="bg2" dark @click="$refs.back.click()" rounded depressed large>อัพโหลดรูปภาพ</v-btn>
                             <br>
                         </div>
                     </div>
@@ -73,7 +73,7 @@ import {App} from "@/store/app";
 })
 
 export default class ImageClass extends Vue {
-
+    api: any = process.env.VUE_APP_SERVER
     public formProfile: any = {}
     private response: boolean = false
 
@@ -84,12 +84,14 @@ export default class ImageClass extends Vue {
     private async run() {
         let buffalo = await Core.getHttp(`/user/buffalo/image/${this.$route.query.id}/`)
         if (buffalo.front_image) {
+            let pathFront= this.api+buffalo.front_image
             let frontImage: any = this.$refs.frontImage
-            frontImage.src = buffalo.front_image
+            frontImage.src = (this.imageExists(pathFront))?pathFront:'/assets/buffalo/buffalo.png'
         }
         if (buffalo.back_image) {
+            let pathBack = this.api+buffalo.back_image
             let backImage: any = this.$refs.backImage
-            backImage.src = buffalo.back_image
+            backImage.src = (this.imageExists(pathBack))?pathBack:'/assets/buffalo/buffalo.png'
         }
 
         await Auth.setUser(this.formProfile.user)
@@ -116,6 +118,17 @@ export default class ImageClass extends Vue {
           await App.success("อัพโหลดรูปภาพสำเร็จ")
         }
     }
+
+    imageExists(image_url:any){
+
+    var http = new XMLHttpRequest();
+
+    http.open('HEAD', image_url, false);
+    http.send();
+
+    return http.status != 404;
+
+}
 
 }
 </script>

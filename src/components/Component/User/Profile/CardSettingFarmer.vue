@@ -1,54 +1,45 @@
 <template>
 <div class="flex flex-wrap">
     <div class="w-full">
-        <ul class="flex flex-col mb-0 list-none flex-wrap pt-3 pb-4 md:flex-row animate__animated animate__bounceInUp animate__delay-1s">
-            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 ">
-                <a class="w-full text-base font-bold uppercase px-5 py-3 shadow rounded-full block leading-normal row wrap" v-on:click="toggleTabs(1)" v-bind:class="{'text-black bg-white': openTab !== 1, 'text-white bg-yellow-500': openTab === 1}">
-                    <img src="/assets/farm/2826134-agriculture/png/006-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
-                    <span class="text-black pl-2">ข้อมูลเกษตกร</span>
-                </a>
-            </li>
-            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 ">
-                <a class="w-full text-base font-bold uppercase px-5 py-3 shadow rounded-full block leading-normal row wrap" v-on:click="toggleTabs(2)" v-bind:class="{'text-black bg-white': openTab !== 2, 'text-black bg-yellow-500': openTab === 2}">
-                    <img src="/assets/farm/2826134-agriculture/png/028-barn.png" height="24px" width="24px" class="rounded-lg" alt="">
-                    <span class="text-black pl-2">ข้อมูลฟาร์ม</span>
-                </a>
-            </li>
-            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 ">
-                <a class="w-full text-base font-bold uppercase px-5 py-3 shadow rounded-full block leading-normal row wrap" v-on:click="toggleTabs(3)" v-bind:class="{'text-black bg-white': openTab !== 3, 'text-black bg-yellow-500': openTab === 3}">
-                    <img src="/assets/farm/2826134-agriculture/png/083-desktop.png" height="24px" width="24px" class="rounded-lg" alt="">
-                    <span class="text-black pl-2">รูปภาพ</span>
-                </a>
-            </li>
-            <li class="-mb-px last:mr-0 flex-auto text-center rounded-lg cursor-pointer md:m-2 ">
-                <a class="w-full text-base font-bold uppercase px-5 py-3 shadow rounded-full block leading-normal row wrap" v-on:click="toggleTabs(5)" v-bind:class="{'text-black bg-white': openTab !== 5, 'text-white bg-yellow-500': openTab === 5}">
-                    <img src="/assets/farm/2826134-agriculture/png/068-phone.png" height="24px" width="24px" class="rounded-lg" alt="">
-                    <span class="text-black pl-2">ตั้งค่า</span>
-                </a>
-            </li>
-        </ul> 
-        <!-- <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg animate__animated animate__bounceInLeft animate__delay-1s"> -->
-            <v-card class="relatives rounded-lg animate__animated animate__bounceInLeft animate__delay-1s">
-                <div class="px-4 py-5 flex-auto">
-                    <div class="tab-content tab-space">
-                        <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
-                            <Profile class="animate__animated animate__zoomIn"  v-if="openTab === 1" />
-                        </div>
 
-                        <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}">
-                            <Farm class="animate__animated animate__zoomIn" v-if="openTab === 2" />
-                        </div>
+        <v-btn @click="toggleTabs(1)" class="m-2" rounded elevation="3" :color="(openTab == 1)?`green`:``">
+            <img src="/assets/farm/2826134-agriculture/png/006-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
+            <span class="font-bold">ข้อมูลเกษตกร</span>
+        </v-btn>
+        <v-btn @click="toggleTabs(2)" class="m-2" rounded elevation="3" :color="(openTab == 2)?`green`:``">
+            <img src="/assets/farm/2826134-agriculture/png/028-barn.png" height="24px" width="24px" class="rounded-lg" alt="">
+            <span class="font-bold">ฟาร์มของฉัน</span>
+        </v-btn>
+        <v-btn @click="toggleTabs(3)" class="m-2" rounded elevation="3" :color="(openTab == 3)?`green`:``">
+            <img src="/assets/farm/2826134-agriculture/png/083-desktop.png" height="24px" width="24px" class="rounded-lg" alt="">
+            <span class="font-bold">ยืนยันตัวตน</span>
+        </v-btn>
+        <v-btn @click="toggleTabs(5)" class="m-2" rounded elevation="3" :color="(openTab == 5)?`green`:``">
+            <img src="/assets/farm/2826134-agriculture/png/068-phone.png" height="24px" width="24px" class="rounded-lg" alt="">
+            <span class="font-bold">ความปลอดภัย</span>
+        </v-btn>
 
-                        <div v-bind:class="{'hidden': openTab !== 3, 'block': openTab === 3}">
-                            <ImageUser class="animate__animated animate__zoomIn" v-if="openTab === 3" />
-                        </div>
-                        <div v-bind:class="{'hidden': openTab !== 5, 'block': openTab === 5}">
-                            <Manager class="animate__animated animate__zoomIn" v-if="openTab === 5" />
-                        </div>
+        <v-card class="mt-6 relatives rounded-lg animate__animated animate__bounceInLeft animate__delay-1s">
+            <div class="px-4 py-5 flex-auto">
+                <div class="tab-content tab-space">
+                    <div v-bind:class="{'hidden': openTab !== 1, 'block': openTab === 1}">
+                        <Profile class="animate__animated animate__zoomIn" v-if="openTab === 1" />
+                    </div>
+
+                    <div v-bind:class="{'hidden': openTab !== 2, 'block': openTab === 2}">
+                        <Farm class="animate__animated animate__zoomIn" v-if="openTab === 2" />
+                    </div>
+
+                    <div v-bind:class="{'hidden': openTab !== 3, 'block': openTab === 3}">
+                        <ImageUser class="animate__animated animate__zoomIn" v-if="openTab === 3" />
+                    </div>
+                    <div v-bind:class="{'hidden': openTab !== 5, 'block': openTab === 5}">
+                        <Manager class="animate__animated animate__zoomIn" v-if="openTab === 5" />
                     </div>
                 </div>
-            </v-card>
-        <!-- </div> --> 
+            </div>
+        </v-card>
+        <!-- </div> -->
     </div>
 </div>
 </template>
@@ -102,9 +93,24 @@ export default class Table extends Vue {
 
     private async created() {
 
+        await this.defaultTab();
+
     }
-    toggleTabs(tabNumber: number) {
-        this.openTab = tabNumber
+
+    async defaultTab() {
+        let path: number = Number(this.$route.query.tab); 
+        return path ? await this.toggleTabs(path) : null
+    }
+    async toggleTabs(tabNumber: number) {
+        console.log(this.$route.fullPath)
+        if (this.$route.query.tab != String(tabNumber)) {
+            await this.$router.push({
+                query: {
+                    'tab': String(tabNumber)
+                }
+            });
+        }  
+        this.openTab = tabNumber 
     }
 
 }
@@ -131,10 +137,11 @@ export default class Table extends Vue {
     background-attachment: fixed;
     background-size: cover;
 }
-.bg2{
+
+.bg2 {
     background-color: #ff9d00;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
-background-attachment: fixed;
-background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 }
 </style>

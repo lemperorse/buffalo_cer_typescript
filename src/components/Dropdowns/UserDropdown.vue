@@ -50,16 +50,16 @@ export default {
     methods: {
 
         async run() {
-            let user = await User.getUser();
-            console.log('[USER]', user)
-            let profile = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
-            this.formProfile = await Core.getHttp(`/user/account/profile/image/${profile.id}/`)
-            if (this.formProfile.profile_image) {
-                let profileImage = this.$refs.profileImage
-                profileImage.src = this.formProfile.profile_image
-            }
+            // let user = await User.getUser();
+            // console.log('[USER]', user)
+            // let profile = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+            // this.formProfile = await Core.getHttp(`/user/account/profile/image/${profile.id}/`)
+            // if (this.formProfile.profile_image) {
+            //     let profileImage = this.$refs.profileImage
+            //     profileImage.src = this.formProfile.profile_image
+            // }
 
-            await Auth.setUser(user.pk)
+            // await Auth.setUser(user.pk)
             this.response = true
         },
         toggleDropdown: function (event) {

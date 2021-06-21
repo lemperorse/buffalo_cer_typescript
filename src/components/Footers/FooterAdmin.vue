@@ -11,15 +11,7 @@
                     </a>
                 </div>
             </div>
-            <div class="w-full md:w-8/12 px-4">
-                <ul class="flex flex-wrap list-none md:justify-end justify-center">
-                    <li>
-                        <a href="https://www.creative-tim.com?ref=vn-footer-admin" class="text-white hover:text-gray-900 text-sm font-semibold block py-1 px-3">
-                            ติดต่อผู้ดูแลระบบ
-                        </a>
-                    </li> 
-                </ul>
-            </div>
+          
         </div>
     </div>
 </footer>

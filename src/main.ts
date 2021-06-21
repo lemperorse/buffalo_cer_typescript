@@ -16,6 +16,10 @@ Vue.use(VueApexCharts)
 
 Vue.component('apexchart', VueApexCharts)
 
+import Menu from "@/components/Component/Core/Menu.vue";
+Vue.component('Menu',Menu)
+
+Vue.prototype.$server = process.env.VUE_APP_SERVER 
 
 import './plugins/varible';
 Vue.config.productionTip = false
