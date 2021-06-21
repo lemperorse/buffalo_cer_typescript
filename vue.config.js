@@ -9,7 +9,7 @@ module.exports = {
   // "transpileDependencies": [
   //   "vuetify"
   // ],
-  // publicPath: process.env.NODE_ENV === 'production' ?
-  //     '/static/' :
-  //     '/'
+  publicPath: process.env.NODE_ENV === 'production' ?
+      '/buffalo_cer_typescript/' :
+      '/'
 }

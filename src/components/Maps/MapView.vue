@@ -40,7 +40,7 @@ export default class GoogleMapWithMarkersComponent extends Vue {
   map: any;
   markers: any = [];
   bounds = new google.maps.LatLngBounds();
-  imagePath: string = "/assets/img/pins/";
+  imagePath: string = "assets/img/pins/";
   ILocation: any = {}
   res: boolean = false;
   created() {

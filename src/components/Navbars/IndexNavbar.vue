@@ -41,22 +41,22 @@ export default {
             navbarOpen: false,
             menus: [{
                     name: 'หน้าแรก',
-                    image: '/assets/farm/2826134-agriculture/png/005-farm.png',
+                    image: './assets/farm/2826134-agriculture/png/005-farm.png',
                     path: '/user/home',
                 },
                 {
                     name: 'ข้อมูลส่วนตัว',
-                    image: '/assets/farm/2826134-agriculture/png/006-farmer.png',
+                    image: './assets/farm/2826134-agriculture/png/006-farmer.png',
                     path: '/user/profile',
                 },
                 {
                     name: 'ใบพันธุ์ประวัติ',
-                    image: '/assets/farm/2826134-agriculture/png/076-award.png',
+                    image: './assets/farm/2826134-agriculture/png/076-award.png',
                     path: '/user/search',
                 },
                 {
                     name: 'ข้อมูลควาย',
-                    image: '/assets/buffalo/buffalo.png',
+                    image: './assets/buffalo/buffalo.png',
                     path: '/user/buffalo',
                 }
             ]

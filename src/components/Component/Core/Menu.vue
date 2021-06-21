@@ -59,7 +59,7 @@ export default {
             default: '200px'
         },
         image: {
-            default: '/assets/buffalo/buffalo.png'
+            default: './assets/buffalo/buffalo.png'
         },
         name: {
             default: 'Title Menu'

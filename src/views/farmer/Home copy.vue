@@ -20,7 +20,7 @@
                 <div>
                     <div class="pa-2 elevation-0 hvr-grow" @click="$router.push('/user/buffalo')">
                         <center>
-                            <v-avatar rounded size="36"><img src="/assets/buffalo/buffalo.png" alt=""></v-avatar>
+                            <v-avatar rounded size="36"><img src="assets/buffalo/buffalo.png" alt=""></v-avatar>
                             <span class="align-self-center">ควายของฉัน</span>
                         </center>
                     </div>
@@ -86,7 +86,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/search')" src="/assets/home/ใบcer.png" height="222px" width="222px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/search')" src="assets/home/ใบcer.png" height="222px" width="222px" alt="">
                             </center>
                         </v-card-text>
                         
@@ -103,7 +103,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="/assets/home/ข้อมูลส่วนตัว.png" height="200px" width="200px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/profile')" src="assets/home/ข้อมูลส่วนตัว.png" height="200px" width="200px" alt="">
                             </center>
                         </v-card-text>
 
@@ -120,7 +120,7 @@
                         <v-divider></v-divider>
                         <v-card-text>
                             <center>
-                                <img class="hvr-grow" @click="$router.push('/user/buffalo')" src="/assets/home/ข้อมูลควาย.png" height="200px" width="200px" alt="">
+                                <img class="hvr-grow" @click="$router.push('/user/buffalo')" src="assets/home/ข้อมูลควาย.png" height="200px" width="200px" alt="">
                             </center>
                         </v-card-text>
 

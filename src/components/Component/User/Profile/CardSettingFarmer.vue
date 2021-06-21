@@ -3,19 +3,19 @@
     <div class="w-full">
 
         <v-btn @click="toggleTabs(1)" class="m-2" rounded elevation="3" :color="(openTab == 1)?`green`:``">
-            <img src="/assets/farm/2826134-agriculture/png/006-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
+            <img src="assets/farm/2826134-agriculture/png/006-farmer.png" height="24px" width="24px" class="rounded-lg" alt="">
             <span class="font-bold">ข้อมูลเกษตกร</span>
         </v-btn>
         <v-btn @click="toggleTabs(2)" class="m-2" rounded elevation="3" :color="(openTab == 2)?`green`:``">
-            <img src="/assets/farm/2826134-agriculture/png/028-barn.png" height="24px" width="24px" class="rounded-lg" alt="">
+            <img src="assets/farm/2826134-agriculture/png/028-barn.png" height="24px" width="24px" class="rounded-lg" alt="">
             <span class="font-bold">ฟาร์มของฉัน</span>
         </v-btn>
         <v-btn @click="toggleTabs(3)" class="m-2" rounded elevation="3" :color="(openTab == 3)?`green`:``">
-            <img src="/assets/farm/2826134-agriculture/png/083-desktop.png" height="24px" width="24px" class="rounded-lg" alt="">
+            <img src="assets/farm/2826134-agriculture/png/083-desktop.png" height="24px" width="24px" class="rounded-lg" alt="">
             <span class="font-bold">ยืนยันตัวตน</span>
         </v-btn>
         <v-btn @click="toggleTabs(5)" class="m-2" rounded elevation="3" :color="(openTab == 5)?`green`:``">
-            <img src="/assets/farm/2826134-agriculture/png/068-phone.png" height="24px" width="24px" class="rounded-lg" alt="">
+            <img src="assets/farm/2826134-agriculture/png/068-phone.png" height="24px" width="24px" class="rounded-lg" alt="">
             <span class="font-bold">ความปลอดภัย</span>
         </v-btn>
 
