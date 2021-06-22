@@ -3,10 +3,10 @@
 
     <apexchart type="line" height="350" :options="graph.chartOptions" :series="graph.series"></apexchart>
     <div class="flex flex-wrap justify-center  mt-2">
-        <v-btn  @click="(age='0')&&(generateData())" class="mr-4" rounded>แรกเกิด</v-btn>
-        <v-btn   @click="(age='240')&&(generateData())" class="mr-4" rounded>อายุ 240 วัน</v-btn>
-        <v-btn   @click="(age='400')&&(generateData())" class="mr-4" rounded>อายุ 400 วัน</v-btn>
-        <v-btn   @click="(age='600')&&(generateData())" class="mr-4" rounded>อายุ 600 วัน</v-btn>
+        <v-btn color="success" @click="(age='0')&&(generateData())" class="mr-4 m-2" rounded>แรกเกิด</v-btn>
+        <v-btn color="success" @click="(age='240')&&(generateData())" class="mr-4 m-2" rounded>อายุ 240 วัน</v-btn>
+        <v-btn color="success" @click="(age='400')&&(generateData())" class="mr-4 m-2" rounded>อายุ 400 วัน</v-btn>
+        <v-btn color="success" @click="(age='600')&&(generateData())" class="mr-4 m-2" rounded>อายุ 600 วัน</v-btn>
     </div>
 
     <div>

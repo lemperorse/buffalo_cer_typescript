@@ -4,9 +4,8 @@
     <div class="w-full">
         <h1 class="text-2xl font-semibold uppercase md:text-3xl p-6">ค้นหาใบพันธุ์ประวัติ</h1>
         <div class="flex w-full p-6">
-            
             <div class="flex ">
-                
+                <!-- ค้นหา -->
                 <form @submit.prevent="run" class="mt-4 w-full row wrap">
                     <!-- <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" /> -->
                     <div class="flex w-full rounded-full border bg-white hover:shadow-lg">
@@ -27,8 +26,7 @@
         </div>
         <div class="flex w-full p-6">
             <div class="flex  -mt-8">
-                <form @submit.prevent="run2" class="w-full row wrap">
-                    <!-- <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" /> -->
+                <form @submit.prevent="run2" class="w-full row wrap"> 
                     <div class="flex w-full rounded-full border bg-white hover:shadow-lg">
                         <button>
                             <span class="w-auto flex justify-end items-center text-grey p-2">

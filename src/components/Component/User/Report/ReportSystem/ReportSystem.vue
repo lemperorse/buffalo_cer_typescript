@@ -9,48 +9,60 @@
         </div><br>
 
     </div>
-
-    <div class="py-2 ">
-
-        <table style="width:100%">
-            <tr>
-                <th>ชื่อควาย</th>
-                <th>น้ำหนัก(กก.)</th>
-                <th>ความกว้างรอบอก(ซม.)</th>
-                <th> ความยาวรอบลำตัว(ซม.)</th>
-                <th> ความสูง(ซม.)</th>
-
-            </tr>
-            <tr v-for="buffalo,index in buffalos.results" :key="index">
-                <td>{{buffalo.buffalo.name}}</td>
-                <td>
-                    <h2 v-if="buffalo.weight0">แรกเกิด : {{buffalo.weight0}}</h2>
-                    <h2 v-if="buffalo.weight240">อายุ 240 วัน : {{buffalo.weight240}}</h2>
-                    <h2 v-if="buffalo.weight400">อายุ 400 วัน : {{buffalo.weight400}}</h2>
-                    <h2 v-if="buffalo.weight600">อายุ 600 วัน : {{buffalo.weight600}}</h2>
-                </td>
-                <td>
-                    <h2 v-if="buffalo.width0">แรกเกิด : {{buffalo.width0}}</h2>
-                    <h2 v-if="buffalo.width240">อายุ 240 วัน : {{buffalo.width240}}</h2>
-                    <h2 v-if="buffalo.width400">อายุ 400 วัน : {{buffalo.width400}}</h2>
-                    <h2 v-if="buffalo.width600">อายุ 600 วัน : {{buffalo.width600}}</h2>
-                </td>
-                <td>
-                    <h2 v-if="buffalo.length0">แรกเกิด : {{buffalo.length0}}</h2>
-                    <h2 v-if="buffalo.length240">อายุ 240 วัน : {{buffalo.length240}}</h2>
-                    <h2 v-if="buffalo.length400">อายุ 400 วัน : {{buffalo.length400}}</h2>
-                    <h2 v-if="buffalo.length600">อายุ 600 วัน : {{buffalo.length600}}</h2>
-                </td>
-                <td>
-                    <h2 v-if="buffalo.height0">แรกเกิด : {{buffalo.height0}}</h2>
-                    <h2 v-if="buffalo.height240">อายุ 240 วัน : {{buffalo.height240}}</h2>
-                    <h2 v-if="buffalo.height400">อายุ 400 วัน : {{buffalo.height400}}</h2>
-                    <h2 v-if="buffalo.height600">อายุ 600 วัน : {{buffalo.height600}}</h2>
-                </td>
-            </tr>
-
-        </table>
-     
+    
+    <div>
+        <v-simple-table >
+            <template class="rounded-lg">
+                <thead>
+                    <tr>
+                        <th class="text-left">
+                            ชื่อควาย
+                        </th>
+                        <th class="text-left">
+                            น้ำหนัก(กก.)
+                        </th>
+                        <th class="text-left">
+                            ความกว้างรอบอก(ซม.)
+                        </th>
+                        <th class="text-left">
+                            ความยาวรอบลำตัว(ซม.)
+                        </th>
+                        <th class="text-left">
+                            ความสูง(ซม.)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="buffalo,index in buffalos.results" :key="index">
+                        <td>{{buffalo.buffalo.name}}</td>
+                        <td>
+                            <h2 v-if="buffalo.weight0">แรกเกิด : {{buffalo.weight0}}</h2>
+                            <h2 v-if="buffalo.weight240">อายุ 240 วัน : {{buffalo.weight240}}</h2>
+                            <h2 v-if="buffalo.weight400">อายุ 400 วัน : {{buffalo.weight400}}</h2>
+                            <h2 v-if="buffalo.weight600">อายุ 600 วัน : {{buffalo.weight600}}</h2>
+                        </td>
+                        <td>
+                            <h2 v-if="buffalo.width0">แรกเกิด : {{buffalo.width0}}</h2>
+                            <h2 v-if="buffalo.width240">อายุ 240 วัน : {{buffalo.width240}}</h2>
+                            <h2 v-if="buffalo.width400">อายุ 400 วัน : {{buffalo.width400}}</h2>
+                            <h2 v-if="buffalo.width600">อายุ 600 วัน : {{buffalo.width600}}</h2>
+                        </td>
+                        <td>
+                            <h2 v-if="buffalo.length0">แรกเกิด : {{buffalo.length0}}</h2>
+                            <h2 v-if="buffalo.length240">อายุ 240 วัน : {{buffalo.length240}}</h2>
+                            <h2 v-if="buffalo.length400">อายุ 400 วัน : {{buffalo.length400}}</h2>
+                            <h2 v-if="buffalo.length600">อายุ 600 วัน : {{buffalo.length600}}</h2>
+                        </td>
+                        <td>
+                            <h2 v-if="buffalo.height0">แรกเกิด : {{buffalo.height0}}</h2>
+                            <h2 v-if="buffalo.height240">อายุ 240 วัน : {{buffalo.height240}}</h2>
+                            <h2 v-if="buffalo.height400">อายุ 400 วัน : {{buffalo.height400}}</h2>
+                            <h2 v-if="buffalo.height600">อายุ 600 วัน : {{buffalo.height600}}</h2>
+                        </td>
+                    </tr>
+                </tbody>
+            </template>
+        </v-simple-table>
     </div>
 
 </div>
@@ -158,17 +170,5 @@ export default class Farm extends Vue {
 <style>
 .f-white {
     color: white !important;
-}
-
-table {
-  width:100%;
-}
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 15px;
-  text-align: left;
 }
 </style>
