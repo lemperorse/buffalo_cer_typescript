@@ -19,14 +19,11 @@
                     </div>
                 </div>
                 <v-spacer></v-spacer>
-                <div>
-
+                <div> 
                     <!-- <v-btn color="grey lighten-1" rounded elevation="0">
                         <i class="em em-female-technologist text-xl mr-2" aria-role="presentation" aria-label=""></i> <b>ติดต่อผู้ดูแลระบบ</b>
-                    </v-btn> -->
-
-                </div>
-
+                    </v-btn> --> 
+                </div> 
             </v-row>
 
             <div :class="(width > 1025)?`grid grid-cols-1 lg:grid-cols-4 gap-4`:''">

@@ -58,6 +58,16 @@ export default {
                     name: 'ข้อมูลควาย',
                     image: './assets/buffalo/buffalo.png',
                     path: '/user/buffalo',
+                },
+                {
+                    name: 'แผนที่',
+                    image: './assets/farm/2826134-agriculture/png/054-truck.png',
+                    path: '/user/map',
+                },
+                {
+                    name: 'รายงาน',
+                    image: './assets/farm/2826134-agriculture/png/088-date.png',
+                    path: '/user/reportbuffalo',
                 }
             ]
 
