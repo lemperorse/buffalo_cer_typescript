@@ -55,7 +55,7 @@ export default {
                     path: '/user/search',
                 },
                 {
-                    name: 'ข้อมูลควาย',
+                    name: 'ควายของฉัน',
                     image: './assets/buffalo/buffalo.png',
                     path: '/user/buffalo',
                 },
