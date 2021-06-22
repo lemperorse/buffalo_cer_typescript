@@ -7,8 +7,6 @@
             <div class="w-full px-4 flex justify-center">
                 <div class="relative"  v-if="response">
                     <v-img class="shadow-xl h-40 w-40 rounded-full align-middle border-none -mt-16 w-48 h-48"  :src="userImage" ></v-img>
-                    
-               
                     <!-- <img ref="profileImage" alt="..." src="https://sv1.picz.in.th/images/2020/11/04/bQMzml.jpg"  
                     class="shadow-xl h-40 w-40 rounded-full align-middle border-none -mt-16 w-48 h-48" /> -->
                     <div class="flex justify-center mt-4">

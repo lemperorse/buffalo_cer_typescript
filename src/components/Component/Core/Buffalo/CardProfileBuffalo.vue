@@ -99,7 +99,6 @@ export default class ImageClass extends Vue {
     }
 
     async frontChange(event: any) {
-
         let file = await Core.getBase64(event.target.files[0])
         let frontImage: any = this.$refs.frontImage
         frontImage.src = file

@@ -57,13 +57,18 @@
                         <div class="flex flex-wrap">
                             <div class="relative w-auto pl-4 flex-initial pt-3">
                                 <div class="">
-                                    <img :src="(buffalo.back_image)?buffalo.back_image:'https://images.pexels.com/photos/4835959/pexels-photo-4835959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'" class="h-24 w-24 bg-white rounded-full border" alt="..." />
+                                    <!-- <v-img class="h-16 w-16 bg-white rounded-full border" :src="(checkImg($api+buffalo.front_image))?$api+buffalo.front_image:'./assets/buffalo/buffalo.png'"></v-img> -->
+                                    <v-img :src="$api+buffalo.front_image" class="h-24 w-24 bg-white rounded-full border" alt="..." />
+                                    <!-- <img  :src="($api+buffalo.front_image)?$api+buffalo.front_image:'https://images.pexels.com/photos/4835959/pexels-photo-4835959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'" class="h-24 w-24 bg-white rounded-full border" alt="..." /> -->
                                 </div>
                             </div>
                             <div class="relative w-full pr-4 max-w-full flex-grow flex-1 text-right">
                                 <span class="font-semibold text-xs text-gray-800">
-                                    MC/NID : {{ buffalo.microchip }}/ {{ buffalo.nid }}
+                                    ชื่อควาย : {{ buffalo.name }}
                                 </span>
+                                <div class="font-semibold text-xs text-gray-800">
+                                    MC/NID : {{ buffalo.microchip }}/ {{ buffalo.nid }}
+                                </div>
                                 <div class="text-gray-500 uppercase font-bold text-xs">
                                     เจ้าของ : {{ buffalo.owner }}
                                 </div>

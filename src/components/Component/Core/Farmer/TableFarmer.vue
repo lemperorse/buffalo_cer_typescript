@@ -49,10 +49,8 @@
                         <div class="flex flex-wrap ">
                             <div class="relative w-auto pl-4 flex-initial">
                                 <div>
-                                    <!-- <v-img class="h-16 w-16 bg-white rounded-full border" :src="(checkImg($api+buffalo.front_image))?$api+buffalo.front_image:'./assets/buffalo/buffalo.png'"></v-img> -->
-                                    
-                                    <v-img class="h-16 w-16 bg-white rounded-full border"  :src="$api+buffalo.front_image"></v-img>
-                                    
+                                    <v-img class="h-16 w-16 bg-white rounded-full border" :src="(checkImg($api+buffalo.front_image))?$api+buffalo.front_image:'./assets/buffalo/buffalo.png'"></v-img>
+                                    <!-- <v-img class="h-16 w-16 bg-white rounded-full border"  :src="$api+buffalo.front_image"></v-img> -->
                                 </div>
                             </div>
                             <div class="relative w-full pr-4 max-w-full flex-grow flex-1 text-right">
