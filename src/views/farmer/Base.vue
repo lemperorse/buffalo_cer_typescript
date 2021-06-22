@@ -7,7 +7,7 @@
         <v-main class="grey lighten-3 bg-home">
             <v-container>
                 <v-row justify="center">
-                    <v-col cols="12" sm="8">
+                    <v-col cols="12" sm="12">
                         <div v-if="logined">
                             <router-view />
                         </div>
