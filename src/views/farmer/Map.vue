@@ -3,7 +3,9 @@
        <div class="w-full lg:w-8/12 px-6 md:px-10">
         <h2 class="text-2xl"> <b>แผนที่</b> </h2> <span>แผนที่แสดงที่ตั้ง ฟาร์ม ที่เกษตรกรคนอื่นๆ บันทึกไว้</span><br><br>
     </div>
-   <Map  :locations="locations" />
+    <v-card class="rounded-lg elevation-3">
+        <Map  :locations="locations" />
+    </v-card>
 </div>
 </template>
 

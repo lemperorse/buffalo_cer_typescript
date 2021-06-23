@@ -1,5 +1,5 @@
 <template>
-  <div class="map  " ref="googleMap"></div>
+  <div class="map" ref="googleMap"></div>
 </template>
 
 <script lang="ts">

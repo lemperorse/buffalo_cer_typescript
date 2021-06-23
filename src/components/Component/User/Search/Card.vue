@@ -5,7 +5,6 @@
         <h1 class="text-2xl font-semibold uppercase md:text-3xl p-6">ค้นหาใบพันธุ์ประวัติ</h1>
         <div class="flex w-full p-6">
             <div class="flex ">
-                <!-- ค้นหา -->
                 <form @submit.prevent="run" class="mt-4 w-full row wrap">
                     <!-- <input :class="$xinput" v-model="search" type="text" placeholder="ค้นหา เช่น ชื่อควาย ชื่อเจ้าของ ชื่อฟาร์ม กลุ่มเกษตรกร จังหวัด อำเภอ ตำบล ของฟาร์ม" /> -->
                     <div class="flex w-full rounded-full border bg-white hover:shadow-lg">
@@ -25,8 +24,8 @@
             </div>
         </div>
         <div class="flex w-full p-6">
-            <div class="flex  -mt-8">
-                <form @submit.prevent="run2" class="w-full row wrap"> 
+            <div class="flex  -mt-8"> 
+                <form @submit.prevent="run2"  class="w-full row wrap"> 
                     <div class="flex w-full rounded-full border bg-white hover:shadow-lg">
                         <button>
                             <span class="w-auto flex justify-end items-center text-grey p-2">
@@ -42,7 +41,11 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> 
+        <!-- <v-select @change="loadProducts()" rounded filled item-text="name" item-value="id" :items="provinces" v-model="province" label="ค้นหาจังหวัด"></v-select> -->
+                    <!-- <v-btn @change="loadProducts()" fab depressed color="orange darken-1" dark>
+                        <v-icon>fas fa-search</v-icon>
+                    </v-btn> -->
 
     </div>
 
@@ -123,7 +126,7 @@ import MapView from '@/components/Maps/MapView.vue';
 import moment from "moment";
 import { FarmForm } from "@/models/farm";
 import { Map } from "@/store/map";
-import { App } from "@/store/app";
+import { App } from "@/store/app"; 
 
 @Component({
     components: { MapView },
@@ -143,8 +146,7 @@ export default class Farm extends Vue {
     private user: any = {}
     private farm: FarmForm | any = {}
     private buffalos: any = []
-    private response: boolean = false
-
+    private response: boolean = false 
     private page: number = 1
     private allPages: number = 1
     private search: string = ''
@@ -152,25 +154,39 @@ export default class Farm extends Vue {
 
     private async created() {
         await this.run();
+        // await this.loadProvinces();
+        // await this.loadProducts()
     }
+
+    // async loadProducts() {
+    //     let search = this.$route.query.search
+    //     search = (search) ? `search=${search}` : ''
+    //     this.buffalos = await Core.getHttp(`/api/buffalo/all/?search=${this.search}${this.province}`)
+    // }
 
     private async run() {
         await App.onLoad()
         let user = await User.getUser();
         this.user = await Core.getHttp(`/api/account/${user.pk}/`)
         this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
-        this.buffalos = await Core.getHttp(`/api/buffalo/all/?search=${this.search}`) 
+        this.buffalos = await Core.getHttp(`/api/buffalo/all/?search=${this.search}`)
         this.allPages = Math.ceil((this.buffalos ?.count / 12))
         this.response = true
         await App.offLoad();
     }
+
+    // provinces: any = null
+    // province: any = '';
+    // async loadProvinces() {
+    //     this.provinces = await Core.getHttp(`/api/province/`)
+    // }
 
     private async run2() {
         await App.onLoad()
         let user = await User.getUser();
         this.user = await Core.getHttp(`/api/account/${user.pk}/`)
         this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
-        this.buffalos = await Core.getHttp(`/api/buffalo/all/?search=${this.search2}`) 
+        this.buffalos = await Core.getHttp(`/api/buffalo/all/?search=${this.search2}`)
         this.allPages = Math.ceil((this.buffalos ?.count / 12))
         this.response = true
         await App.offLoad();
@@ -178,10 +194,10 @@ export default class Farm extends Vue {
 
     private async handlePageChange(value: any) {
         await App.onLoad()
-        this.buffalos = await Core.getHttp(`/api/buffalo/all/?page=${value}&search=${this.search}`) 
+        this.buffalos = await Core.getHttp(`/api/buffalo/all/?page=${value}&search=${this.search}`)
         await App.offLoad();
     }
-
+ 
 }
 </script>
 
