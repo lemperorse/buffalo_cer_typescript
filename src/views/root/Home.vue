@@ -18,19 +18,19 @@
                     <div class="w-full md:w-8/12"> 
                         <button :class="`${$btn} bg-blue-600 rounded-full`">เข้าสู่ระบบ</button>
                     </div>
-
+ 
                     <div class="w-full md:w-8/12 flex flex-wrap   relative">
                         <div class="w-1/2">
-                            <router-link to="/re-password" class="text-gray-600">
+                            <router-link to="/re-password" class="text-gray-600 text-xl  ">
                                 <small>ลืมรหัสผ่าน</small>
                             </router-link>
                         </div>
                         <div class="w-1/2 text-right">
-                            <router-link to="/register" class="text-gray-600 invisible">
-                                <small>สมัครสมาชิก</small>
-                            </router-link>
+                            <a :href="api+'/admin/'" class="text-gray-600  text-xl  ">
+                                <small>ผู้ดูแลระบบ</small>
+                            </a>
                         </div>
-                    </div>
+                    </div> 
                     <v-divider class="mt-8" style="width:70%;"></v-divider>
                     <p class="social-text">ลิขสิทธิ์ © 2563 โดย ชยุต ดงปาลีธรรม และ คณะ</p>
 
@@ -95,6 +95,7 @@
   })
 
   export default class Test extends Vue {
+       api: any = process.env.VUE_APP_SERVER
       tab: number = 0
       switchc: string = ''
       private form: any = {

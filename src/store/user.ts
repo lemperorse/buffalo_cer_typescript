@@ -28,7 +28,7 @@ class UserClass extends VuexModule {
             this.user =  Object.assign({}, user, profile,permission,{user_id:user.pk,profile_id:profile.id});   
             this.permission = permission.is_staff
             this.farm = await Core.getHttp(`/user/buffalo/farm/${user.pk}/`)
-            this.routeUser = (permission.is_staff)?'/admin/home':'/user/home'
+            this.routeUser = (permission.is_staff)?'/user/home':'/user/home'
             return true;
         }else{
             return false;
