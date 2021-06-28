@@ -47,22 +47,24 @@
                 <div class="border bg-white rounded-lg shadow  animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap ">
-                            <div class="relative w-auto pl-4 flex-initial">
+                            <div class="relative w-auto flex-initial">
                                 <div>
-                                    <v-img class="h-16 w-16 bg-white rounded-full border" :src="(checkImg($api+buffalo.front_image))?$api+buffalo.front_image:'./assets/buffalo/buffalo.png'"></v-img>
-                                    <!-- <v-img class="h-16 w-16 bg-white rounded-full border"  :src="$api+buffalo.front_image"></v-img> -->
+                                    <!-- <v-img class="h-16 w-16 bg-white rounded-full border" :src="(checkImg($api+buffalo.front_image))?$api+buffalo.front_image:'./assets/buffalo/buffalo.png'"></v-img> -->
+                                    <v-img class="h-16 w-16 bg-white rounded-full border"  :src="$api+buffalo.front_image"></v-img>
                                 </div>
                             </div>
-                            <div class="relative w-full pr-4 max-w-full flex-grow flex-1 text-right">
+                            <div class="relative w-full pl-4 max-w-full flex-grow flex-1 text-left">
                                 <span class="font-semibold text-xl text-gray-800">
-                                    ชื่อควาย : {{buffalo.name}}
+                                    {{buffalo.name}}
                                 </span>
                                 <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                    หมายเลข MICROCHIP : {{ buffalo.nid }}
+                                    <!-- MICROCHIP : {{ buffalo.microship }} -->
+                                    <div v-if="buffalo.microship">MICROSHIP : {{ buffalo.microship }}</div>
+                                    <div v-else>MICROSHIP : -</div>
                                 </h5>
-                                <span>
+                                <div class="mt-1">
                                     <v-btn color="amber" dark rounded depressed @click="$router.push(`buffalo/profile?id=${buffalo.id}`)">ดูรายละเอียด</v-btn>
-                                </span>
+                                </div>
                             </div>
                         </div>
                     </div>

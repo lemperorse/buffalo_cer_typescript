@@ -15,7 +15,7 @@
     </v-toolbar>
 
     <v-bottom-sheet v-model="navbarOpen" inset>
-        <v-sheet height="200px">
+        <v-sheet height="253px ">
             <div class="flex flex-col">
                 <v-btn v-for="(menu,i) in menus" :key="i" text @click="$router.push(menu.path)">
                     <img class="h-8 w-auto" :src="menu.image" alt="">
@@ -23,7 +23,7 @@
                         {{menu.name}}
                     </span>
                 </v-btn>
-                <v-btn   outlined @click="logout()">ออกจากระบบ</v-btn>
+                <v-btn color="error"  outlined @click="logout()">ออกจากระบบ</v-btn>
 
             </div>
         </v-sheet>

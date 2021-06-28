@@ -41,12 +41,7 @@
                     </div>
                 </form>
             </div>
-        </div> 
-        <!-- <v-select @change="loadProducts()" rounded filled item-text="name" item-value="id" :items="provinces" v-model="province" label="ค้นหาจังหวัด"></v-select> -->
-                    <!-- <v-btn @change="loadProducts()" fab depressed color="orange darken-1" dark>
-                        <v-icon>fas fa-search</v-icon>
-                    </v-btn> -->
-
+        </div>
     </div>
 
     <!-- card --><br>
@@ -56,37 +51,48 @@
                 <div class="border bg-white rounded-lg shadow  animate__animated animate__zoomIn ">
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap">
-                            <div class="relative w-auto pl-4 flex-initial pt-3">
+                            <div class="relative w-auto  flex-initial pt-3">
                                 <div class="">
                                     <!-- <v-img class="h-16 w-16 bg-white rounded-full border" :src="(checkImg($api+buffalo.front_image))?$api+buffalo.front_image:'./assets/buffalo/buffalo.png'"></v-img> -->
                                     <v-img :src="$api+buffalo.front_image" class="h-24 w-24 bg-white rounded-full border" alt="..." />
                                     <!-- <img  :src="($api+buffalo.front_image)?$api+buffalo.front_image:'https://images.pexels.com/photos/4835959/pexels-photo-4835959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'" class="h-24 w-24 bg-white rounded-full border" alt="..." /> -->
                                 </div>
-                            </div>
-                            <div class="relative w-full pr-4 max-w-full flex-grow flex-1 text-right">
+                            </div> 
+                            <div class="relative w-full pl-4 max-w-full flex-grow flex-1 text-left">
                                 <span class="font-semibold text-xs text-gray-800">
-                                    ชื่อควาย : {{ buffalo.name }}
+                                    {{ buffalo.name }}
                                 </span>
                                 <div class="font-semibold text-xs text-gray-800">
-                                    MC/NID : {{ buffalo.microchip }}/ {{ buffalo.nid }}
+                                    <!-- MC : {{ buffalo.microship }}/ {{ buffalo.nid }} -->
+                                    <div v-if="buffalo.microship">MC : {{ buffalo.microship }}</div>
+                                    <div v-else>MC : -</div>
+                                </div>
+                                <div class="font-semibold text-xs text-gray-800">
+                                    <div v-if="buffalo.nid">NID : {{ buffalo.nid }}</div>
+                                    <div v-else>NID : -</div>
+                                    <!-- NID : {{ buffalo.microchip }}/ {{ buffalo.nid }} -->
                                 </div>
                                 <div class="text-gray-500 uppercase font-bold text-xs">
-                                    เจ้าของ : {{ buffalo.owner }}
+                                    <div v-if="buffalo.owner">เจ้าของ : {{ buffalo.owner }}</div>
+                                    <div v-else>เจ้าของ : -</div>
                                 </div>
                                 <div class="text-gray-500 uppercase font-bold text-xs">
-                                    ฟาร์ม : {{ buffalo.froms }}
+                                    <div v-if="buffalo.froms">ฟาร์ม : {{ buffalo.froms }}</div>
+                                    <div v-else>ฟาร์ม : -</div>
                                 </div>
                                 <div class="text-gray-500 uppercase font-bold text-xs">
-                                    กลุ่ม : {{ buffalo.group }}
+                                    <div v-if="buffalo.group">กลุ่ม : {{ buffalo.group }}</div>
+                                    <div v-else>กลุ่ม : -</div>
                                 </div>
                                 <div class="text-gray-500 uppercase font-bold text-xs">
-                                    ที่อยู่ : {{ buffalo.address }}
+                                    <div v-if="buffalo.address">ที่อยู่ : {{ buffalo.address }}</div>
+                                    <div v-else>ที่อยู่ : -</div>
                                 </div>
-                                <span>
+                                <div class="mt-1">
                                     <v-btn @click="$router.push(`buffalo/public?id=${buffalo.id}`)" rounded depressed dark color="amber">
                                         ดูรายละเอียด
                                     </v-btn>
-                                </span>
+                                </div>
                             </div>
                         </div>
                     </div>
