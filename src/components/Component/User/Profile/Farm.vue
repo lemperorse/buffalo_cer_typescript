@@ -55,16 +55,20 @@
             <div class="flex flex-wrap">
                 <div class="w-full ">
                     <div class="relative w-full mb-3">
-                        <MapView :name="'locations'" :center="{'Latitude':form.latitude,'Longitude' :form.longitude }" :locations="[
-                  {'Latitude':form.latitude,'Longitude' :form.longitude } ,]" :zoom="18" :disableDefaultUI="false" :scaleControl="false" :zoomControl="false"></MapView>
+              <MapView :name="'locations'" :center="currentLocation.center" :locations="currentLocation.mark" :zoom="16" :disableDefaultUI="false" :scaleControl="false" :zoomControl="false"></MapView>
+
+
+  
                     </div>
                 </div>
-                <div class="w-full lg:w-6/12 md:px-4">
-                    <v-text-field :disabled="unEdit" v-model="form.latitude" type="text" filled rounded dense label="พิกัดฟาร์ม GPS(ละติจูด)" id="id" prepend-inner-icon="fas fa-map-marker-alt"></v-text-field>
+                <div class="w-full   md:px-4"><br>
+                                <v-text-field :disabled="unEdit" rounded class="w-full  " v-model="form.location" filled label="พิกัดฟาร์ม" prepend-inner-icon="mdi-google-maps"></v-text-field>
+
+                    <!-- <v-text-field :disabled="unEdit" v-model="form.latitude" type="text" filled rounded dense label="พิกัดฟาร์ม GPS(ละติจูด)" id="id" prepend-inner-icon="fas fa-map-marker-alt"></v-text-field> -->
                 </div> 
-                <div class="w-full lg:w-6/12 md:px-4">
+                <!-- <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" v-model="form.longitude" type="text" filled rounded dense label="พิกัดฟาร์ม GPS(ลองติจูด)" id="id" prepend-inner-icon="fas fa-map-marker-alt"></v-text-field>
-                </div> 
+                </div>  -->
             </div>
 
             <div class="flex justify-center mt-4">
@@ -120,6 +124,8 @@ export default class Farm extends Vue {
     private unEdit: boolean = true
     private currentFarmer: any = null
     private group: any[] = []
+        currentLocation:any ={}
+
     private async created() {
         await this.collingPermission()
         await this.run();
@@ -142,8 +148,20 @@ export default class Farm extends Vue {
         let profile = await Core.getHttp(`/api/profile/${this.currentFarmer}/`)
         this.form = await Core.getHttp(`/user/buffalo/farm/${profile.user}/`)
         await this.setCity();
+        await this.generateMap()
         this.response = true
         await App.offLoad();
+    }
+
+    async generateMap(){
+         this.response = false;
+        let map = (this.form.location).split(',')
+        if(map.length > 1){ 
+            this.currentLocation = {
+                center : {'Latitude':parseFloat(map[0]) ,'Longitude' : parseFloat(map[1]) },
+                mark : [{'Latitude':parseFloat(map[0]),'Longitude' :parseFloat(map[1]) } ,]  
+            }
+        }
     }
 
     async update() {
@@ -164,8 +182,7 @@ export default class Farm extends Vue {
 
     @Watch('latCore')
     async changeMapCore() {
-        this.form.latitude = Map.lat
-        this.form.longitude = Map.lng
+        this.form.location = `${Map.lat},${Map.lng}` 
         await this.update();
     }
     get latCore() {

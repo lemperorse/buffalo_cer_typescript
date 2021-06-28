@@ -9,7 +9,7 @@
 
                         <div class="row wrap px-3">
                             <v-avatar size="86">
-                                <v-img :src="$api+user.profile_image"></v-img>
+                                <v-img :src="$api+'/'+user.profile_image"></v-img>
                             </v-avatar>
                             <div class=" ml-2 align-self-center">
                                 <div class="text-3xl font-bold">{{user.first_name}} {{user.last_name}}</div>

@@ -29,8 +29,12 @@ import { Auth } from "@/store/auth";
 export default class Test extends Vue {
 
     async created() {
-        await Auth.checkToken();
-        await User.loadUser();
+        let tokenHaved = await Auth.checkToken();
+        let sessionUser = await User.loadUser();
+        if(!sessionUser && tokenHaved){
+            await Auth.logout(); 
+            await location.reload();
+        } 
         await this.$router.replace(User.routeUser)
         console.log(User.routeUser)
     }

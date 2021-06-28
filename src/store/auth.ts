@@ -63,6 +63,9 @@ class AuthClass extends VuexModule {
     public async checkToken(){
         if(this.token != null){
             await this.storeToken(this.token);
+            return true;
+        }else{
+            return false;
         }
     }
 

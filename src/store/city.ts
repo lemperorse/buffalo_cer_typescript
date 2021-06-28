@@ -36,7 +36,7 @@ class CityClass extends VuexModule {
         let geo: any = this.currentGeo?.name
         let amphur: any = this.currentAmphur?.name
         let district: any = this.currentDistrict?.name
-        this.showName = `${geo}-${province}-${amphur}-${district}`
+        this.showName = `${geo}  จ.${province} อ.${amphur} ต.${district}`
     }
 
 
