@@ -22,7 +22,7 @@
         <form @submit.prevent="update()">
             <h6 class="text-gray-500 md:px-4 text-sm mt-3 mb-6 font-bold uppercase">
                 บัญชี
-            </h6>
+            </h6> 
             <div class="flex flex-wrap">
                 <div class="w-full lg:w-6/12 md:px-4 ">
                     <v-text-field disabled required v-model="formUser.username" type="text" filled rounded dense label="ชื่อผู้ใช้งาน" id="id" prepend-inner-icon="fas fa-user"></v-text-field>

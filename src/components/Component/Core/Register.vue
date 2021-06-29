@@ -70,7 +70,7 @@
         </div>
 
         <div class="relative w-full ml-2">
-            <v-select required :items="gender" item-text="value" item-value="id" v-model="formProfile.gender" filled rounded dense label="เพศ (ไม่บังคับ)" prepend-inner-icon="fas fa-venus-mars" />
+            <v-select :items="gender" item-text="value" item-value="id" v-model="formProfile.gender" filled rounded dense label="เพศ (ไม่บังคับ)" prepend-inner-icon="fas fa-venus-mars" />
         </div>
 
         <div class="text-center mt-6">
@@ -102,7 +102,7 @@
         </div>
 
         <div class="relative w-full ml-2">
-            <v-text-field v-model="formProfile.zipcode" type="number" filled rounded name="name" label="รหัสไปรษณีย์ (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-mail-bulk"></v-text-field>
+            <v-text-field v-model="formProfile.zipcode" type="number" filled rounded name="name" label="รหัสไปรษณีย์" id="id" prepend-inner-icon="fas fa-mail-bulk"></v-text-field>
         </div>
 
         <div class="text-center">
@@ -171,20 +171,19 @@ export default class Home extends Vue {
     @Watch('formProfile.birthday')
     async onChangeProvince(val: string) {
         this.formProfile.age = moment().diff(val, 'years', false);
-
     }
     async created() {
             await this.getLocation();
-        this.gender = await Core.getChoice('เพศ')
-        this.prefix = await Core.getChoice('คำนำหน้า')
+            this.gender = await Core.getChoice('เพศ')
+            this.prefix = await Core.getChoice('คำนำหน้า')
     
     }
 
     async getLocation(){ 
         if(navigator.geolocation){
-     await navigator.geolocation.getCurrentPosition((location:any)=>{
-          this.location = `${location.coords.latitude},${location.coords.longitude}`
-         });
+        await navigator.geolocation.getCurrentPosition((location:any)=>{
+            this.location = `${location.coords.latitude},${location.coords.longitude}`
+            });
         }
        
    
@@ -195,6 +194,8 @@ export default class Home extends Vue {
         this.formProfile.province = City.currentProvince ?.id
         this.formProfile.amphur = City.currentAmphur ?.id
         this.formProfile.district = City.currentDistrict ?.id
+        this.formProfile.birthday = (this.formProfile.birthday )?this.formProfile.birthday :'2021-06-06'
+        this.formProfile.age = (this.formProfile.age )?this.formProfile.age :25
         let user = await Auth.register(this.formUser, this.formProfile, this.location ) 
         if(user.id){
             await App.success("สมัครสมาชิกสำเร็จ")
