@@ -13,12 +13,14 @@ class AuthClass extends VuexModule {
     public async  setUser(id:number){
         this.user = await Core.getHttp(`/api/account/${id}/`)
     }
-    public async register(from:any,fromProfile:any): Promise<any> {
+    public async register(from:any,fromProfile:any,location:any): Promise<any> {
         let user:any  = await Core.postHttp('/api/register',from)
         if(user.id){
+            alert(user.id)
             fromProfile.user = user?.id
             await this.autoCreateProfile(fromProfile)
-            await this.autoCreateFarm(user?.first_name,user?.id)
+            await this.autoCreateFarm(user?.first_name,user?.id,location)
+            return user;
         }
         return user
     }
@@ -27,10 +29,12 @@ class AuthClass extends VuexModule {
         return Core.postHttp('/api/profile/create/',from)
     }
 
-    private async autoCreateFarm(name:string,user:number): Promise<any>{
+    private async autoCreateFarm(name:string,user:number,location:any): Promise<any>{
+        
         return Core.postHttp('/api/buffalo/farm/create/', {
             "user_id":user,
-            "name":name
+            "name":name,
+            "location":(location)?location:'19.0290389,99.8906438'
         })
     }
 

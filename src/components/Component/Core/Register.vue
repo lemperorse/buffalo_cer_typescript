@@ -30,6 +30,7 @@
         </div>
 
         <div class="text-center mt-6">
+           <v-btn outlined class="mr-2" large  @click="step = step-1" rounded color="purple darken-3" dark>ย้อนกลับ</v-btn>
             <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
@@ -51,6 +52,7 @@
         </div>
 
         <div class="text-center mt-6">
+               <v-btn outlined class="mr-2" large  @click="step = step-1" rounded color="purple darken-3" dark>ย้อนกลับ</v-btn>
             <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
@@ -63,7 +65,8 @@
         </div>
 
         <div class="relative w-full ml-2">
-            <v-text-field v-model="formProfile.personal_id" filled rounded type="number" name="name" label="เลขบัตรประจำตัวประชาชน 13 หลัก (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
+            <v-text-field v-model="formProfile.personal_id" filled rounded  type="text" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"  id="username" name="username" minlength="13" maxlength="13"
+         label="เลขบัตรประจำตัวประชาชน 13 หลัก (ไม่บังคับ)"   prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
 
         <div class="relative w-full ml-2">
@@ -71,6 +74,7 @@
         </div>
 
         <div class="text-center mt-6">
+               <v-btn outlined class="mr-2" large  @click="step = step-1" rounded color="purple darken-3" dark>ย้อนกลับ</v-btn>
             <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
@@ -83,14 +87,14 @@
         </div>
 
         <div class="relative w-full ml-2">
-            <v-text-field required v-model="formProfile.address" filled rounded name="name" label="บ้านเลขที่ หมู่ที่" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
+            <v-text-field required v-model="formProfile.address" filled rounded name="name" label="บ้านเลขที่" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
         </div>
         <div class="relative w-full ml-2">
-            <v-text-field filled rounded name="name" label="พิกัดฟาร์ม (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
+            <v-text-field v-model="location" filled rounded name="name" label="พิกัดฟาร์ม (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
         </div>
 
         <div class="relative w-full ml-2">
-            <v-text-field v-model="formProfile.mooban" filled rounded name="name" label="หมู่บ้าน (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-home"></v-text-field>
+            <v-text-field required v-model="formProfile.mooban" filled rounded name="name" label="หมู่บ้าน, หมู่ที่  " id="id" prepend-inner-icon="fas fa-home"></v-text-field>
         </div>
 
         <div class="relative w-full ml-2">
@@ -102,6 +106,7 @@
         </div>
 
         <div class="text-center">
+               <v-btn outlined class="mr-2" large  @click="step = step-1" rounded color="purple darken-3" dark>ย้อนกลับ</v-btn>
             <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
@@ -117,7 +122,7 @@
             <v-text-field required v-model="formUser.username" type="text" filled rounded name="name" label="ชื่อผู้ใช้" id="id" prepend-inner-icon="fas fa-users"></v-text-field>
         </div>
         <div class="relative w-full ml-2">
-            <v-text-field type="text" filled rounded name="name" label="อีเมล์ (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-at"></v-text-field>
+            <v-text-field type="text" v-model="formUser.email" filled rounded name="name" label="อีเมล์ (ไม่บังคับ)" id="id" prepend-inner-icon="fas fa-at"></v-text-field>
         </div>
         <div class="relative w-full ml-2">
             <v-text-field required v-model="formUser.password" type="password" filled rounded name="name" label="รหัสผ่าน" id="id" prepend-inner-icon="fas fa-key"></v-text-field>
@@ -127,6 +132,7 @@
         </div>
 
         <div class="text-center mt-6">
+               <v-btn outlined class="mr-2" large  @click="step = step-1" rounded color="purple darken-3" dark>ย้อนกลับ</v-btn>
             <v-btn large type="submit" rounded color="purple darken-3" dark>ดำเนินการต่อ</v-btn>
         </div>
 
@@ -160,6 +166,7 @@ export default class Home extends Vue {
     private prefix: [] = []
     public formUser: FormRegister | any = {}
     public formProfile: Profile | any = {}
+    public location:any = ''
 
     @Watch('formProfile.birthday')
     async onChangeProvince(val: string) {
@@ -167,8 +174,20 @@ export default class Home extends Vue {
 
     }
     async created() {
+            await this.getLocation();
         this.gender = await Core.getChoice('เพศ')
         this.prefix = await Core.getChoice('คำนำหน้า')
+    
+    }
+
+    async getLocation(){ 
+        if(navigator.geolocation){
+     await navigator.geolocation.getCurrentPosition((location:any)=>{
+          this.location = `${location.coords.latitude},${location.coords.longitude}`
+         });
+        }
+       
+   
     }
 
     async register() {
@@ -176,10 +195,14 @@ export default class Home extends Vue {
         this.formProfile.province = City.currentProvince ?.id
         this.formProfile.amphur = City.currentAmphur ?.id
         this.formProfile.district = City.currentDistrict ?.id
-        await Auth.register(this.formUser, this.formProfile)
-        await App.success("สมัครสมาชิกสำเร็จ")
-        await this.login();
-        await this.$router.go(-1)
+        let user = await Auth.register(this.formUser, this.formProfile, this.location ) 
+        if(user.id){
+            await App.success("สมัครสมาชิกสำเร็จ")
+            await this.login();
+            await this.$router.go(-1)
+        }else{
+            await App.error('ไม่สามารถสมัครสมาชิกได้'+JSON.stringify(user));
+        }
     }
 
     private async login() {

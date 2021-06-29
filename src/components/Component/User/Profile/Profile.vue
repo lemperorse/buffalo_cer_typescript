@@ -49,7 +49,7 @@
                     <v-text-field :disabled="unEdit" required v-model="formUser.last_name" type="text" filled rounded dense label="นามสกุล" id="id" prepend-inner-icon="fas fa-user"></v-text-field>
                 </div>
                 <div class="w-full lg:w-4/12 md:px-4">
-                    <v-text-field :disabled="unEdit" required v-model="formProfile.personal_id" type="text" filled rounded dense label="รหัสบัตรประจำตัวประชาชน" id="id" prepend-inner-icon="far fa-address-card" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></v-text-field>
+                    <v-text-field :disabled="unEdit" minlength="13" maxlength="13"  required v-model="formProfile.personal_id" type="text" filled rounded dense label="รหัสบัตรประจำตัวประชาชน" prepend-inner-icon="far fa-address-card" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></v-text-field>
                 </div> 
                 <div class="w-full lg:w-4/12 md:px-4">
                     <v-text-field :disabled="unEdit" required v-model="formProfile.tel" type="text" filled rounded dense label="เบอร์โทร" id="id" prepend-inner-icon="fas fa-mobile-alt" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"></v-text-field>

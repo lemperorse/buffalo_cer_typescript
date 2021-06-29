@@ -99,8 +99,8 @@
       tab: number = 0
       switchc: string = ''
       private form: any = {
-          "username": "root",
-          "password": "Pautn1611"
+          "username": "",
+          "password": ""
       }
 
       private async login() {

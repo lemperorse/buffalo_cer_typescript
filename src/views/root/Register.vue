@@ -139,9 +139,15 @@ export default class Home extends Vue {
         this.formProfile.province = City.currentProvince ?.id
         this.formProfile.amphur = City.currentAmphur ?.id
         this.formProfile.district = City.currentDistrict ?.id
-        await Auth.register(this.formUser, this.formProfile)
-        await App.success("สมัครสมาชิกสำเร็จ")
-        await this.$router.go(-1)
+        let user = await Auth.register(this.formUser, this.formProfile,'19.01,99.44')
+        if(user.id){
+            alert(user.id);
+            await App.success("สมัครสมาชิกสำเร็จ")
+           // await this.$router.go(-1)
+        }else{
+            await App.error('ไม่สามารถสมัครสมาชิกได้ '+JSON.stringify(user));
+        }
+    
     }
 
     async openCityDialog() {
