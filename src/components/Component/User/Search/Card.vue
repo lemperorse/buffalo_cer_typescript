@@ -54,7 +54,7 @@
                             <div class="relative w-auto  flex-initial pt-3">
                                 <div class="">
                                     <!-- <v-img class="h-16 w-16 bg-white rounded-full border" :src="(checkImg($api+buffalo.front_image))?$api+buffalo.front_image:'./assets/buffalo/buffalo.png'"></v-img> -->
-                                    <v-img :src="$api+buffalo.front_image" class="h-24 w-24 bg-white rounded-full border" alt="..." />
+                                    <v-img :src="$api +'/'+ buffalo.front_image" class="h-24 w-24 bg-white rounded-full border" alt="..." />
                                     <!-- <img  :src="($api+buffalo.front_image)?$api+buffalo.front_image:'https://images.pexels.com/photos/4835959/pexels-photo-4835959.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'" class="h-24 w-24 bg-white rounded-full border" alt="..." /> -->
                                 </div>
                             </div> 

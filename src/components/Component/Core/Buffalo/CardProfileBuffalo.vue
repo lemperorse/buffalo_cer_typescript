@@ -84,12 +84,12 @@ export default class ImageClass extends Vue {
     private async run() {
         let buffalo = await Core.getHttp(`/user/buffalo/image/${this.$route.query.id}/`)
         if (buffalo.front_image) {
-            let pathFront= this.api+buffalo.front_image
+            let pathFront= this.api +'/'+ buffalo.front_image
             let frontImage: any = this.$refs.frontImage
             frontImage.src = (this.imageExists(pathFront))?pathFront:'./assets/buffalo/buffalo.png'
         }
         if (buffalo.back_image) {
-            let pathBack = this.api+buffalo.back_image
+            let pathBack = this.api +'/'+ buffalo.back_image
             let backImage: any = this.$refs.backImage
             backImage.src = (this.imageExists(pathBack))?pathBack:'./assets/buffalo/buffalo.png'
         }

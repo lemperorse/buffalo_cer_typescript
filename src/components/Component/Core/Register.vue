@@ -70,7 +70,7 @@
         </div>
 
         <div class="relative w-full ml-2">
-            <v-select :items="gender" item-text="value" item-value="id" v-model="formProfile.gender" filled rounded dense label="เพศ (ไม่บังคับ)" prepend-inner-icon="fas fa-venus-mars" />
+            <v-select required :items="gender" item-text="value" item-value="id" v-model="formProfile.gender" filled rounded dense label="เพศ (ไม่บังคับ)" prepend-inner-icon="fas fa-venus-mars" />
         </div>
 
         <div class="text-center mt-6">
@@ -166,7 +166,7 @@ export default class Home extends Vue {
     private prefix: [] = []
     public formUser: FormRegister | any = {}
     public formProfile: Profile | any = {}
-    public location:any = ''
+    public location:any = '19.0290389,99.8906438'
 
     @Watch('formProfile.birthday')
     async onChangeProvince(val: string) {

@@ -16,7 +16,7 @@ class AuthClass extends VuexModule {
     public async register(from:any,fromProfile:any,location:any): Promise<any> {
         let user:any  = await Core.postHttp('/api/register',from)
         if(user.id){
-            alert(user.id)
+           // alert(user.id)
             fromProfile.user = user?.id
             await this.autoCreateProfile(fromProfile)
             await this.autoCreateFarm(user?.first_name,user?.id,location)
