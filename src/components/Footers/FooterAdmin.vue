@@ -7,7 +7,7 @@
                 <div class="text-sm font-semibold py-1 text-center md:text-left text-black">
                     ลิขสิทธิ์ © 2563
                     <a href="https://www.creative-tim.com?ref=vn-footer-admin" class="text-white hover:text-gray-800 text-sm font-semibold py-1">
-                        โดย ชยุต ดงปาลีธรรม และ คณะ
+                        โดย ศูนย์วิจัยและบํารุงพันธุ์สัตว์พะเยา
                     </a>
                 </div>
             </div>

@@ -45,22 +45,34 @@
             <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index" v-if="!buffalo.deleted">
                 <!-- <v-card class="animate__animated animate__zoomIn"> -->
                 <div class="border bg-white rounded-lg shadow  animate__animated animate__zoomIn ">
+                    <v-toolbar flat dense class="rounded-t-xl" color="transparent">
+                        <div></div>
+                        <v-spacer></v-spacer>
+                        <div class="text-xs p-2 border-2 rounded-xl bg-gray-500 text-white">สถานะ : {{buffalo.status.value}}</div>
+                        <!-- <v-text-field readonly name="name" label="label" id="id"></v-text-field> -->
+                    </v-toolbar> 
                     <div class="flex-auto p-4 ">
                         <div class="flex flex-wrap ">
                             <div class="relative w-auto flex-initial">
                                 <div>
                                     <!-- <v-img class="h-16 w-16 bg-white rounded-full border" :src="(checkImg($api+buffalo.front_image))?$api+buffalo.front_image:'./assets/buffalo/buffalo.png'"></v-img> -->
-                                    <v-img class="h-16 w-16 bg-white rounded-full border"  :src="$api +'/'+ buffalo.front_image"></v-img>
+                                    <v-img class="h-16 w-16 bg-white rounded-full border" :src="$api +'/'+ buffalo.front_image"></v-img>
                                 </div>
                             </div>
                             <div class="relative w-full pl-4 max-w-full flex-grow flex-1 text-left">
                                 <span class="font-semibold text-xl text-gray-800">
                                     {{buffalo.name}}
-                                </span>
-                                <h5 class="text-gray-500 uppercase font-bold text-xs">
-                                    <!-- MICROCHIP : {{ buffalo.microship }} -->
-                                    <div v-if="buffalo.microship">MICROSHIP : {{ buffalo.microship }}</div>
-                                    <div v-else>MICROSHIP : -</div>
+                                </span> 
+                                <h5 class="text-gray-500 uppercase font-bold text-xs"> 
+                                    <div>อายุ : {{ buffalo.age }}</div> 
+                                </h5>
+                                <h5 class="text-gray-500 uppercase font-bold text-xs"> 
+                                    <div v-if="buffalo.nid">หมายเลขNID : {{ buffalo.nid }}</div>
+                                    <div v-else>หมายเลขNID : -</div>
+                                </h5>
+                                <h5 class="text-gray-500 uppercase font-bold text-xs"> 
+                                    <div v-if="buffalo.microship">หมายเลขไมโครชิพ : {{ buffalo.microship }}</div>
+                                    <div v-else>หมายเลขไมโครชิพ : -</div>
                                 </h5>
                                 <div class="mt-1">
                                     <v-btn color="amber" dark rounded depressed @click="$router.push(`buffalo/profile?id=${buffalo.id}`)">ดูรายละเอียด</v-btn>
@@ -74,7 +86,6 @@
         </div>
 
     </div>
-    
 
     <div class="py-2 ">
 
@@ -126,7 +137,7 @@ import { App } from "@/store/app";
 })
 
 export default class Farm extends Vue {
-    checkImg:any = Core.imageExists
+    checkImg: any = Core.imageExists
     private user: any = {}
     private farm: FarmForm | any = {}
     private buffalos: any = []
@@ -161,7 +172,8 @@ export default class Farm extends Vue {
 .f-white {
     color: white !important;
 }
-.bg2{
+
+.bg2 {
     background-color: #ff9d00;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23ff9d00' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fb8d17' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f47d24' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23ed6e2d' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23e35f34' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23d85239' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23cc453e' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23be3941' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23b02f43' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23a02644' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23901e44' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23801843' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%236f1341' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%235e0f3d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%234e0c38' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%233e0933' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%232e062c' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;

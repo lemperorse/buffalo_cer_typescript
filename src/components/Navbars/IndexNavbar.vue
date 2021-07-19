@@ -1,6 +1,6 @@
 <template>
 <div>
-    <v-toolbar class="bg-alpha">
+    <v-toolbar class="bg-alpha flex row-wrap overflow-y-hidden	overflow-x-auto">
         <v-app-bar-nav-icon dark @click="navbarOpen=!navbarOpen" class="d-flex d-md-none"></v-app-bar-nav-icon>
 
         <v-toolbar-title class="text-white">พันธุ์ควายไทย</v-toolbar-title>
@@ -23,7 +23,7 @@
                         {{menu.name}}
                     </span>
                 </v-btn>
-                <v-btn color="error"  outlined @click="logout()">ออกจากระบบ</v-btn>
+                <v-btn color="error"  @click="logout()">ออกจากระบบ</v-btn>
 
             </div>
         </v-sheet>

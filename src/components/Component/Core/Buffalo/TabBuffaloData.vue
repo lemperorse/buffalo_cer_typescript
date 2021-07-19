@@ -63,7 +63,7 @@
                 </div>
                 <div class="w-full lg:w-6/12 md:px-4">
                     <v-select :disabled="unEdit" :items="status" item-text="value" item-value="id" v-model="form.status" filled rounded dense label="สถานะ" prepend-inner-icon="fas fa-file-alt" />
-                </div> 
+                </div>
                 <div class="w-full lg:w-6/12 md:px-4">
                     <v-select :disabled="unEdit" :items="froms" item-text="value" item-value="id" v-model="form.froms" filled rounded dense label="แหล่งที่มา" prepend-inner-icon="fas fa-file-import" />
                 </div>

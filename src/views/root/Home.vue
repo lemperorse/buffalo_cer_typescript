@@ -32,7 +32,7 @@
                         </div>
                     </div> 
                     <v-divider class="mt-8" style="width:70%;"></v-divider>
-                    <p class="social-text">ลิขสิทธิ์ © 2563 โดย ชยุต ดงปาลีธรรม และ คณะ</p>
+                    <p class="social-text">ลิขสิทธิ์ © 2563 โดย ศูนย์วิจัยและบํารุงพันธุ์สัตว์พะเยา</p>
 
                 </form>
 
