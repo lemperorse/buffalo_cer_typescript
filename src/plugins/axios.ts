@@ -9,7 +9,7 @@ import axios from "axios";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {
-  baseURL: process.env.baseURL || process.env.apiUrl || "http://www.buffalomarket.agri.up.ac.th:1003/" //"http://www.fattening.agri.up.ac.th:1003"// //"http://localhost:8000"// "https://www.le-buffalo.ml" //"http://192.168.1.112:8000" 
+  baseURL: process.env.baseURL || process.env.apiUrl || "https://www.buffalocert.agri.up.ac.th/" //"http://www.fattening.agri.up.ac.th:1003"// //"http://localhost:8000"// "https://www.le-buffalo.ml" //"http://192.168.1.112:8000" 
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
 };
