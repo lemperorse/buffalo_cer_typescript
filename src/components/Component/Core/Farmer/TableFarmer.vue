@@ -64,7 +64,7 @@
                                     {{buffalo.name}}
                                 </span> 
                                 <h5 class="text-gray-500 uppercase font-bold text-xs"> 
-                                    <div>อายุ : {{ buffalo.age }}</div> 
+                                    <div>อายุ : {{ buffalo.age }} ปี</div> 
                                 </h5>
                                 <h5 class="text-gray-500 uppercase font-bold text-xs"> 
                                     <div v-if="buffalo.nid">หมายเลขNID : {{ buffalo.nid }}</div>
