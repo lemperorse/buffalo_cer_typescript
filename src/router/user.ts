@@ -77,6 +77,12 @@ const userRouter: any = [
         name: 'Map',
         component: getView('Map')
     },
+
+    {
+        path: '/user/xtest',
+        name: 'xtest',
+        component: getView('Test')
+    },
 ]
 
 export  {

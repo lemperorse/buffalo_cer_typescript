@@ -5,6 +5,7 @@ class CoreModule extends VuexModule {
     //state
     private token: string | null = null;
     public Hi:String | null = null;
+    public choices:any = [];
 
 
     async getHttp(url:string):Promise<any>{
@@ -25,6 +26,10 @@ class CoreModule extends VuexModule {
 
     async getChoice(name:string):Promise<any>{
         return await this.getHttp(`/api/choice/?name=${name}`)
+    }
+
+    async getFullChoice(){
+       this.choices =  await this.getHttp(`/api/choice/?name=${name}`)
     }
 
     async getGeo():Promise<any>{
