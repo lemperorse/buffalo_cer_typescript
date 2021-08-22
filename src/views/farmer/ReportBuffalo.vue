@@ -9,17 +9,29 @@
             <v-tab>
                 รายงานควาย
             </v-tab>
-            <v-tab tab>
+            <v-tab>
                 รายงานการเจริญเติบโต
             </v-tab>
-            <v-tab-item >
-                <div class="p-2"  v-if="tab == 0">
+            <v-tab>
+                รายงานควายรายตัว
+            </v-tab>
+            <v-tab-item>
+                <div class="p-2" v-if="tab == 0">
                     <Graph />
                 </div>
 
             </v-tab-item>
-            <v-tab-item v-if="tab == 1">
-              <GraphEvo />
+            <v-tab-item>
+                <div v-if="tab == 1">
+                    <GraphEvo />
+                </div>
+
+            </v-tab-item>
+            <v-tab-item>
+                <div v-if="tab == 2">
+                    <GraphEach />
+                </div>
+
             </v-tab-item>
         </v-tabs>
     </div>
@@ -30,16 +42,19 @@
 <script>
 import Graph from '@/components/Report/Graph.vue'
 import GraphEvo from '@/components/Report/GraphEvo.vue'
+import GraphEach from '@/components/Report/GraphEach.vue'
 
 export default {
     name: "report-buffalo-page",
     components: {
-        Graph, GraphEvo,  
+        Graph,
+        GraphEvo,
+        GraphEach
     },
-    data:()=>{
-      return ({
-        tab:1
-      })
+    data: () => {
+        return ({
+            tab: 1
+        })
     }
 };
 </script>

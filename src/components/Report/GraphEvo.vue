@@ -1,7 +1,7 @@
 <template>
 <div class="p-2" v-if="response">
 
-    <apexchart type="line" height="350" :options="graph.chartOptions" :series="graph.series"></apexchart>
+    <apexchart type="bar" height="350" :options="graph.chartOptions" :series="graph.series"></apexchart>
     <div class="flex flex-wrap justify-center  mt-2">
         <v-btn color="success" @click="(age='0')&&(generateData())" class="mr-4 m-2" rounded>แรกเกิด</v-btn>
         <v-btn color="success" @click="(age='240')&&(generateData())" class="mr-4 m-2" rounded>อายุ 240 วัน</v-btn>
@@ -57,91 +57,57 @@ export default class Home extends Vue {
 
     graph: any = {
         series: [{
-                name: "น้ำหนัก",
-                data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]
-            },
-            {
-                name: "ความกว้างรอบอก",
-                data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35]
-            },
-            {
-                name: 'ความยาวลำตัว',
-                data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47]
-            },
-            {
-                name: 'ความสูง',
-                data: [87, 57, 74, 99, 75, 38, 62, 47, 82, 56, 45, 47]
-            }
-        ],
+            name: 'Net Profit',
+            data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+        }, {
+            name: 'Revenue',
+            data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+        }, {
+            name: 'Free Cash Flow',
+            data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+        }, {
+            name: ' Flow',
+            data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+        }],
         chartOptions: {
             chart: {
-                height: 350,
-                type: 'line',
-                zoom: {
-                    enabled: false
+                type: 'bar',
+                height: 350
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '55%',
+                    endingShape: 'rounded'
                 },
             },
             dataLabels: {
                 enabled: false
             },
             stroke: {
-                width: [5, 7, 5],
-                curve: 'straight',
-                dashArray: [0, 8, 5]
-            },
-            title: {
-                text: '',
-                align: 'left'
-            },
-            legend: {
-                tooltipHoverFormatter: function (val: any, opts: any) {
-                    return val + ' - ' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + ''
-                }
-            },
-            markers: {
-                size: 0,
-                hover: {
-                    sizeOffset: 6
-                }
+                show: true,
+                width: 2,
+                colors: ['transparent']
             },
             xaxis: {
-                categories: [],
+                categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+            },
+            yaxis: {
+                title: {
+                    text: '$ (thousands)'
+                }
+            },
+            fill: {
+                opacity: 1
             },
             tooltip: {
-                y: [{
-                        title: {
-                            formatter: function (val: any) {
-                                return val + " (กก.)"
-                            }
-                        }
-                    },
-                    {
-                        title: {
-                            formatter: function (val: any) {
-                                return val + " (ซม.)"
-                            }
-                        }
-                    },
-                    {
-                        title: {
-                            formatter: function (val: any) {
-                                return val + " (ซม.)"
-                            }
-                        }
-                    },
-                    {
-                        title: {
-                            formatter: function (val: any) {
-                                return val + " (ซม.)"
-                            }
-                        }
+                y: {
+                    formatter: function (val :any) {
+                        return "$ " + val + " thousands"
                     }
-                ]
-            },
-            grid: {
-                borderColor: '#f1f1f1',
+                }
             }
-        },
+        },     
     }
     age: any = '0'
     rawValue: any = {}
