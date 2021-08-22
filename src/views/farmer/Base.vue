@@ -38,7 +38,9 @@ import CityDialog from '@/components/Dialog/City.vue'
 import FooterAdmin from "@/components/Footers/FooterAdmin.vue"
 import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
 import IndexNavbar from "@/components/Navbars/IndexNavbar.vue";
-
+import {City} from '@/store/city'
+import {Core} from '@/store/core'
+import {App} from '@/store/app'
 @Component({
     components: {
         FooterAdmin,
@@ -63,8 +65,13 @@ export default class Admin extends Vue {
         console.log(this.$router.options.routes)
         window.addEventListener('scroll', this.handleScroll);
         await Auth.checkToken();
+        await App.onLoad();
+         await City.getFullCity();
+         await Core.getFullChoice();
+          await App.offLoad();
         this.logined = await User.loadUser();
         if (User.routeUser == '/' || User.routeUser == '/admin/home') {
+           
             await this.$router.replace(User.routeUser)
         }
     }
