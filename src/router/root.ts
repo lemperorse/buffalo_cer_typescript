@@ -1,7 +1,7 @@
 
 
 // @ts-ignore
-const getView = function(page:any){
+const getView = function (page: any) {
     return () => import(`@/views/root/${page}.vue`)
 }
 
@@ -21,7 +21,7 @@ const rootRouter = [
         path: '/test/',
         name: 'test',
         component: getView('Test')
-    },{
+    }, {
         path: '/register/',
         name: 'register',
         component: getView('Register')
@@ -41,9 +41,19 @@ const rootRouter = [
         name: 'forgot-password-for-onyourown',
         component: getView('Forgotpassword_for_onyourown')
     },
+    {
+        path: '/pdf-cert/',
+        name: 'pdf-cert',
+        component: getView('PdfCert')
+    },
+    {
+        path: '/pdf-endorse/',
+        name: 'pdf-endorse',
+        component: getView('PdfEndorse')
+    },
 ]
 
 
-export  {
+export {
     rootRouter
 }
