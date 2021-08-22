@@ -20,6 +20,12 @@ const routes: Array<any> = [
     component: () => import('@/views/farmer/Base.vue'),
     children: userRouter
   },
+  {
+    path: "/export/cert",
+    permission:'export-cert',
+    component: () => import('@/views/CertPdf.vue'),
+ 
+  },
   // {
   //   path: "/admin/",
   //   permission:'Admin',
