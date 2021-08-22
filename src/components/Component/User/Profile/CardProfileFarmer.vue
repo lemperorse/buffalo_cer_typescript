@@ -81,7 +81,7 @@ export default class ImageClass extends Vue {
         if (data.id) {
             await User.setUser();
             this.user = User.user
-            alert("เปบี่ยนแปลงรูปภาพสำเร็จ")
+            alert("เปลี่ยนแปลงรูปภาพสำเร็จ")
         }
         this.response = true
     }
