@@ -2,8 +2,8 @@
 <div v-if="response">
     <div class="flex flex-wrap">
         <div class="mt-4 lg:w-1/4 md:px-4">
-            <v-select label="เลือกควาย"  outlined></v-select>
-        </div>      
+            <v-select v-if="buffalos" @change="changeBuffalo()" :items="buffalos" :item-value="'id'" item-text="name" label="เลือกควาย" v-model="selectBuffalo" outlined></v-select>
+        </div>
     </div>
     <div>
         <apexchart type="bar" height="430" :options="chartOptions" :series="series"></apexchart>
@@ -27,6 +27,7 @@ export default {
         farm: User.farm,
         response: false,
         buffalos: null,
+        selectBuffalo: null,
         buffaloEach: null,
         buffaloWeight: [],
         buffaloWidth: [],
@@ -84,17 +85,28 @@ export default {
     }),
     async created() {
         await this.getBuffalos()
-        await this.getBuffaloEach()
-        await this.getData()
         this.response = true;
     },
     methods: {
         async getBuffalos() {
-            let buffalos = await Core.getHttp(`/api/buffalo/buffalo/`)
-            console.log(buffalos)
+            this.buffalos = await Core.getHttp(`/api/buffalo/buffalo/raw/?farm__id=${this.farm.id}`)
+            this.selectBuffalo = this.buffalos[0].id
+            await this.getBuffaloEach(this.selectBuffalo)
         },
-        async getBuffaloEach() {
-            this.buffaloEach = await Core.getHttp(`api/buffalo/evolution/40/`)
+        async getBuffaloEach(pk) {
+            this.buffaloEach = await Core.getHttp(`api/buffalo/evolution/${pk}/`)
+            await this.getData()
+
+        },
+        async changeBuffalo() {
+            this.response = false
+            this.buffaloWeight = []
+            this.buffaloWidth = []
+            this.buffaloLength = []
+            this.buffaloHeight = []
+            await this.getBuffaloEach(this.selectBuffalo)
+            this.response = true
+
         },
         async getData() {
             ////// Weight //////
