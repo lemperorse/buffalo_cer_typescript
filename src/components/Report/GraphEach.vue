@@ -90,8 +90,8 @@ export default {
     },
     methods: {
         async getBuffalos() {
-            this.buffalos = await Core.getHttp(`/api/buffalo/evolutions/?buffalo__farm=${this.farm.id}`)
-            console.log(this.buffalos)
+            let buffalos = await Core.getHttp(`/api/buffalo/buffalo/`)
+            console.log(buffalos)
         },
         async getBuffaloEach() {
             this.buffaloEach = await Core.getHttp(`api/buffalo/evolution/40/`)
