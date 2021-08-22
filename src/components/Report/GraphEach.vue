@@ -1,6 +1,14 @@
 <template>
 <div v-if="response">
-    <apexchart type="bar" height="430" :options="chartOptions" :series="series"></apexchart>
+    <div class="flex flex-wrap">
+        <div class="mt-4 lg:w-1/4 md:px-4">
+            <v-select label="เลือกควาย"  outlined></v-select>
+        </div>      
+    </div>
+    <div>
+        <apexchart type="bar" height="430" :options="chartOptions" :series="series"></apexchart>
+    </div>
+
 </div>
 </template>
 
@@ -18,7 +26,7 @@ export default {
         user: {},
         farm: User.farm,
         response: false,
-        buffalos:null,
+        buffalos: null,
         buffaloEach: null,
         buffaloWeight: [],
         buffaloWidth: [],
