@@ -134,12 +134,15 @@ export default class Farm extends Vue {
     async collingPermission() {
         let user = await User.getUser();
         let userAll = await Core.getHttp(`/api/account/${user.pk}/`)
-        if (userAll.is_staff) {
-            this.currentFarmer = this.$route.query.farmer
-        } else {
-            let profile = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+        console.log(user,userAll)
+        // if (userAll.is_staff && this.$route.query.farmer) {
+        //     this.currentFarmer = this.$route.query.farmer
+        // } else {
+        //     let profile = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
+        //     this.currentFarmer = profile.id
+        // }
+                let profile = await Core.getHttp(`/user/account/myprofile/${user.pk}/`)
             this.currentFarmer = profile.id
-        }
     }
 
     private async run() {
