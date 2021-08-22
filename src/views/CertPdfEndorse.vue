@@ -38,11 +38,12 @@ export default {
   },
   computed: {},
   watch: {},
-  created() {
-    this.load();
+  async created() {
+    await this.load();
   },
   methods: {
     async load() {
+      await Core.getFullChoice();
       this.dataParent = await Core.getHttp(
         `/user/buffalo/cert/${this.$route.query.id}/`
       );
@@ -50,32 +51,32 @@ export default {
         `/user/buffalo/buffalo/${this.$route.query.id}/`
       );
       this.dataBf = await Core.getHttp(`/api/buffalo/farm/`);
-      this.dataFarm = this.farm(this.dataBf, this.dataBuffalo.farm);
-      this.dataBuffalo.ccolor = this.findChoice(this.dataBuffalo.color);
-      this.dataBuffalo.cgender = this.findChoice(this.dataBuffalo.gender);
+      this.dataFarm = await this.farm(this.dataBf, this.dataBuffalo.farm);
+      this.dataBuffalo.ccolor = await this.findChoice(this.dataBuffalo.color);
+      this.dataBuffalo.cgender = await this.findChoice(this.dataBuffalo.gender);
 
-      this.dataBuffalo.cbirthday = this.dDate(this.dataBuffalo.birthday);
-      this.dataBuffalo.nowdays = this.dDate(0);
+      this.dataBuffalo.cbirthday = await this.dDate(this.dataBuffalo.birthday);
+      this.dataBuffalo.nowdays = await this.dDate(0);
 
       console.log(this.dataFarm);
-      console.log(this.dataBuffalo.farm);
+      console.log(this.dataBuffalo.ccolor);
     },
-    dDate(datd) {
+    async dDate(datd) {
       var dd = moment.locale("th");
       if (datd == 0) {
-        this.date = moment().add(543, "year").format("LL");
+        this.date = await moment().add(543, "year").format("LL");
         return this.date;
       } else {
-        this.date = moment(datd).add(543, "year").format("LL");
+        this.date = await moment(datd).add(543, "year").format("LL");
         return this.date;
       }
     },
-    farm(dataFarm, id) {
-      let bfFarm = _.find(dataFarm, { id: id });
+    async farm(dataFarm, id) {
+      let bfFarm = await _.find(dataFarm, { id: id });
       return bfFarm;
     },
-    findChoice(id) {
-      let choice = _.find(this.choices, { id: id });
+    async findChoice(id) {
+      let choice = await _.find(this.choices, { id: id });
       return choice.value;
     },
 

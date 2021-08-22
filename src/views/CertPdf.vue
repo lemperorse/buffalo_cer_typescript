@@ -12,7 +12,6 @@
       <v-icon left>fas fa-file-download</v-icon>
       ดาวน์โหลดใบพันธุ์ประวัติอ้างอิง
     </v-btn>
-   
   </div>
 </template>
 
@@ -44,7 +43,7 @@ export default {
   },
   methods: {
     async load() {
-     await Core.getFullChoice();
+      await Core.getFullChoice();
       console.log(`${this.$route.query.id}`);
       this.dataParent = await Core.getHttp(
         `/user/buffalo/cert/${this.$route.query.id}/`
@@ -53,22 +52,23 @@ export default {
         `/user/buffalo/buffalo/${this.$route.query.id}/`
       );
       this.dataBf = await Core.getHttp(`/api/buffalo/farm/`);
-      this.dataFarm = this.farm(this.dataBf, this.dataBuffalo.farm);
-      this.dataBuffalo.ccolor = this.findChoice(this.dataBuffalo.color);
-      this.dataBuffalo.cgender = this.findChoice(this.dataBuffalo.gender);
-      this.dataBuffalo.cbirthday = this.dDate(this.dataBuffalo.birthday);
+      this.dataFarm = await this.farm(this.dataBf, this.dataBuffalo.farm);
+      this.dataBuffalo.ccolor = await this.findChoice(this.dataBuffalo.color);
+      this.dataBuffalo.cgender = await this.findChoice(this.dataBuffalo.gender);
+      this.dataBuffalo.cbirthday = await this.dDate(this.dataBuffalo.birthday);
+      console.log(this.dataBuffalo.ccolor);
     },
-    dDate(datd) {
+    async dDate(datd) {
       var dd = moment.locale("th");
-      this.date = moment(datd).add(543, "year").format("LL");
+      this.date = await moment(datd).add(543, "year").format("LL");
       return this.date;
     },
-    farm(dataFarm, id) {
-      let bfFarm = _.find(dataFarm, { id: id });
+    async farm(dataFarm, id) {
+      let bfFarm = await _.find(dataFarm, { id: id });
       return bfFarm;
     },
-    findChoice(id) {
-      let choice = _.find(this.choices, { id: id });
+    async findChoice(id) {
+      let choice = await _.find(this.choices, { id: id });
       return choice.value;
     },
 
@@ -277,8 +277,8 @@ export default {
           },
         },
       };
-      // pdfMake.createPdf(docDefinition).open({}, window);
-      pdfMake.createPdf(docDefinition).print();
+      pdfMake.createPdf(docDefinition).open({}, window);
+      // pdfMake.createPdf(docDefinition).print();
     },
   },
 };

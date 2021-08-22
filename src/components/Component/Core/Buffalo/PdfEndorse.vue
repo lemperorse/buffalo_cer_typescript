@@ -38,8 +38,8 @@ export default {
   },
   computed: {},
   watch: {},
-  created() {
-    this.load();
+  async created() {
+    await this.load();
   },
   methods: {
     async load() {
