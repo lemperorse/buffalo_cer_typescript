@@ -12,6 +12,7 @@
       <v-icon left>fas fa-file-download</v-icon>
       ดาวน์โหลดใบพันธุ์ประวัติอ้างอิง
     </v-btn>
+   
   </div>
 </template>
 
@@ -38,8 +39,8 @@ export default {
   },
   computed: {},
   watch: {},
-  created() {
-    this.load();
+  async created() {
+    await this.load();
   },
   methods: {
     async load() {
