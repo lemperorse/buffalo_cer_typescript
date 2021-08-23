@@ -15,10 +15,13 @@
         <div class="w-full lg:w-6/12 md:px-4 ">
             <div class="flex flex-wrap">
                 <div class="mt-4 lg:w-6/12 md:px-4">
-                    <v-autocomplete v-if="themFarm" :items="themFarm" :item-value="'id'" item-text="name" label="เลือกฟาร์ม" v-model="themSelectFarm" outlined></v-autocomplete>
+                    <v-autocomplete @change="changeFarm()" v-if="themFarm" :items="themFarm" :item-value="'id'" item-text="name" label="เลือกฟาร์ม" v-model="themSelectFarm" outlined></v-autocomplete>
                 </div>
                 <div class="mt-4 lg:w-6/12 md:px-4">
-                    <v-autocomplete v-if="themFarm" :items="themFarm" :item-value="'id'" item-text="name" label="เลือกควาย" v-model="themSelectFarm" outlined></v-autocomplete>
+                    <v-autocomplete @change="changeThemBuffalo()" v-if="themBuffalos" :items="themBuffalos" :item-value="'id'" item-text="name" label="เลือกควาย" v-model="themSelectBuff" outlined></v-autocomplete>
+                </div>
+                <div>
+                    <apexchart type="bar" height="430" :options="themChartOptions" :series="themSeries"></apexchart>
                 </div>
             </div>
         </div>
@@ -180,6 +183,10 @@ export default {
             this.myBuffaloWidth = []
             this.myBuffaloLength = []
             this.myBuffaloHeight = []
+            this.themBuffaloWeight = []
+            this.themBuffaloWidth = []
+            this.themBuffaloLength = []
+            this.themBuffaloHeight = []
             await this.getBuffaloEach(this.mySelect)
             this.response = true
 
@@ -219,8 +226,69 @@ export default {
 
         async getFarm() {
             this.themFarm = await Core.getHttp(`api/buffalo/farm/`)
-            console.log(this.themFarm)
-        }
+
+        },
+        async getThemBuffalos(pk) {
+            this.themBuffalos = await Core.getHttp(`/api/buffalo/buffalo/raw/?farm__id=${pk}`)
+        },
+
+        async getThemBuffaloEach(pk) {
+            this.themBuffaloEach = await Core.getHttp(`api/buffalo/evolution/${pk}/`)
+            console.log(this.themBuffaloEach)
+            await this.getThemData()
+
+        },
+        async changeThemBuffalo() {
+            this.response = false
+            this.myBuffaloWeight = []
+            this.myBuffaloWidth = []
+            this.myBuffaloLength = []
+            this.myBuffaloHeight = []
+            this.themBuffaloWeight = []
+            this.themBuffaloWidth = []
+            this.themBuffaloLength = []
+            this.themBuffaloHeight = []
+            await this.getThemBuffaloEach(this.themSelectBuff)
+            this.response = true
+
+        },
+        async changeFarm() {
+            this.response = false
+            await this.getThemBuffalos(this.themSelectFarm)
+
+            this.response = true
+
+        },
+        async getThemData() {
+            ////// Weight //////
+            this.themBuffaloWeight.push(this.themBuffaloEach.weight0)
+            this.themBuffaloWeight.push(this.themBuffaloEach.weight240)
+            this.themBuffaloWeight.push(this.themBuffaloEach.weight400)
+            this.themBuffaloWeight.push(this.themBuffaloEach.weight600)
+            this.themSeries[0].data = this.themBuffaloWeight
+
+            ////// Width //////
+            this.themBuffaloWidth.push(this.themBuffaloEach.width0)
+            this.themBuffaloWidth.push(this.themBuffaloEach.width240)
+            this.themBuffaloWidth.push(this.themBuffaloEach.width400)
+            this.themBuffaloWidth.push(this.themBuffaloEach.width600)
+            this.themSeries[1].data = this.themBuffaloWidth
+
+            ////// Length //////
+            this.themBuffaloLength.push(this.themBuffaloEach.length0)
+            this.themBuffaloLength.push(this.themBuffaloEach.length240)
+            this.themBuffaloLength.push(this.themBuffaloEach.length400)
+            this.themBuffaloLength.push(this.themBuffaloEach.length600)
+            this.themSeries[2].data = this.themBuffaloLength
+
+            ////// Height //////
+            this.themBuffaloHeight.push(this.themBuffaloEach.height0)
+            this.themBuffaloHeight.push(this.themBuffaloEach.height240)
+            this.themBuffaloHeight.push(this.themBuffaloEach.height400)
+            this.themBuffaloHeight.push(this.themBuffaloEach.height600)
+            this.themSeries[3].data = this.themBuffaloHeight
+
+        },
     },
 
 }
