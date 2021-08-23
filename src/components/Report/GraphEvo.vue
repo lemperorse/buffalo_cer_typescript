@@ -1,216 +1,229 @@
 <template>
-  <div class="p-2" v-if="response">
-    <apexchart
-      type="bar"
-      height="350"
-      :options="graph.chartOptions"
-      :series="graph.series"
-    ></apexchart>
-    <div class="flex flex-wrap justify-center mt-2">
-      <v-btn
-        color="success"
-        @click="(age = '0') && generateData()"
-        class="mr-4 m-2"
-        rounded
-        >แรกเกิด</v-btn
-      >
-      <v-btn
-        color="success"
-        @click="(age = '240') && generateData()"
-        class="mr-4 m-2"
-        rounded
-        >อายุ 240 วัน</v-btn
-      >
-      <v-btn
-        color="success"
-        @click="(age = '400') && generateData()"
-        class="mr-4 m-2"
-        rounded
-        >อายุ 400 วัน</v-btn
-      >
-      <v-btn
-        color="success"
-        @click="(age = '600') && generateData()"
-        class="mr-4 m-2"
-        rounded
-        >อายุ 600 วัน</v-btn
-      >
+<div class="p-2" >
+
+    <div v-if="response">
+ 
+        <div id="chart">
+            <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
+        </div>
+
     </div>
 
-    <div>
-      <br />
-      <ReportSystem />
+    <div v-else>
+        <v-alert type="primary" :value="true">
+            ยังไม่มีข้อมูลการเจริญเติบโตบันทึกไว้
+        </v-alert>
     </div>
-  </div>
+
+</div>
 </template>
 
 <script lang="ts">
-import ReportSystem from "@/components/Component/User/Report/ReportSystem/ReportSystem.vue";
+import {
+    Component,
+    Vue,
+} from 'vue-property-decorator';
 
-import { Component, Vue } from "vue-property-decorator";
+import {
+    mapState
+} from 'vuex';
 
-import { mapState } from "vuex";
+import {
+    User
+} from '@/store/user'
 
-import { User } from "@/store/user";
-
-import { Geography } from "@/models/core";
-import { Core } from "@/store/core";
-import _, { forEach } from "lodash";
+import {
+    Geography
+} from '@/models/core'
+import {
+    Core
+} from '@/store/core'
+import _, {
+    forEach
+} from 'lodash'
 @Component({
-  components: { ReportSystem },
-  computed: {},
+    components: {},
+    computed: {
+
+    }
 })
-export default class Home extends Vue {
-  user: any = {};
-  farm: any = User.farm;
+export default class Graph extends Vue {
+    response: boolean = false
+    farm: any = User.farm
+    series: any = [{
+        name: 'Income',
+        type: 'column',
+        data: [1.4, 2, 2.5, 1.5, 2.5, 2.8, 3.8, 4.6]
+    }, {
+        name: 'Cashflow',
+        type: 'column',
+        data: [1.1, 3, 3.1, 4, 4.1, 4.9, 6.5, 8.5]
+    }, {
+        name: 'Revenue',
+        type: 'line',
+        data: [20, 29, 37, 36, 44, 45, 50, 58]
+    }]
 
-  rawEvo: any = [];
-
-  graph: any = {
-    series: [
-      {
-        name: "น้ำหนัก (กก.)",
-        data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
-      },
-      {
-        name: "ความกว้างรอบอก (ซม.)",
-        data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
-      },
-      {
-        name: "ความยาวรอบลำตัว (ซม.)",
-        data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
-      },
-      {
-        name: "ความสูง (ซม.)",
-        data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
-      },
-    ],
-    chartOptions: {
-      chart: {
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          columnWidth: "55%",
-          endingShape: "rounded",
+    chartOptions: any = {
+        chart: {
+            height: 350,
+            type: 'line',
+            stacked: false
         },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        show: true,
-        width: 2,
-        colors: ["transparent"],
-      },
-      xaxis: {
-        categories: [
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-        ],
-      },
-      yaxis: {
+        dataLabels: {
+            enabled: false
+        },
+        stroke: {
+            width: [1, 1, 4]
+        },
         title: {
-          text: " ",
+            text: 'อัตราการเจริญเติบโตของควาย',
+            align: 'left',
+            offsetX: 110
         },
-      },
-      fill: {
-        opacity: 1,
-      },
-      // tooltip: {
-      //     y: {
-      //         formatter: function (val :any) {
-      //             return "$ " + val + " thousands"
-      //         }
-      //     }
-      // }
-    },
-  };
-  age: any = "0";
-  rawValue: any = {};
+        xaxis: {
+            categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
+        },
+        yaxis: [{
+                axisTicks: {
+                    show: true,
+                },
+                axisBorder: {
+                    show: true,
+                    color: '#008FFB'
+                },
+                labels: {
+                    style: {
+                        colors: '#008FFB',
+                    }
+                },
+                title: {
+                    text: "แรกเกิด",
+                    style: {
+                        color: '#008FFB',
+                    }
+                },
+                tooltip: {
+                    enabled: true
+                }
+            },
+            {
+                seriesName: 'Income',
+                opposite: true,
+                axisTicks: {
+                    show: true,
+                },
+                axisBorder: {
+                    show: true,
+                    color: '#00E396'
+                },
+                labels: {
+                    style: {
+                        colors: '#00E396',
+                    }
+                },
+                title: {
+                    text: "240 วัน",
+                    style: {
+                        color: '#00E396',
+                    }
+                },
+            },
+            {
+                seriesName: '400 วัน',
+                opposite: true,
+                axisTicks: {
+                    show: true,
+                },
+                axisBorder: {
+                    show: true,
+                    color: '#FEB019'
+                },
+                labels: {
+                    style: {
+                        colors: '#FEB019',
+                    },
+                },
+                title: {
+                    text: "400 วัน",
+                    style: {
+                        color: '#FEB019',
+                    }
+                }
+            },
+            {
+                seriesName: '600 วัน',
+                opposite: true,
+                axisTicks: {
+                    show: true,
+                },
+                axisBorder: {
+                    show: true,
+                    color: '#FF4560'
+                },
+                labels: {
+                    style: {
+                        colors: '#FF4560',
+                    },
+                },
+                title: {
+                    text: "600 วัน",
+                    style: {
+                        color: '#FF4560',
+                    }
+                }
+            },
+        ],
+        tooltip: {
+            fixed: {
+                enabled: true,
+                position: 'topLeft', // topRight, topLeft, bottomRight, bottomLeft
+                offsetY: 30,
+                offsetX: 60
+            },
+        },
+        legend: {
+            horizontalAlign: 'left',
+            offsetX: 40
+        }
+    }
 
-  response: boolean = false;
+    async created() {
+        let loadGraph = await this.getGraphSeries();
+        this.response = loadGraph
+    }
 
-  async created() {
-    await this.getBuffaloEvo();
-    await this.getData();
-    await this.generateData();
-    this.response = true;
-  }
+    async getGraphSeries() {
+        let graph = await Core.getHttp(`/report/evo/${this.farm.id}/`)
+        if (graph.success) {
+            this.series = graph.series
+            this.chartOptions.xaxis.categories = graph.index
+            return graph.success
+        } else {
+            return graph.success
+        }
+    }
 
-  async getBuffaloEvo() {
-    this.rawEvo = await Core.getHttp(
-      `/api/buffalo/evolutions/?buffalo__farm=${this.farm.id}`
-    );
-  }
-
-  async generateData() {
-    this.response = false;
-    await this.getData();
-
-    let buffalo = _.map(this.rawEvo, (r: any) => {
-      return r.buffalo.name;
-    });
-    this.graph.chartOptions.xaxis.categories = buffalo;
-    this.graph.series[0].data = this.rawValue[`age${this.age}`].weight;
-    this.graph.series[1].data = this.rawValue[`age${this.age}`].width;
-    this.graph.series[2].data = this.rawValue[`age${this.age}`].length;
-    this.graph.series[3].data = this.rawValue[`age${this.age}`].height;
-    this.response = true;
-  }
-
-  async getData() {
-    let ages = [0, 240, 400, 600];
-    let data: any = {};
-    ages.forEach((age) => {
-      data[`age${age}`] = {
-        weight: _.map(this.rawEvo, `weight${age}`),
-        width: _.map(this.rawEvo, `width${age}`),
-        length: _.map(this.rawEvo, `width${age}`),
-        height: _.map(this.rawEvo, `height${age}`),
-      };
-    });
-    this.rawValue = data;
-
-    console.log(data);
-  }
-
-  async get240() {}
-  async get400() {}
-  async get600() {}
-
-  get width() {
-    return this.$vuetify.breakpoint.width;
-  }
 }
 </script>
 
 <style scoped>
 .box {
-  display: flex;
-  width: 100%;
-  height: 8px;
-  margin: 5px 0px 60px 0px;
+    display: flex;
+    width: 100%;
+    height: 8px;
+    margin: 5px 0px 60px 0px;
 }
 
 .box-sm {
-  height: 8px;
-  margin: 0;
-  flex-grow: 1;
-  transition: all 0.8s ease-in-out;
-  cursor: pointer;
+    height: 8px;
+    margin: 0;
+    flex-grow: 1;
+    transition: all .8s ease-in-out;
+    cursor: pointer;
 }
 
 .box-sm:hover {
-  flex-grow: 12;
+    flex-grow: 12;
 }
 </style>

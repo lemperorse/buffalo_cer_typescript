@@ -5,7 +5,7 @@
     </div>
 
     <div class="p-2 rounded-xl shadow-xl bg-white">
-        <v-tabs v-model="tab">
+        <v-tabs v-model="tab"  fixed-tabs >
             <v-tab>
                 รายงานควาย
             </v-tab>
@@ -13,13 +13,13 @@
                 รายงานการเจริญเติบโต
             </v-tab>
             <v-tab>
-                รายงานควายรายตัว
+                รายงานเปรียบเทียบรายฟาร์ม
             </v-tab>
-            <v-tab>
+            <!-- <v-tab>
                 รายงานน้ำหนักเฉลี่ย
-            </v-tab>
+            </v-tab> -->
             <v-tab>
-                เปรียบเทียบกับฟาร์มอื่น
+                รายงานเปรียบเทียบรายตัว
             </v-tab>
             <v-tab-item>
                 <div class="p-2" v-if="tab == 0">
@@ -27,7 +27,7 @@
                 </div>
 
             </v-tab-item>
-            <v-tab-item>
+            <v-tab-item touchless>
                 <div v-if="tab == 1">
                     <GraphEvo />
                 </div>
@@ -39,14 +39,14 @@
                 </div>
 
             </v-tab-item>
-            <v-tab-item>
+            <!-- <v-tab-item>
                 <div v-if="tab == 3">
                     <GraphAVG />
                 </div>
 
-            </v-tab-item>
+            </v-tab-item> -->
             <v-tab-item>
-                <div v-if="tab == 4">
+                <div v-if="tab == 3">
                     <GraphCompare />
                 </div>
 

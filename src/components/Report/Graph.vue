@@ -1,46 +1,49 @@
 <template>
 <div class="p-2">
 
-    <div class="flex flex-wrap mt-6">
-        <div class="m-4 bg-gray-100     p-4   rounded-3xl   flex justify-around items-center  "> 
-            <i class="text-4xl object-cover  em em-water_buffalo" aria-role="presentation" aria-label="WATER BUFFALO"></i>
-            <div class="flex flex-col justify-center pl-2">
-                <p class="text-gray-900 dark:text-gray-300 font-semibold text-xl">ทั้งหมด</p>
-                <p class="text-black  text-justify font-semibold">{{data.all}} ตัว</p>
+    <div class="flex flex-col md:flex-row flex-wrap mt-6">
+        <div class="w-full md:w-1/4  p-2     ">
+            <div class=" bg-green-100  p-4 rounded-3xl    flex justify-around  items-center  ">
+                <i class="text-4xl object-cover  em em-water_buffalo" aria-role="presentation" aria-label="WATER BUFFALO"></i>
+                <div class="flex flex-col justify-center pl-2">
+                    <p class="text-gray-900 dark:text-gray-300 font-semibold text-xl">ควายในฟาร์ม</p>
+                    <p class="text-black  text-justify font-semibold">{{dashboard.buffalo_all}} ตัว</p>
+                </div>
             </div>
+
         </div><br>
-        <div class="m-4 bg-gray-100  p-4 rounded-3xl    flex justify-around  items-center  ">
-           
-            <i class="text-4xl object-cover em em-heart" aria-role="presentation" aria-label="HEAVY BLACK HEART"></i>
-            <div class="flex flex-col justify-center pl-2">
-                <p class="text-gray-900 dark:text-gray-300 font-semibold text-xl">มีชีวิต</p>
-                <p class="text-black  text-justify font-semibold">{{data.lived}} ตัว</p>
+        <div class="w-full md:w-1/4  p-2    ">
+            <div class=" bg-gray-200  p-4 rounded-3xl    flex justify-around  items-center  ">
+                <i class="text-4xl object-cover em em-water_buffalo" aria-role="presentation" aria-label="HEAVY BLACK HEART"></i>
+                <div class="flex flex-col justify-center pl-2">
+                    <p class="text-gray-900 dark:text-gray-300 font-semibold text-xl">ควายที่ไม่ได้อยู่ในฟาร์ม</p>
+                    <p class="text-black  text-justify font-semibold">{{dashboard.buffalo_disable}} ตัว</p>
+                </div>
             </div>
         </div>
-           <div class="m-4 bg-gray-100  p-4 rounded-3xl    flex justify-around  items-center  "> 
-            <i class="text-4xl object-cover  em em-broken_heart" aria-role="presentation" aria-label="BROKEN HEART"></i>
-            <div class="flex flex-col justify-center pl-2">
-                <p class="text-gray-900 dark:text-gray-300 font-semibold text-xl">ไม่มีชีวิต</p>
-                <p class="text-black  text-justify font-semibold">{{data.died}} ตัว</p>
+
+        <div class="w-full md:w-1/4  p-2   ">
+            <div class=" bg-gray-100  p-4 rounded-3xl    flex justify-around  items-center  ">
+                <i class="text-4xl object-cover em em-male_sign" aria-role="presentation" aria-label=""></i>
+                <div class="flex flex-col justify-center pl-2">
+                    <p class="text-gray-900 dark:text-gray-300 font-semibold text-xl">ตัวผู้</p>
+                    <p class="text-black  text-justify font-semibold">{{data.male}} ตัว</p>
+                </div>
             </div>
         </div>
-           <div class="m-4 bg-gray-100  p-4 rounded-3xl    flex justify-around  items-center  ">
-            <i class="text-4xl object-cover em em-male_sign" aria-role="presentation" aria-label=""></i>
-            <div class="flex flex-col justify-center pl-2">
-                <p class="text-gray-900 dark:text-gray-300 font-semibold text-xl">ตัวผู้</p>
-                <p class="text-black  text-justify font-semibold">{{data.male}} ตัว</p>
+        <div class="w-full md:w-1/4  p-2 ">
+            <div class=" bg-gray-100  p-4 rounded-3xl    flex justify-around  items-center  ">
+                <i class="text-4xl object-cover em em-female_sign" aria-role="presentation" aria-label=""></i>
+                <div class="flex flex-col justify-center pl-2">
+                    <p class="text-gray-900 dark:text-gray-300 font-semibold text-xl">ตัวเมีย</p>
+                    <p class="text-black  text-justify font-semibold">{{data.female}} ตัว</p>
+                </div>
             </div>
-        </div>
-           <div class="m-4 bg-gray-100  p-4 rounded-3xl    flex justify-around  items-center  ">
-            <i class="text-4xl object-cover em em-female_sign" aria-role="presentation" aria-label=""></i>
-            <div class="flex flex-col justify-center pl-2">
-                <p class="text-gray-900 dark:text-gray-300 font-semibold text-xl">ตัวเมีย</p>
-                <p class="text-black  text-justify font-semibold">{{data.female}} ตัว</p>
-            </div>
+
         </div>
     </div>
- 
-    <div  :class="`flex ${width > 1366 ? `flex-row`:`flex-col`} mt-6`" >
+
+    <div :class="`flex ${width > 1366 ? `flex-row`:`flex-col`} mt-6`">
         <div :class="`${width > 1366 ? `w-1/2`:`w-full`} p-6`">
             <v-card class="rounded-lg h-450" outlined>
                 <v-card-title primary-title>
@@ -121,7 +124,7 @@ import _ from 'lodash'
     }
 })
 export default class Home extends Vue {
-    
+
     user: any = {}
     farm: any = User.farm;
     data: any = {}
@@ -185,9 +188,9 @@ export default class Home extends Vue {
 
     }
 
-     get width() {
-            return this.$vuetify.breakpoint.width
-        }
+    get width() {
+        return this.$vuetify.breakpoint.width
+    }
 
 }
 </script>
