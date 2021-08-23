@@ -2,7 +2,7 @@
 <div v-if="response">
     <div class="flex flex-wrap">
         <div class="mt-4 lg:w-1/4 md:px-4">
-            <v-select v-if="buffalos" @change="changeBuffalo()" :items="buffalos" :item-value="'id'" item-text="name" label="เลือกควาย" v-model="selectBuffalo" outlined></v-select>
+            <v-autocomplete v-if="buffalos" @change="changeBuffalo()" :items="buffalos" :item-value="'id'" item-text="name" label="เลือกควาย" v-model="selectBuffalo" outlined></v-autocomplete>
         </div>
     </div>
     <div>
