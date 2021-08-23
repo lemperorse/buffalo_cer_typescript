@@ -99,6 +99,170 @@
                     </div>
                   </div>
                 </div>
+                <div
+                  class="
+                    lg:grid lg:grid-flow-col
+                    md:grid md:grid-flow-col
+                    lg:grid-cols-2 lg:grid-rows-1
+                    md:grid-cols-2 md:grid-rows-1
+                    gap-2
+                  "
+                >
+                  <div class="w-full px-1">
+                    <div class="relative w-full mb-3">
+                      <label
+                        class="
+                          block
+                          uppercase
+                          text-gray-700 text-xs
+                          font-bold
+                          mb-2
+                        "
+                        htmlFor="grid-password"
+                      >
+                        ปู่
+                      </label>
+                      <div class="flex">
+                        <v-text-field
+                          v-model="form.father_nid"
+                          filled
+                          rounded
+                          type="text"
+                          name="name"
+                          label="ปู่"
+                          id="id"
+                        ></v-text-field>
+                        <v-btn
+                          @click="dialogFather = true"
+                          class="success ml-2"
+                          dark
+                          depressed
+                          fab
+                        >
+                          <v-icon>fas fa-search</v-icon>
+                        </v-btn>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full px-1">
+                    <div class="relative w-full mb-3">
+                      <label
+                        class="
+                          block
+                          uppercase
+                          text-gray-700 text-xs
+                          font-bold
+                          mb-2
+                        "
+                        htmlFor="grid-password"
+                      >
+                        ย่า
+                      </label>
+                      <div class="flex">
+                        <v-text-field
+                          v-model="form.mother_nid"
+                          filled
+                          rounded
+                          type="text"
+                          name="name"
+                          label="ย่า"
+                          id="id"
+                        ></v-text-field>
+                        <v-btn
+                          @click="dialogMother = true"
+                          class="success ml-2"
+                          dark
+                          depressed
+                          fab
+                        >
+                          <v-icon>fas fa-search</v-icon>
+                        </v-btn>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="
+                    lg:grid lg:grid-flow-col
+                    md:grid md:grid-flow-col
+                    lg:grid-cols-2 lg:grid-rows-1
+                    md:grid-cols-2 md:grid-rows-1
+                    gap-2
+                  "
+                >
+                  <div class="w-full px-1">
+                    <div class="relative w-full mb-3">
+                      <label
+                        class="
+                          block
+                          uppercase
+                          text-gray-700 text-xs
+                          font-bold
+                          mb-2
+                        "
+                        htmlFor="grid-password"
+                      >
+                        ตา
+                      </label>
+                      <div class="flex">
+                        <v-text-field
+                          v-model="form.father_nid"
+                          filled
+                          rounded
+                          type="text"
+                          name="name"
+                          label="ตา"
+                          id="id"
+                        ></v-text-field>
+                        <v-btn
+                          @click="dialogFather = true"
+                          class="success ml-2"
+                          dark
+                          depressed
+                          fab
+                        >
+                          <v-icon>fas fa-search</v-icon>
+                        </v-btn>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-full px-1">
+                    <div class="relative w-full mb-3">
+                      <label
+                        class="
+                          block
+                          uppercase
+                          text-gray-700 text-xs
+                          font-bold
+                          mb-2
+                        "
+                        htmlFor="grid-password"
+                      >
+                        ยาย
+                      </label>
+                      <div class="flex">
+                        <v-text-field
+                          v-model="form.mother_nid"
+                          filled
+                          rounded
+                          type="text"
+                          name="name"
+                          label="ยาย"
+                          id="id"
+                        ></v-text-field>
+                        <v-btn
+                          @click="dialogMother = true"
+                          class="success ml-2"
+                          dark
+                          depressed
+                          fab
+                        >
+                          <v-icon>fas fa-search</v-icon>
+                        </v-btn>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="w-full px-1">
                   <div class="relative w-full mb-3">
                     <v-btn
