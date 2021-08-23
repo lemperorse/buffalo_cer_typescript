@@ -158,6 +158,7 @@ export default class Farm extends Vue {
             await this.run()
             this.unEdit = true
             await App.success("บันทึกข้อมูลสำเร็จ")
+            await location.reload()
 
         } else {
             await App.error("โปรดระบุข้อมูลให้ครบถ้วน")
