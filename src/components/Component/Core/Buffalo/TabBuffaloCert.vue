@@ -124,7 +124,7 @@
                       </label>
                       <div class="flex">
                         <v-text-field
-                          v-model="form.father_nid"
+                          v-model="form.grand_father_male_nid"
                           filled
                           rounded
                           type="text"
@@ -133,7 +133,7 @@
                           id="id"
                         ></v-text-field>
                         <v-btn
-                          @click="dialogFather = true"
+                          @click="dialogFatherMale = true"
                           class="success ml-2"
                           dark
                           depressed
@@ -160,7 +160,7 @@
                       </label>
                       <div class="flex">
                         <v-text-field
-                          v-model="form.mother_nid"
+                          v-model="form.grand_mother_male_nid"
                           filled
                           rounded
                           type="text"
@@ -169,7 +169,7 @@
                           id="id"
                         ></v-text-field>
                         <v-btn
-                          @click="dialogMother = true"
+                          @click="dialogMotherMale = true"
                           class="success ml-2"
                           dark
                           depressed
@@ -206,7 +206,7 @@
                       </label>
                       <div class="flex">
                         <v-text-field
-                          v-model="form.father_nid"
+                          v-model="form.grand_father_female_nid"
                           filled
                           rounded
                           type="text"
@@ -215,7 +215,7 @@
                           id="id"
                         ></v-text-field>
                         <v-btn
-                          @click="dialogFather = true"
+                          @click="dialogFatherFemale = true"
                           class="success ml-2"
                           dark
                           depressed
@@ -242,7 +242,7 @@
                       </label>
                       <div class="flex">
                         <v-text-field
-                          v-model="form.mother_nid"
+                          v-model="form.grand_mother_female_nid"
                           filled
                           rounded
                           type="text"
@@ -251,7 +251,7 @@
                           id="id"
                         ></v-text-field>
                         <v-btn
-                          @click="dialogMother = true"
+                          @click="dialogMotherFemale = true"
                           class="success ml-2"
                           dark
                           depressed
@@ -418,6 +418,188 @@
           </v-card-text>
         </v-card>
       </v-dialog>
+      <!-- ปู่ย่า -->
+      <v-dialog
+        v-model="dialogFatherMale"
+        persistent
+        max-width="500px"
+        style="z-index: 1003"
+      >
+        <v-card>
+          <v-card-title primary-title>
+            เลือกพ่อพันธ์ุ
+            <v-spacer></v-spacer>
+            <v-btn
+              color="error"
+              @click="
+                chooseFatherMale = null;
+                dialogFatherMale = false;
+              "
+              class="bg-blue-600 ml-2"
+              icon
+              rounded
+            >
+              <v-icon>fas fa-times</v-icon>
+            </v-btn>
+          </v-card-title>
+          <v-card-text>
+            <v-autocomplete
+              filled
+              rounded
+              v-model="chooseFatherMale"
+              return-object
+              item-text="name"
+              :items="buffalos"
+            ></v-autocomplete>
+            <v-btn
+              @click="chooseFatherData()"
+              color="purple"
+              dark
+              large
+              rounded
+              block
+              >เลือก</v-btn
+            >
+            <!-- <button @click="chooseFatherData()" :class="`bg-blue-600 ${$btn}`">เลือก</button> -->
+          </v-card-text>
+        </v-card>
+      </v-dialog>
+      <v-dialog
+        v-model="dialogMotherMale"
+        persistent
+        max-width="500px"
+        style="z-index: 1003"
+      >
+        <v-card>
+          <v-card-title primary-title>
+            เลือกย่า
+            <v-spacer></v-spacer>
+            <v-btn
+              color="error"
+              @click="
+                chooseMotherMale = null;
+                dialogMotherMale = false;
+              "
+              class="bg-blue-600 ml-2"
+              icon
+              rounded
+            >
+              <v-icon>fas fa-times</v-icon>
+            </v-btn>
+          </v-card-title>
+          <v-card-text>
+            <v-autocomplete
+              filled
+              rounded
+              v-model="chooseMotherMale"
+              return-object
+              item-text="name"
+              :items="buffalos"
+            ></v-autocomplete>
+            <v-btn
+              @click="chooseMotherData()"
+              color="purple"
+              dark
+              large
+              rounded
+              block
+              >เลือก</v-btn
+            >
+            <!-- <button @click="chooseMotherData()" :class="`bg-blue-600 ${$btn}`">เลือก</button> -->
+          </v-card-text>
+        </v-card>
+      </v-dialog>
+      <!-- ตายาย -->
+      <v-dialog
+        v-model="dialogFatherFemale"
+        persistent
+        max-width="500px"
+        style="z-index: 1003"
+      >
+        <v-card>
+          <v-card-title primary-title>
+            เลือกพ่อพันธ์ุ
+            <v-spacer></v-spacer>
+            <v-btn
+              color="error"
+              @click="
+                chooseFatherFemale = null;
+                dialogFatherFemale = false;
+              "
+              class="bg-blue-600 ml-2"
+              icon
+              rounded
+            >
+              <v-icon>fas fa-times</v-icon>
+            </v-btn>
+          </v-card-title>
+          <v-card-text>
+            <v-autocomplete
+              filled
+              rounded
+              v-model="chooseFatherFemale"
+              return-object
+              item-text="name"
+              :items="buffalos"
+            ></v-autocomplete>
+            <v-btn
+              @click="chooseFatherData()"
+              color="purple"
+              dark
+              large
+              rounded
+              block
+              >เลือก</v-btn
+            >
+            <!-- <button @click="chooseFatherData()" :class="`bg-blue-600 ${$btn}`">เลือก</button> -->
+          </v-card-text>
+        </v-card>
+      </v-dialog>
+      <v-dialog
+        v-model="dialogMotherFemale"
+        persistent
+        max-width="500px"
+        style="z-index: 1003"
+      >
+        <v-card>
+          <v-card-title primary-title>
+            เลือกยาย
+            <v-spacer></v-spacer>
+            <v-btn
+              color="error"
+              @click="
+                chooseMotherFemale = null;
+                dialogMotherFemale = false;
+              "
+              class="bg-blue-600 ml-2"
+              icon
+              rounded
+            >
+              <v-icon>fas fa-times</v-icon>
+            </v-btn>
+          </v-card-title>
+          <v-card-text>
+            <v-autocomplete
+              filled
+              rounded
+              v-model="chooseMotherFemale"
+              return-object
+              item-text="name"
+              :items="buffalos"
+            ></v-autocomplete>
+            <v-btn
+              @click="chooseMotherData()"
+              color="purple"
+              dark
+              large
+              rounded
+              block
+              >เลือก</v-btn
+            >
+            <!-- <button @click="chooseMotherData()" :class="`bg-blue-600 ${$btn}`">เลือก</button> -->
+          </v-card-text>
+        </v-card>
+      </v-dialog>
     </v-app>
   </div>
 </template>
@@ -454,8 +636,16 @@ export default class Farm extends Vue {
 
   private dialogFather: boolean = false;
   private dialogMother: boolean = false;
+  private dialogFatherMale: boolean = false;
+  private dialogMotherMale: boolean = false;
+  private dialogFatherFemale: boolean = false;
+  private dialogMotherFemale: boolean = false;
   private chooseFather: any | null = null;
   private chooseMother: any | null = null;
+  private chooseFatherMale: any | null = null;
+  private chooseMotherMale: any | null = null;
+  private chooseFatherFemale: any | null = null;
+  private chooseMotherFemale: any | null = null;
   api: any = process.env.VUE_APP_SERVER;
   private async created() {
     await this.run();
@@ -486,6 +676,16 @@ export default class Farm extends Vue {
       this.form.father_nid = `${this.chooseFather.name} (${this.chooseFather.nid})`;
       this.dialogFather = false;
     }
+    if (this.chooseFatherMale) {
+      this.form.grand_father_male = this.chooseFatherMale.id;
+      this.form.grand_father_male_nid = `${this.chooseFatherMale.name} (${this.chooseFatherMale.nid})`;
+      this.dialogFatherMale = false;
+    }
+    if (this.chooseFatherFemale) {
+      this.form.grand_father_female = this.chooseFatherFemale.id;
+      this.form.grand_father_female_nid = `${this.chooseFatherFemale.name} (${this.chooseFatherFemale.nid})`;
+      this.dialogFatherFemale = false;
+    }
   }
 
   private async chooseMotherData() {
@@ -493,6 +693,19 @@ export default class Farm extends Vue {
       this.form.mother = this.chooseMother.id;
       this.form.mother_nid = `${this.chooseMother.name} (${this.chooseMother.nid})`;
       this.dialogMother = false;
+      console.log("Mother");
+    }
+    if (this.chooseMotherFemale) {
+      this.form.grand_mother_female = this.chooseMotherFemale.id;
+      this.form.grand_mother_female_nid = `${this.chooseMotherFemale.name} (${this.chooseMotherFemale.nid})`;
+      this.dialogMotherFemale = false;
+      console.log("Mother-1");
+    }
+    if (this.chooseMotherMale) {
+      this.form.grand_mother_male = this.chooseMotherMale.id;
+      this.form.grand_mother_male_nid = `${this.chooseMotherMale.name} (${this.chooseMotherMale.nid})`;
+      this.dialogMotherMale = false;
+      console.log("Mother-2");
     }
   }
 
@@ -505,6 +718,7 @@ export default class Farm extends Vue {
       await this.run();
       this.unEdit = true;
       await App.success("บันทึกข้อมูลสำเร็จ");
+      await location.reload();
     } else {
       await App.error("โปรดระบุข้อมูลให้ครบถ้วน");
     }
