@@ -160,7 +160,7 @@ export default class TabBuff extends Vue {
                 type: 'radar',
             },
             title: {
-                text: 'Basic Radar Chart'
+                text: ''
             },
             xaxis: {
                 categories: ['รอบอก', 'น้ำหนัก', 'ส่วนสูง', 'ความยาวรอบตัว']
@@ -178,7 +178,7 @@ export default class TabBuff extends Vue {
                 type: 'radar',
             },
             title: {
-                text: 'Basic Radar Chart'
+                text: ''
             },
             xaxis: {
                 categories: ['รอบอก', 'น้ำหนัก', 'ส่วนสูง', 'ความยาวรอบตัว']
@@ -196,7 +196,7 @@ export default class TabBuff extends Vue {
                 type: 'radar',
             },
             title: {
-                text: 'Basic Radar Chart'
+                text: ''
             },
             xaxis: {
                 categories: ['รอบอก', 'น้ำหนัก', 'ส่วนสูง', 'ความยาวรอบตัว']
@@ -214,7 +214,7 @@ export default class TabBuff extends Vue {
                 type: 'radar',
             },
             title: {
-                text: 'Basic Radar Chart'
+                text: ''
             },
             xaxis: {
                 categories: ['รอบอก', 'น้ำหนัก', 'ส่วนสูง', 'ความยาวรอบตัว']
