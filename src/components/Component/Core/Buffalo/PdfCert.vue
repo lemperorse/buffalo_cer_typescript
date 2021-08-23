@@ -208,15 +208,7 @@ export default {
                 bold: true,
                 margin: [40, 0, 40, 0],
               },
-              "  ฟาร์ม ",
-              {
-                text: this.dataBuffalo.color,
-                italics: true,
-                fontSize: 16,
-                bold: true,
-                margin: [40, 0, 40, 0],
-              },
-              "  เพศ ",
+              "  ฟาร์ม  ",
               {
                 text: this.dataBuffalo.farm,
                 italics: true,
@@ -392,41 +384,5 @@ export default {
 </script>
 
 <style>
-.vertical-divider {
-  padding: 40px 40px 40px 40px;
-  border: 3px black;
-  border-style: dotted hidden dotted dotted;
-  z-index: 1;
-  width: 25%;
-  height: 25%;
-  left: 25%;
-  position: absolute;
-}
-.center-element {
-  position: absolute;
-  align-items: center;
-  z-index: 1;
-  left: -20%;
-  bottom: 40%;
-  background: white;
-  padding: 5px;
-}
-.top-element {
-  position: absolute;
-  align-items: center;
-  z-index: 1;
-  top: -10%;
-  right: -45%;
-  background: white;
-  padding: 5px;
-}
-.bottom-element {
-  position: absolute;
-  align-items: center;
-  z-index: 1;
-  top: 92%;
-  right: -50%;
-  background: white;
-  padding: 5px;
-}
+
 </style>
