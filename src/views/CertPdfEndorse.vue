@@ -88,7 +88,7 @@ export default {
 
       const docDefinition = {
         pageSize: "A4",
-        pageMargins: [60, 40, 60, 40],
+        pageMargins: [40, 40, 40, 40],
         pageOrientation: "landscape",
         defaultStyle: {
           font: "THSarabun",
@@ -114,7 +114,7 @@ export default {
                         image: "building",
                         alignment: "left",
                         width: 70,
-                        margin: 10,
+                        margin: 20,
                         border: [false, false, false, false],
                       },
                       {
@@ -367,7 +367,7 @@ export default {
         },
         background: [
           {
-            absolutePosition: { x: 55, y: 110 },
+            absolutePosition: { x: 35, y: 120 },
             canvas: [
               {
                 type: "line",
