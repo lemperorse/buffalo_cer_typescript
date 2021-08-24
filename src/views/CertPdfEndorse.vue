@@ -8,6 +8,7 @@
       block
       large
       rounded
+      id="exportEndorsePDF"
     >
       <v-icon left>fas fa-file-download</v-icon>
       ดาวน์โหลดใบประกาศนียบัตรรับรองพันธุ์ประวัติ
@@ -37,8 +38,12 @@ export default {
   watch: {},
   async created() {
     await this.load();
+    await this.autoClick();
   },
   methods: {
+    async autoClick() {
+      document.getElementById("exportEndorsePDF").click();
+    },
     async load() {
       await Core.getFullChoice();
       console.log(`${this.$route.query.id}`);
@@ -54,7 +59,9 @@ export default {
         this.date = await moment().add(543, "year").format("LL");
         return this.date;
       } else {
-        this.date = await moment(datd, "DD/MM/YYYY").add(543, "year").format("LL");
+        this.date = await moment(datd, "DD/MM/YYYY")
+          .add(543, "year")
+          .format("LL");
         return this.date;
       }
     },
@@ -290,7 +297,7 @@ export default {
                     border: [false, false, false, false],
                   },
                   {
-                    text: "นายชยุต ดงปาลีธรรม์",
+                    text: this.dataBuffalo.owner,
                     colSpan: 3,
                     alignment: "center",
                     border: [false, false, false, false],
@@ -422,11 +429,11 @@ export default {
       };
       // pdfMake.createPdf(docDefinition).open({}, window);
       pdfMake.createPdf(docDefinition).print();
+      // pdfMake.createPdf(docDefinition).print({}, window);
     },
   },
 };
 </script>
 
 <style>
-
 </style>

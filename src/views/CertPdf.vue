@@ -8,6 +8,7 @@
       block
       large
       rounded
+      id="exportPDF"
     >
       <v-icon left>fas fa-file-download</v-icon>
       ดาวน์โหลดใบพันธุ์ประวัติอ้างอิง
@@ -33,10 +34,15 @@ export default {
       choices: Core.choices,
     };
   },
-  computed: {},
+  computed: {
+    async exporPDFs() {
+      this.exporPDF();
+    },
+  },
   watch: {},
   async created() {
     await this.load();
+    await this.autoClick();
   },
   methods: {
     async load() {
@@ -47,6 +53,9 @@ export default {
       );
       this.dataBuffalo.bday = await this.dDate(this.dataBuffalo.birthday);
       console.log(this.dataBuffalo);
+    },
+    async autoClick() {
+      document.getElementById("exportPDF").click();
     },
     async dDate(datd) {
       var dd = moment.locale("th");
@@ -378,6 +387,8 @@ export default {
       };
       // pdfMake.createPdf(docDefinition).open({}, window);
       pdfMake.createPdf(docDefinition).print();
+
+      // pdfMake.createPdf(docDefinition).print({}, window);
     },
   },
 };

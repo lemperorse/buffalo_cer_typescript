@@ -290,7 +290,7 @@ export default {
                     border: [false, false, false, false],
                   },
                   {
-                    text: "นายชยุต ดงปาลีธรรม์",
+                    text: this.dataBuffalo.owner,
                     colSpan: 3,
                     alignment: "center",
                     border: [false, false, false, false],
@@ -422,6 +422,7 @@ export default {
       };
       // pdfMake.createPdf(docDefinition).open({}, window);
       pdfMake.createPdf(docDefinition).print();
+      // pdfMake.createPdf(docDefinition).print({}, window);
     },
   },
 };
