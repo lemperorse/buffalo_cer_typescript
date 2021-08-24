@@ -202,7 +202,8 @@ export default class Home extends Vue {
             await this.login();
             await this.$router.go(-1)
         }else{
-            await App.error('ไม่สามารถสมัครสมาชิกได้'+JSON.stringify(user));
+            let errorText = JSON.stringify(user['username']) ? JSON.stringify(user['username'][0]):JSON.stringify(user.password)
+            await App.error('ไม่สามารถสมัครสมาชิกได้ '+errorText);
         }
     }
 
