@@ -3,9 +3,13 @@
 
     <div v-if="response">
  
-        <div id="chart">
+        <!-- <div id="chart">
             <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
-        </div>
+        </div> -->
+
+         <div id="chart" style="overflow-x: scroll;">
+        <apexchart type="line" :width="($vuetify.breakpoint.mobile)?`1900`:`100%`" height="350" :options="chartOptions" :series="series"></apexchart>
+      </div>
 
     </div>
 
@@ -84,95 +88,54 @@ export default class Graph extends Vue {
         xaxis: {
             categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
         },
-        yaxis: [{
-                axisTicks: {
-                    show: true,
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#008FFB'
-                },
-                labels: {
-                    style: {
-                        colors: '#008FFB',
-                    }
-                },
-                title: {
-                    text: "แรกเกิด",
-                    style: {
-                        color: '#008FFB',
-                    }
-                },
-                tooltip: {
-                    enabled: true
-                }
-            },
-            {
-                seriesName: 'Income',
-                opposite: true,
-                axisTicks: {
-                    show: true,
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#00E396'
-                },
-                labels: {
-                    style: {
-                        colors: '#00E396',
-                    }
-                },
-                title: {
-                    text: "240 วัน",
-                    style: {
-                        color: '#00E396',
-                    }
-                },
-            },
-            {
-                seriesName: '400 วัน',
-                opposite: true,
-                axisTicks: {
-                    show: true,
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#FEB019'
-                },
-                labels: {
-                    style: {
-                        colors: '#FEB019',
+        yaxis: [
+          
+          {show: false,},{show: false,},{show: false,},
+           {
+                    axisTicks: {
+                        show: true,
                     },
-                },
-                title: {
-                    text: "400 วัน",
-                    style: {
-                        color: '#FEB019',
-                    }
-                }
-            },
-            {
-                seriesName: '600 วัน',
-                opposite: true,
-                axisTicks: {
-                    show: true,
-                },
-                axisBorder: {
-                    show: true,
-                    color: '#FF4560'
-                },
-                labels: {
-                    style: {
-                        colors: '#FF4560',
+                    axisBorder: {
+                        show: true,
+                     
                     },
-                },
-                title: {
-                    text: "600 วัน",
-                    style: {
-                        color: '#FF4560',
+                    labels: {
+                     
+                    },
+                    title: {
+                        text: "น้ำหนัก",
+                        
+                    },
+                    tooltip: {
+                        enabled: true
                     }
-                }
-            },
+                },
+           {
+                    seriesName: 'อัตราการเจริญเติบโต',
+                    axisTicks: {
+                        show: true,
+                    },
+                    axisBorder: {
+                        show: true,
+                        color: 'rgb(119, 93, 208)'
+                    },
+                    labels: {
+                        style: {
+                            colors: 'rgb(119, 93, 208)',
+                        }
+                    },
+                    title: {
+                        text: "อัตราการเจริญเติบโต",
+                        style: {
+                            color: 'rgb(119, 93, 208)',
+                        }
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                },
+         
+        
         ],
         tooltip: {
             fixed: {
@@ -194,6 +157,7 @@ export default class Graph extends Vue {
     }
 
     async getGraphSeries() {
+        
         let graph = await Core.getHttp(`/report/evo/${this.farm.id}/`)
         if (graph.success) {
             this.series = graph.series

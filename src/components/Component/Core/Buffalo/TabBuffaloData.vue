@@ -55,6 +55,10 @@
                 <div class="w-full lg:w-6/12 md:px-4">
                     <v-text-field :disabled="unEdit" required v-model="form.age" type="number" filled rounded dense label="อายุ(ปี) หรือ (ประเมินจากฟัน)" id="id" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
                 </div>
+                 <div class="w-full lg:w-6/12 md:px-4">
+                    <v-text-field :disabled="unEdit" required v-model="form.age" type="number" filled rounded dense label="อายุ(ปี) หรือ (ประเมินจากฟัน)" id="id" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
+                </div>
+                
                 <div class="w-full lg:w-6/12 md:px-4">
                     <v-select :disabled="unEdit" required :items="sex" item-text="value" item-value="id" v-model="form.gender" filled rounded dense label="เพศ" prepend-inner-icon="fas fa-venus-mars" />
                 </div>

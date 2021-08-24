@@ -6,12 +6,12 @@
             <v-autocomplete dense :items="farms" :item-value="'id'" item-text="name" label="เลือกฟาร์ม" v-model="mySelect" outlined></v-autocomplete>
             <v-btn class="ml-6" @click="addFarm()" color="success">+ เพิ่มฟาร์ม</v-btn>
         </div>
-
-        <div id="chart">
-           
-            <apexchart type="line" height="350" :options="chartOptions" :series="series"></apexchart>
-        </div>
-
+   
+  
+       <div id="chart" style="overflow-x: scroll;">
+        <apexchart type="line" :width="($vuetify.breakpoint.mobile)?`1900`:`100%`" height="350" :options="chartOptions" :series="series"></apexchart>
+      </div>
+      
     </div>
 
     <div v-else>
