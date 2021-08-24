@@ -117,6 +117,7 @@ export default class Graph extends Vue {
             this.series.push(graph.series_chart)
             this.rawData = (graph.series_obj).concat(this.rawData)
             this.years = this.arrayUnique((graph.index).concat(this.years))
+            this.years = this.years.sort(function(a:any, b:any){return a-b});
             this.chartOptions.xaxis.categories = this.years
             this.infarms.push(graph.farm)
             await this.generateDataChart()
@@ -134,6 +135,7 @@ export default class Graph extends Vue {
             this.rawData = (graph.series_obj).concat(this.rawData)
             this.series.push(graph.series_chart)
             this.years = (graph.index).concat(this.years)
+            this.years = this.years.sort(function(a:any, b:any){return a-b});
             this.chartOptions.xaxis.categories = this.years
             this.infarms.push(graph.farm)
             await this.generateDataChart()

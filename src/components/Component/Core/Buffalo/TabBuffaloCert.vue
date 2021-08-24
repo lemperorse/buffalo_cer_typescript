@@ -660,9 +660,32 @@ export default class Farm extends Vue {
       `/user/buffalo/buffalo/?farm=${this.buffalo.farm}`,
       {}
     );
-    this.form = await Core.getHttp(
+   let cert  = await Core.getHttp(
       `/user/buffalo/cert/${this.$route.query.id}/`
     );
+    if(!cert.id){
+        let form  = {
+    "mother": "",
+    "mother_nid": "",
+    "father": "",
+    "father_nid": "",
+    "grand_father_male": "",
+    "grand_father_male_nid": "",
+    "grand_mother_male": "",
+    "grand_mother_male_nid": "",
+    "grand_father_female": "",
+    "grand_father_female_nid": "",
+    "grand_mother_female": "",
+    "grand_mother_female_nid": "", 
+    "buffalo": this.$route.query.id
+}
+this.form = await Core.postHttp(
+      `/api/buffalo/cert/create/`,form
+    );
+
+    }else{
+       this.form = cert
+    }
     this.formCertReal = await Core.getHttp(
       `/user/buffalo/certreal/${this.$route.query.id}/`
     );
