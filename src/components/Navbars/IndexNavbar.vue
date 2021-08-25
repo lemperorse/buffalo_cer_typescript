@@ -1,6 +1,9 @@
 <template>
 <div>
-    <v-toolbar class="bg-alpha flex row-wrap overflow-y-hidden	overflow-x-auto">
+    <div class="bg-green-600" v-if="$vuetify.breakpoint.mobile">
+        <br><br> 
+    </div>
+    <v-toolbar class="bg-alpha flex row-wrap overflow-y-hidden	overflow-x-auto ">
         <v-app-bar-nav-icon dark @click="navbarOpen=!navbarOpen" class="d-flex d-md-none"></v-app-bar-nav-icon>
 
         <v-toolbar-title class="text-white">พันธุ์ควายไทย</v-toolbar-title>

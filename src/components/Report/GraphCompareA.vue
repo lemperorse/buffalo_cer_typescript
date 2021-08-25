@@ -1,7 +1,7 @@
 <template>
 <div class="p-4">
    
-    <v-autocomplete @change="changeMyBuffalo()" v-if="myBuffalos" :items="myBuffalos" :item-value="'id'" item-text="name" label="เลือกควายของท่าน" v-model="mySelect" outlined></v-autocomplete>
+    <v-autocomplete @change="changeMyBuffalo()" v-if="myBuffalos" :items="myBuffalos" :item-value="'id'" item-text="buffalo.name" label="เลือกควายของท่าน" v-model="mySelect" outlined></v-autocomplete>
  
        <div id="chart" style="overflow-x: scroll;">
         <apexchart type="line" :width="($vuetify.breakpoint.mobile)?`1900`:`100%`" height="350" :options="chartOptions" :series="series"></apexchart>
@@ -181,8 +181,8 @@ export default {
         await this.getBuffalos()
     },
     methods: {
-        async getBuffalos() {
-            this.myBuffalos = await Core.getHttp(`/api/buffalo/buffalo/raw/?farm__id=${this.farm.id}`)
+        async getBuffalos() { 
+            this.myBuffalos = await Core.getHttp(`/api/buffalo/evolutions/?buffalo__farm=${this.farm.id}`)
         },
         async changeMyBuffalo() {
             this.buffalo = await Core.getHttp(`api/buffalo/evolution/${this.mySelect}/`)

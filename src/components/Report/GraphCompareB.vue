@@ -7,7 +7,7 @@
 
         </div>
         <div  class="w-full md:w-1/2 pl-2">
-            <v-autocomplete @change="changeMyBuffalo()" v-if="myBuffalos" :items="myBuffalos" :item-value="'id'" item-text="name" label="เลือกควายของท่าน" v-model="mySelect" outlined></v-autocomplete>
+            <v-autocomplete @change="changeMyBuffalo()" v-if="myBuffalos" :items="myBuffalos" :item-value="'id'" item-text="buffalo.name" label="เลือกควายของท่าน" v-model="mySelect" outlined></v-autocomplete>
         </div>
     </div>
 
@@ -191,7 +191,7 @@ export default {
             this.themFarm = await Core.getHttp(`api/buffalo/farm/`)
         },
         async getBuffalos() {
-            this.myBuffalos = await Core.getHttp(`/api/buffalo/buffalo/raw/?farm__id=${this.themSelectFarm}`)
+            this.myBuffalos = await Core.getHttp(`/api/buffalo/evolutions/?buffalo__farm=${this.themSelectFarm}`)
         },
         async changeMyBuffalo() {
             this.buffalo = await Core.getHttp(`api/buffalo/evolution/${this.mySelect}/`)

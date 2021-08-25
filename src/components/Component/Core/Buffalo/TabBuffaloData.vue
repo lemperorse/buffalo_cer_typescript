@@ -56,7 +56,7 @@
                     <v-text-field :disabled="unEdit" required v-model="form.age" type="number" filled rounded dense label="อายุ(ปี) หรือ (ประเมินจากฟัน)" id="id" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
                 </div>
                  <div class="w-full lg:w-6/12 md:px-4">
-                    <v-text-field :disabled="unEdit" required v-model="form.age" type="number" filled rounded dense label="อายุ(ปี) หรือ (ประเมินจากฟัน)" id="id" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
+                    <v-text-field :disabled="unEdit"   v-model="form.age_month" type="number" filled rounded dense label="อายุ(เดือน) หรือ (ประเมินจากฟัน)" id="id" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
                 </div>
                 
                 <div class="w-full lg:w-6/12 md:px-4">
@@ -151,8 +151,14 @@ export default class Farm extends Vue {
 
     @Watch('form.birthday')
     async onChangeDate(val: string) {
+        
+
         this.form.age = moment().diff(val, 'years', false);
+        let month = (moment().diff(val, 'months', false)  -12) /12
+        this.form.age_month = Math.floor(month);
     }
+
+   
 
     private async updateBuffalo() {
         delete this.form.back_image

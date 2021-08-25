@@ -38,6 +38,10 @@
                 <div class="w-full lg:w-6/12 px-4">
                     <v-text-field v-model="form.age" type="number" filled rounded dense label="อายุ(ปี) หรือ (ประเมินจากฟัน)" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
                 </div>
+                 <div class="w-full lg:w-6/12 md:px-4">
+                    <v-text-field     v-model="form.age_month" type="number" filled rounded dense label="อายุ(เดือน) หรือ (ประเมินจากฟัน)" id="id" prepend-inner-icon="fas fa-birthday-cake"></v-text-field>
+                </div>
+                
                 <div class="w-full lg:w-6/12 px-4">
                     <v-select :items="sex" item-text="value" item-value="id" v-model="form.gender" filled rounded dense label="เพศ" prepend-inner-icon="fas fa-venus-mars" />
                 </div>
@@ -151,6 +155,8 @@ export default class Farm extends Vue {
     @Watch('form.birthday')
     async onChangeDate(val: string) {
         this.form.age = moment().diff(val, 'years', false);
+         let month = (moment().diff(val, 'months', false)  -12) /12
+        this.form.age_month = Math.floor(month);
     }
 
     async frontChange(event: any) {
