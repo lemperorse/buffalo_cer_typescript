@@ -415,7 +415,7 @@ form.sign-in-form {
     pointer-events: all;
 }
 
-@media (max-width: 870px) {
+@media (max-width: 767px) {
     .containerR {
         min-height: 800px;
         height: 100vh;
