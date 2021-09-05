@@ -23,7 +23,7 @@
                         </v-card-title>
                         <v-divider></v-divider>
                         <v-card-text>
-                            <apexchart type="donut" :options="buffaloOptions" :series="buffaloSeries"></apexchart>
+                            <apexchart type="pie" :options="buffaloOptions" :series="buffaloSeries"></apexchart>
 
                         </v-card-text>
 
