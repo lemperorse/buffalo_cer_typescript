@@ -63,7 +63,7 @@
       <div class="text-center mt-6">
         <v-btn
           outlined
-          class="mr-2"
+          class="mr-2 mb-2"
           large
           @click="step = step - 1"
           rounded
@@ -71,7 +71,7 @@
           dark
           >ย้อนกลับ</v-btn
         >
-        <v-btn large type="submit" rounded color="purple darken-3" dark
+        <v-btn large type="submit" rounded color="purple darken-3" dark class="mb-2"
           >ดำเนินการต่อ</v-btn
         >
       </div>
