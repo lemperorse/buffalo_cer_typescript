@@ -71,7 +71,13 @@
           dark
           >ย้อนกลับ</v-btn
         >
-        <v-btn large type="submit" rounded color="purple darken-3" dark class="mb-2"
+        <v-btn
+          large
+          type="submit"
+          rounded
+          color="purple darken-3"
+          dark
+          class="mb-2"
           >ดำเนินการต่อ</v-btn
         >
       </div>
@@ -172,7 +178,7 @@
       <div class="text-center mt-6">
         <v-btn
           outlined
-          class="mr-2"
+          class="ma-2"
           large
           @click="step = step - 1"
           rounded
@@ -243,6 +249,8 @@
           name="name"
           label="จังหวัด อำเภอ ตำบล"
           id="id"
+          hint="คลิกหรือกดเพื่อค้นหาข้อมูล"
+          persistent-hint
           prepend-inner-icon="fas fa-hotel"
         ></v-text-field>
       </div>
@@ -263,7 +271,7 @@
       <div class="text-center">
         <v-btn
           outlined
-          class="mr-2"
+          class="ma-2"
           large
           @click="step = step - 1"
           rounded
@@ -296,6 +304,8 @@
           name="name"
           label="ชื่อผู้ใช้"
           id="id"
+          hint="เป็นภาษาอังกฤษหรือตัวเลขเท่านั้น (แนะนำให้เป็นเบอร์โทรศัพท์)"
+          persistent-hint
           prepend-inner-icon="fas fa-users"
         ></v-text-field>
       </div>
@@ -341,7 +351,7 @@
       <div class="text-center mt-6">
         <v-btn
           outlined
-          class="mr-2"
+          class="ma-2"
           large
           @click="step = step - 1"
           rounded
@@ -349,8 +359,8 @@
           dark
           >ย้อนกลับ</v-btn
         >
-        <v-btn large type="submit" rounded color="purple darken-3" dark
-          >ดำเนินการต่อ</v-btn
+        <v-btn large type="submit" rounded color="green darken-1" dark
+          >สมัครสมาชิก</v-btn
         >
       </div>
     </form>
