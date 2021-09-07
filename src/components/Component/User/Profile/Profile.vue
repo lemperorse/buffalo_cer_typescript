@@ -199,7 +199,7 @@
 
         <hr class="mt-6 border-b-1 border-gray-400 mx-4" />
         <h6 class="text-gray-500 text-sm mt-6 mb-6 md:px-4 font-bold uppercase">
-          ทีอยู่
+          ที่อยู่
         </h6>
 
         <div class="flex flex-wrap">

@@ -1,17 +1,32 @@
 <template>
   <div>
-    <v-btn
-      @click="exporEndorse()"
-      color="deep-purple accent-3"
-      depressed
-      dark
-      block
-      large
-      rounded
-    >
-      <v-icon left>fas fa-file-download</v-icon>
-      ดาวน์โหลดใบประกาศนียบัตรรับรองพันธุ์ประวัติ
-    </v-btn>
+    <div class="mt-2" v-if="$vuetify.breakpoint.mobile">
+      <v-alert
+        class="my-4"
+        @click="exporEndorse()"
+        color="deep-purple accent-3"
+        border="left"
+        elevation="1"
+        colored-border
+        icon="mdi-file-download"
+      >
+        ดาวน์โหลดใบประกาศนียบัตรรับรองพันธุ์ประวัติ
+      </v-alert>
+    </div>
+    <div v-else>
+      <v-btn
+        @click="exporEndorse()"
+        color="deep-purple accent-3"
+        depressed
+        dark
+        block
+        large
+        rounded
+      >
+        <v-icon left>fas fa-file-download</v-icon>
+        ดาวน์โหลดใบประกาศนียบัตรรับรองพันธุ์ประวัติ
+      </v-btn>
+    </div>
   </div>
 </template>
 
@@ -54,7 +69,9 @@ export default {
         this.date = await moment().add(543, "year").format("LL");
         return this.date;
       } else {
-        this.date = await moment(datd, "DD/MM/YYYY").add(543, "year").format("LL");
+        this.date = await moment(datd, "DD/MM/YYYY")
+          .add(543, "year")
+          .format("LL");
         return this.date;
       }
     },
@@ -429,5 +446,4 @@ export default {
 </script>
 
 <style>
-
 </style>

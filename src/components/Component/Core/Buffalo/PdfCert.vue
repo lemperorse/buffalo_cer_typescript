@@ -1,17 +1,31 @@
 <template>
   <div>
-    <v-btn
-      @click="exporPDF()"
-      color="deep-purple accent-1"
-      depressed
-      dark
-      block
-      large
-      rounded
-    >
-      <v-icon left>fas fa-file-download</v-icon>
-      ดาวน์โหลดใบพันธุ์ประวัติอ้างอิง
-    </v-btn>
+    <div v-if="$vuetify.breakpoint.mobile">
+      <v-alert
+        @click="exporPDF()"
+        color="deep-purple accent-1"
+        border="left"
+        elevation="1"
+        colored-border
+        icon="mdi-file-download"
+      >
+        ดาวน์โหลดใบพันธุ์ประวัติอ้างอิง
+      </v-alert>
+    </div>
+    <div v-else>
+      <v-btn
+        @click="exporPDF()"
+        color="deep-purple accent-1"
+        depressed
+        dark
+        block
+        large
+        rounded
+      >
+        <v-icon left>fas fa-file-download</v-icon>
+        ดาวน์โหลดใบพันธุ์ประวัติอ้างอิง
+      </v-btn>
+    </div>
   </div>
 </template>
 
