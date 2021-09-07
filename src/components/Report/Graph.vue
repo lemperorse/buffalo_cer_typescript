@@ -44,7 +44,7 @@
     </div>
 
     <div :class="`flex ${width > 1366 ? `flex-row`:`flex-col`} mt-6`">
-        <div :class="`${width > 1366 ? `w-1/2`:`w-full`} p-6`">
+        <div :class="`${width > 1366 ? `w-1/2`:`w-full`} p-2`">
             <v-card class="rounded-lg h-450" outlined>
                 <v-card-title primary-title>
                     จำนวนควายทั้งหมด
@@ -61,7 +61,7 @@
             </v-card>
         </div>
 
-        <div :class="`${width > 1366 ? `w-1/2`:`w-full`} p-6`">
+        <div :class="`${width > 1366 ? `w-1/2`:`w-full`} p-2`">
             <v-card rounded class="rounded-lg h-420" outlined>
                 <v-card-title primary-title>
                     จำนวนควายในปัจจุบัน

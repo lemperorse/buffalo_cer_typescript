@@ -351,6 +351,12 @@ export default class TabBuff extends Vue {
         height: 350,
         type: "line",
         stacked: false,
+        toolbar: {
+          show: true,
+        },
+        zoom: {
+          enabled: true,
+        },
       },
       dataLabels: {
         enabled: false,
@@ -392,7 +398,7 @@ export default class TabBuff extends Vue {
           },
         },
         {
-          seriesName: "ความกว้างรอบอก",
+          seriesName: "รอบอก/ลำตัว/สูง (ซม.)",
           opposite: true,
           axisTicks: {
             show: true,
@@ -407,56 +413,14 @@ export default class TabBuff extends Vue {
             },
           },
           title: {
-            text: "ความกว้างรอบอก",
+            text: "รอบอก/ลำตัว/สูง (ซม.)",
             style: {
-              color: "#00E396",
+              color: "#000000",
             },
           },
         },
-        {
-          seriesName: "ความยาวลำตัว",
-          opposite: true,
-          axisTicks: {
-            show: true,
-          },
-          axisBorder: {
-            show: true,
-            color: "#FEB019",
-          },
-          labels: {
-            style: {
-              colors: "#FEB019",
-            },
-          },
-          title: {
-            text: "ความยาวลำตัว",
-            style: {
-              color: "#FEB019",
-            },
-          },
-        },
-        {
-          seriesName: "ความสูง",
-          opposite: true,
-          axisTicks: {
-            show: true,
-          },
-          axisBorder: {
-            show: true,
-            color: "rgb(255, 69, 96)",
-          },
-          labels: {
-            style: {
-              colors: "rgb(255, 69, 96)",
-            },
-          },
-          title: {
-            text: "ความสูง",
-            style: {
-              color: "rgb(255, 69, 96)",
-            },
-          },
-        },
+        { show: false },
+        { show: false },
         {
           seriesName: "การเจริญเติบโต",
           opposite: true,
