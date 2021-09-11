@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div v-if="$vuetify.breakpoint.mobile">
+    <div v-if="$vuetify.breakpoint.mobile" @click="exporPDF()">
       <v-alert
-        @click="exporPDF()"
         color="deep-purple accent-1"
         border="left"
         elevation="1"

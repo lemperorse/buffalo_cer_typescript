@@ -1,9 +1,8 @@
 <template>
   <div>
-    <div class="mt-2" v-if="$vuetify.breakpoint.mobile">
+    <div class="mt-2" v-if="$vuetify.breakpoint.mobile" @click="exporEndorse()">
       <v-alert
         class="my-4"
-        @click="exporEndorse()"
         color="deep-purple accent-3"
         border="left"
         elevation="1"
