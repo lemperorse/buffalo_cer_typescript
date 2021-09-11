@@ -12,13 +12,41 @@
     ></v-autocomplete>
 
     <div id="chart" style="overflow-x: scroll">
+      <span>น้ำหนัก (กก.)</span>
       <apexchart
-        type="line"
-        :width="$vuetify.breakpoint.mobile ? `1900` : `100%`"
-        height="350"
-        :options="chartOptions"
-        :series="series"
+        type="bar"
+        height="250"
+        :options="graghWeight.chartOptions"
+        :series="graghWeight.series"
       ></apexchart>
+      <span>ความกว้างรอบอก (ซม.)</span>
+      <apexchart
+        type="bar"
+        height="250"
+        :options="graghWidth.chartOptions"
+        :series="graghWidth.series"
+      ></apexchart>
+      <span>ความยาวรอบลำตัว (ซม.)</span>
+      <apexchart
+        type="bar"
+        height="250"
+        :options="graghLength.chartOptions"
+        :series="graghLength.series"
+      ></apexchart>
+      <span>ความสูง (ซม.)</span>
+      <apexchart
+        type="bar"
+        height="250"
+        :options="graghHeight.chartOptions"
+        :series="graghHeight.series"
+      ></apexchart>
+      <!-- <span>อัตราการเจริญเติบโต (กก.)</span>
+      <apexchart
+        type="bar"
+        height="250"
+        :options="graghGrowth.chartOptions"
+        :series="graghGrowth.series"
+      ></apexchart> -->
     </div>
   </div>
 </template>
@@ -33,110 +61,299 @@ export default {
     myBuffalos: [],
     buffalo: {},
     mySelect: null,
-    series: [],
-    chartOptions: {
-      chart: {
-        height: 350,
-        type: "line",
-        stacked: false,
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        width: [1, 1, 4],
-      },
-      title: {
-        text: "",
-        align: "left",
-        offsetX: 110,
-      },
-      xaxis: {
-        categories: ["แรกเกิด", "240 วัน", "400 วัน", "600 วัน"],
-      },
-      yaxis: [
-        {
-          seriesName: "น้ำหนัก",
-          axisTicks: {
-            show: true,
-          },
-          axisBorder: {
-            show: true,
-            color: "#008FFB",
-          },
-          labels: {
-            style: {
-              colors: "#008FFB",
-            },
-          },
-          title: {
-            text: "น้ำหนัก",
-            style: {
-              color: "#008FFB",
-            },
-          },
-          tooltip: {
-            enabled: true,
-          },
+    graghWeight: {
+      series: [],
+      chartOptions: {
+        chart: {
+          type: "bar",
+          height: 350,
         },
-        {
-          seriesName: "รอบอก/ลำตัว/สูง (ซม.)",
-          opposite: true,
-          axisTicks: {
-            show: true,
-          },
-          axisBorder: {
-            show: true,
-            color: "#00E396",
-          },
-          labels: {
-            style: {
-              colors: "#00E396",
-            },
-          },
-          title: {
-            text: "รอบอก/ลำตัว/สูง (ซม.)",
-            style: {
-              color: "#000000",
+        colors: "#7E57C2",
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: "55%",
+            endingShape: "rounded",
+            dataLabels: {
+              position: "top", // top, center, bottom
             },
           },
         },
-        { show: false },
-        { show: false },
-        {
-          seriesName: "การเจริญเติบโต",
-          opposite: true,
-          axisTicks: {
-            show: true,
-          },
-          axisBorder: {
-            show: true,
-            color: "rgb(119, 93, 208)",
-          },
-          labels: {
-            style: {
-              colors: "rgb(119, 93, 208)",
-            },
-          },
-          title: {
-            text: "การเจริญเติบโต",
-            style: {
-              color: "rgb(119, 93, 208)",
-            },
-          },
-        },
-      ],
-      tooltip: {
-        fixed: {
+        dataLabels: {
           enabled: true,
-          position: "topLeft", // topRight, topLeft, bottomRight, bottomLeft
-          offsetY: 30,
-          offsetX: 60,
+          formatter: function (val) {
+            return val + " กก.";
+          },
+          offsetY: -20,
+          style: {
+            fontSize: "12px",
+            colors: ["#304758"],
+          },
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ["transparent"],
+        },
+        xaxis: {
+          categories: [
+            "แรกเกิด",
+            "อายุ 240 วัน",
+            "อายุ 400 วัน",
+            "อายุ 600 วัน",
+          ],
+        },
+        yaxis: {
+          title: {
+            text: "น้ำหนัก (กก.)",
+          },
+        },
+        fill: {
+          opacity: 1,
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val + " กก.";
+            },
+          },
         },
       },
-      legend: {
-        horizontalAlign: "left",
-        offsetX: 40,
+    },
+    graghWidth: {
+      series: [],
+      chartOptions: {
+        chart: {
+          type: "bar",
+          height: 350,
+        },
+        colors: "#FFEE58",
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: "55%",
+            endingShape: "rounded",
+            dataLabels: {
+              position: "top", // top, center, bottom
+            },
+          },
+        },
+        dataLabels: {
+          enabled: true,
+          formatter: function (val) {
+            return val + " ซม.";
+          },
+          offsetY: -20,
+          style: {
+            fontSize: "12px",
+            colors: ["#304758"],
+          },
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ["transparent"],
+        },
+        xaxis: {
+          categories: [
+            "แรกเกิด",
+            "อายุ 240 วัน",
+            "อายุ 400 วัน",
+            "อายุ 600 วัน",
+          ],
+        },
+        yaxis: {
+          title: {
+            text: "ความยาวรอบลำตัว (ซม.)",
+          },
+        },
+        fill: {
+          opacity: 1,
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val + " ซม.";
+            },
+          },
+        },
+      },
+    },
+    graghLength: {
+      series: [],
+      chartOptions: {
+        chart: {
+          type: "bar",
+          height: 350,
+        },
+        colors: "#3399ff",
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: "55%",
+            endingShape: "rounded",
+            dataLabels: {
+              position: "top", // top, center, bottom
+            },
+          },
+        },
+        dataLabels: {
+          enabled: true,
+          formatter: function (val) {
+            return val + " ซม.";
+          },
+          offsetY: -20,
+          style: {
+            fontSize: "12px",
+            colors: ["#304758"],
+          },
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ["transparent"],
+        },
+        xaxis: {
+          categories: [
+            "แรกเกิด",
+            "อายุ 240 วัน",
+            "อายุ 400 วัน",
+            "อายุ 600 วัน",
+          ],
+        },
+        yaxis: {
+          title: {
+            text: "ความยาวรอบลำตัว (ซม.)",
+          },
+        },
+        fill: {
+          opacity: 1,
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val + " ซม.";
+            },
+          },
+        },
+      },
+    },
+    graghHeight: {
+      series: [],
+      chartOptions: {
+        chart: {
+          type: "bar",
+          height: 350,
+        },
+        colors: "#66ff99",
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: "55%",
+            endingShape: "rounded",
+            dataLabels: {
+              position: "top", // top, center, bottom
+            },
+          },
+        },
+        dataLabels: {
+          enabled: true,
+          formatter: function (val) {
+            return val + " ซม.";
+          },
+          offsetY: -20,
+          style: {
+            fontSize: "12px",
+            colors: ["#304758"],
+          },
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ["transparent"],
+        },
+        xaxis: {
+          categories: [
+            "แรกเกิด",
+            "อายุ 240 วัน",
+            "อายุ 400 วัน",
+            "อายุ 600 วัน",
+          ],
+        },
+        yaxis: {
+          title: {
+            text: "ความสูง (ซม.)",
+          },
+        },
+        fill: {
+          opacity: 1,
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val + " ซม.";
+            },
+          },
+        },
+      },
+    },
+    graghGrowth: {
+      series: [],
+      chartOptions: {
+        chart: {
+          type: "bar",
+          height: 350,
+        },
+        colors: "#EC407A",
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: "55%",
+            endingShape: "rounded",
+            dataLabels: {
+              position: "top", // top, center, bottom
+            },
+          },
+        },
+        dataLabels: {
+          enabled: true,
+          formatter: function (val) {
+            return val + " กก.";
+          },
+          offsetY: -20,
+          style: {
+            fontSize: "12px",
+            colors: ["#304758"],
+          },
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ["transparent"],
+        },
+        xaxis: {
+          categories: [
+            "แรกเกิด",
+            "อายุ 240 วัน",
+            "อายุ 400 วัน",
+            "อายุ 600 วัน",
+          ],
+        },
+        yaxis: {
+          title: {
+            text: "อัตราการเจริญเติบโต (กก.)",
+          },
+        },
+        fill: {
+          opacity: 1,
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val + " กก.";
+            },
+          },
+        },
       },
     },
   }),
@@ -156,10 +373,9 @@ export default {
       await this.generateSeries();
     },
     async generateSeries() {
-      let series = [
+      let weight = [
         {
           name: "น้ำหนัก",
-          type: "column",
           data: [
             this.buffalo.weight0,
             this.buffalo.weight240,
@@ -167,9 +383,10 @@ export default {
             this.buffalo.weight600,
           ],
         },
+      ];
+      let width = [
         {
           name: "ความกว้างรอบอก",
-          type: "column",
           data: [
             this.buffalo.width0,
             this.buffalo.width240,
@@ -177,6 +394,8 @@ export default {
             this.buffalo.width600,
           ],
         },
+      ];
+      let length = [
         {
           name: "ความยาวลำตัว",
           type: "column",
@@ -187,6 +406,8 @@ export default {
             this.buffalo.length600,
           ],
         },
+      ];
+      let height = [
         {
           name: "ความสูง",
           type: "column",
@@ -197,9 +418,10 @@ export default {
             this.buffalo.height600,
           ],
         },
+      ];
+      let growth = [
         {
           name: "การเจริญเติบโต",
-          type: "line",
           data: [
             0,
             this.calculate(this.buffalo.weight0, this.buffalo.weight240, 240),
@@ -208,8 +430,11 @@ export default {
           ],
         },
       ];
-
-      this.series = series;
+      this.graghWidth.series = width;
+      this.graghWeight.series = weight;
+      this.graghLength.series = length;
+      this.graghHeight.series = height;
+      this.graghGrowth.series = growth;
     },
     calculate(first, now, numDay) {
       let result = (now - first) / numDay;

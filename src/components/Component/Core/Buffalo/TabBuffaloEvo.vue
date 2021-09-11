@@ -30,7 +30,15 @@
       </div>
     </div>
     <div>
-      <div v-if="unEdit" id="chart" style="overflow-x: scroll">
+      <div id="chart" style="overflow-x: scroll">
+        <!-- <pre>{{ form }}</pre> -->
+        <!-- <apexchart
+          type="line"
+          :width="$vuetify.breakpoint.mobile ? `1900` : `100%`"
+          height="250"
+          :options="gragh.chartOptions"
+          :series="gragh.series"
+        ></apexchart> -->
         <span>น้ำหนัก (กก.)</span>
         <apexchart
           type="bar"
@@ -465,7 +473,7 @@ export default class TabBuff extends Vue {
       },
       yaxis: {
         title: {
-          text: "ความยาวรอบลำตัว (ซม.)",
+          text: "ความกว้างรอบอก (ซม.)",
         },
       },
       fill: {
@@ -501,7 +509,7 @@ export default class TabBuff extends Vue {
       dataLabels: {
         enabled: true,
         formatter: function (val: any) {
-          return val + " ซม.";
+          return val + " กก.";
         },
         offsetY: -20,
         style: {
@@ -519,7 +527,7 @@ export default class TabBuff extends Vue {
       },
       yaxis: {
         title: {
-          text: "ความยาวรอบลำตัว (ซม.)",
+          text: "น้ำหนัก (กก.)",
         },
       },
       fill: {
@@ -528,7 +536,7 @@ export default class TabBuff extends Vue {
       tooltip: {
         y: {
           formatter: function (val: any) {
-            return val + " ซม.";
+            return val + " กก.";
           },
         },
       },
