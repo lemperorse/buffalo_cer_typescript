@@ -182,12 +182,11 @@
             />
           </div>
           <div class="w-full lg:w-6/12 md:px-4">
+       
             <v-select
               :disabled="unEdit"
-              :items="gene"
-              item-text="value"
-              item-value="id"
-              v-model="form.gene"
+              :items="gene" 
+              v-model="form.genes"
               filled
               rounded
               dense
@@ -287,20 +286,7 @@ export default class Farm extends Vue {
     this.color = await Core.getChoice(`สีควาย`);
     this.status = await Core.getChoice(`สถานะควาย`);
     this.froms = await Core.getChoice(`แหล่งที่มาของควาย`);
-    this.gene = [
-      {
-        name: "ควายไทย(ควายปลัก)",
-        value: "ควายไทย(ควายปลัก)",
-      },
-      {
-        name: "ควายมูร่าห์(ควายแม่น้ำ)",
-        value: "ควายมูร่าห์(ควายแม่น้ำ)",
-      },
-      {
-        name: "ควายลูกผสม",
-        value: "ควายลูกผสม",
-      },
-    ];
+    this.gene =  await Core.getHttp(`/user/buffalo/genes`)
   }
 
   private async run() {
