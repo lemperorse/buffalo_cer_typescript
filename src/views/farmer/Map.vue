@@ -5,6 +5,7 @@
     </div>
     <v-card class="rounded-lg elevation-3">
         <Map  :locations="locations" />
+        
     </v-card>
 </div>
 </template>
@@ -48,7 +49,8 @@
      async created() {
          this.rawFarm = await Core.getHttp(`/user/buffalo/farm/`)
          let map = _.map(this.rawFarm ,(r)=>{
-             return  {'Latitude':r.latitude ,'Longitude':r.longitude }
+             let rawMap = (r.location).split(',')
+             return  {'Latitude':rawMap[0] ,'Longitude':rawMap[1] }
          })
          this.locations = map
         this.response = true;
