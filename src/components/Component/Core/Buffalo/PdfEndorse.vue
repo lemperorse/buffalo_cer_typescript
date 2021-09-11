@@ -1,15 +1,26 @@
 <template>
   <div>
-    <div class="mt-2" v-if="$vuetify.breakpoint.mobile" @click="exporEndorse()">
+    <div class="mt-2" v-if="$vuetify.breakpoint.mobile">
       <v-alert
         class="my-4"
         color="deep-purple accent-3"
         border="left"
         elevation="1"
         colored-border
-        icon="mdi-file-download"
       >
         ดาวน์โหลดใบประกาศนียบัตรรับรองพันธุ์ประวัติ
+        <v-btn
+          @click="exporEndorse()"
+          color="deep-purple accent-3"
+          depressed
+          dark
+          block
+          large
+          rounded
+        >
+          <v-icon left>fas fa-file-download</v-icon>
+          ดาวน์โหลด
+        </v-btn>
       </v-alert>
     </div>
     <div v-else>

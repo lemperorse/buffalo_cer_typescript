@@ -327,7 +327,7 @@
         </v-tab-item>
       </v-tabs>
     </div>
-    <v-app>
+    <div>
       <v-dialog
         v-model="dialogFather"
         persistent
@@ -600,7 +600,7 @@
           </v-card-text>
         </v-card>
       </v-dialog>
-    </v-app>
+    </div>
   </div>
 </template>
 

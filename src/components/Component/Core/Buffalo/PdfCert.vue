@@ -1,14 +1,25 @@
 <template>
   <div>
-    <div v-if="$vuetify.breakpoint.mobile" @click="exporPDF()">
+    <div v-if="$vuetify.breakpoint.mobile" >
       <v-alert
         color="deep-purple accent-1"
         border="left"
         elevation="1"
         colored-border
-        icon="mdi-file-download"
       >
         ดาวน์โหลดใบพันธุ์ประวัติอ้างอิง
+        <v-btn
+          class="mt-1"
+          @click="exporPDF()"
+          color="deep-purple accent-1"
+          depressed
+          dark
+          block
+          large
+          rounded
+        >
+          <v-icon left>fas fa-file-download</v-icon>ดาวน์โหลด
+        </v-btn>
       </v-alert>
     </div>
     <div v-else>
@@ -95,7 +106,7 @@ export default {
           bolditalics: "Kanit-MediumItalic.ttf",
         },
       };
-
+      const win = window.open("", "_blank");
       const docDefinition = {
         pageSize: "A4",
         pageMargins: [40, 40, 40, 40],
@@ -390,7 +401,8 @@ export default {
         },
       };
       // pdfMake.createPdf(docDefinition).open({}, window);
-      pdfMake.createPdf(docDefinition).print();
+      // pdfMake.createPdf(docDefinition).print();
+      pdfMake.createPdf(docDefinition).open({}, win);
     },
   },
 };
