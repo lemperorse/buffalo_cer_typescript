@@ -102,7 +102,7 @@ export default class Graph extends Vue {
     dataLabels: {
       enabled: true,
       formatter: function (val: any) {
-        return val + " กก.";
+        return val + " กก. / วัน";
       },
     },
     stroke: {
