@@ -31,48 +31,17 @@
     </div>
     <div>
       <div id="chart" style="overflow-x: scroll">
-        <!-- <pre>{{ form }}</pre> -->
-        <!-- <apexchart
+        <apexchart
           type="line"
-          :width="$vuetify.breakpoint.mobile ? `1900` : `100%`"
           height="250"
-          :options="gragh.chartOptions"
-          :series="gragh.series"
-        ></apexchart> -->
-        <span>น้ำหนัก (กก.)</span>
-        <apexchart
-          type="bar"
-          height="250"
-          :options="graghWeight.chartOptions"
-          :series="graghWeight.series"
+          :options="graghKK.chartOptions"
+          :series="graghKK.series"
         ></apexchart>
-        <span>ความกว้างรอบอก (ซม.)</span>
         <apexchart
           type="bar"
           height="250"
-          :options="graghWidth.chartOptions"
-          :series="graghWidth.series"
-        ></apexchart>
-        <span>ความยาวรอบลำตัว (ซม.)</span>
-        <apexchart
-          type="bar"
-          height="250"
-          :options="graghLength.chartOptions"
-          :series="graghLength.series"
-        ></apexchart>
-        <span>ความสูง (ซม.)</span>
-        <apexchart
-          type="bar"
-          height="250"
-          :options="graghHeight.chartOptions"
-          :series="graghHeight.series"
-        ></apexchart>
-        <span>อัตราการเจริญเติบโต (กก.)</span>
-        <apexchart
-          type="bar"
-          height="250"
-          :options="graghGrowth.chartOptions"
-          :series="graghGrowth.series"
+          :options="graghCM.chartOptions"
+          :series="graghCM.series"
         ></apexchart>
       </div>
     </div>
@@ -380,14 +349,13 @@ export default class TabBuff extends Vue {
   private unEdit: boolean = true;
   private response: boolean = false;
 
-  graghWeight: any = {
+  graghKK: any = {
     series: [],
     chartOptions: {
       chart: {
-        type: "bar",
         height: 350,
+        type: "line",
       },
-      colors: "#7E57C2",
       plotOptions: {
         bar: {
           horizontal: false,
@@ -397,83 +365,88 @@ export default class TabBuff extends Vue {
             position: "top", // top, center, bottom
           },
         },
+      },
+      stroke: {
+        width: [0, 4],
+      },
+      title: {
+        text: "น้ำหนักและการเจริญเติบโต",
       },
       dataLabels: {
         enabled: true,
         formatter: function (val: any) {
-          return val + " กก.";
+          return val + " กก. / วัน";
         },
-        offsetY: -20,
-        style: {
-          fontSize: "12px",
-          colors: ["#304758"],
-        },
-      },
-      stroke: {
-        show: true,
-        width: 2,
-        colors: ["transparent"],
+        enabledOnSeries: [1],
       },
       xaxis: {
         categories: ["แรกเกิด", "อายุ 240 วัน", "อายุ 400 วัน", "อายุ 600 วัน"],
       },
-      yaxis: {
-        title: {
-          text: "น้ำหนัก (กก.)",
-        },
-      },
-      fill: {
-        opacity: 1,
-      },
-      tooltip: {
-        y: {
-          formatter: function (val: any) {
-            return val + " กก.";
+      yaxis: [
+        {
+          title: {
+            text: "น้ำหนัก (กก.)",
           },
         },
+        {
+          opposite: true,
+          title: {
+            text: "อัตราการเจริญเติบโต (กก.)",
+          },
+        },
+      ],
+      tooltip: {
+        y: [
+          {
+            formatter: function (val: any) {
+              return val + " กก.";
+            },
+          },
+          {
+            formatter: function (val: any) {
+              return val + " กก. / วัน";
+            },
+          },
+        ],
       },
     },
   };
-  graghWidth: any = {
+  graghCM: any = {
     series: [],
     chartOptions: {
       chart: {
         type: "bar",
         height: 350,
       },
-      colors: "#FFEE58",
       plotOptions: {
         bar: {
           horizontal: false,
           columnWidth: "55%",
           endingShape: "rounded",
-          dataLabels: {
-            position: "top", // top, center, bottom
-          },
         },
       },
       dataLabels: {
         enabled: true,
+        style: { fontSize: "12px", colors: ["#fff"] },
         formatter: function (val: any) {
           return val + " ซม.";
         },
         offsetY: -20,
-        style: {
-          fontSize: "12px",
-          colors: ["#304758"],
-        },
       },
       stroke: {
         show: true,
         width: 2,
         colors: ["transparent"],
       },
+      title: {
+        text: "ความกว้างรอบอกม ความยาวลำตัวและความสูง",
+      },
       xaxis: {
         categories: ["แรกเกิด", "อายุ 240 วัน", "อายุ 400 วัน", "อายุ 600 วัน"],
       },
       yaxis: {
         title: {
-          text: "ความกว้างรอบอก (ซม.)",
+          text: "หน่วย (ซม.)",
         },
       },
       fill: {
@@ -488,168 +461,7 @@ export default class TabBuff extends Vue {
       },
     },
   };
-  graghLength: any = {
-    series: [],
-    chartOptions: {
-      chart: {
-        type: "bar",
-        height: 350,
-      },
-      colors: "#3399ff",
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          columnWidth: "55%",
-          endingShape: "rounded",
-          dataLabels: {
-            position: "top", // top, center, bottom
-          },
-        },
-      },
-      dataLabels: {
-        enabled: true,
-        formatter: function (val: any) {
-          return val + " กก.";
-        },
-        offsetY: -20,
-        style: {
-          fontSize: "12px",
-          colors: ["#304758"],
-        },
-      },
-      stroke: {
-        show: true,
-        width: 2,
-        colors: ["transparent"],
-      },
-      xaxis: {
-        categories: ["แรกเกิด", "อายุ 240 วัน", "อายุ 400 วัน", "อายุ 600 วัน"],
-      },
-      yaxis: {
-        title: {
-          text: "น้ำหนัก (กก.)",
-        },
-      },
-      fill: {
-        opacity: 1,
-      },
-      tooltip: {
-        y: {
-          formatter: function (val: any) {
-            return val + " กก.";
-          },
-        },
-      },
-    },
-  };
-  graghHeight: any = {
-    series: [],
-    chartOptions: {
-      chart: {
-        type: "bar",
-        height: 350,
-      },
-      colors: "#66ff99",
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          columnWidth: "55%",
-          endingShape: "rounded",
-          dataLabels: {
-            position: "top", // top, center, bottom
-          },
-        },
-      },
-      dataLabels: {
-        enabled: true,
-        formatter: function (val: any) {
-          return val + " ซม.";
-        },
-        offsetY: -20,
-        style: {
-          fontSize: "12px",
-          colors: ["#304758"],
-        },
-      },
-      stroke: {
-        show: true,
-        width: 2,
-        colors: ["transparent"],
-      },
-      xaxis: {
-        categories: ["แรกเกิด", "อายุ 240 วัน", "อายุ 400 วัน", "อายุ 600 วัน"],
-      },
-      yaxis: {
-        title: {
-          text: "ความสูง (ซม.)",
-        },
-      },
-      fill: {
-        opacity: 1,
-      },
-      tooltip: {
-        y: {
-          formatter: function (val: any) {
-            return val + " ซม.";
-          },
-        },
-      },
-    },
-  };
-  graghGrowth: any = {
-    series: [],
-    chartOptions: {
-      chart: {
-        type: "bar",
-        height: 350,
-      },
-      colors: "#EC407A",
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          columnWidth: "55%",
-          endingShape: "rounded",
-          dataLabels: {
-            position: "top", // top, center, bottom
-          },
-        },
-      },
-      dataLabels: {
-        enabled: true,
-        formatter: function (val: any) {
-          return val + " กก.";
-        },
-        offsetY: -20,
-        style: {
-          fontSize: "12px",
-          colors: ["#304758"],
-        },
-      },
-      stroke: {
-        show: true,
-        width: 2,
-        colors: ["transparent"],
-      },
-      xaxis: {
-        categories: ["แรกเกิด", "อายุ 240 วัน", "อายุ 400 วัน", "อายุ 600 วัน"],
-      },
-      yaxis: {
-        title: {
-          text: "อัตราการเจริญเติบโต (กก.)",
-        },
-      },
-      fill: {
-        opacity: 1,
-      },
-      tooltip: {
-        y: {
-          formatter: function (val: any) {
-            return val + " กก.";
-          },
-        },
-      },
-    },
-  };
+
   private async created() {
     await this.run();
   }
@@ -721,9 +533,10 @@ export default class TabBuff extends Vue {
     return this.unEdit ? "border-success" : "border-edit";
   }
   async generateSeries() {
-    let weight = [
+    let kk = [
       {
         name: "น้ำหนัก",
+        type: "column",
         data: [
           this.form.weight0,
           this.form.weight240,
@@ -731,10 +544,21 @@ export default class TabBuff extends Vue {
           this.form.weight600,
         ],
       },
+      {
+        name: "การเจริญเติบโต",
+        type: "line",
+        data: [
+          0,
+          this.calculate(this.form.weight0, this.form.weight240, 240),
+          this.calculate(this.form.weight0, this.form.weight400, 400),
+          this.calculate(this.form.weight0, this.form.weight600, 600),
+        ],
+      },
     ];
-    let width = [
+    let cm = [
       {
         name: "ความกว้างรอบอก",
+        type: "column",
         data: [
           this.form.width0,
           this.form.width240,
@@ -742,8 +566,6 @@ export default class TabBuff extends Vue {
           this.form.width600,
         ],
       },
-    ];
-    let length = [
       {
         name: "ความยาวลำตัว",
         type: "column",
@@ -754,8 +576,6 @@ export default class TabBuff extends Vue {
           this.form.length600,
         ],
       },
-    ];
-    let height = [
       {
         name: "ความสูง",
         type: "column",
@@ -767,22 +587,9 @@ export default class TabBuff extends Vue {
         ],
       },
     ];
-    let growth = [
-      {
-        name: "การเจริญเติบโต",
-        data: [
-          0,
-          this.calculate(this.form.weight0, this.form.weight240, 240),
-          this.calculate(this.form.weight0, this.form.weight400, 400),
-          this.calculate(this.form.weight0, this.form.weight600, 600),
-        ],
-      },
-    ];
-    this.graghWidth.series = width;
-    this.graghWeight.series = weight;
-    this.graghLength.series = length;
-    this.graghHeight.series = height;
-    this.graghGrowth.series = growth;
+
+    this.graghKK.series = kk;
+    this.graghCM.series = cm;
   }
   calculate(first: any, now: any, numDay: any) {
     let result = (now - first) / numDay;
