@@ -34,13 +34,13 @@
         :options="graghKK.chartOptions"
         :series="graghKK.series"
       ></apexchart>
-      <apexchart
-        type="bar"
-        height="250"
-        :options="graghCM.chartOptions"
-        :series="graghCM.series"
-      ></apexchart>
+      
     </div>
+           <div v-if="responseCM">
+                  <BodyLength :graph="graphCM_data.chest" filter="ความกว้างรอบอก" color="#eb6e34" title="ความกว้างรอบอก ที่เพิ่มขึ้น" />
+                <BodyLength :graph="graphCM_data.body" filter="ความยาวลำตัว"  color="#c4cf30" title="ความยาวลำตัว ที่เพิ่มขึ้น" />
+                <BodyLength :graph="graphCM_data.height" filter="ความสูง"  color="#87507c" title="ความสูง ที่เพิ่มขึ้น"  /> 
+                </div>
   </div>
 </template>
 
@@ -48,7 +48,12 @@
 import _ from "lodash";
 import { Core } from "@/store/core";
 import { User } from "@/store/user";
+import BodyLength from '@/components/Component/Core/Evo/BodyLength.vue'
+
 export default {
+   components:{
+    BodyLength
+  },
   data: () => ({
     farm: User.farm,
     themFarm: [],
@@ -178,11 +183,26 @@ export default {
         },
       },
     },
+   responseCM:false,
+    graphCM_data: {}
   }),
   async created() {
     await this.getFarms();
   },
   methods: {
+            filterDataSeries(data,name){
+        let response =  _.filter(data,{name:name})
+        return (response[0])?response[0]:null
+    },
+
+    async getGraphCM(){
+      this.graphCM_data = {
+        "chest": this.filterDataSeries(this.graghCM.series,'ความกว้างรอบอก'),
+          "body": this.filterDataSeries(this.graghCM.series,'ความยาวลำตัว'),
+         "height": this.filterDataSeries(this.graghCM.series,'ความสูง')
+      }
+      
+    },
     async getFarms() {
       this.themFarm = await Core.getHttp(`api/buffalo/farm/`);
     },
@@ -192,10 +212,13 @@ export default {
       );
     },
     async changeMyBuffalo() {
+       this.responseCM = false;
       this.buffalo = await Core.getHttp(
         `api/buffalo/evolution/${this.mySelect}/`
       );
       await this.generateSeries();
+         await this.getGraphCM();
+      this.responseCM = true;
     },
     async generateSeries() {
       let kk = [

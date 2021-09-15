@@ -33,6 +33,7 @@ export default {
                         height: 350,
                         type: "line",
                     },
+                    colors: [this.color,"rgb(0, 227, 150)"],
                     plotOptions: {
                         bar: {
                             horizontal: false,
@@ -59,12 +60,10 @@ export default {
                     xaxis: {
                         categories: ["แรกเกิด", "อายุ 240 วัน", "อายุ 400 วัน", "อายุ 600 วัน"],
                     },
-                    fill: {
-                        colors: '#9C27B0'
-                    },
+                 
                     yaxis: [{
                             title: {
-                                text: "หน่วย (ซม.)",
+                                text: this.filter +" (ซม.)",
                             },
                         },
                         {
@@ -116,7 +115,8 @@ export default {
                 }]
             }
             this.graghKK.title = this.title
-            this.graghKK.chartOptions.fill.colors = this.color
+            // this.graghKK.chartOptions.fill.colors = this.color
+            this.graghKK.chartOptions.colors =  [this.color,"rgb(0, 227, 150)"],
             this.response = true;
         }
 

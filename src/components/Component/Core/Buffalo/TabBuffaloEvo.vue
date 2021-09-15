@@ -20,9 +20,9 @@
           
         
                 <div v-if="responseCM">
-                  <BodyLength :graph="graphCM_data.chest" color="#eb6e34" title="ความกว้างรอบอก ที่เพิ่มขึ้น" />
-                <BodyLength :graph="graphCM_data.body"  color="#c4cf30" title="ความยาวลำตัว ที่เพิ่มขึ้น" />
-                <BodyLength :graph="graphCM_data.height"  color="#87507c" title="ความสูง ที่เพิ่มขึ้น"  /> 
+                  <BodyLength :graph="graphCM_data.chest" filter="ความกว้างรอบอก" color="#eb6e34" title="ความกว้างรอบอก ที่เพิ่มขึ้น" />
+                <BodyLength :graph="graphCM_data.body" filter="ความยาวลำตัว"  color="#c4cf30" title="ความยาวลำตัว ที่เพิ่มขึ้น" />
+                <BodyLength :graph="graphCM_data.height" filter="ความสูง"  color="#87507c" title="ความสูง ที่เพิ่มขึ้น"  /> 
                 </div>
   
  
@@ -155,6 +155,7 @@ export default class TabBuff extends Vue {
                 height: 350,
                 type: "line",
             },
+            
             plotOptions: {
                 bar: {
                     horizontal: false,
