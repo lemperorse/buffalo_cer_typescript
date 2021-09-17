@@ -6,8 +6,8 @@
             <div class="w-full md:w-4/12 px-4"> 
                 <div class="text-sm font-semibold py-1 text-center md:text-left text-black">
                     ลิขสิทธิ์ © 2563
-                    <a href="https://www.creative-tim.com?ref=vn-footer-admin" class="text-white hover:text-gray-800 text-sm font-semibold py-1">
-                        โดย ศูนย์วิจัยและบํารุงพันธุ์สัตว์พะเยา
+                    <a href="" class="text-white hover:text-gray-800 text-sm font-semibold py-1">
+                        โดย กรมปศุสัตว์ ศูนย์วิจัยและบํารุงพันธุ์สัตว์พะเยา
                     </a>
                 </div>
             </div>
