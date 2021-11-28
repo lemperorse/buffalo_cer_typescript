@@ -368,7 +368,7 @@ export default {
       };
       // pdfMake.createPdf(docDefinition).open({}, window);
       // pdfMake.createPdf(docDefinition).print();
-      pdfMake.createPdf(docDefinition).open({}, win);
+      pdfMake.createPdf(docDefinition).download("buffalo", win);
     },
   },
 };
