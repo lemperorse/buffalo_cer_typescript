@@ -10,7 +10,12 @@ import 'vue-loading-overlay/dist/vue-loading.css';
 import 'hover.css'
 Vue.use(Loading,{color: 'red'});
 Vue.component('loading', Loading)
- 
+
+
+import device from "vue-device-detector"
+Vue.use(device)
+
+
 import VueApexCharts from 'vue-apexcharts'
 Vue.use(VueApexCharts)
 

@@ -15,6 +15,9 @@ export default Vue.extend({
 
   components: { 
   },
+  async created() {
+   
+  },  
 
   data: () => ({
     //

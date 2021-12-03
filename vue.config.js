@@ -6,6 +6,10 @@ module.exports = {
   "pluginOptions": {
     "cordovaPath": "src-cordova"
   },
+  devServer: {
+    public: '192.168.1.2:8080',
+    https: true 
+  },
   // "transpileDependencies": [
   //   "vuetify"
   // ],

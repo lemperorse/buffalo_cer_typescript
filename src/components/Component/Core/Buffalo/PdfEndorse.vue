@@ -432,8 +432,34 @@ export default {
       };
       // pdfMake.createPdf(docDefinition).open({}, window);
       // pdfMake.createPdf(docDefinition).print();
-      pdfMake.createPdf(docDefinition).download('buffalo', win);
+      // pdfMake.createPdf(docDefinition).download('buffalo', win);
+       if(this.$device.android || this.$device.ios ){
+                   await this.getPdfMobile( pdfMake.createPdf(docDefinition) ,this.dataBuffalo.name+'.pdf');
+            }else{
+                pdfMake.createPdf(docDefinition).download(this.dataBuffalo.name, win);
+            }
     },
+
+          async getPdfMobile(pdf,name) { 
+            pdf.getBuffer((buffer) => {
+                var blob = new Blob([buffer], { type: 'application/pdf' }); 
+                // Save the PDF to the data Directory of our App
+
+                 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, (fs) =>{
+                  console.log('file system open: ' + fs.name);
+                  fs.root.getFile(name, { create: true, exclusive: false },  (fileEntry)=> {
+                    console.log("fileEntry:" + JSON.stringify(fileEntry));
+                    fileEntry.createWriter(function (fileWriter) { 
+                                fileWriter.write(blob);
+                                console.log(fileEntry.nativeURL);
+                                alert('ดาวน์โหลดไฟล์สำเร็จแล้ว');
+                                cordova.plugins.fileOpener2.open(fileEntry.nativeURL, 'application/pdf');
+                            });
+                  }, function(data){});
+                }, function(data){});  
+            });
+        },
+
   },
 };
 </script>

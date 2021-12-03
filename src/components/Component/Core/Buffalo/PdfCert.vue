@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h2>sdds</h2>
+
     <div v-if="$vuetify.breakpoint.mobile">
         <v-alert color="green darken-1" border="left" elevation="1" colored-border>
             ดาวน์โหลดใบพันธุ์ประวัติอ้างอิงควาย
@@ -40,7 +40,7 @@ export default {
     computed: {},
     watch: {},
     async created() {
-        alert('Hello World')
+ 
         await this.load();
     },
     methods: {
@@ -62,7 +62,7 @@ export default {
         },
 
         async exporPDF() {
-
+            const win = window.open("", "_blank");
             pdfMake.vfs = pdfFonts.pdfMake.vfs;
             //const win = window.open("", "_blank");
             pdfMake.fonts = {
@@ -340,49 +340,35 @@ export default {
                 },
             };
             // pdfMake.createPdf(docDefinition).open({}, window);
-            // pdfMake.createPdf(docDefinition).print();
-            this.pdf = pdfMake.createPdf(docDefinition)
-            await this.getPdfMobile();
-            //pdfMake.createPdf(docDefinition).download("buffalo", win);
+            // pdfMake.createPdf(docDefinition).print();  
+            if (this.$device.android || this.$device.ios) {
+                await this.getPdfMobile(pdfMake.createPdf(docDefinition), this.dataBuffalo.name + '.pdf');
+            } else {
+                pdfMake.createPdf(docDefinition).download(this.dataBuffalo.name, win);
+            }
+
         },
 
-        async getPdfMobile() {
-            alert('Hello')
-            this.pdf.getBuffer((buffer) => {
+        async getPdfMobile(pdf, name) {
+            pdf.getBuffer((buffer) => {
                 var blob = new Blob([buffer], { type: 'application/pdf' });
-                console.log('xxx',cordova.plugins)
                 // Save the PDF to the data Directory of our App
 
-                 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, (fs) =>{
-                  console.log('file system open: ' + fs.name);
-                  fs.root.getFile("tests.pdf", { create: true, exclusive: false },  (fileEntry)=> {
-                    console.log("fileEntry:" + JSON.stringify(fileEntry));
-                    fileEntry.createWriter(function (fileWriter) { 
-                                fileWriter.write(blob);
-                                console.log(fileEntry.nativeURL);
-                                cordova.plugins.fileOpener2.open(fileEntry.nativeURL, 'application/pdf');
-                            });
-                  }, function(data){});
-                }, function(data){});  
-                
-            
+                window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, (fs) => {
+                    console.log('file system open: ' + fs.name);
+                    fs.root.getFile(name, { create: true, exclusive: false }, (fileEntry) => {
+                        console.log("fileEntry:" + JSON.stringify(fileEntry));
+                        fileEntry.createWriter(function (fileWriter) {
+                            fileWriter.write(blob);
+                            console.log(fileEntry.nativeURL);
+                            alert('ดาวน์โหลดไฟล์สำเร็จแล้ว');
+                            cordova.plugins.fileOpener2.open(fileEntry.nativeURL, 'application/pdf');
+                        });
+                    }, function (data) {});
+                }, function (data) {});
             });
         },
-          writeFile(path, filename, blob) {
-            return new Promise((resolve, reject) => {
-                window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function (dirpar) {
-                    dirpar.getDirectory(path, { create: true }, function (dir) {
-                        dir.getFile(filename, { create: true, exclusive: false }, function (fileEntry) {
-                            fileEntry.createWriter(function (fileWriter) {
-                                fileWriter.onwriteend = resolve
-                                fileWriter.onerror = reject
-                                fileWriter.write(blob);
-                            });
-                        }, reject);
-                    }, reject);
-                }, reject);
-            });
-        }
+
     },
 };
 </script>
