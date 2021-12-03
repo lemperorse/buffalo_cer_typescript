@@ -2,7 +2,7 @@
 <!-- <div class="bg-gray-100"> -->
 <div class="">
     <div class="w-full">
-        <h1 class="text-2xl font-semibold uppercase md:text-3xl p-6">ค้นหาใบพันธุ์ประวัติ</h1>
+        <h1 class="text-2xl font-semibold uppercase md:text-3xl p-6">ค้นหาใบพันธุ์ประวัติ 5555</h1>
         <div class="flex w-full p-6">
             <div class="flex ">
                 <form @submit.prevent="run" class="mt-4 w-full row wrap">

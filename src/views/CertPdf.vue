@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <v-btn
       @click="exporPDF()"
       color="deep-purple accent-1"
@@ -342,7 +343,7 @@ export default {
         },
         styles: {
           header: {
-            fontSize: 20,
+            fontSize: 20, 
             bold: true,
           },
           subheader: {
@@ -353,6 +354,7 @@ export default {
       };
       // pdfMake.createPdf(docDefinition).open({}, window);
       // pdfMake.createPdf(docDefinition).print();
+      alert('sds')
       pdfMake.createPdf(docDefinition).download('buffalo', win);
     },
   },
