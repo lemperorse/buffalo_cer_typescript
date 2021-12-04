@@ -4,7 +4,7 @@
         <div class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" style="background-image: url(https://sv1.picz.in.th/images/2021/12/04/65BtVV.png);">
             <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
             <div class="w-full px-24 z-10">
-                <img src="https://sv1.picz.in.th/images/2021/12/04/65kTER.png" alt="">
+                <img class="ximhg" src="https://sv1.picz.in.th/images/2021/12/04/65kTER.png" alt="">
                 <h1 class="text-2xl font-bold text-left tracking-wide">เว็บไซต์พันธุ์ควายไทย (ฺBuffalo Cert)</h1>
                 <p class="text-xl my-4">สำหรับเก็บข้อมูลควายและใบพันธุ์ประวัติควายของคุณ</p>
             </div>
@@ -214,5 +214,13 @@ export default class Test extends Vue {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23555555' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23525052' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%234f4b4f' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%234c464c' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23494149' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23463c46' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23433743' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%233f3340' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%233c2e3d' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%2339293a' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23362538' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23332035' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23301b32' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%232d172f' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%2329122c' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23260d29' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23230727' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23210024' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
+}
+.ximhg {
+    width:auto;
+  }
+@media only screen and (min-width: 1980px) {
+  .ximhg {
+    width:600px;
+  }
 }
 </style>
