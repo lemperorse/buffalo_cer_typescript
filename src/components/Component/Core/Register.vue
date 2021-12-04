@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-full justify-center items-center -mt-64 md:mt-0">
+  <div class="flex flex-col  justify-center items-center  md:mt-0">
     <form class="sign-up-form forms" v-if="step == 0">
       <h2 class="font-bold text-xl">สมัครสมาชิก พันธุ์ประวัติควายไทย</h2>
       <div class="text-blue-500 text-center mb-3 font-bold">

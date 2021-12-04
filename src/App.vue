@@ -24,3 +24,11 @@ export default Vue.extend({
   }),
 });
 </script>
+<style  >
+@import url('https://fonts.googleapis.com/css2?family=Sarabun&display=swap');
+
+* {
+    font-family: 'Sarabun', sans-serif;
+}
+
+</style>

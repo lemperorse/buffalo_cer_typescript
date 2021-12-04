@@ -1,6 +1,6 @@
 <template>
 <div>
-    <section class="min-h-screen flex items-stretch  text-white">
+    <section class="h-screen  flex   text-white">
         <div class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" style="background-image: url(https://sv1.picz.in.th/images/2021/12/04/65BtVV.png);">
             <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
             <div class="w-full px-24 z-10">
@@ -18,18 +18,11 @@
             </div>
             <div class="w-full py-6 z-20">
                 <div class="my-6">
-                    <center><img class="w-64" src="https://sv1.picz.in.th/images/2021/12/04/65BKRS.png" alt=""></center>
-                    <h2 class="text-white  text-4xl font-semibold">พันธุ์ควายไทย</h2>
+                    <center><img class="w-32 md:w-64" src="https://sv1.picz.in.th/images/2021/12/04/65BKRS.png" alt=""></center>
+                    <h2 class="text-white  text-3xl md:text-4xl font-semibold">พันธุ์ควายไทย</h2>
                     <h2 class="text-xl">Buffalo Cert</h2>
                 </div>
-                <!-- <div class="py-6 space-x-2">
-                    <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">f</span>
-                    <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">G+</span>
-                    <span class="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">in</span>
-                </div> -->
-                <!-- <p class="text-gray-100 font-semibold text-2xl  ">
-                    เข้าสู่ระบบ
-                </p> -->
+                 
                 <form action="" class="sm:w-2/3 w-full px-4 mx-auto">
                     <form @submit.prevent="login()" class="sign-in-form forms" v-if="tab == 0"> 
 
@@ -52,9 +45,8 @@
 
                             <v-btn large dark text @click="goAdmin()"><span class="text-white text-base font-semibold">ผู้ดูแลระบบ</span></v-btn>
                         </v-toolbar>
-
-                        <v-divider class="mt-24" style="width:70%;"></v-divider>
-                        <p class="social-text text-base font-semibold">ลิขสิทธิ์ © 2563 โดย กรมปศุสัตว์ ศูนย์วิจัยและบํารุงพันธุ์สัตว์พะเยา</p>
+ 
+                        <p class="mt-10 social-text text-sm font-semibold">ลิขสิทธิ์ © 2563 <br> โดย กรมปศุสัตว์ ศูนย์วิจัยและบํารุงพันธุ์สัตว์พะเยา</p>
 
                     </form>
                 </form>
@@ -215,11 +207,7 @@ export default class Test extends Vue {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@200&display=swap');
-
-* {
-    font-family: 'Sarabun', sans-serif;
-}
+ 
 
 .bg-log {
     background-color: #555555;
