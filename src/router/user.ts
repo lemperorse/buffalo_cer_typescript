@@ -22,7 +22,7 @@ const userRouter: any = [
     },
     {
         path: '/user/search',
-        name: 'ค้นหาใบพันธ์ประวัติ',
+        name: 'ค้นหาใบพันธ์ุประวัติ',
         icon:'em em-card_file_box',
         show: true,
         component: getView('Search')

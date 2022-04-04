@@ -64,7 +64,7 @@
               filled
               rounded
               dense
-              label="อีเมล์"
+              label="อีเมล"
               id="id"
               placeholder="(ไม่บังคับ)"
               prepend-inner-icon="fas fa-envelope"

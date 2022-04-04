@@ -79,7 +79,7 @@
                         <div class="" v-if="step==5">
                             <form @submit.prevent="register()">
                                 <v-text-field v-model="formUser.username" required label="ชื่อผู้ใช้" solo></v-text-field>
-                                <v-text-field label="อีเมล์ (ไม่บังคับ)" solo></v-text-field>
+                                <v-text-field label="อีเมล (ไม่บังคับ)" solo></v-text-field>
                                 <v-text-field v-model="formUser.password" type="password" required label="รหัสผ่าน" solo></v-text-field>
                                 <v-text-field v-model="formUser.password2" type="password" required label="ยืนยันรหัสผ่าน" solo></v-text-field>
                                 <button type="submit" :class="'bg-blue-600 '+btn">

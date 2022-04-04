@@ -73,7 +73,7 @@ export default class Graph extends Vue {
             width: [1, 1, 4]
         },
         title: {
-            text: 'อัตราการเจริญเติบโตของควาย เปรียบเที่ยบรายฟาร์ม',
+            text: 'อัตราการเจริญเติบโตของควาย เปรียบเทียบรายฟาร์ม',
             align: 'left',
             offsetX: 110
         },

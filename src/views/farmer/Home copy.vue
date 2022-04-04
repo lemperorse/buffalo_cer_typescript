@@ -81,7 +81,7 @@
                 <div class="w-full lg:w-1/3 xl:w-1/3 md:w-1/2 px-2 mb-2">
                     <v-card class="rounded-lg h-420" outlined>
                         <v-card-title primary-title>
-                            ค้นหาใบพันธ์ประวัติ
+                            ค้นหาใบพันธ์ุประวัติ
                         </v-card-title>
                         <v-divider></v-divider>
                         <v-card-text>
@@ -91,7 +91,7 @@
                         </v-card-text>
                         
                         <v-card-actions class="mt-3 pt-5">
-                            <v-btn color="deep-purple accent-3" block text @click="$router.push('/user/search')">ค้นหาใบพันธ์ประวัติ</v-btn>
+                            <v-btn color="deep-purple accent-3" block text @click="$router.push('/user/search')">ค้นหาใบพันธ์ุประวัติ</v-btn>
                         </v-card-actions>
                     </v-card>
                 </div>

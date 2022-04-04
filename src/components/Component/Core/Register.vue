@@ -316,7 +316,7 @@
           filled
           rounded
           name="name"
-          label="อีเมล์ (ไม่บังคับ)"
+          label="อีเมล (ไม่บังคับ)"
           id="id"
           prepend-inner-icon="fas fa-at"
         ></v-text-field>
