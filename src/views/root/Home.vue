@@ -5,7 +5,7 @@
             <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
             <div class="w-full px-24 z-10">
                 <img class="ximhg" src="https://sv1.picz.in.th/images/2021/12/04/65kTER.png" alt="">
-                <h1 class="text-2xl font-bold text-left tracking-wide">เว็บไซต์พันธุ์ควายไทย (ฺBuffalo Cert)</h1>
+                <h1 class="text-2xl font-bold text-left tracking-wide">เว็บไซต์พันธุ์ควายไทย (Buffalo Cert)</h1>
                 <p class="text-xl my-4">สำหรับเก็บข้อมูลควายและใบพันธุ์ประวัติควายของคุณ</p>
             </div>
             <div class="bottom-0 absolute p-4 text-center right-0 left-0 flex justify-center space-x-4">
