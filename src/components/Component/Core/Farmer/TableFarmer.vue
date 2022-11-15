@@ -40,7 +40,7 @@
         </div>
     </div>
     <!-- card -->
-    <div class="block w-full overflow-x-auto rounded-lg">
+    <div class="block w-full overflow-x-auto rounded-lg"  >
         <div class="flex flex-wrap mb-4">
             <div class="w-full md:w-1/2 xl:w-1/3 p-3 " v-for="buffalo,index in buffalos.results" :key="index" v-if="!buffalo.deleted">
                 <!-- <v-card class="animate__animated animate__zoomIn"> -->
@@ -48,7 +48,7 @@
                     <v-toolbar flat dense class="rounded-t-xl" color="transparent">
                         <div></div>
                         <v-spacer></v-spacer>
-                        <div class="text-xs p-2 border-2 rounded-xl bg-gray-500 text-white">สถานะ : {{buffalo.status.value}}</div>
+                        <div v-if="buffalo.status" class="text-xs p-2 border-2 rounded-xl bg-gray-500 text-white">สถานะ : {{buffalo.status.value}}</div>
                         <!-- <v-text-field readonly name="name" label="label" id="id"></v-text-field> -->
                     </v-toolbar> 
                     <div class="flex-auto p-4 ">
